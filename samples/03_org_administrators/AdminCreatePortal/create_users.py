@@ -1,11 +1,21 @@
 # Script to read account list from a csv file and create appropriate users in the portal.
 import csv
 from arcgis.gis import *
+import argparse
+
+#region read cmd line args
+parser = argparse.ArgumentParser()
+parser.add_argument('url', help='Portal url of the form: https://portalname.domain.com/webadaptor')
+parser.add_argument('-u','--user', help='Administrator username', default='admin')
+parser.add_argument('-p','--password', help='Administrator password', default='x]984<ngb3!')
+
+args = parser.parse_args()
+#endregion
 
 print("CREATING USER ACCOUNTS")
 
 # Connect to the GIS
-gis = GIS("https://dev003327.esri.com/portal", "admin", "esri.agp")
+gis = GIS(args.url, args.user, args.password)
 
 # loop through and create users
 with open("users.csv", 'r') as users_csv:
