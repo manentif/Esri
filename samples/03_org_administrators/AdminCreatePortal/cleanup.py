@@ -1,13 +1,24 @@
 # Script to clean up the users, content and groups created for demo
 
 from arcgis.gis import *
+import argparse
+
+#region read cmd line args
+parser = argparse.ArgumentParser()
+parser.add_argument('url', help='Portal url of the form: https://portalname.domain.com/webadaptor')
+parser.add_argument('-u','--user', help='Administrator username', default='admin')
+parser.add_argument('-p','--password', help='Administrator password', default='x]984<ngb3!')
+
+args = parser.parse_args()
+#endregion
+
 print("RUNNING CLEANUP")
 print("---------------")
 
-gis = GIS("https://dev003327.esri.com/portal", "admin", "esri.agp")
+gis = GIS(args.url, args.user, args.password)
 
 # region remove groups
-group_list = gis.groups.search("owner:admin")
+group_list = gis.groups.search("owner:" + args.user)
 print("")
 print("Deleting groups")
 print("---------------")

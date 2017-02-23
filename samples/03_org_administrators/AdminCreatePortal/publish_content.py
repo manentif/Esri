@@ -4,6 +4,16 @@
 from arcgis.gis import *
 import csv
 import json
+import argparse
+
+#region read cmd line args
+parser = argparse.ArgumentParser()
+parser.add_argument('url', help='Portal url of the form: https://portalname.domain.com/webadaptor')
+parser.add_argument('-u','--user', help='Administrator username', default='admin')
+parser.add_argument('-p','--password', help='Administrator password', default='x]984<ngb3!')
+
+args = parser.parse_args()
+#endregion
 
 # Read the csv containing user accounts and their territory info
 csv_path = "users.csv"
@@ -14,7 +24,7 @@ with open('.\\user_content\\web_map.json', 'r') as webmap_file:
             template_webmap_dict = json.load(webmap_file)
 
 # Connect to the GIS
-gis = GIS("https://dev003327.esri.com/portal", "admin", "esri.agp")
+gis = GIS(args.url, args.user, args.password)
 
 # Loop through each user and publish the content
 with open(csv_path, 'r') as csv_handle:
@@ -38,9 +48,9 @@ with open(csv_path, 'r') as csv_handle:
 
                 web_map_properties = {'title': '{0} {1} response locations'.format(row['Firstname'], row['Lastname']),
                                       'type': 'Web Map',
-                                      'snippet': 'Areas affected by Hurricane Matthew under the supervision of' +\
+                                      'snippet': 'Regions under the supervision of' +\
                                                  '{0} {1}'.format(row['Firstname'], row['Lastname']),
-                                      'tags': 'ArcGIS Python API',
+                                      'tags': 'ArcGIS API for Python',
                                       'typeKeywords' : "Collector, Explorer Web Map, Web Map, Map, Online Map",
                                       'text': json.dumps(user_webmap_dict)}
 
