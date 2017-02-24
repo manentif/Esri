@@ -19,3 +19,6 @@ powershell -Command "Invoke-WebRequest https://repo.continuum.io/miniconda/Minic
 REM 2. Install miniconda
 ECHO Install miniconda in user profile. Not registering Python
 start /wait "" miniconda.exe /InstallationType=JustMe /RegisterPython=0 /S /D=%UserProfile%\miniconda3
+
+REM return 0 if succeeded else 1
+ECHO %errorlevel%

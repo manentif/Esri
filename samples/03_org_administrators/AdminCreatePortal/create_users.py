@@ -3,53 +3,64 @@ import csv
 from arcgis.gis import *
 import argparse
 
-#region read cmd line args
-parser = argparse.ArgumentParser()
-parser.add_argument('url', help='Portal url of the form: https://portalname.domain.com/webadaptor')
-parser.add_argument('-u','--user', help='Administrator username', default='admin')
-parser.add_argument('-p','--password', help='Administrator password', default='x]984<ngb3!')
+try:
+    #region read cmd line args
+    parser = argparse.ArgumentParser()
+    parser.add_argument('url', help='Portal url of the form: https://portalname.domain.com/webadaptor')
+    parser.add_argument('-u','--user', help='Administrator username', default='admin')
+    parser.add_argument('-p','--password', help='Administrator password', default='x]984<ngb3!')
+    parser.add_argument('-l', '--log', help='Path to log file', default='python_process.log')
 
-args = parser.parse_args()
-#endregion
+    args = parser.parse_args()
+    #endregion
 
-print("CREATING USER ACCOUNTS")
+    # Read the log file in append mode
+    log_file = open(args.log, 'a')
 
-# Connect to the GIS
-gis = GIS(args.url, args.user, args.password)
+    log_file.write("\n")
+    log_file.write("=====================================================================\n")
+    log_file.write("CREATING USER ACCOUNTS")
 
-# loop through and create users
-with open("users.csv", 'r') as users_csv:
-    users = csv.DictReader(users_csv)
-    for user in users:
-        try:
-            print("Creating user: ", user['username'], end=" ## ")
-            result = gis.users.create(username=user['username'],
-                                      password=user['password'],
-                                      firstname=user['Firstname'],
-                                      lastname=user['Lastname'],
-                                      email=user['email'],
-                                      role =user['role'])
-            if result:
-                print("success  ##")
+    # Connect to the GIS
+    gis = GIS(args.url, args.user, args.password)
 
-                print("\t Adding to groups: ", end=" # ")
-                groups = user['groups']
-                group_list = groups.split(",")
+    # loop through and create users
+    with open("users.csv", 'r') as users_csv:
+        users = csv.DictReader(users_csv)
+        for user in users:
+            try:
+                log_file.write("\nCreating user: " + user['username'] + " ## ")
+                result = gis.users.create(username=user['username'],
+                                          password=user['password'],
+                                          firstname=user['Firstname'],
+                                          lastname=user['Lastname'],
+                                          email=user['email'],
+                                          role =user['role'])
+                if result:
+                    log_file.write("success  ##\n")
 
-                # Search for the group
-                for g in group_list:
-                    group_search = gis.groups.search(g)
-                    if len(group_search) > 0:
-                        try:
-                            group = group_search[0]
-                            groups_result = group.add_users([user['username']])
-                            if len(groups_result['notAdded']) == 0:
-                                print(g, end =" # ")
+                    log_file.write("\t Adding to groups:  # ")
+                    groups = user['groups']
+                    group_list = groups.split(",")
 
-                        except Exception as groups_ex:
-                            print("\n \t Cannot add user to group ", g, str(groups_ex))
-                print("\n")
+                    # Search for the group
+                    for g in group_list:
+                        group_search = gis.groups.search(g)
+                        if len(group_search) > 0:
+                            try:
+                                group = group_search[0]
+                                groups_result = group.add_users([user['username']])
+                                if len(groups_result['notAdded']) == 0:
+                                    log_file.write(g + " # ")
 
-        except Exception as add_ex:
-            print("Cannot create user: " + user['username'])
-            print(str(add_ex))
+                            except Exception as groups_ex:
+                                log_file.write("\n \t Cannot add user to group ", g, str(groups_ex))
+            except Exception as add_ex:
+                log_file.write("\nCannot create user: " + user['username'])
+                log_file.write("\n")
+                log_file.write(str(add_ex))
+
+    log_file.close()
+    print("0")
+except:
+    print("1")
