@@ -20,7 +20,7 @@ csv_path = "users.csv"
 
 # Read template web map
 template_webmap_dict = dict()
-with open('.\\user_content\\web_map.json', 'r') as webmap_file:
+with open('user_content/web_map.json', 'r') as webmap_file:
             template_webmap_dict = json.load(webmap_file)
 
 # Connect to the GIS
@@ -31,7 +31,7 @@ with open(csv_path, 'r') as csv_handle:
     reader = csv.DictReader(csv_handle)
     for row in reader:
         try:
-            data_to_publish = '.\\user_content\\' + row['assigned_state'] + ".csv"
+            data_to_publish = 'user_content/' + row['assigned_state'] + ".csv"
 
             print("Publishing ", data_to_publish, end = " # ")
             added_item = gis.content.add({}, data = data_to_publish)

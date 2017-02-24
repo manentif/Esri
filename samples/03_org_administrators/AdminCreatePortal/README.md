@@ -1,3 +1,15 @@
+# Introduction
+This folder Python and batch scripts that will help populate a fresh portal
+with users, groups and content for each of the user accounts. You can find the
+list of users and groups in the corresponding `users.csv` and `groups.csv`
+files.
+
+## Steps
+ 1. Run `populate_portal.bat` which execute the Python scripts in sequence
+ and creates users, groups and content.
+ 2. Optionally run `clean_up.bat` to erase all users, groups and content
+
+# Sample outputs below
 ## Running clean_up.py
 `clean_up.py` accepts the credentials as command line args. Inquiring help
 on the file returns the following:
