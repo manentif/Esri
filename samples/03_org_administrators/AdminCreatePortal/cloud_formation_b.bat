@@ -1,3 +1,4 @@
+ECHO off
 REM This is a batch file to be called by Esri AWS ArcGIS cloud formation tool
 REM What this batch file does:
 REM 1. Download miniconda windows edition to currnet active dir
@@ -11,8 +12,6 @@ REM 7. Run publish_content.py script
 REM Call this script with portal URL, admin username, admin password
 REM Prints CF_success at the end
 
-ECHO off
-
 REM 3a. Create new env called 'cloud_formation
 ECHO Creating new environment
 call deactivate
@@ -22,7 +21,7 @@ call conda activate cloud_formation
 
 REM 3b. Install arcgis
 ECHO Installing arcgis package
-call conda isntall -c esri arcgis
+call conda install -y -c esri arcgis
 
 REM 4. Run clean up script
 python.exe cleanup.py %1 -u %2 -p %3 -l %4

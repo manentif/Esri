@@ -1,3 +1,4 @@
+ECHO off
 REM This is a batch file to be called by Esri AWS ArcGIS cloud formation tool
 REM What this batch file does:
 REM 1. Download miniconda windows edition to currnet active dir
@@ -11,7 +12,6 @@ REM 7. Run publish_content.py script
 REM Call this script with portal URL, admin username, admin password
 REM Prints CF_success at the end
 
-ECHO off
 REM 1. Download miniconda to active dir
 ECHO Downloading latest miniconda
 powershell -Command "Invoke-WebRequest https://repo.continuum.io/miniconda/Miniconda3-latest-Windows-x86_64.exe -OutFile miniconda.exe"
