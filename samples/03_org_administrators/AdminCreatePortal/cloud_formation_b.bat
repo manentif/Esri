@@ -27,10 +27,10 @@ REM 4. Run clean up script
 python.exe cleanup.py %1 -u %2 -p %3 -l %4
 
 REM 5. Run create_groups script
-REM python.exe create_groups.py %1 -u %2 -p %3 -l %4
+python.exe create_groups.py %1 -u %2 -p %3 -l %4
 
 REM 6. Run create_users script
-REM python.exe create_users.py %1 -u %2 -p %3 -l %4
+python.exe create_users.py %1 -u %2 -p %3 -l %4
 
 REM 7. Run publish_content script
-REM python.exe publish_content.py %1 -u %2 -p %3 -l %4
+python.exe publish_content.py %1 -u %2 -p %3 -l %4
