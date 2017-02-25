@@ -17,7 +17,7 @@ ECHO Creating new environment
 call deactivate
 conda env remove -y --name cloud_formation
 conda create -y --name cloud_formation python=3.6
-call conda activate cloud_formation
+call activate cloud_formation
 
 REM 3b. Install arcgis
 ECHO Installing arcgis package
