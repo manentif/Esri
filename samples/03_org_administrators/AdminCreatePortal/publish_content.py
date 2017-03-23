@@ -59,15 +59,23 @@ try:
                                           'snippet': 'Regions under the supervision of' +\
                                                      '{0} {1}'.format(row['Firstname'], row['Lastname']),
                                           'tags': 'ArcGIS API for Python',
-                                          'typeKeywords' : "Collector, Explorer Web Map, Web Map, Map, Online Map",
+                                          'typeKeywords': "Collector, Explorer Web Map, Web Map, Map, Online Map",
                                           'text': json.dumps(user_webmap_dict)}
 
                     web_map_item = gis.content.add(web_map_properties)
 
+                    #Reassign ownership of items to current user. Transfer webmaps in a new
+                    # folder with user's last name
                     log_file.write("success. Assigning to: " + "  #  ")
                     result1 = published_item.reassign_to(row['username'])
-                    result2 = web_map_item.reassign_to(row['username'])
-                    if (result1 and result2) is not None:
+                    new_folder_name = row['Lastname'] + "_webmaps"
+                    result2 = web_map_item.reassign_to(row['username'], target_folder=new_folder_name)
+
+                    #share webmap to user's groups
+                    groups_list1 = row['groups'].split(',')
+                    groups_list = [gname.lstrip() for gname in groups_list1] #remove white spaces in name
+                    result3 = web_map_item.share(groups=groups_list)
+                    if (result1 and result2 and result3) is not None:
                         log_file.write(row['username'])
                     else:
                         log_file.write("error")
