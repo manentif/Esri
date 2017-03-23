@@ -1,5 +1,5 @@
 # Introduction
-This folder Python and batch scripts that will help populate a fresh portal
+This folder contains Python and batch scripts that will help populate a fresh portal
 with users, groups and content for each of the user accounts. You can find the
 list of users and groups in the corresponding `users.csv` and `groups.csv`
 files.
@@ -14,7 +14,9 @@ files.
 # Sample outputs below
 
 ## Running the cloud formation batch files
-Call the batch files one after another. These files return 0 upon success.
+Call the batch files one after another. These files return 0 upon success. The `cloud_formation_b.bat`
+accepts 4 command line arguments. Pass the URL to the portal, admin username and password and the log file
+to output the messages.
 
 ```
 >> cloud_formation_a.bat
@@ -56,6 +58,9 @@ Uninstalling prior versions of arcgis widget
 
 0
 ```
+# Running the Python scripts individually
+If you choose to run the scripts individually instead of calling them using the batch files, you can do so 
+as shown below. All files accept command line parameters, to view the options, call them with `--help` flag.
 
 ## Running clean_up.py
 `clean_up.py` accepts the credentials as command line args. Inquiring help
@@ -80,27 +85,32 @@ optional arguments:
 Running it with credentials returns the following
 ```
 E:\code>python cleanup.py https://ESRIwebgis.webgistesting.net/portal -u admin -p xxxxxx -l python_log.log
+=====================================================================
 RUNNING CLEANUP
----------------
-
 Deleting groups
 ---------------
-Deleting  Featured Maps and Apps  ##  success
+
+Deleting Basemaps  ##  success
+Deleting Central Services  ##  success
+...
 
 Deleting user content
 ---------------------
-User :  admin # skipped
-User :  esri_boundaries # skipped
-User :  esri_demographics # skipped
-User :  esri_livingatlas # skipped
-User :  esri_nav # skipped
+User : adams.powell # 
+Deleting : Adams Powell response locations # True | 
+Deleting : SC # True | 
+Deleting : SC # True | empty
+User : admin # skipped
+...
 
 Deleting users
 --------------
-Deleting  system_publisher  ##  success
+Deleting adams.powell  ##  success
+Deleting allen.price  ##  success
+Deleting anderson.bailey  ##  success
+...
 
  All clean
-
 ```
 
 ## Running create_groups.py
