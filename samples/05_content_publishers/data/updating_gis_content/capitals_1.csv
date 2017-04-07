@@ -1,4 +1,4 @@
-City_ID,NAME,ST,CAPITAL,POP2000,POP2007,Longitude,Latitude
+city_id,name,state,capital,pop2000,pop2007,longitude,latitude
 1,Honolulu,HI,State,371657,378587,-157.8234362,21.30578163
 2,Juneau,AK,State,30711,31592,-134.5115816,58.35141816
 3,Boise City,ID,State,185787,203529,-116.2376546,43.61373614

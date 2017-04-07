@@ -1,4 +1,4 @@
-City_ID,NAME,ST,CAPITAL,POP2000,POP2007,Longitude,Latitude
+city_id,name,state,capital,pop2000,pop2007,longitude,latitude
 20,Baton Rouge,LA,State,227818,228810,-91.1402271,30.45809113
 21,Helena,MT,State,25780,26007,-112.0270271,46.59580915
 22,Bismarck,ND,State,55532,59344,-100.7790001,46.81334565

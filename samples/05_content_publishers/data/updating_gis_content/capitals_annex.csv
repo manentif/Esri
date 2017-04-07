@@ -1,4 +1,4 @@
-City_ID,NAME,CLASS,WHITE,BLACK,AMERI_ES,ASIAN,HAWN_PI,HISPANIC,MALES,FEMALES
+city_id,name,class,white,black,ameri_es,asian,hawn_pl,hispanic,males,females
 1,Honolulu,Census Designated Place,73093,6038,689,207588,25457,16229,182628,189029
 2,Juneau,City and Borough,22969,248,3496,1438,116,1040,15469,15242
 3,Boise City,City,171204,1437,1300,3870,302,8410,92014,93773
