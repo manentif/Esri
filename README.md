@@ -1,5 +1,5 @@
 # ArcGIS Python API
-Documentation and samples for the ArcGIS Python API https://developers.arcgis.com/python/ 
+documentation and samples for the ArcGIS Python API https://developers.arcgis.com/python/ 
 
 [ArcGIS Python API](https://developers.arcgis.com/python/)
 
