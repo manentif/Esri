@@ -1,0 +1,14 @@
+{
+    "ModelConfiguration": "_ner",
+    "InferenceFunction": "EntityRecognizer.py",
+    "ModelDir": "data\\EntityRecognizer\\models\\crime_10",
+    "Labels": [
+        "Address",
+        "Crime",
+        "Crime_datetime",
+        "Reported_datetime",
+        "Reporting_officer",
+        "Weapon"
+    ],
+    "address_tag": "Address"
+}
