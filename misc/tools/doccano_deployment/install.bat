@@ -13,24 +13,24 @@ pip install virtualenv
 virtualenv venv
 call venv/scripts/activate
 call git clone https://github.com/doccano/doccano.git doccano
-cd %DIR%doccano
+cd "%DIR%doccano"
 call git checkout bdba2961bf7942eb529a1591a7499b5d15af73bf
 git config --global url."https://".insteadOf git://
-pip install -r %DIR%doccano\requirements.txt
-cd %DIR%doccano\frontend
-::SET PATH=%PATH%;%systemroot%\System32\WindowsPowerShell\v1.0\
-call npm install --global windows-build-tools --vs2015
+pip install -r "%DIR%doccano\requirements.txt"
+cd "%DIR%doccano\frontend"
+SET PATH=%PATH%;%systemroot%\System32\WindowsPowerShell\v1.0\
+call npm install --global windows-build-tools
 SET NODE_GYP_FORCE_PYTHON=%userprofile%\.windows-build-tools\python27\python.exe
 call npm install
 call npm run build
-cd %DIR%doccano\app
-python %DIR%doccano\app\manage.py migrate
-python %DIR%doccano\app\manage.py createsuperuser
+cd "%DIR%doccano\app"
+python "%DIR%doccano\app\manage.py" migrate
+python "%DIR%doccano\app\manage.py" createsuperuser
 call deactivate
-cd %DIR%doccano\app\server\static
+cd "%DIR%doccano\app\server\static"
 call npm install
-cd %DIR%
-copy %DIR%annotation.html %DIR%doccano\app\server\templates /Y
+cd "%DIR%"
+copy "%DIR%annotation.html" "%DIR%doccano\app\server\templates" /Y
 net stop doccano /Y
 nssm remove doccano confirm
 nssm install doccano %DIR%run_doccano.bat %DIR%
@@ -39,7 +39,3 @@ net stop start_webpack /Y
 nssm remove start_webpack confirm
 nssm install start_webpack %DIR%start_webpack.bat %DIR%
 nssm start start_webpack
-
-
-
-
