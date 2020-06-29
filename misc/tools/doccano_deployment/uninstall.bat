@@ -10,5 +10,5 @@ nssm remove start_webpack confirm
 %systemroot%\System32\WindowsPowerShell\v1.0\powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "& '%DIR%uninstall_chocolatey.ps1' %*" -Verb RunAs
 cd %DIR%
 call rmdir /Q /S %DIR%doccano
-call rmdir /Q /S %DIR%venv
+call rmdir /Q /S "C:/docanno_venv"
 echo "Uninstalled"

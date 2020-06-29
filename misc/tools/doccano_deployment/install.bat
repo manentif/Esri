@@ -10,8 +10,8 @@ call refresh_path.bat
 SET PATH=%PATH%;C:\Program Files\Git\bin;C:\Program Files\nodejs
 call refresh_path.bat
 pip install virtualenv 
-virtualenv venv
-call venv/scripts/activate
+virtualenv C:/docanno_venv
+call "C:/docanno_venv/scripts/activate"
 call git clone https://github.com/doccano/doccano.git doccano
 cd "%DIR%doccano"
 call git checkout bdba2961bf7942eb529a1591a7499b5d15af73bf
@@ -26,7 +26,7 @@ call npm run build
 cd "%DIR%doccano\app"
 python "%DIR%doccano\app\manage.py" migrate
 python "%DIR%doccano\app\manage.py" createsuperuser
-call deactivate
+call "C:\docanno_venv\Scripts\deactivate"
 cd "%DIR%doccano\app\server\static"
 call npm install
 cd "%DIR%"
