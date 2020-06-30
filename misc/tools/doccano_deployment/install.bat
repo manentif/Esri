@@ -12,6 +12,7 @@ call refresh_path.bat
 pip install virtualenv 
 virtualenv "C:/doccano/venv"
 call C:/doccano/venv/scripts/activate
+python -m pip install --force-reinstall pip
 call git clone https://github.com/doccano/doccano.git doccano
 cd "%DIR%doccano"
 call git checkout bdba2961bf7942eb529a1591a7499b5d15af73bf
