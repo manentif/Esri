@@ -31,7 +31,7 @@ echo "-----Setting up doccano service-----">> %LOGFILE%
 call :setup_doccano_service 2>> %LOGFILE%
 echo "Doccano successfully installed"
 echo "Starting doccano at http://localhost:8000 ......"
-timeout 20 > null
+timeout 20 > %temp%\%temp%\null
 start explorer http://localhost:8000
 exit /B
 
@@ -54,7 +54,7 @@ virtualenv "C:/doccano/venv"
 call C:/doccano/venv/scripts/activate
 pip install doccano==1.2.4
 cd "%DIR_%"
-net stop doccano /Y >null
+net stop doccano /Y >%temp%\null
 nssm remove doccano confirm
 @REM set /p doccano_username="Enter username:"
 @REM set /p doccano_password="Enter Password:"
@@ -66,7 +66,7 @@ exit /B
 :setup_doccano_service
 call refresh_path.bat
 nssm install doccano %DIR_%run_doccano.bat  "%doccano_username% %doccano_password%"
-nssm start doccano > null
+nssm start doccano > %temp%\null
 call C:/doccano/venv/scripts/deactivate
 exit /B
 
