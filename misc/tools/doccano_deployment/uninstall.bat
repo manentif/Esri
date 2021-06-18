@@ -21,8 +21,16 @@ call refresh_path.bat
 %systemroot%\System32\WindowsPowerShell\v1.0\powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "& '%DIR_%uninstall.ps1' %*" -Verb RunAs
 %systemroot%\System32\WindowsPowerShell\v1.0\powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "& '%DIR_%uninstall_chocolatey.ps1' %*" -Verb RunAs
 cd %DIR_%
-del /f /s /q C:/doccano/ 1>nul
-call rmdir /Q /S C:/doccano/
-del /f /s /q C:/doccano/venv 1>nul
 call rmdir /Q /S "C:/doccano/venv"
+
+:delete_files
+set /p del_files="Delete Doccano files?(y/n): "
+
+IF %del_files%==y del "C:\doccano\doccano.db" && GOTO :end
+
+IF  %del_files%==n GOTO :end
+IF NOT %del_files%==n IF NOT %del_files%==y echo "Please provide a valid(y/n) input." && GOTO :delete_files 
+
+
+:end
 echo "Uninstalled"
