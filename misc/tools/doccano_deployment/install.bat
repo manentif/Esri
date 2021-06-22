@@ -4,7 +4,8 @@ SET DIR_=%~dp0
 for /f "delims=" %%i in ('powershell -file  %DIR_%elevated_prompt_check.ps1') do set admin=%%i
 
 if  %admin%==0 (
-    echo "Need to run this installation as an administrator"  
+    powershell start '%~f0' ' %*' -verb runas 2>nul && exit /b
+    echo Need to run this installation as an administrator
     pause
     exit)
 
@@ -29,9 +30,9 @@ call :getpwd 2>> %LOGFILE%
 echo "-----Setting up doccano service-----">> %LOGFILE%
 @REM GOTO :end
 call :setup_doccano_service 2>> %LOGFILE%
-echo "Doccano successfully installed"
-echo "Starting doccano at http://localhost:8000 ......"
-timeout 20 > %temp%\%temp%\null
+echo Doccano successfully installed
+echo Starting doccano at http://localhost:8000 ......
+timeout 20 > %temp%\null
 start explorer http://localhost:8000
 exit /B
 
@@ -73,14 +74,14 @@ exit /B
 :getpwd
 
 for /f "delims=" %%i in ('powershell -file  getpwd.ps1') do set doccano_password=%%i
-if /I  %doccano_password%==0 echo "Passwords don't match" && GOTO :getpwd
+if /I  %doccano_password%==0 echo Passwords don't match && GOTO :getpwd
 if /I  %doccano_password%==1 echo "Password does not meet length(>5) requirement" && GOTO :getpwd
 exit /B
 
 
 :getusrname
 for /f "delims=" %%i in ('powershell -file  get_username.ps1') do set doccano_username=%%i
-if /I  %doccano_username%==0 echo "Username does not meet length(>5) requirement" && GOTO :getusrname
+if /I  %doccano_username%==0 echo Username does not meet length(^>5) requirement && GOTO :getusrname
 exit /B
 
 

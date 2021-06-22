@@ -3,7 +3,8 @@ SET DIR_=%~dp0
 for /f "delims=" %%i in ('powershell -file  %DIR_%elevated_prompt_check.ps1') do set admin=%%i
 
 if  %admin%==0 (
-    echo "Need to run this installation as an administrator"  
+    powershell start '%~f0' ' %*' -verb runas 2>nul && exit /b
+    echo Need to run this uninstaller as an administrator
     pause
     exit)
 set hr=%time:~0,2%
@@ -24,13 +25,13 @@ cd %DIR_%
 call rmdir /Q /S "C:/doccano/venv"
 
 :delete_files
-set /p del_files="Delete Doccano files?(y/n): "
+set /p del_files=Delete Doccano files?(y/n): 
 
 IF %del_files%==y del "C:\doccano\doccano.db" && GOTO :end
 
 IF  %del_files%==n GOTO :end
-IF NOT %del_files%==n IF NOT %del_files%==y echo "Please provide a valid(y/n) input." && GOTO :delete_files 
+IF NOT %del_files%==n IF NOT %del_files%==y echo Please provide a valid(y/n) input. && GOTO :delete_files 
 
 
 :end
-echo "Uninstalled"
+echo Doccano has been uninstalled.
