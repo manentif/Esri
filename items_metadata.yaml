@@ -162,14 +162,14 @@ samples:
 #   description: This notebook provides you with tools and methods that you can try yourself in performing data modeling, analyzing, and predicting the spread of COVID-19 with the ArcGIS API for Python, and other libraries such as pandas and numpy
 #   licenseInfo: ""
 #   tags: ["Data Science", "GIS", "Predictive", "Covid19", "Part 3"]
-- title: Creating hurricane tracks using Geoanalytics
-  url: https://www.arcgis.com/home/item.html?id=c6106b0ead3f49059b326646eda85f9a
-  path: ./samples/04_gis_analysts_data_scientists/creating_hurricane_tracks_using_geoanalytics.ipynb
-  thumbnail: ./static/thumbnails/creating_hurricane_tracks_using_geoanalytics.png
-  snippet: Use GeoAnalytics to create hurricane tracks
-  description: The sample code below uses big data analytics (GeoAnalytics) to reconstruct hurricane tracks using data registered on a big data file share in the GIS
-  licenseInfo: ""
-  tags: ["Data Science", "GIS", "Hurricane", "Tracks", "GeoAnalytics"]
+# - title: Creating hurricane tracks using Geoanalytics
+#   url: https://www.arcgis.com/home/item.html?id=c6106b0ead3f49059b326646eda85f9a
+#   path: ./samples/04_gis_analysts_data_scientists/creating_hurricane_tracks_using_geoanalytics.ipynb
+#   thumbnail: ./static/thumbnails/creating_hurricane_tracks_using_geoanalytics.png
+#   snippet: Use GeoAnalytics to create hurricane tracks
+#   description: The sample code below uses big data analytics (GeoAnalytics) to reconstruct hurricane tracks using data registered on a big data file share in the GIS
+#   licenseInfo: ""
+#   tags: ["Data Science", "GIS", "Hurricane", "Tracks", "GeoAnalytics"]
 # - title: Creating Raster Information Product using Raster Analytics
 #   url: https://www.arcgis.com/home/item.html?id=f0423a7df2064096a78e150a6fbf5ae4
 #   path: ./samples/04_gis_analysts_data_scientists/creating_raster_information_product_using_raster_analytics.ipynb
@@ -178,31 +178,31 @@ samples:
 #   description: This sample show the capabilities of imagery layers and raster analytics.
 #   licenseInfo: ""
 #   tags: ["Data Science", "GIS", "Raster Analytics", "Product"]
-- title: Crime analysis and clustering using geoanalytics and pyspark.ml
-  url: https://www.arcgis.com/home/item.html?id=1410a28d3a8d4d2aa353efcf9b606b69
-  path: ./samples/04_gis_analysts_data_scientists/crime_analysis_and_clustering_using_geoanalytics_and_pyspark.ipynb
-  thumbnail: ./static/thumbnails/crime_analysis_and_clustering_using_geoanalytics_and_pyspark.png
-  snippet: Analyze crime in Chicago
-  description: Through this sample, we will demonstrate the utility of a number of geoanalytics tools including find_hot_spots, aggregate_points and calculate_density to visually understand geographical patterns.
-  licenseInfo: ""
-  tags: ["Data Science", "GIS", "Crime", "Clustering", "GeoAnalytics", "PySpark"]
-- title: Designate Bike Routes for Commuting Professionals
-  url: https://www.arcgis.com/home/item.html?id=62b874f4e705448a95abac0240f3053d
-  path: ./samples/04_gis_analysts_data_scientists/designate_bike_routes_for_commuting_professionals.ipynb
-  thumbnail: ./static/thumbnails/designate_bike_routes_for_commuting_professionals.png
-  snippet: Analyze biking streets in Seattle, WA
-  description: This sample uses ArcGIS API for Python to analyze and select streets for making bike routes for people commuting to and from work in the City of Seattle, Washington.
-  licenseInfo: ""
-  tags: ["Data Science", "GIS", "Bike", "Routes", "Commute"]
-- title: Detecting and Categorizing Brick Kilns from Satellite Imagery
-  url: https://www.arcgis.com/home/item.html?id=59a916aaa9114354a89e07a3941f9c98
-  path: ./samples/04_gis_analysts_data_scientists/detecting_and_categorizing_brick_kilns_from_satellite_imagery.ipynb
-  thumbnail: ./static/thumbnails/detecting_and_categorizing_brick_kilns_from_satellite_imagery.png
-  snippet: Categorize Brick Kilns using the Python API
-  description: In this sample, we will use Deep Learning on ArcGIS Platform to detect the location and design category of all brick kilns around Delhi NCR area in India to find the brick kilns which are not following the directions from CPCB.
-  licenseInfo: ""
-  runtime: advanced_gpu
-  tags: ["Data Science", "GIS", "Brick Kilns", "Categorization", "Deep Learning"]
+# - title: Crime analysis and clustering using geoanalytics and pyspark.ml
+#   url: https://www.arcgis.com/home/item.html?id=1410a28d3a8d4d2aa353efcf9b606b69
+#   path: ./samples/04_gis_analysts_data_scientists/crime_analysis_and_clustering_using_geoanalytics_and_pyspark.ipynb
+#   thumbnail: ./static/thumbnails/crime_analysis_and_clustering_using_geoanalytics_and_pyspark.png
+#   snippet: Analyze crime in Chicago
+#   description: Through this sample, we will demonstrate the utility of a number of geoanalytics tools including find_hot_spots, aggregate_points and calculate_density to visually understand geographical patterns.
+#   licenseInfo: ""
+#   tags: ["Data Science", "GIS", "Crime", "Clustering", "GeoAnalytics", "PySpark"]
+# - title: Designate Bike Routes for Commuting Professionals
+#   url: https://www.arcgis.com/home/item.html?id=62b874f4e705448a95abac0240f3053d
+#   path: ./samples/04_gis_analysts_data_scientists/designate_bike_routes_for_commuting_professionals.ipynb
+#   thumbnail: ./static/thumbnails/designate_bike_routes_for_commuting_professionals.png
+#   snippet: Analyze biking streets in Seattle, WA
+#   description: This sample uses ArcGIS API for Python to analyze and select streets for making bike routes for people commuting to and from work in the City of Seattle, Washington.
+#   licenseInfo: ""
+#   tags: ["Data Science", "GIS", "Bike", "Routes", "Commute"]
+# - title: Detecting and Categorizing Brick Kilns from Satellite Imagery
+#   url: https://www.arcgis.com/home/item.html?id=59a916aaa9114354a89e07a3941f9c98
+#   path: ./samples/04_gis_analysts_data_scientists/detecting_and_categorizing_brick_kilns_from_satellite_imagery.ipynb
+#   thumbnail: ./static/thumbnails/detecting_and_categorizing_brick_kilns_from_satellite_imagery.png
+#   snippet: Categorize Brick Kilns using the Python API
+#   description: In this sample, we will use Deep Learning on ArcGIS Platform to detect the location and design category of all brick kilns around Delhi NCR area in India to find the brick kilns which are not following the directions from CPCB.
+#   licenseInfo: ""
+#   runtime: advanced_gpu
+#   tags: ["Data Science", "GIS", "Brick Kilns", "Categorization", "Deep Learning"]
 # - title: Detecting settlements using supervised classification and deep learning
 #   url: https://www.arcgis.com/home/item.html?id=4a4828703f1a494e89ec973086cad715
 #   path: ./samples/04_gis_analysts_data_scientists/detecting_settlements_using_supervised_classification_and_deep_learning.ipynb
@@ -404,14 +404,14 @@ samples:
 #   description: In this notebook you will analyze the aggregated tracks to answer important questions about hurricane severity and how they correlate over time.
 #   licenseInfo: ""
 #   tags: ["Data Science", "GIS", "Hurricane", "Tracks", "GeoAnalytics", "Part 3"]
-- title: Predict Floods with Unit Hydrographs
-  url: https://www.arcgis.com/home/item.html?id=2bbf431943304ddeba48d00d14f8c34f
-  path: ./samples/04_gis_analysts_data_scientists/predict-floods-with-unit-hydrographs.ipynb
-  thumbnail: ./static/thumbnails/predict-floods-with-unit-hydrographs.png
-  snippet: Estimate stream runoff during a predicted rainstorm in Vermont.
-  description: Estimate stream runoff during a predicted rainstorm in Vermont.
-  licenseInfo: ""
-  tags: ["Data Science", "GIS", "Raster", "Floods", "Prediction", "Hydrograph"]
+# - title: Predict Floods with Unit Hydrographs
+#   url: https://www.arcgis.com/home/item.html?id=2bbf431943304ddeba48d00d14f8c34f
+#   path: ./samples/04_gis_analysts_data_scientists/predict-floods-with-unit-hydrographs.ipynb
+#   thumbnail: ./static/thumbnails/predict-floods-with-unit-hydrographs.png
+#   snippet: Estimate stream runoff during a predicted rainstorm in Vermont.
+#   description: Estimate stream runoff during a predicted rainstorm in Vermont.
+#   licenseInfo: ""
+#   tags: ["Data Science", "GIS", "Raster", "Floods", "Prediction", "Hydrograph"]
 # - title: Predicting El Niño–Southern Oscillation through correlation and time series analysis/deep learning
 #   url: https://www.arcgis.com/home/item.html?id=69df9348e964433d86a5c0fb8aaa48de
 #   path: ./samples/04_gis_analysts_data_scientists/predicting_enso.ipynb
@@ -453,14 +453,14 @@ samples:
   description: Weighted Linear Combination (WLC) method based on combined GIS and Remote Sensing techniques is used in the sample to create a potential hazard map for avalanches.
   licenseInfo: ""
   tags: ["Data Science", "GIS", "Avalanche", "Mapping"]
-- title: Spatial and temporal distribution of service calls using big data tools
-  url: https://www.arcgis.com/home/item.html?id=7b6991aa6f4d4ce0be6e43badb04d117
-  path: ./samples/04_gis_analysts_data_scientists/spatial_and_temporal_trends_of_service_calls.ipynb
-  thumbnail: ./static/thumbnails/spatial_and_temporal_trends_of_service_calls.png
-  snippet: Use big data tools for spatial and temporal distribution
-  description: This sample demonstrates ability of ArcGIS API for Python to perform big data analysis on your infrastructure.
-  licenseInfo: ""
-  tags: ["Data Science", "GIS", "Service Calls", "GeoAnalytics", "Trends", "Spatial", "Temporal"]
+# - title: Spatial and temporal distribution of service calls using big data tools
+#   url: https://www.arcgis.com/home/item.html?id=7b6991aa6f4d4ce0be6e43badb04d117
+#   path: ./samples/04_gis_analysts_data_scientists/spatial_and_temporal_trends_of_service_calls.ipynb
+#   thumbnail: ./static/thumbnails/spatial_and_temporal_trends_of_service_calls.png
+#   snippet: Use big data tools for spatial and temporal distribution
+#   description: This sample demonstrates ability of ArcGIS API for Python to perform big data analysis on your infrastructure.
+#   licenseInfo: ""
+#   tags: ["Data Science", "GIS", "Service Calls", "GeoAnalytics", "Trends", "Spatial", "Temporal"]
 - title: Temperature forecast using time series data
   url: https://www.arcgis.com/home/item.html?id=cf173caaba3f495f9592a9f180361ee4
   path: ./samples/04_gis_analysts_data_scientists/temperature_forecast_using_time_series_data.ipynb
@@ -648,7 +648,7 @@ samples:
   licenseInfo: ''
   tags: ['Jupyter', 'Dashboard', "Vegetation", "raster"]
 - title: Identifying country names from incomplete house addresses
-  url: https://www.arcgis.com/home/item.html?id=d52e28b3cd854c7fa92157f5cc46ca2c
+  url: https://www.arcgis.com/home/item.html?id=55ec14f803774022862bcbda96653a0e
   path: ./samples/04_gis_analysts_data_scientists/identifying-country-names-from-incomplete-house-addresses.ipynb
   thumbnail: ./static/thumbnails/identifying_country_names_from_incomplete_house_addresses.jpg
   snippet: Build a classifier to predict the country for incomplete house addresses.
@@ -745,7 +745,7 @@ samples:
 #   runtime: advanced_gpu
 #   tags: ["Data Science", "GIS", "Coastline Extraction", "Imagery"]
 - title: Translating Story Map from one language to another using Deep Learning
-  url: https://www.arcgis.com/home/item.html?id=747174e3770940369ee9b14499ae5014
+  url: https://www.arcgis.com/home/item.html?id=15a731751bad43c7abf7258b7aa90bac
   path: ./samples/04_gis_analysts_data_scientists/translating_story_map_from_one_language_to_another.ipynb
   thumbnail: ./static/thumbnails/default.png
   snippet: In this notebook, we will pick a story map written in English language, and create another story map with the text translated to Spanish language using the arcgis.learn.text's TextTranslator class.
