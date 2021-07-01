@@ -40,7 +40,7 @@ samples:
   licenseInfo: ""
   tags: ["Data Science", "GIS", "airbnb"]
 - title: Analyzing violent crime
-  url: https://www.arcgis.com/home/item.html?id=f19cbf3595de4bf898e7228a46b79ffd
+  url: https://www.arcgis.com/home/home/item.html?id=f19cbf3595de4bf898e7228a46b79ffd
   path: ./samples/04_gis_analysts_data_scientists/analyzing_violent_crime.ipynb
   thumbnail: ./static/thumbnails/analyzing_violent_crime.png
   snippet: Analyze violent crime in Chicago
