@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>arcgis.features.find_locations module &mdash; arcgis 1.8.4 documentation</title>
+  <title>arcgis.features.find_locations module &mdash; arcgis 1.9 documentation</title>
   
 
   
@@ -19,7 +19,10 @@
   
     <link rel="shortcut icon" href="_static/favicon.ico"/>
   
+
   
+  
+
   
 
   
@@ -33,7 +36,7 @@
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/language_data.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -64,7 +67,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           
 
           
-            <a href="index.html" class="icon icon-home" alt="Documentation Home"> arcgis
+            <a href="index.html" class="icon icon-home"> arcgis
           
 
           
@@ -77,7 +80,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                1.8.4
+                1.9
               </div>
             
           
@@ -194,6 +197,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
@@ -207,7 +212,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
         
       </li>
     
@@ -241,9 +246,9 @@ create_watersheds creates catchment areas based on locations you specify.
 trace_downstream determines the flow paths in a downstream direction from the locations you specify</p>
 <div class="section" id="find-existing-locations">
 <h2>find_existing_locations<a class="headerlink" href="#find-existing-locations" title="Permalink to this headline">¶</a></h2>
-<dl class="py function">
+<dl class="function">
 <dt id="arcgis.features.find_locations.find_existing_locations">
-<code class="sig-prename descclassname">arcgis.features.find_locations.</code><code class="sig-name descname">find_existing_locations</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_layers</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">expressions</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">estimate</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.find_locations.find_existing_locations" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.features.find_locations.</code><code class="sig-name descname">find_existing_locations</code><span class="sig-paren">(</span><em class="sig-param">input_layers=None</em>, <em class="sig-param">expressions=None</em>, <em class="sig-param">output_name=None</em>, <em class="sig-param">context=None</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">estimate=False</em>, <em class="sig-param">future=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.find_locations.find_existing_locations" title="Permalink to this definition">¶</a></dt>
 <dd><img alt="_images/find_existing_locations.png" src="_images/find_existing_locations.png" />
 <p>The <code class="docutils literal notranslate"><span class="pre">find_existing_locations</span></code> method selects features in the input layer that meet a query you specify.
 A query is made up of one or more expressions. There are two types of expressions: attribute and spatial.
@@ -537,9 +542,9 @@ If <code class="docutils literal notranslate"><span class="pre">output_name</spa
 </div>
 <div class="section" id="derive-new-locations">
 <h2>derive_new_locations<a class="headerlink" href="#derive-new-locations" title="Permalink to this headline">¶</a></h2>
-<dl class="py function">
+<dl class="function">
 <dt id="arcgis.features.find_locations.derive_new_locations">
-<code class="sig-prename descclassname">arcgis.features.find_locations.</code><code class="sig-name descname">derive_new_locations</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_layers</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">expressions</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">estimate</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.find_locations.derive_new_locations" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.features.find_locations.</code><code class="sig-name descname">derive_new_locations</code><span class="sig-paren">(</span><em class="sig-param">input_layers=[]</em>, <em class="sig-param">expressions=[]</em>, <em class="sig-param">output_name=None</em>, <em class="sig-param">context=None</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">estimate=False</em>, <em class="sig-param">future=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.find_locations.derive_new_locations" title="Permalink to this definition">¶</a></dt>
 <dd><img alt="_images/derive_new_locations.png" src="_images/derive_new_locations.png" />
 <p>The <code class="docutils literal notranslate"><span class="pre">derive_new_locations</span></code> method derives new features from the input layers that meet a query you specify. A query is
 made up of one or more expressions. There are two types of expressions: attribute and spatial. An example of an
@@ -827,9 +832,9 @@ is included in the output.</p></li>
 </div>
 <div class="section" id="find-similar-locations">
 <h2>find_similar_locations<a class="headerlink" href="#find-similar-locations" title="Permalink to this headline">¶</a></h2>
-<dl class="py function">
+<dl class="function">
 <dt id="arcgis.features.find_locations.find_similar_locations">
-<code class="sig-prename descclassname">arcgis.features.find_locations.</code><code class="sig-name descname">find_similar_locations</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_layer</span></em>, <em class="sig-param"><span class="n">search_layer</span></em>, <em class="sig-param"><span class="n">analysis_fields</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">input_query</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">number_of_results</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">estimate</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.find_locations.find_similar_locations" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.features.find_locations.</code><code class="sig-name descname">find_similar_locations</code><span class="sig-paren">(</span><em class="sig-param">input_layer</em>, <em class="sig-param">search_layer</em>, <em class="sig-param">analysis_fields=[]</em>, <em class="sig-param">input_query=None</em>, <em class="sig-param">number_of_results=0</em>, <em class="sig-param">output_name=None</em>, <em class="sig-param">context=None</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">estimate=False</em>, <em class="sig-param">future=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.find_locations.find_similar_locations" title="Permalink to this definition">¶</a></dt>
 <dd><img alt="_images/find_similar_locations.png" src="_images/find_similar_locations.png" />
 <p>The <code class="docutils literal notranslate"><span class="pre">find_similar_locations</span></code> method measures the similarity of candidate locations to one or more reference locations.</p>
 <p>Based on criteria you specify, Find <code class="docutils literal notranslate"><span class="pre">find_similar_locations</span></code> can answer questions such as the following:</p>
@@ -947,9 +952,9 @@ For <code class="docutils literal notranslate"><span class="pre">find_similar_lo
 </div>
 <div class="section" id="find-centroids">
 <h2>find_centroids<a class="headerlink" href="#find-centroids" title="Permalink to this headline">¶</a></h2>
-<dl class="py function">
+<dl class="function">
 <dt id="arcgis.features.analysis.find_centroids">
-<code class="sig-prename descclassname">arcgis.features.analysis.</code><code class="sig-name descname">find_centroids</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_layer</span></em>, <em class="sig-param"><span class="n">point_location</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">estimate</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.analysis.find_centroids" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.features.analysis.</code><code class="sig-name descname">find_centroids</code><span class="sig-paren">(</span><em class="sig-param">input_layer</em>, <em class="sig-param">point_location=False</em>, <em class="sig-param">output_name=None</em>, <em class="sig-param">context=None</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">estimate=False</em>, <em class="sig-param">future=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.analysis.find_centroids" title="Permalink to this definition">¶</a></dt>
 <dd><img alt="_images/find_centroids.png" src="_images/find_centroids.png" />
 <p>The <code class="docutils literal notranslate"><span class="pre">find_centroids</span></code> method that finds and generates points from the representative center (centroid) of
 each input multipoint, line, or area feature. Finding the centroid of a feature is very common for many analytical
@@ -1013,15 +1018,246 @@ workflows where the resulting points can then be used in other analytic workflow
 </div>
 <div class="section" id="choose-best-facilities">
 <h2>choose_best_facilities<a class="headerlink" href="#choose-best-facilities" title="Permalink to this headline">¶</a></h2>
-<dl class="py function">
+<dl class="function">
 <dt id="arcgis.features.find_locations.choose_best_facilities">
-<code class="sig-prename descclassname">arcgis.features.find_locations.</code><code class="sig-name descname">choose_best_facilities</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">goal</span><span class="o">=</span><span class="default_value">'Allocate'</span></em>, <em class="sig-param"><span class="n">demand_locations_layer</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">demand</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">demand_field</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">max_travel_range</span><span class="o">=</span><span class="default_value">2147483647</span></em>, <em class="sig-param"><span class="n">max_travel_range_field</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">max_travel_range_units</span><span class="o">=</span><span class="default_value">'Minutes'</span></em>, <em class="sig-param"><span class="n">travel_mode</span><span class="o">=</span><span class="default_value">'Driving Time'</span></em>, <em class="sig-param"><span class="n">time_of_day</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">time_zone_for_time_of_day</span><span class="o">=</span><span class="default_value">'GeoLocal'</span></em>, <em class="sig-param"><span class="n">travel_direction</span><span class="o">=</span><span class="default_value">'FacilityToDemand'</span></em>, <em class="sig-param"><span class="n">required_facilities_layer</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">required_facilities_capacity</span><span class="o">=</span><span class="default_value">2147483647</span></em>, <em class="sig-param"><span class="n">required_facilities_capacity_field</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">candidate_facilities_layer</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">candidate_count</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">candidate_facilities_capacity</span><span class="o">=</span><span class="default_value">2147483647</span></em>, <em class="sig-param"><span class="n">candidate_facilities_capacity_field</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">percent_demand_coverage</span><span class="o">=</span><span class="default_value">100</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">estimate</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">point_barrier_layer</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">line_barrier_layer</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">polygon_barrier_layer</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.find_locations.choose_best_facilities" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.features.find_locations.</code><code class="sig-name descname">choose_best_facilities</code><span class="sig-paren">(</span><em class="sig-param">goal='Allocate'</em>, <em class="sig-param">demand_locations_layer=None</em>, <em class="sig-param">demand=1</em>, <em class="sig-param">demand_field=None</em>, <em class="sig-param">max_travel_range=2147483647</em>, <em class="sig-param">max_travel_range_field=None</em>, <em class="sig-param">max_travel_range_units='Minutes'</em>, <em class="sig-param">travel_mode=None</em>, <em class="sig-param">time_of_day=None</em>, <em class="sig-param">time_zone_for_time_of_day='GeoLocal'</em>, <em class="sig-param">travel_direction='FacilityToDemand'</em>, <em class="sig-param">required_facilities_layer=None</em>, <em class="sig-param">required_facilities_capacity=2147483647</em>, <em class="sig-param">required_facilities_capacity_field=None</em>, <em class="sig-param">candidate_facilities_layer=None</em>, <em class="sig-param">candidate_count=1</em>, <em class="sig-param">candidate_facilities_capacity=2147483647</em>, <em class="sig-param">candidate_facilities_capacity_field=None</em>, <em class="sig-param">percent_demand_coverage=100</em>, <em class="sig-param">output_name=None</em>, <em class="sig-param">context=None</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">estimate=False</em>, <em class="sig-param">point_barrier_layer=None</em>, <em class="sig-param">line_barrier_layer=None</em>, <em class="sig-param">polygon_barrier_layer=None</em>, <em class="sig-param">future=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.find_locations.choose_best_facilities" title="Permalink to this definition">¶</a></dt>
 <dd><img alt="_images/choose_best_facilities.png" src="_images/choose_best_facilities.png" />
 <p>The <code class="docutils literal notranslate"><span class="pre">choose_best_facilities</span></code> method finds the set of facilities that will best serve demand from surrounding areas.</p>
 <p>Facilities might be public institutions that offer a service, such as fire stations, schools, or libraries,
 or they might be commercial ones such as drug stores or distribution centers for a parcel delivery service.
 Demand represents the need for a service that the facilities can meet. Demand is associated with point locations,
 with each location representing a given amount of demand.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 87%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>goal</p></td>
+<td><p>Required string. Specify the goal that must be satisfied when allocating
+demand locations to facilities.</p>
+<p>Choice list:[‘Allocate’, ‘MinimizeImpedance’, ‘MaximizeCoverage’, ‘MaximizeCapacitatedCoverage’, ‘PercentCoverage’]</p>
+<p>Default value is ‘Allocate’.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>demand_locations_layer</p></td>
+<td><p>Required point feature layer. A point layer specifying the locations
+that have demand for facilities. See <a class="reference internal" href="arcgis.features.analysis.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
+</tr>
+<tr class="row-even"><td><p>demand</p></td>
+<td><p>Optional float. The amount of demand available at every demand locations.</p>
+<p>The default value is 1.0.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>demand_field</p></td>
+<td><p>Optional string. A numeric field on the <code class="docutils literal notranslate"><span class="pre">demand_locations_layer</span></code>
+representing the amount of demand available at each demand location.
+If specified, the <code class="docutils literal notranslate"><span class="pre">demand</span></code> parameter is ignored.</p></td>
+</tr>
+<tr class="row-even"><td><p>max_travel_range</p></td>
+<td><p>Optional float. Specify the maximum travel time or distance allowed
+between a demand location and the facility it is allocated to.</p>
+<p>The default is unlimited (2,147,483,647.0).</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>max_travel_range_field</p></td>
+<td><p>Optional string. A numeric field on the <code class="docutils literal notranslate"><span class="pre">demand_locations_layer</span></code> specifying the maximum
+travel time or distance allowed between a demand location
+and the facility it is allocated to. If specified, the <code class="docutils literal notranslate"><span class="pre">max_travel_range</span></code> parameter is ignored.</p></td>
+</tr>
+<tr class="row-even"><td><p>max_travel_range_units</p></td>
+<td><p>Optional string. The units for the maximum travel time or distance allowed
+between a demand location and the facility it is allocated to.</p>
+<p>Choice list:[‘Seconds’, ‘Minutes’, ‘Hours’, ‘Days’, ‘Meters’, ‘Kilometers’, ‘Feet’, ‘Yards’, ‘Miles’].</p>
+<p>The default is ‘Minutes’.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>travel_mode</p></td>
+<td><p>Specify the mode of transportation for the analysis.</p>
+<dl class="simple">
+<dt>Choice list: [‘Driving Distance’, ‘Driving Time’, ‘Rural Driving Distance’,</dt><dd><p>‘Rural Driving Time’, ‘Trucking Distance’, ‘Trucking Time’,
+‘Walking Distance’, ‘Walking Time’]</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="row-even"><td><p>time_of_day</p></td>
+<td><p>Optional datetime.datetime. Specify whether travel times
+should consider traffic conditions. To use traffic in the
+analysis, set travel_mode to a travel mode object whose
+impedance_attribute_name property is set to travel_time and
+assign a value to time_of_day. (A travel mode with other
+impedance_attribute_name values don’t support traffic.)
+The <code class="docutils literal notranslate"><span class="pre">time_of_day</span></code> value represents the time at which travel
+begins, or departs, from the origin points. The time is
+specified as datetime.datetime.</p>
+<p>The service supports two kinds of traffic: ty
+pical and live.
+Typical traffic references travel speeds that are made up of
+historical averages for each five-minute interval spanning a week.
+Live traffic retrieves speeds from a traffic feed that processes
+phone probe records, sensors, and other data sources to record
+actual travel speeds and predict speeds for the near future.</p>
+<p>The <a class="reference external" href="http://www.arcgis.com/home/webmap/viewer.html?webmap=b7a893e8e1e04311bd925ea25cb8d7c7">data coverage</a> page shows the countries Esri currently provides traffic data for.</p>
+<p>Typical Traffic:</p>
+<p>To ensure the task uses typical traffic in locations where it
+is available, choose a time and day of the week, and then convert
+the day of the week to one of the following dates from 1990:</p>
+<ul class="simple">
+<li><p>Monday - 1/1/1990</p></li>
+<li><p>Tuesday - 1/2/1990</p></li>
+<li><p>Wednesday - 1/3/1990</p></li>
+<li><p>Thursday - 1/4/1990</p></li>
+<li><p>Friday - 1/5/1990</p></li>
+<li><p>Saturday - 1/6/1990</p></li>
+<li><p>Sunday - 1/7/1990</p></li>
+</ul>
+<p>Set the time and date as datetime.datetime.</p>
+<p>For example, to solve for 1:03 p.m. on Thursdays, set the
+time and date to 1:03 p.m., 4 January 1990; and convert to
+datetime eg. datetime.datetime(1990, 1, 4, 1, 3).</p>
+<p>Live Traffic:</p>
+<p>To use live traffic when and where it is available,
+choose a time and date and convert to datetime.</p>
+<p>Esri saves live traffic data for 12 hours and references
+predictive data extending 12 hours into the future. If the
+time and date you specify for this parameter is outside the
+24-hour time window, or the travel time in the analysis
+continues past the predictive data window, the task falls
+back to typical traffic speeds.</p>
+<p>Examples:
+from datetime import datetime</p>
+<ul class="simple">
+<li><p>“time_of_day”: datetime(1990, 1, 4, 1, 3) # 13:03, 4 January 1990. Typical traffic on Thursdays at 1:03 p.m.</p></li>
+<li><p>“time_of_day”: datetime(1990, 1, 7, 17, 0) # 17:00, 7 January 1990. Typical traffic on Sundays at 5:00 p.m.</p></li>
+<li><p>“time_of_day”: datetime(2014, 10, 22, 8, 0) # 8:00, 22 October 2014. If the current time is between 8:00 p.m., 21 Oct. 2014 and 8:00 p.m., 22 Oct. 2014, live traffic speeds are referenced in the analysis; otherwise, typical traffic speeds are referenced.</p></li>
+<li><p>“time_of_day”: datetime(2015, 3, 18, 10, 20) # 10:20, 18 March 2015. If the current time is between 10:20 p.m., 17 Mar. 2015 and 10:20 p.m., 18 Mar. 2015, live traffic speeds are referenced in the analysis; otherwise, typical traffic speeds are referenced.</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>time_zone_for_time_of_day</p></td>
+<td><p>Optional string. Specify the time zone or zones of the time_of_day parameter.</p>
+<p>Choice list: [‘GeoLocal’, ‘UTC’]</p>
+<p>GeoLocal-refers to the time zone in which the origins_layer points are located.</p>
+<p>UTC-refers to Coordinated Universal Time.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>travel_direction</p></td>
+<td><p>Optional string. Specify whether to measure travel times or distances
+from facilities to demand locations or from demand locations to facilities.</p>
+<p>Choice list: [‘FacilityToDemand’, ‘DemandToFacility’]</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>required_facilities_layer</p></td>
+<td><p>Optional point feature layer. A point layer specifying one or more locations that act as facilities
+by providing some kind of service. Facilities specified by this parameter
+are required to be part of the output solution and will be used before any
+facilities from the <code class="docutils literal notranslate"><span class="pre">candidate_facilities_layer</span></code> when allocating demand locations.</p></td>
+</tr>
+<tr class="row-even"><td><p>required_facilities_capacity</p></td>
+<td><p>Optional float. Specify how much demand every facility in the <code class="docutils literal notranslate"><span class="pre">required_facilities_layer</span></code>
+is capable of supplying.</p>
+<p>The default value is unlimited (2,147,483,647).</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>required_facilities_capacity_field</p></td>
+<td><p>Optional string. A field on the required_facilities_layer
+representing how much demand each facility in the
+<code class="docutils literal notranslate"><span class="pre">required_facilities_layer</span></code> is capable of supplying. This
+parameter takes precedence when <code class="docutils literal notranslate"><span class="pre">required_facilities_capacity</span></code>
+parameter is also specified.</p></td>
+</tr>
+<tr class="row-even"><td><p>candidate_facilities_layer</p></td>
+<td><p>Optional point layer. A point layer specifying one or more
+locations that act as facilities by providing some kind of
+service. Facilities specified by this parameter are not
+required to be part of the output solution and will be used
+only after all the facilities from the
+<code class="docutils literal notranslate"><span class="pre">candidate_facilities_layer</span></code> have been used when
+allocating demand locations.</p></td>
+</tr>
+<tr class="row-odd"><td><p>candidate_count</p></td>
+<td><p>Optional integer. The number of candidate facilities to
+choose when allocating demand locations. Note that the sum
+of the features in the <code class="docutils literal notranslate"><span class="pre">required_facilities_capacity</span></code>
+and the value specified for <code class="docutils literal notranslate"><span class="pre">candidate_count</span></code> cannot
+exceed 100.</p>
+<p>The default value is 1.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>candidate_facilities_capacity</p></td>
+<td><p>Optional float. Specify how much demand every facility in
+the <code class="docutils literal notranslate"><span class="pre">candidate_facilities_layer</span></code> is capable of supplying.</p>
+<p>The default value is unlimited (2,147,483,647.0).</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>candidate_facilities_capacity_field</p></td>
+<td><p>Optional string. A field on the <code class="docutils literal notranslate"><span class="pre">candidate_facilities_layer</span></code>
+representing how much demand each facility in the
+<code class="docutils literal notranslate"><span class="pre">candidate_facilities_layer</span></code> is capable of supplying. This
+parameter takes precedence when <code class="docutils literal notranslate"><span class="pre">candidate_facilities_capacity</span></code>
+parameter is also specified.</p></td>
+</tr>
+<tr class="row-even"><td><p>percent_demand_coverage</p></td>
+<td><p>Optional float. Specify the percentage of the total demand
+that you want the chosen and required facilities to capture.</p>
+<p>The default value is 100.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>output_name</p></td>
+<td><p>Optional string. If provided, the method will create a
+feature layer of the results. You define the name of the
+layer. If <code class="docutils literal notranslate"><span class="pre">output_name</span></code> is not supplied, the method will
+return a feature collection.</p></td>
+</tr>
+<tr class="row-even"><td><p>context</p></td>
+<td><p>Optional string. Additional settings such as processing
+extent and output spatial reference. For
+<code class="docutils literal notranslate"><span class="pre">choose_best_facilities</span></code>, there are two settings.</p>
+<ol class="arabic simple">
+<li><p>Extent (<code class="docutils literal notranslate"><span class="pre">extent</span></code>) - a bounding box that defines the analysis area. Only those features in the input layer that intersect the bounding box will be enriched.</p></li>
+<li><p>Output Spatial Reference (<code class="docutils literal notranslate"><span class="pre">outSR</span></code>) - the output features will be projected into the output spatial reference.</p></li>
+</ol>
+</td>
+</tr>
+<tr class="row-odd"><td><p>gis</p></td>
+<td><p>Optional, the GIS on which this tool runs. If not
+specified, the active GIS is used.</p></td>
+</tr>
+<tr class="row-even"><td><p>estimate</p></td>
+<td><p>Optional boolean. Is true, the number of credits needed
+to run the operation will be returned as a float.</p></td>
+</tr>
+<tr class="row-odd"><td><p>point_barrier_layer</p></td>
+<td><p>Optional layer. Specify one or more point features that
+act as temporary restrictions (in other words, barriers)
+when traveling on the underlying streets.</p>
+<p>A point barrier can model a fallen tree, an accident, a
+downed electrical line, or anything that completely blocks
+traffic at a specific position along the street. Travel is
+permitted on the street but not through the barrier.
+See <a class="reference internal" href="arcgis.features.analysis.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>line_barrier_layer</p></td>
+<td><p>Optional layer. Specify one or more line features that prohibit travel anywhere the lines intersect the streets.</p>
+<p>A line barrier prohibits travel anywhere the barrier intersects the streets. For example, a parade or protest that blocks traffic across several street
+segments can be modeled with a line barrier. See <a class="reference internal" href="arcgis.features.analysis.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>polygon_barrier_layer</p></td>
+<td><p>Optional string. Specify one or more polygon features that completely restrict travel on the streets intersected by the polygons.</p>
+<p>One use of this type of barrier is to model floods covering areas of the street network and making road travel there impossible. See <a class="reference internal" href="arcgis.features.analysis.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>future</p></td>
+<td><p>Optional boolean. If True, the result will be a GPJob object and results will be returned asynchronously.</p></td>
+</tr>
+</tbody>
+</table>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><p>When an output_name is specified, a FeatureLayerCollection Item with 3 layers is returned (see dictionary below for details), else a dict with the following keys:</p>
@@ -1048,9 +1284,9 @@ with each location representing a given amount of demand.</p>
 </div>
 <div class="section" id="create-viewshed">
 <h2>create_viewshed<a class="headerlink" href="#create-viewshed" title="Permalink to this headline">¶</a></h2>
-<dl class="py function">
+<dl class="function">
 <dt id="arcgis.features.find_locations.create_viewshed">
-<code class="sig-prename descclassname">arcgis.features.find_locations.</code><code class="sig-name descname">create_viewshed</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_layer</span></em>, <em class="sig-param"><span class="n">dem_resolution</span><span class="o">=</span><span class="default_value">'Finest'</span></em>, <em class="sig-param"><span class="n">maximum_distance</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">max_distance_units</span><span class="o">=</span><span class="default_value">'Meters'</span></em>, <em class="sig-param"><span class="n">observer_height</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">observer_height_units</span><span class="o">=</span><span class="default_value">'Meters'</span></em>, <em class="sig-param"><span class="n">target_height</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">target_height_units</span><span class="o">=</span><span class="default_value">'Meters'</span></em>, <em class="sig-param"><span class="n">generalize</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">estimate</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.find_locations.create_viewshed" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.features.find_locations.</code><code class="sig-name descname">create_viewshed</code><span class="sig-paren">(</span><em class="sig-param">input_layer</em>, <em class="sig-param">dem_resolution='Finest'</em>, <em class="sig-param">maximum_distance=None</em>, <em class="sig-param">max_distance_units='Meters'</em>, <em class="sig-param">observer_height=None</em>, <em class="sig-param">observer_height_units='Meters'</em>, <em class="sig-param">target_height=None</em>, <em class="sig-param">target_height_units='Meters'</em>, <em class="sig-param">generalize=True</em>, <em class="sig-param">output_name=None</em>, <em class="sig-param">context=None</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">estimate=False</em>, <em class="sig-param">future=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.find_locations.create_viewshed" title="Permalink to this definition">¶</a></dt>
 <dd><img alt="_images/create_viewshed.png" src="_images/create_viewshed.png" />
 <p>The create_viewshed method identifies visible areas based on the observer locations you provide.
 The results are areas where the observers can see the observed objects (and the observed objects can see the observers).</p>
@@ -1173,9 +1409,9 @@ that intersect the bounding box will be analyzed.</p></li>
 </div>
 <div class="section" id="create-watersheds">
 <h2>create_watersheds<a class="headerlink" href="#create-watersheds" title="Permalink to this headline">¶</a></h2>
-<dl class="py function">
+<dl class="function">
 <dt id="arcgis.features.find_locations.create_watersheds">
-<code class="sig-prename descclassname">arcgis.features.find_locations.</code><code class="sig-name descname">create_watersheds</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_layer</span></em>, <em class="sig-param"><span class="n">search_distance</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">search_units</span><span class="o">=</span><span class="default_value">'Meters'</span></em>, <em class="sig-param"><span class="n">source_database</span><span class="o">=</span><span class="default_value">'FINEST'</span></em>, <em class="sig-param"><span class="n">generalize</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">estimate</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.find_locations.create_watersheds" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.features.find_locations.</code><code class="sig-name descname">create_watersheds</code><span class="sig-paren">(</span><em class="sig-param">input_layer</em>, <em class="sig-param">search_distance=None</em>, <em class="sig-param">search_units='Meters'</em>, <em class="sig-param">source_database='FINEST'</em>, <em class="sig-param">generalize=True</em>, <em class="sig-param">output_name=None</em>, <em class="sig-param">context=None</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">estimate=False</em>, <em class="sig-param">future=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.find_locations.create_watersheds" title="Permalink to this definition">¶</a></dt>
 <dd><img alt="_images/create_watersheds.png" src="_images/create_watersheds.png" />
 <p>The <code class="docutils literal notranslate"><span class="pre">create_watersheds</span></code> method determines the watershed, or upstream contributing area, for each point
 in your analysis layer. For example, suppose you have point features representing locations
@@ -1274,9 +1510,9 @@ that intersect the bounding box will be analyzed.</p></li>
 </div>
 <div class="section" id="trace-downstream">
 <h2>trace_downstream<a class="headerlink" href="#trace-downstream" title="Permalink to this headline">¶</a></h2>
-<dl class="py function">
+<dl class="function">
 <dt id="arcgis.features.find_locations.trace_downstream">
-<code class="sig-prename descclassname">arcgis.features.find_locations.</code><code class="sig-name descname">trace_downstream</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_layer</span></em>, <em class="sig-param"><span class="n">split_distance</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">split_units</span><span class="o">=</span><span class="default_value">'Kilometers'</span></em>, <em class="sig-param"><span class="n">max_distance</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">max_distance_units</span><span class="o">=</span><span class="default_value">'Kilometers'</span></em>, <em class="sig-param"><span class="n">bounding_polygon_layer</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">source_database</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">generalize</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">estimate</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.find_locations.trace_downstream" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.features.find_locations.</code><code class="sig-name descname">trace_downstream</code><span class="sig-paren">(</span><em class="sig-param">input_layer</em>, <em class="sig-param">split_distance=None</em>, <em class="sig-param">split_units='Kilometers'</em>, <em class="sig-param">max_distance=None</em>, <em class="sig-param">max_distance_units='Kilometers'</em>, <em class="sig-param">bounding_polygon_layer=None</em>, <em class="sig-param">source_database=None</em>, <em class="sig-param">generalize=True</em>, <em class="sig-param">output_name=None</em>, <em class="sig-param">context=None</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">estimate=False</em>, <em class="sig-param">future=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.find_locations.trace_downstream" title="Permalink to this definition">¶</a></dt>
 <dd><img alt="_images/trace_downstream.png" src="_images/trace_downstream.png" />
 <p>The <code class="docutils literal notranslate"><span class="pre">trace_downstream</span></code> method determines the trace, or flow path, in a downstream direction from the points in your analysis layer.</p>
 <p>For example, suppose you have point features representing sources of contamination and you want to determine where in your study
@@ -1393,37 +1629,29 @@ You define the name of the service. If <code class="docutils literal notranslate
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="arcgis.features.hydrology.html" class="btn btn-neutral float-right" title="arcgis.features.hydrology module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="arcgis.features.enrich_data.html" class="btn btn-neutral float-left" title="arcgis.features.enrich_data module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="arcgis.features.hydrology.html" class="btn btn-neutral float-right" title="arcgis.features.hydrology module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="arcgis.features.enrich_data.html" class="btn btn-neutral float-left" title="arcgis.features.enrich_data module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright 2016-2021, Esri
+        &#169; Copyright 2016-2021, Esri.
 
     </p>
   </div>
     
     
     
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     
     provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -1431,12 +1659,12 @@ You define the name of the service. If <code class="docutils literal notranslate
 
   </div>
   
-    Options v: 1.8.4
+    Options v: 1.9
 
   <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
       <span class="fa fa-book"> Pick an earlier version</span>
-      v: 1.8.4
+      v: 1.9
       <span class="fa fa-caret-down"></span>
     </span>
     <div class="rst-other-versions">
@@ -1444,6 +1672,14 @@ You define the name of the service. If <code class="docutils literal notranslate
       
       <dl>
         <dt>Versions</dt>
+        
+          
+          <dd><a href="1.8.5/">1.8.5</a></dd>
+          
+        
+          
+          <dd><a href="1.8.4/">1.8.4</a></dd>
+          
         
           
           <dd><a href="1.8.3/">1.8.3</a></dd>
@@ -1479,10 +1715,6 @@ You define the name of the service. If <code class="docutils literal notranslate
         
           
           <dd><a href="1.6.0/">1.6.0</a></dd>
-          
-        
-          
-          <dd><a href="1.5.3/">1.5.3</a></dd>
           
         
           
@@ -1535,6 +1767,10 @@ You define the name of the service. If <code class="docutils literal notranslate
         
           
           <dd><a href="1.2.0/">1.2.0</a></dd>
+          
+        
+          
+          <dd><a href="1.1.0/">1.1.0</a></dd>
           
         
           

@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>arcgis.geocoding module &mdash; arcgis 1.8.4 documentation</title>
+  <title>arcgis.geocoding module &mdash; arcgis 1.9 documentation</title>
   
 
   
@@ -19,7 +19,10 @@
   
     <link rel="shortcut icon" href="_static/favicon.ico"/>
   
+
   
+  
+
   
 
   
@@ -33,7 +36,7 @@
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/language_data.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -64,7 +67,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           
 
           
-            <a href="index.html" class="icon icon-home" alt="Documentation Home"> arcgis
+            <a href="index.html" class="icon icon-home"> arcgis
           
 
           
@@ -77,7 +80,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                1.8.4
+                1.9
               </div>
             
           
@@ -170,6 +173,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
@@ -181,7 +186,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
         
       </li>
     
@@ -208,9 +213,9 @@ batch results for a set of addresses, as well as for reverse geocoding,
 i.e. determining the address at a particular x/y location.</p>
 <div class="section" id="geocoder">
 <h2>Geocoder<a class="headerlink" href="#geocoder" title="Permalink to this headline">¶</a></h2>
-<dl class="py class">
+<dl class="class">
 <dt id="arcgis.geocoding.Geocoder">
-<em class="property">class </em><code class="sig-prename descclassname">arcgis.geocoding.</code><code class="sig-name descname">Geocoder</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geocoding.Geocoder" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.geocoding.</code><code class="sig-name descname">Geocoder</code><span class="sig-paren">(</span><em class="sig-param">location</em>, <em class="sig-param">gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geocoding.Geocoder" title="Permalink to this definition">¶</a></dt>
 <dd><p>Geocoders can find point locations of addresses, business names, and so on.
 The output points can be visualized on a map, inserted as stops for a route,
 or loaded as input for spatial analysis. It is also used to generate
@@ -220,15 +225,15 @@ i.e. determining the address at a particular x/y location.</p>
 <p>Geocoders shared as Items in the GIS can be obtained using <cite>Geocoder.fromitem(item)</cite>.</p>
 <p>Geocoders may also be created using the constructor by passing in their location, such as
 a url to a Geocoding Service.</p>
-<dl class="py method">
+<dl class="method">
 <dt id="arcgis.geocoding.Geocoder.fromitem">
-<em class="property">classmethod </em><code class="sig-name descname">fromitem</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">item</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geocoding.Geocoder.fromitem" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">fromitem</code><span class="sig-paren">(</span><em class="sig-param">item</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geocoding.Geocoder.fromitem" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a Geocoder from an Item in the GIS
 :param item: an Item of type ‘Geocoding Service’
 :return: Geocoder</p>
 </dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="arcgis.geocoding.Geocoder.properties">
 <em class="property">property </em><code class="sig-name descname">properties</code><a class="headerlink" href="#arcgis.geocoding.Geocoder.properties" title="Permalink to this definition">¶</a></dt>
 <dd><p>The properties of this object</p>
@@ -239,9 +244,9 @@ a url to a Geocoding Service.</p>
 </div>
 <div class="section" id="get-geocoders">
 <h2>get_geocoders<a class="headerlink" href="#get-geocoders" title="Permalink to this headline">¶</a></h2>
-<dl class="py function">
+<dl class="function">
 <dt id="arcgis.geocoding.get_geocoders">
-<code class="sig-prename descclassname">arcgis.geocoding.</code><code class="sig-name descname">get_geocoders</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">gis</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geocoding.get_geocoders" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.geocoding.</code><code class="sig-name descname">get_geocoders</code><span class="sig-paren">(</span><em class="sig-param">gis</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geocoding.get_geocoders" title="Permalink to this definition">¶</a></dt>
 <dd><p>A GIS includes one or more geocoders. The list of geocoders registered with the GIS
 can be queried using get_geocoders.</p>
 <dl class="field-list simple">
@@ -257,9 +262,9 @@ can be queried using get_geocoders.</p>
 </div>
 <div class="section" id="geocode">
 <h2>geocode<a class="headerlink" href="#geocode" title="Permalink to this headline">¶</a></h2>
-<dl class="py method">
+<dl class="method">
 <dt id="arcgis.geocoding.geocode">
-<code class="sig-prename descclassname">geocoding.</code><code class="sig-name descname">geocode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">search_extent</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">distance</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">out_sr</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">category</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">out_fields</span><span class="o">=</span><span class="default_value">'*'</span></em>, <em class="sig-param"><span class="n">max_locations</span><span class="o">=</span><span class="default_value">20</span></em>, <em class="sig-param"><span class="n">magic_key</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">for_storage</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">geocoder</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">as_featureset</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">match_out_of_range</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">location_type</span><span class="o">=</span><span class="default_value">'street'</span></em>, <em class="sig-param"><span class="n">lang_code</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">source_country</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geocoding.geocode" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">geocoding.</code><code class="sig-name descname">geocode</code><span class="sig-paren">(</span><em class="sig-param">search_extent=None</em>, <em class="sig-param">location=None</em>, <em class="sig-param">distance=None</em>, <em class="sig-param">out_sr=None</em>, <em class="sig-param">category=None</em>, <em class="sig-param">out_fields='*'</em>, <em class="sig-param">max_locations=20</em>, <em class="sig-param">magic_key=None</em>, <em class="sig-param">for_storage=False</em>, <em class="sig-param">geocoder=None</em>, <em class="sig-param">as_featureset=False</em>, <em class="sig-param">match_out_of_range=True</em>, <em class="sig-param">location_type='street'</em>, <em class="sig-param">lang_code=None</em>, <em class="sig-param">source_country=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geocoding.geocode" title="Permalink to this definition">¶</a></dt>
 <dd><p>The geocode function geocodes one location per request.</p>
 <table class="docutils align-default">
 <colgroup>
@@ -408,9 +413,9 @@ the 3-character country code.</p></td>
 </div>
 <div class="section" id="geocode-from-items">
 <h2>geocode_from_items<a class="headerlink" href="#geocode-from-items" title="Permalink to this headline">¶</a></h2>
-<dl class="py function">
+<dl class="function">
 <dt id="arcgis.geocoding.geocode_from_items">
-<code class="sig-prename descclassname">arcgis.geocoding.</code><code class="sig-name descname">geocode_from_items</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_data</span></em>, <em class="sig-param"><span class="n">output_type</span><span class="o">=</span><span class="default_value">'Feature Layer'</span></em>, <em class="sig-param"><span class="n">geocode_service_url</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">geocode_parameters</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">country</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_fields</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">header_rows_to_skip</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">category</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geocoding.geocode_from_items" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.geocoding.</code><code class="sig-name descname">geocode_from_items</code><span class="sig-paren">(</span><em class="sig-param">input_data</em>, <em class="sig-param">output_type='Feature Layer'</em>, <em class="sig-param">geocode_service_url=None</em>, <em class="sig-param">geocode_parameters=None</em>, <em class="sig-param">country=None</em>, <em class="sig-param">output_fields=None</em>, <em class="sig-param">header_rows_to_skip=1</em>, <em class="sig-param">output_name=None</em>, <em class="sig-param">category=None</em>, <em class="sig-param">context=None</em>, <em class="sig-param">gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geocoding.geocode_from_items" title="Permalink to this definition">¶</a></dt>
 <dd><p>The Batch Geocode geocodes a table or file of addresses and returns the geocoded results. It
 supports CSV, XLS or table input. The task geocodes the entire file regardless of size.</p>
 <table class="docutils align-default">
@@ -521,9 +526,9 @@ the active GIS is used.</p></td>
 </div>
 <div class="section" id="analyze-geocode-input">
 <h2>analyze_geocode_input<a class="headerlink" href="#analyze-geocode-input" title="Permalink to this headline">¶</a></h2>
-<dl class="py function">
+<dl class="function">
 <dt id="arcgis.geocoding.analyze_geocode_input">
-<code class="sig-prename descclassname">arcgis.geocoding.</code><code class="sig-name descname">analyze_geocode_input</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_table_or_item</span></em>, <em class="sig-param"><span class="n">geocode_service_url</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">column_names</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">input_file_parameters</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">locale</span><span class="o">=</span><span class="default_value">'en'</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geocoding.analyze_geocode_input" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.geocoding.</code><code class="sig-name descname">analyze_geocode_input</code><span class="sig-paren">(</span><em class="sig-param">input_table_or_item</em>, <em class="sig-param">geocode_service_url=None</em>, <em class="sig-param">column_names=None</em>, <em class="sig-param">input_file_parameters=None</em>, <em class="sig-param">locale='en'</em>, <em class="sig-param">context=None</em>, <em class="sig-param">gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geocoding.analyze_geocode_input" title="Permalink to this definition">¶</a></dt>
 <dd><p>The analyze_geocode_input function takes in a geocode input (either a table or file of
 addresses) and returns an output dictionary that includes a suggested field mapping. It supports CSV,
 XLS, or table input. The table can be from a big data file share or from a feature service. The
@@ -656,9 +661,9 @@ input_file_parameters={“fileType”:”csv”,”headerRowExists”:”true”
 </div>
 <div class="section" id="reverse-geocode">
 <h2>reverse_geocode<a class="headerlink" href="#reverse-geocode" title="Permalink to this headline">¶</a></h2>
-<dl class="py function">
+<dl class="function">
 <dt id="arcgis.geocoding.reverse_geocode">
-<code class="sig-prename descclassname">arcgis.geocoding.</code><code class="sig-name descname">reverse_geocode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span></em>, <em class="sig-param"><span class="n">distance</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">out_sr</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">lang_code</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">return_intersection</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">for_storage</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">geocoder</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">feature_types</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">roof_top</span><span class="o">=</span><span class="default_value">'street'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geocoding.reverse_geocode" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.geocoding.</code><code class="sig-name descname">reverse_geocode</code><span class="sig-paren">(</span><em class="sig-param">location</em>, <em class="sig-param">distance=None</em>, <em class="sig-param">out_sr=None</em>, <em class="sig-param">lang_code=None</em>, <em class="sig-param">return_intersection=False</em>, <em class="sig-param">for_storage=False</em>, <em class="sig-param">geocoder=None</em>, <em class="sig-param">feature_types=None</em>, <em class="sig-param">roof_top='street'</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geocoding.reverse_geocode" title="Permalink to this definition">¶</a></dt>
 <dd><p>The reverse_geocode operation determines the address at a particular
 x/y location. You pass the coordinates of a point location to the
 geocoding service, and the service returns the address that is
@@ -751,9 +756,9 @@ values.</p>
 </div>
 <div class="section" id="batch-geocode">
 <h2>batch_geocode<a class="headerlink" href="#batch-geocode" title="Permalink to this headline">¶</a></h2>
-<dl class="py function">
+<dl class="function">
 <dt id="arcgis.geocoding.batch_geocode">
-<code class="sig-prename descclassname">arcgis.geocoding.</code><code class="sig-name descname">batch_geocode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">addresses</span></em>, <em class="sig-param"><span class="n">source_country</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">category</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">out_sr</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">geocoder</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">as_featureset</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">match_out_of_range</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">location_type</span><span class="o">=</span><span class="default_value">'street'</span></em>, <em class="sig-param"><span class="n">search_extent</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">lang_code</span><span class="o">=</span><span class="default_value">'EN'</span></em>, <em class="sig-param"><span class="n">preferred_label_values</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geocoding.batch_geocode" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.geocoding.</code><code class="sig-name descname">batch_geocode</code><span class="sig-paren">(</span><em class="sig-param">addresses</em>, <em class="sig-param">source_country=None</em>, <em class="sig-param">category=None</em>, <em class="sig-param">out_sr=None</em>, <em class="sig-param">geocoder=None</em>, <em class="sig-param">as_featureset=False</em>, <em class="sig-param">match_out_of_range=True</em>, <em class="sig-param">location_type='street'</em>, <em class="sig-param">search_extent=None</em>, <em class="sig-param">lang_code='EN'</em>, <em class="sig-param">preferred_label_values=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geocoding.batch_geocode" title="Permalink to this definition">¶</a></dt>
 <dd><p>The batch_geocode() function geocodes an entire list of addresses.
 Geocoding many addresses at once is also known as bulk geocoding.</p>
 <table class="docutils align-default">
@@ -871,9 +876,9 @@ e.g. =’matchedCity,primaryStreet’</p></td>
 </div>
 <div class="section" id="suggest">
 <h2>suggest<a class="headerlink" href="#suggest" title="Permalink to this headline">¶</a></h2>
-<dl class="py function">
+<dl class="function">
 <dt id="arcgis.geocoding.suggest">
-<code class="sig-prename descclassname">arcgis.geocoding.</code><code class="sig-name descname">suggest</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span></em>, <em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">distance</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">category</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">geocoder</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">search_extent</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">max_suggestions</span><span class="o">=</span><span class="default_value">5</span></em>, <em class="sig-param"><span class="n">country_code</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geocoding.suggest" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.geocoding.</code><code class="sig-name descname">suggest</code><span class="sig-paren">(</span><em class="sig-param">text</em>, <em class="sig-param">location=None</em>, <em class="sig-param">distance=None</em>, <em class="sig-param">category=None</em>, <em class="sig-param">geocoder=None</em>, <em class="sig-param">search_extent=None</em>, <em class="sig-param">max_suggestions=5</em>, <em class="sig-param">country_code=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geocoding.suggest" title="Permalink to this definition">¶</a></dt>
 <dd><p>The result of this operation is a resource representing a list of
 suggested matches for the input text. This resource provides the
 matching text as well as a unique ID value, which links a
@@ -990,37 +995,29 @@ the corresponding <cite>geocode</cite> call must also include the
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="arcgis.geoenrichment.html" class="btn btn-neutral float-right" title="arcgis.geoenrichment module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="arcgis.geoanalytics.use_proximity.html" class="btn btn-neutral float-left" title="arcgis.geoanalytics.use_proximity module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="arcgis.geoenrichment.html" class="btn btn-neutral float-right" title="arcgis.geoenrichment module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="arcgis.geoanalytics.use_proximity.html" class="btn btn-neutral float-left" title="arcgis.geoanalytics.use_proximity module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright 2016-2021, Esri
+        &#169; Copyright 2016-2021, Esri.
 
     </p>
   </div>
     
     
     
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     
     provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -1028,12 +1025,12 @@ the corresponding <cite>geocode</cite> call must also include the
 
   </div>
   
-    Options v: 1.8.4
+    Options v: 1.9
 
   <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
       <span class="fa fa-book"> Pick an earlier version</span>
-      v: 1.8.4
+      v: 1.9
       <span class="fa fa-caret-down"></span>
     </span>
     <div class="rst-other-versions">
@@ -1041,6 +1038,14 @@ the corresponding <cite>geocode</cite> call must also include the
       
       <dl>
         <dt>Versions</dt>
+        
+          
+          <dd><a href="1.8.5/">1.8.5</a></dd>
+          
+        
+          
+          <dd><a href="1.8.4/">1.8.4</a></dd>
+          
         
           
           <dd><a href="1.8.3/">1.8.3</a></dd>
@@ -1076,10 +1081,6 @@ the corresponding <cite>geocode</cite> call must also include the
         
           
           <dd><a href="1.6.0/">1.6.0</a></dd>
-          
-        
-          
-          <dd><a href="1.5.3/">1.5.3</a></dd>
           
         
           
@@ -1132,6 +1133,10 @@ the corresponding <cite>geocode</cite> call must also include the
         
           
           <dd><a href="1.2.0/">1.2.0</a></dd>
+          
+        
+          
+          <dd><a href="1.1.0/">1.1.0</a></dd>
           
         
           
