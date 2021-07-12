@@ -63,7 +63,7 @@ var Stemmer = function() {
     var stem;
     var suffix;
     var firstch;
-    var origword = w;
+    //var origword = w;
 
     if (w.length < 3)
       return w;
