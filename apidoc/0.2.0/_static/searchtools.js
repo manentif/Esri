@@ -319,7 +319,7 @@ var Search = {
     for (var prefix in objects) {
       for (var name in objects[prefix]) {
         var fullname = (prefix ? prefix + '.' : '') + name;
-        var fullnameLower = fullname.toLowerCase()
+        var fullnameLower = fullname.toLowerCase();
         if (fullnameLower.indexOf(object) > -1) {
           var score = 0;
           var parts = fullnameLower.split('.');
