@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>arcgis.geoanalytics module &mdash; arcgis 1.8.4 documentation</title>
+  <title>arcgis.geoanalytics module &mdash; arcgis 1.9 documentation</title>
   
 
   
@@ -19,7 +19,10 @@
   
     <link rel="shortcut icon" href="_static/favicon.ico"/>
   
+
   
+  
+
   
 
   
@@ -33,7 +36,7 @@
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/language_data.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -64,7 +67,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           
 
           
-            <a href="index.html" class="icon icon-home" alt="Documentation Home"> arcgis
+            <a href="index.html" class="icon icon-home"> arcgis
           
 
           
@@ -77,7 +80,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                1.8.4
+                1.9
               </div>
             
           
@@ -174,6 +177,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
@@ -185,7 +190,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
         
       </li>
     
@@ -246,9 +251,9 @@ These GeoAnalytics tools work with big data registered in the GISs datastores as
 </div></blockquote>
 <div class="section" id="define-output-datastore">
 <h2>define_output_datastore<a class="headerlink" href="#define-output-datastore" title="Permalink to this headline">¶</a></h2>
-<dl class="py function">
+<dl class="function">
 <dt id="arcgis.geoanalytics.define_output_datastore">
-<code class="sig-prename descclassname">arcgis.geoanalytics.</code><code class="sig-name descname">define_output_datastore</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">datastore</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">template</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.define_output_datastore" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.geoanalytics.</code><code class="sig-name descname">define_output_datastore</code><span class="sig-paren">(</span><em class="sig-param">datastore=None</em>, <em class="sig-param">template=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.define_output_datastore" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets the <cite>arcgis.env.output_datastore</cite> by providing the datastore and template name
 to this method. If datastore is None, the <cite>arcgis.env.output_datastore</cite> will reset
 to default.</p>
@@ -284,9 +289,9 @@ be written to a file in the big data file share.</p></td>
 </div>
 <div class="section" id="get-datastores">
 <h2>get_datastores<a class="headerlink" href="#get-datastores" title="Permalink to this headline">¶</a></h2>
-<dl class="py function">
+<dl class="function">
 <dt id="arcgis.geoanalytics.get_datastores">
-<code class="sig-prename descclassname">arcgis.geoanalytics.</code><code class="sig-name descname">get_datastores</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.get_datastores" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.geoanalytics.</code><code class="sig-name descname">get_datastores</code><span class="sig-paren">(</span><em class="sig-param">gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.get_datastores" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a helper object to manage geoanalytics datastores in the GIS.
 If a gis isn’t specified, returns datastore manager of arcgis.env.active_gis</p>
 </dd></dl>
@@ -294,9 +299,9 @@ If a gis isn’t specified, returns datastore manager of arcgis.env.active_gis</
 </div>
 <div class="section" id="is-supported">
 <h2>is_supported<a class="headerlink" href="#is-supported" title="Permalink to this headline">¶</a></h2>
-<dl class="py function">
+<dl class="function">
 <dt id="arcgis.geoanalytics.is_supported">
-<code class="sig-prename descclassname">arcgis.geoanalytics.</code><code class="sig-name descname">is_supported</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.is_supported" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.geoanalytics.</code><code class="sig-name descname">is_supported</code><span class="sig-paren">(</span><em class="sig-param">gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.is_supported" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns True if the GIS supports geoanalytics. If a gis isn’t specified,
 checks if arcgis.env.active_gis supports geoanalytics</p>
 </dd></dl>
@@ -366,37 +371,29 @@ checks if arcgis.env.active_gis supports geoanalytics</p>
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="arcgis.geoanalytics.analyze_patterns.html" class="btn btn-neutral float-right" title="arcgis.geoanalytics.analyze_patterns module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="arcgis.network.analysis.html" class="btn btn-neutral float-left" title="arcgis.network.analysis module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="arcgis.geoanalytics.analyze_patterns.html" class="btn btn-neutral float-right" title="arcgis.geoanalytics.analyze_patterns module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="arcgis.network.analysis.html" class="btn btn-neutral float-left" title="arcgis.network.analysis module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright 2016-2021, Esri
+        &#169; Copyright 2016-2021, Esri.
 
     </p>
   </div>
     
     
     
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     
     provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -404,12 +401,12 @@ checks if arcgis.env.active_gis supports geoanalytics</p>
 
   </div>
   
-    Options v: 1.8.4
+    Options v: 1.9
 
   <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
       <span class="fa fa-book"> Pick an earlier version</span>
-      v: 1.8.4
+      v: 1.9
       <span class="fa fa-caret-down"></span>
     </span>
     <div class="rst-other-versions">
@@ -417,6 +414,14 @@ checks if arcgis.env.active_gis supports geoanalytics</p>
       
       <dl>
         <dt>Versions</dt>
+        
+          
+          <dd><a href="1.8.5/">1.8.5</a></dd>
+          
+        
+          
+          <dd><a href="1.8.4/">1.8.4</a></dd>
+          
         
           
           <dd><a href="1.8.3/">1.8.3</a></dd>
@@ -452,10 +457,6 @@ checks if arcgis.env.active_gis supports geoanalytics</p>
         
           
           <dd><a href="1.6.0/">1.6.0</a></dd>
-          
-        
-          
-          <dd><a href="1.5.3/">1.5.3</a></dd>
           
         
           
@@ -508,6 +509,10 @@ checks if arcgis.env.active_gis supports geoanalytics</p>
         
           
           <dd><a href="1.2.0/">1.2.0</a></dd>
+          
+        
+          
+          <dd><a href="1.1.0/">1.1.0</a></dd>
           
         
           
