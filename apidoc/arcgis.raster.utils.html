@@ -4,10 +4,11 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>arcgis.raster.utils module &mdash; arcgis 1.9 documentation</title>
+  <title>arcgis.raster.utils module &mdash; arcgis 2.0.0 documentation</title>
   
 
   
@@ -36,7 +37,6 @@
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/language_data.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -80,7 +80,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                1.9
+                2.0.0
               </div>
             
           
@@ -105,7 +105,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               
             
             
-              <p class="caption"><span class="caption-text">arcgis</span></p>
+              <p><span class="caption-text">arcgis</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="arcgis.gis.toc.html">arcgis.gis module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.env.html">arcgis.env module</a></li>
@@ -146,6 +146,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l1"><a class="reference internal" href="arcgis.widgets.html">arcgis.widgets module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.apps.html">arcgis.apps module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.learn.toc.html">arcgis.learn module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.auth.html">arcgis.auth package</a></li>
 </ul>
 
             
@@ -218,13 +219,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJGGV5"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-  <div class="section" id="module-arcgis.raster.utils">
+  <section id="module-arcgis.raster.utils">
 <span id="arcgis-raster-utils-module"></span><h1>arcgis.raster.utils module<a class="headerlink" href="#module-arcgis.raster.utils" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="generate-direct-access-url">
+<section id="generate-direct-access-url">
 <h2>generate_direct_access_url<a class="headerlink" href="#generate-direct-access-url" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
+<dl class="py function">
 <dt id="arcgis.raster.utils.generate_direct_access_url">
-<code class="sig-prename descclassname">arcgis.raster.utils.</code><code class="sig-name descname">generate_direct_access_url</code><span class="sig-paren">(</span><em class="sig-param">expiration=None</em>, <em class="sig-param">*</em>, <em class="sig-param">gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.utils.generate_direct_access_url" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.raster.utils.</code><code class="sig-name descname">generate_direct_access_url</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">expiration</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.utils.generate_direct_access_url" title="Permalink to this definition">¶</a></dt>
 <dd><p>Function to get the direct access url for user’s rasterStore on ArcGIS Online.</p>
 <table class="docutils align-default">
 <colgroup>
@@ -252,17 +253,17 @@ If not specified, the active GIS is used.</p></td>
 </dl>
 </dd></dl>
 
-</div>
-<div class="section" id="upload-imagery-to-agol-userstore">
+</section>
+<section id="upload-imagery-to-agol-userstore">
 <h2>upload_imagery_to_agol_userstore<a class="headerlink" href="#upload-imagery-to-agol-userstore" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
+<dl class="py function">
 <dt id="arcgis.raster.utils.upload_imagery_to_agol_userstore">
-<code class="sig-prename descclassname">arcgis.raster.utils.</code><code class="sig-name descname">upload_imagery_to_agol_userstore</code><span class="sig-paren">(</span><em class="sig-param">files</em>, <em class="sig-param">direct_access_url=None</em>, <em class="sig-param">auto_renew=True</em>, <em class="sig-param">upload_properties=None</em>, <em class="sig-param">*</em>, <em class="sig-param">gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.utils.upload_imagery_to_agol_userstore" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.raster.utils.</code><code class="sig-name descname">upload_imagery_to_agol_userstore</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">files</span></em>, <em class="sig-param"><span class="n">direct_access_url</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">auto_renew</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">upload_properties</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.utils.upload_imagery_to_agol_userstore" title="Permalink to this definition">¶</a></dt>
 <dd><p>Uploads file/files to the user’s rasterstore on ArcGIS Online and returns the list of urls.</p>
 <p>The list of urls can then be used with <a class="reference internal" href="arcgis.raster.analytics.html#arcgis.raster.analytics.copy_raster" title="arcgis.raster.analytics.copy_raster"><code class="xref py py-meth docutils literal notranslate"><span class="pre">arcgis.raster.analytics.copy_raster()</span></code></a> or <a class="reference internal" href="arcgis.raster.analytics.html#arcgis.raster.analytics.create_image_collection" title="arcgis.raster.analytics.create_image_collection"><code class="xref py py-meth docutils literal notranslate"><span class="pre">arcgis.raster.analytics.create_image_collection()</span></code></a>
 method to create imagery layers on ArcGIS Online.</p>
-<p>For this functionality to work, Azure library packages for Python (Azure SDK for Python - azure-storage-blob: 12.1&lt;= version &lt;=12.8)
-needs to be pre-installed. Refer <a class="reference external" href="https://docs.microsoft.com/en-us/azure/developer/python/azure-sdk-install">https://docs.microsoft.com/en-us/azure/developer/python/azure-sdk-install</a></p>
+<p>For this functionality to work, Azure library packages for Python (Azure SDK for Python - azure-storage-blob: 12.1&lt;= version &lt;=12.9)
+needs to be pre-installed. Refer <a class="reference external" href="https://docs.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-python#install-the-package">https://docs.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-python#install-the-package</a></p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 5%" />
@@ -333,8 +334,8 @@ If not specified, the active GIS is used.</p></td>
 </div>
 </dd></dl>
 
-</div>
-</div>
+</section>
+</section>
 
 
 
@@ -351,7 +352,7 @@ If not specified, the active GIS is used.</p></td>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2016-2021, Esri.
+        &#169; Copyright 2016-2022, Esri.
 
     </p>
   </div>
@@ -372,12 +373,12 @@ If not specified, the active GIS is used.</p></td>
 
   </div>
   
-    Options v: 1.9
+    Options v: 2.0.0
 
   <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
       <span class="fa fa-book"> Pick an earlier version</span>
-      v: 1.9
+      v: 2.0.0
       <span class="fa fa-caret-down"></span>
     </span>
     <div class="rst-other-versions">
@@ -385,6 +386,14 @@ If not specified, the active GIS is used.</p></td>
       
       <dl>
         <dt>Versions</dt>
+        
+          
+          <dd><a href="1.9.1/">1.9.1</a></dd>
+          
+        
+          
+          <dd><a href="1.9.0/">1.9.0</a></dd>
+          
         
           
           <dd><a href="1.8.5/">1.8.5</a></dd>

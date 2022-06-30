@@ -4,10 +4,11 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>arcgis.raster.functions.RFT &mdash; arcgis 1.9 documentation</title>
+  <title>arcgis.raster.functions.RFT &mdash; arcgis 2.0.0 documentation</title>
   
 
   
@@ -36,7 +37,6 @@
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/language_data.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -80,7 +80,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                1.9
+                2.0.0
               </div>
             
           
@@ -105,7 +105,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               
             
             
-              <p class="caption"><span class="caption-text">arcgis</span></p>
+              <p><span class="caption-text">arcgis</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="arcgis.gis.toc.html">arcgis.gis module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.env.html">arcgis.env module</a></li>
@@ -142,6 +142,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l1"><a class="reference internal" href="arcgis.widgets.html">arcgis.widgets module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.apps.html">arcgis.apps module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.learn.toc.html">arcgis.learn module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.auth.html">arcgis.auth package</a></li>
 </ul>
 
             
@@ -214,7 +215,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJGGV5"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-  <div class="section" id="arcgis-raster-functions-rft">
+  <section id="arcgis-raster-functions-rft">
 <h1>arcgis.raster.functions.RFT<a class="headerlink" href="#arcgis-raster-functions-rft" title="Permalink to this headline">¶</a></h1>
 <blockquote>
 <div><p>Represents a callable object created from a Raster Function Template(RFT) portal item.
@@ -272,9 +273,9 @@ imagery_layer_output #This would display a new ImageryLayer object with the RFT 
 </pre></div>
 </div>
 </div></blockquote>
-<dl class="class">
+<dl class="py class">
 <dt id="arcgis.raster.functions.RFT">
-<em class="property">class </em><code class="sig-prename descclassname">arcgis.raster.functions.</code><code class="sig-name descname">RFT</code><span class="sig-paren">(</span><em class="sig-param">raster_function_template</em>, <em class="sig-param">gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.RFT" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">arcgis.raster.functions.</code><code class="sig-name descname">RFT</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">raster_function_template</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.RFT" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils align-default">
 <colgroup>
 <col style="width: 26%" />
@@ -292,9 +293,9 @@ imagery_layer_output #This would display a new ImageryLayer object with the RFT 
 </tr>
 </tbody>
 </table>
-<dl class="method">
+<dl class="py method">
 <dt id="arcgis.raster.functions.RFT.to_json">
-<code class="sig-name descname">to_json</code><span class="sig-paren">(</span><em class="sig-param">gis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.RFT.to_json" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">to_json</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.RFT.to_json" title="Permalink to this definition">¶</a></dt>
 <dd><p>Converts the raster function template into a dictionary.</p>
 <table class="docutils align-default">
 <colgroup>
@@ -317,9 +318,9 @@ imagery_layer_output #This would display a new ImageryLayer object with the RFT 
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="arcgis.raster.functions.RFT.draw_graph">
-<code class="sig-name descname">draw_graph</code><span class="sig-paren">(</span><em class="sig-param">show_attributes=False</em>, <em class="sig-param">graph_size=&quot;14.25</em>, <em class="sig-param">15.25&quot;</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.RFT.draw_graph" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">draw_graph</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">show_attributes</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">graph_size</span><span class="o">=</span><span class="default_value">'14.25, 15.25'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.raster.functions.RFT.draw_graph" title="Permalink to this definition">¶</a></dt>
 <dd><p>Displays a structural representation of the function chain and it’s raster input values. If
 show_attributes is set to True, then the draw_graph function also displays the attributes
 of all the functions in the function chain, representing the rasters in a blue rectangular
@@ -358,7 +359,7 @@ that it fits within the given size.</p></td>
 
 </dd></dl>
 
-</div>
+</section>
 
 
 
@@ -375,7 +376,7 @@ that it fits within the given size.</p></td>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2016-2021, Esri.
+        &#169; Copyright 2016-2022, Esri.
 
     </p>
   </div>
@@ -396,12 +397,12 @@ that it fits within the given size.</p></td>
 
   </div>
   
-    Options v: 1.9
+    Options v: 2.0.0
 
   <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
       <span class="fa fa-book"> Pick an earlier version</span>
-      v: 1.9
+      v: 2.0.0
       <span class="fa fa-caret-down"></span>
     </span>
     <div class="rst-other-versions">
@@ -409,6 +410,14 @@ that it fits within the given size.</p></td>
       
       <dl>
         <dt>Versions</dt>
+        
+          
+          <dd><a href="1.9.1/">1.9.1</a></dd>
+          
+        
+          
+          <dd><a href="1.9.0/">1.9.0</a></dd>
+          
         
           
           <dd><a href="1.8.5/">1.8.5</a></dd>

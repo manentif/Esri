@@ -4,10 +4,11 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>arcgis.features.enrich_data module &mdash; arcgis 1.9 documentation</title>
+  <title>arcgis.features.enrich_data module &mdash; arcgis 2.0.0 documentation</title>
   
 
   
@@ -36,7 +37,6 @@
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/language_data.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -80,7 +80,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                1.9
+                2.0.0
               </div>
             
           
@@ -105,7 +105,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               
             
             
-              <p class="caption"><span class="caption-text">arcgis</span></p>
+              <p><span class="caption-text">arcgis</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="arcgis.gis.toc.html">arcgis.gis module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.env.html">arcgis.env module</a></li>
@@ -118,7 +118,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#featurecollection">FeatureCollection</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#geoaccessor">GeoAccessor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#geoseriesaccessor">GeoSeriesAccessor</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#spatialdataframe">SpatialDataFrame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#editfeaturejob">EditFeatureJob</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="arcgis.features.toc.html#submodules">Submodules</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="arcgis.features.analysis.html">arcgis.features.analysis module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.features.analyze_patterns.html">arcgis.features.analyze_patterns module</a></li>
@@ -150,6 +150,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l1"><a class="reference internal" href="arcgis.widgets.html">arcgis.widgets module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.apps.html">arcgis.apps module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.learn.toc.html">arcgis.learn module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.auth.html">arcgis.auth package</a></li>
 </ul>
 
             
@@ -222,17 +223,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJGGV5"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-  <div class="section" id="module-arcgis.features.enrich_data">
+  <section id="module-arcgis.features.enrich_data">
 <span id="arcgis-features-enrich-data-module"></span><h1>arcgis.features.enrich_data module<a class="headerlink" href="#module-arcgis.features.enrich_data" title="Permalink to this headline">¶</a></h1>
 <p>These functions help you explore the character of areas. Detailed demographic data and statistics are returned for your
 chosen areas.</p>
 <p>enrich_layer retrieves information about the people, places, and businesses in a specific area, or within a selected
 travel time or distance from a location.</p>
-<div class="section" id="enrich-layer">
+<section id="enrich-layer">
 <h2>enrich_layer<a class="headerlink" href="#enrich-layer" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
+<dl class="py function">
 <dt id="arcgis.features.enrich_data.enrich_layer">
-<code class="sig-prename descclassname">arcgis.features.enrich_data.</code><code class="sig-name descname">enrich_layer</code><span class="sig-paren">(</span><em class="sig-param">input_layer</em>, <em class="sig-param">data_collections=[]</em>, <em class="sig-param">analysis_variables=[]</em>, <em class="sig-param">country=None</em>, <em class="sig-param">buffer_type=None</em>, <em class="sig-param">distance=None</em>, <em class="sig-param">units=None</em>, <em class="sig-param">output_name=None</em>, <em class="sig-param">context=None</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">estimate=False</em>, <em class="sig-param">return_boundaries=False</em>, <em class="sig-param">future=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.enrich_data.enrich_layer" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.features.enrich_data.</code><code class="sig-name descname">enrich_layer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_layer</span></em>, <em class="sig-param"><span class="n">data_collections</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">analysis_variables</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">country</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">buffer_type</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">distance</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">units</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">estimate</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">return_boundaries</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.enrich_data.enrich_layer" title="Permalink to this definition">¶</a></dt>
 <dd><img alt="_images/enrich_layer.png" src="_images/enrich_layer.png" />
 <p>The <code class="docutils literal notranslate"><span class="pre">enrich_layer</span></code> method enriches your data by getting facts about the people, places, and businesses that surround
 your data locations. For example: What kind of people live here? What do people like to do in this area? What are
@@ -288,22 +289,26 @@ The value is the two-character country code.</p>
 </td>
 </tr>
 <tr class="row-odd"><td><p>output_name</p></td>
-<td><p>Optional string. If provided, the task will create a feature service of the results.
-You define the name of the service. If output_name is not supplied, the task will return a feature collection.</p></td>
+<td><p>Optional string or <a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureLayer" title="arcgis.features.FeatureLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureLayer</span></code></a>. Existing
+feature layer will cause the new layer to be appended to the Feature Service.
+If overwrite is True in context, new layer will overwrite existing layer.
+If output_name not indicated then new <a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureCollection" title="arcgis.features.FeatureCollection"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureCollection</span></code></a> created.</p></td>
 </tr>
 <tr class="row-even"><td><p>context</p></td>
-<td><p>Optional string. Context contains additional settings that affect task execution. For <code class="docutils literal notranslate"><span class="pre">enrich_layer</span></code> method, there are two settings.</p>
-<ol class="arabic simple">
-<li><p>Extent (extent)-a bounding box that defines the analysis area. Only those features in the input_layer that intersect the bounding box will be analyzed.</p></li>
-<li><p>Output Spatial Reference (outSR) the output features will be projected into the output spatial reference.</p></li>
-</ol>
+<td><p>Optional dict. Additional settings such as processing extent and output spatial reference.
+For enrich_layer, there are three settings.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">extent</span></code> - a bounding box that defines the analysis area. Only those features in the input_layer that intersect the bounding box will be analyzed.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">outSR</span></code> - the output features will be projected into the output spatial reference referred to by the <cite>wkid</cite>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">overwrite</span></code> - if True, then the feature layer in output_name will be overwritten with new feature layer.</p></li>
+</ul>
 </td>
 </tr>
 <tr class="row-odd"><td><p>gis</p></td>
 <td><p>Optional, the GIS on which this tool runs. If not specified, the active GIS is used.</p></td>
 </tr>
-<tr class="row-even"><td><p>estimate</p></td>
-<td><p>Optional Boolean. If True, the number of credits to run the operation will be returned.</p></td>
+<tr class="row-even"><td></td>
+<td></td>
 </tr>
 <tr class="row-odd"><td><p>return_boundaries</p></td>
 <td><p>Optional boolean. Applies only for point and line input features. If True, a result layer of areas is returned.
@@ -319,7 +324,7 @@ analysis_variables variables.</p>
 </tr>
 </tbody>
 </table>
-<p>:returns result_layer : feature layer Item if output_name is specified, else Feature Collection.</p>
+<p>:returns <a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureLayer" title="arcgis.features.FeatureLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureLayer</span></code></a> if output_name is specified, else <a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureCollection" title="arcgis.features.FeatureCollection"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureCollection</span></code></a>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">USAGE</span> <span class="n">EXAMPLE</span><span class="p">:</span> <span class="n">To</span> <span class="n">enrich</span> <span class="n">US</span> <span class="n">block</span> <span class="n">groups</span> <span class="k">with</span> <span class="n">population</span> <span class="k">as</span> <span class="n">analysis</span> <span class="n">variable</span><span class="o">.</span>
 <span class="n">blkgrp_enrich</span> <span class="o">=</span> <span class="n">enrich_layer</span><span class="p">(</span><span class="n">block_groups</span><span class="p">,</span>
                              <span class="n">analysis_variables</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;AtRisk.MP27002A_B&quot;</span><span class="p">],</span>
@@ -329,8 +334,8 @@ analysis_variables variables.</p>
 </div>
 </dd></dl>
 
-</div>
-</div>
+</section>
+</section>
 
 
 
@@ -347,7 +352,7 @@ analysis_variables variables.</p>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2016-2021, Esri.
+        &#169; Copyright 2016-2022, Esri.
 
     </p>
   </div>
@@ -368,12 +373,12 @@ analysis_variables variables.</p>
 
   </div>
   
-    Options v: 1.9
+    Options v: 2.0.0
 
   <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
       <span class="fa fa-book"> Pick an earlier version</span>
-      v: 1.9
+      v: 2.0.0
       <span class="fa fa-caret-down"></span>
     </span>
     <div class="rst-other-versions">
@@ -381,6 +386,14 @@ analysis_variables variables.</p>
       
       <dl>
         <dt>Versions</dt>
+        
+          
+          <dd><a href="1.9.1/">1.9.1</a></dd>
+          
+        
+          
+          <dd><a href="1.9.0/">1.9.0</a></dd>
+          
         
           
           <dd><a href="1.8.5/">1.8.5</a></dd>

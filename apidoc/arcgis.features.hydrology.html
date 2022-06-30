@@ -4,10 +4,11 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>arcgis.features.hydrology module &mdash; arcgis 1.9 documentation</title>
+  <title>arcgis.features.hydrology module &mdash; arcgis 2.0.0 documentation</title>
   
 
   
@@ -36,7 +37,6 @@
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/language_data.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -80,7 +80,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                1.9
+                2.0.0
               </div>
             
           
@@ -105,7 +105,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               
             
             
-              <p class="caption"><span class="caption-text">arcgis</span></p>
+              <p><span class="caption-text">arcgis</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="arcgis.gis.toc.html">arcgis.gis module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.env.html">arcgis.env module</a></li>
@@ -118,7 +118,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#featurecollection">FeatureCollection</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#geoaccessor">GeoAccessor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#geoseriesaccessor">GeoSeriesAccessor</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#spatialdataframe">SpatialDataFrame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#editfeaturejob">EditFeatureJob</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="arcgis.features.toc.html#submodules">Submodules</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="arcgis.features.analysis.html">arcgis.features.analysis module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.features.analyze_patterns.html">arcgis.features.analyze_patterns module</a></li>
@@ -151,6 +151,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l1"><a class="reference internal" href="arcgis.widgets.html">arcgis.widgets module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.apps.html">arcgis.apps module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.learn.toc.html">arcgis.learn module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.auth.html">arcgis.auth package</a></li>
 </ul>
 
             
@@ -223,14 +224,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJGGV5"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-  <div class="section" id="module-arcgis.features.hydrology">
+  <section id="module-arcgis.features.hydrology">
 <span id="arcgis-features-hydrology-module"></span><h1>arcgis.features.hydrology module<a class="headerlink" href="#module-arcgis.features.hydrology" title="Permalink to this headline">¶</a></h1>
 <p>These functions help you use hydrology analysis.</p>
-<div class="section" id="trace-downstream">
+<section id="trace-downstream">
 <h2>trace_downstream<a class="headerlink" href="#trace-downstream" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
+<dl class="py function">
 <dt id="arcgis.features.hydrology.trace_downstream">
-<code class="sig-prename descclassname">arcgis.features.hydrology.</code><code class="sig-name descname">trace_downstream</code><span class="sig-paren">(</span><em class="sig-param">input_points</em>, <em class="sig-param">point_id_field=None</em>, <em class="sig-param">source_database='Finest'</em>, <em class="sig-param">generalize=False</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">future=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.hydrology.trace_downstream" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.features.hydrology.</code><code class="sig-name descname">trace_downstream</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_points</span></em>, <em class="sig-param"><span class="n">point_id_field</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">source_database</span><span class="o">=</span><span class="default_value">'Finest'</span></em>, <em class="sig-param"><span class="n">generalize</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.hydrology.trace_downstream" title="Permalink to this definition">¶</a></dt>
 <dd><img alt="_images/trace_downstream.png" src="_images/trace_downstream.png" />
 <p>The <code class="docutils literal notranslate"><span class="pre">trace_downstream</span></code> method delineates the downstream path from a specified location.
 Esri-curated elevation data is used to create an output polyline delineating the flow path
@@ -294,7 +295,7 @@ also be optionally explicitly passed in through this parameter.</p></td>
 </table>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>FeatureSet</p>
+<dd class="field-odd"><p>A new <a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureSet" title="arcgis.features.FeatureSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureSet</span></code></a></p>
 </dd>
 </dl>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># USAGE EXAMPLE: To trace downstream path from from the outlet points.</span>
@@ -305,12 +306,12 @@ also be optionally explicitly passed in through this parameter.</p></td>
 </div>
 </dd></dl>
 
-</div>
-<div class="section" id="watershed">
+</section>
+<section id="watershed">
 <h2>watershed<a class="headerlink" href="#watershed" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
+<dl class="py function">
 <dt id="arcgis.features.hydrology.watershed">
-<code class="sig-prename descclassname">arcgis.features.hydrology.</code><code class="sig-name descname">watershed</code><span class="sig-paren">(</span><em class="sig-param">input_points</em>, <em class="sig-param">point_id_field=None</em>, <em class="sig-param">snap_distance=10</em>, <em class="sig-param">snap_distance_units='Meters'</em>, <em class="sig-param">source_database='Finest'</em>, <em class="sig-param">generalize=False</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">return_snapped_points=True</em>, <em class="sig-param">future=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.hydrology.watershed" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">arcgis.features.hydrology.</code><code class="sig-name descname">watershed</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_points</span></em>, <em class="sig-param"><span class="n">point_id_field</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">snap_distance</span><span class="o">=</span><span class="default_value">10</span></em>, <em class="sig-param"><span class="n">snap_distance_units</span><span class="o">=</span><span class="default_value">'Meters'</span></em>, <em class="sig-param"><span class="n">source_database</span><span class="o">=</span><span class="default_value">'Finest'</span></em>, <em class="sig-param"><span class="n">generalize</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">return_snapped_points</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.hydrology.watershed" title="Permalink to this definition">¶</a></dt>
 <dd><img alt="_images/create_watersheds.png" src="_images/create_watersheds.png" />
 <p>The <code class="docutils literal notranslate"><span class="pre">watershed</span></code> is used to identify catchment areas based on a particular location you
 provide and ArcGIS Online Elevation data.</p>
@@ -400,8 +401,8 @@ If snapping is enabled, this might not be the same as the input point.</p>
 </div>
 </dd></dl>
 
-</div>
-</div>
+</section>
+</section>
 
 
 
@@ -418,7 +419,7 @@ If snapping is enabled, this might not be the same as the input point.</p>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2016-2021, Esri.
+        &#169; Copyright 2016-2022, Esri.
 
     </p>
   </div>
@@ -439,12 +440,12 @@ If snapping is enabled, this might not be the same as the input point.</p>
 
   </div>
   
-    Options v: 1.9
+    Options v: 2.0.0
 
   <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
       <span class="fa fa-book"> Pick an earlier version</span>
-      v: 1.9
+      v: 2.0.0
       <span class="fa fa-caret-down"></span>
     </span>
     <div class="rst-other-versions">
@@ -452,6 +453,14 @@ If snapping is enabled, this might not be the same as the input point.</p>
       
       <dl>
         <dt>Versions</dt>
+        
+          
+          <dd><a href="1.9.1/">1.9.1</a></dd>
+          
+        
+          
+          <dd><a href="1.9.0/">1.9.0</a></dd>
+          
         
           
           <dd><a href="1.8.5/">1.8.5</a></dd>
