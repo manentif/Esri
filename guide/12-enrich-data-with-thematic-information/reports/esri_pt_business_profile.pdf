@@ -1,0 +1,1 @@
+{"error":{"code":10020007,"message":"Parameter 'studyAreas' is invalid.","details":[" Reason:\r\n  Failed to parse study area [0]."],"causes":[{"code":10020032,"message":"Failed to parse study area [0].","details":[]}]},"messages":[]}
