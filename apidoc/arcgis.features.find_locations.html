@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>arcgis.features.find_locations module &mdash; arcgis 2.0.1 documentation</title>
+  <title>arcgis.features.find_locations module &mdash; arcgis 1.9 documentation</title>
   
 
   
@@ -32,12 +32,11 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/sphinx_highlight.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -81,7 +80,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                2.0.1
+                1.9
               </div>
             
           
@@ -106,7 +105,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               
             
             
-              <p class="caption" role="heading"><span class="caption-text">arcgis</span></p>
+              <p class="caption"><span class="caption-text">arcgis</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="arcgis.gis.toc.html">arcgis.gis module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.env.html">arcgis.env module</a></li>
@@ -119,45 +118,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#featurecollection">FeatureCollection</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#geoaccessor">GeoAccessor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#geoseriesaccessor">GeoSeriesAccessor</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#editfeaturejob">EditFeatureJob</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.features.toc.html#spatialdataframe">SpatialDataFrame</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="arcgis.features.toc.html#submodules">Submodules</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="arcgis.features.analysis.html">arcgis.features.analysis module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.features.analyze_patterns.html">arcgis.features.analyze_patterns module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.features.elevation.html">arcgis.features.elevation module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.features.enrich_data.html">arcgis.features.enrich_data module</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">arcgis.features.find_locations module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#find-existing-locations">find_existing_locations</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#arcgis.features.find_locations.find_existing_locations"><code class="docutils literal notranslate"><span class="pre">find_existing_locations()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="#derive-new-locations">derive_new_locations</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#arcgis.features.find_locations.derive_new_locations"><code class="docutils literal notranslate"><span class="pre">derive_new_locations()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="#find-similar-locations">find_similar_locations</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#arcgis.features.find_locations.find_similar_locations"><code class="docutils literal notranslate"><span class="pre">find_similar_locations()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="#find-centroids">find_centroids</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#arcgis.features.analysis.find_centroids"><code class="docutils literal notranslate"><span class="pre">find_centroids()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="#choose-best-facilities">choose_best_facilities</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#arcgis.features.find_locations.choose_best_facilities"><code class="docutils literal notranslate"><span class="pre">choose_best_facilities()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="#create-viewshed">create_viewshed</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#arcgis.features.find_locations.create_viewshed"><code class="docutils literal notranslate"><span class="pre">create_viewshed()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="#create-watersheds">create_watersheds</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#arcgis.features.find_locations.create_watersheds"><code class="docutils literal notranslate"><span class="pre">create_watersheds()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="#trace-downstream">trace_downstream</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#arcgis.features.find_locations.trace_downstream"><code class="docutils literal notranslate"><span class="pre">trace_downstream()</span></code></a></li>
-</ul>
-</li>
+<li class="toctree-l4"><a class="reference internal" href="#find-existing-locations">find_existing_locations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#derive-new-locations">derive_new_locations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#find-similar-locations">find_similar_locations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#find-centroids">find_centroids</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#choose-best-facilities">choose_best_facilities</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#create-viewshed">create_viewshed</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#create-watersheds">create_watersheds</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#trace-downstream">trace_downstream</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.features.hydrology.html">arcgis.features.hydrology module</a></li>
@@ -176,14 +151,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l1"><a class="reference internal" href="arcgis.geoenrichment.html">arcgis.geoenrichment module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.geometry.html">arcgis.geometry module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.geoprocessing.html">arcgis.geoprocessing module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="arcgis.graph.html">arcgis.graph module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.mapping.toc.html">arcgis.mapping module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.realtime.html">arcgis.realtime module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.schematics.html">arcgis.schematics module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.widgets.html">arcgis.widgets module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.apps.html">arcgis.apps module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.learn.toc.html">arcgis.learn module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="arcgis.auth.html">arcgis.auth package</a></li>
 </ul>
 
             
@@ -257,7 +230,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <div class="section" id="module-arcgis.features.find_locations">
-<span id="arcgis-features-find-locations-module"></span><h1>arcgis.features.find_locations module<a class="headerlink" href="#module-arcgis.features.find_locations" title="Permalink to this heading">¶</a></h1>
+<span id="arcgis-features-find-locations-module"></span><h1>arcgis.features.find_locations module<a class="headerlink" href="#module-arcgis.features.find_locations" title="Permalink to this headline">¶</a></h1>
 <p>These functions are used to identify areas that meet a number of different criteria you specify. These criteria can be based
 upon attribute queries (for example, parcels that are vacant) and spatial queries (for example, within 1 kilometer of a
 river). The areas that are found can be selected from existing features (such as existing land parcels) or new features
@@ -272,10 +245,10 @@ create_viewshed creates areas that are visible based on locations you specify.
 create_watersheds creates catchment areas based on locations you specify.
 trace_downstream determines the flow paths in a downstream direction from the locations you specify</p>
 <div class="section" id="find-existing-locations">
-<h2>find_existing_locations<a class="headerlink" href="#find-existing-locations" title="Permalink to this heading">¶</a></h2>
-<dl class="py function">
-<dt class="sig sig-object py" id="arcgis.features.find_locations.find_existing_locations">
-<span class="sig-prename descclassname"><span class="pre">arcgis.features.find_locations.</span></span><span class="sig-name descname"><span class="pre">find_existing_locations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_layers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expressions</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">estimate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">future</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.find_locations.find_existing_locations" title="Permalink to this definition">¶</a></dt>
+<h2>find_existing_locations<a class="headerlink" href="#find-existing-locations" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="arcgis.features.find_locations.find_existing_locations">
+<code class="sig-prename descclassname">arcgis.features.find_locations.</code><code class="sig-name descname">find_existing_locations</code><span class="sig-paren">(</span><em class="sig-param">input_layers=None</em>, <em class="sig-param">expressions=None</em>, <em class="sig-param">output_name=None</em>, <em class="sig-param">context=None</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">estimate=False</em>, <em class="sig-param">future=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.find_locations.find_existing_locations" title="Permalink to this definition">¶</a></dt>
 <dd><img alt="_images/find_existing_locations.png" src="_images/find_existing_locations.png" />
 <p>The <code class="docutils literal notranslate"><span class="pre">find_existing_locations</span></code> method selects features in the input layer that meet a query you specify.
 A query is made up of one or more expressions. There are two types of expressions: attribute and spatial.
@@ -291,26 +264,25 @@ An example of a spatial expression is that the parcel must also be within a cert
 <td><p><strong>Description</strong></p></td>
 </tr>
 <tr class="row-even"><td><p>input_layers</p></td>
-<td><dl>
-<dt>Required list of feature layers. A list of layers that will be used in the expressions parameter.</dt><dd><p>Each layer in the list can be:</p>
+<td><p>Required list of feature layers. A list of layers that will be used in the expressions parameter.
+Each layer in the list can be:</p>
 <ul class="simple">
 <li><p>a feature service layer with an optional filter to select specific features, or</p></li>
 <li><p>a feature collection</p></li>
 </ul>
 <p>See <a class="reference internal" href="arcgis.features.analysis.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p>
-</dd>
-</dl>
 </td>
 </tr>
 <tr class="row-odd"><td><p>expressions</p></td>
 <td><p>Required dict. There are two types of expressions, attribute and spatial.</p>
-<blockquote>
-<div><p>Example attribute expression:</p>
-<p>{
-“operator”: “and”,
+<p>Example attribute expression:</p>
+<dl class="simple">
+<dt>{</dt><dd><p>“operator”: “and”,
 “layer”: 0,
-“where”: “STATUS = ‘VACANT’”
-}</p>
+“where”: “STATUS = ‘VACANT’”</p>
+</dd>
+</dl>
+<p>}</p>
 <p><strong>Note</strong></p>
 <ul class="simple">
 <li><p>operator can be either <code class="docutils literal notranslate"><span class="pre">and</span></code> or <code class="docutils literal notranslate"><span class="pre">or</span></code></p></li>
@@ -319,8 +291,10 @@ An example of a spatial expression is that the parcel must also be within a cert
 <li><p>When dealing with text fields, values must be single-quoted (‘VACANT’).</p></li>
 <li><p>Date fields support all queries except LIKE. Dates are strings in YYYY:MM:DD hh:mm:ss format.</p></li>
 </ul>
-<p>Here’s an example using the date field ObsDate:</p>
+<blockquote>
+<div><p>Here’s an example using the date field ObsDate:</p>
 <p>“where”: “ObsDate &gt;= ‘1998-04-30 13:30:00’ “</p>
+</div></blockquote>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 13%" />
@@ -399,14 +373,16 @@ suitable distance value.</p>
 </tbody>
 </table>
 <p>Example spatial expression:
-{
-“operator”: “and”,
+{</p>
+<blockquote>
+<div><p>“operator”: “and”,
 “layer”: 0,
 “spatialRel”: “withinDistance”,
 “selectingLayer”: 1,
 “distance”: 10,
-“units”: “miles”
-}</p>
+“units”: “miles”</p>
+</div></blockquote>
+<p>}</p>
 <ul class="simple">
 <li><p>operator can be either <code class="docutils literal notranslate"><span class="pre">and</span></code> or <code class="docutils literal notranslate"><span class="pre">or</span></code></p></li>
 <li><p>layer is the index of the layer in <code class="docutils literal notranslate"><span class="pre">the</span> <span class="pre">input_layers</span></code> parameter. The result of the expression is features in this layer.</p></li>
@@ -523,71 +499,52 @@ is included in the output.</p></li>
 is added to the previous expression. Grouping expressions is only necessary when you need to create two or more distinct
 sets of features from the same layer. One way to think of grouping is that without grouping, you would have to execute
 <code class="docutils literal notranslate"><span class="pre">find_existing_locations</span></code> multiple times and merge the results.</p>
-</div></blockquote>
 </td>
 </tr>
-<tr class="row-even"><td><p>output_name</p></td>
-<td><dl class="simple">
-<dt>Optional string or <a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureLayer" title="arcgis.features.FeatureLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureLayer</span></code></a>. Existing</dt><dd><p>feature layer will cause the new layer to be appended to the Feature Service.
-If overwrite is True in context, new layer will overwrite existing layer.
-If output_name not indicated then new <a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureCollection" title="arcgis.features.FeatureCollection"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureCollection</span></code></a> created.</p>
-</dd>
-</dl>
+<tr class="row-odd"><td><p>output_name</p></td>
+<td><p>Optional string. If provided, the method will create a feature layer of the results. You define the name of the layer.
+If <code class="docutils literal notranslate"><span class="pre">output_name</span></code> is not supplied, the task will return a feature collection.</p></td>
+</tr>
+<tr class="row-even"><td><p>context</p></td>
+<td><p>Optional string. Additional settings such as processing extent and output spatial reference. For <code class="docutils literal notranslate"><span class="pre">find_existing_locations</span></code>, there are two settings.</p>
+<ol class="arabic simple">
+<li><p>Extent (<code class="docutils literal notranslate"><span class="pre">extent</span></code>)-a bounding box that defines the analysis area. Only those points in the input_layers that intersect the bounding box will be analyzed.</p></li>
+<li><p>Output Spatial Reference (<code class="docutils literal notranslate"><span class="pre">outSR</span></code>)-the output features will be projected into the output spatial reference.</p></li>
+</ol>
 </td>
 </tr>
-<tr class="row-odd"><td><p>context</p></td>
-<td><dl>
-<dt>Optional dict. Additional settings such as processing extent and output spatial reference.</dt><dd><p>For find_existing_locations, there are three settings.</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">extent</span></code> - a bounding box that defines the analysis area. Only those features in the input_layer that intersect the bounding box will be analyzed.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">outSR</span></code> - the output features will be projected into the output spatial reference referred to by the <cite>wkid</cite>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">overwrite</span></code> - if True, then the feature layer in output_name will be overwritten with new feature layer. Available for ArcGIS Online or Enterprise 10.9.1+</p></li>
-</ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example Usage</span>
-<span class="n">context</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;extent&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;xmin&quot;</span><span class="p">:</span> <span class="mf">3164569.408035</span><span class="p">,</span>
-                    <span class="s2">&quot;ymin&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">9187921.892449</span><span class="p">,</span>
-                    <span class="s2">&quot;xmax&quot;</span><span class="p">:</span> <span class="mf">3174104.927313</span><span class="p">,</span>
-                    <span class="s2">&quot;ymax&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">9175500.875353</span><span class="p">,</span>
-                    <span class="s2">&quot;spatialReference&quot;</span><span class="p">:{</span><span class="s2">&quot;wkid&quot;</span><span class="p">:</span><span class="mi">102100</span><span class="p">,</span><span class="s2">&quot;latestWkid&quot;</span><span class="p">:</span><span class="mi">3857</span><span class="p">}},</span>
-            <span class="s2">&quot;outSR&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;wkid&quot;</span><span class="p">:</span> <span class="mi">3857</span><span class="p">},</span>
-            <span class="s2">&quot;overwrite&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">}</span>
-</pre></div>
-</div>
-</dd>
-</dl>
-</td>
-</tr>
-<tr class="row-even"><td><p>gis</p></td>
+<tr class="row-odd"><td><p>gis</p></td>
 <td><p>Optional, the GIS on which this tool runs. If not specified, the active GIS is used.</p></td>
 </tr>
-<tr class="row-odd"><td><p>estimate</p></td>
+<tr class="row-even"><td><p>estimate</p></td>
 <td><p>Optional boolean. Is true, the number of credits needed to run the operation will be returned as a float.</p></td>
+</tr>
+<tr class="row-odd"><td><p>future</p></td>
+<td><p>Optional boolean. If True, the result will be a GPJob object and results will be returned asynchronously.</p></td>
 </tr>
 </tbody>
 </table>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><p><a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureLayer" title="arcgis.features.FeatureLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureLayer</span></code></a> if output_name is specified, else <a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureCollection" title="arcgis.features.FeatureCollection"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureCollection</span></code></a>.</p>
-<p>#USAGE EXAMPLE: To find busy (where SEGMENT_TY is 1 and where ARTERIAL_C is 1) streets from the existing seattle streets layer.</p>
-<dl class="simple">
-<dt>arterial_streets = find_existing_locations(input_layers=[bike_route_streets],</dt><dd><dl class="simple">
-<dt>expressions=[{“operator”:””,”layer”:0,”where”:”SEGMENT_TY = 1”},</dt><dd><p>{“operator”:”and”,”layer”:0,”where”:”ARTERIAL_C = 1”}],
-output_name=’ArterialStreets’)</p>
+<dd class="field-odd"><p>result_layer : feature layer Item if output_name is specified, else Feature Collection.</p>
 </dd>
 </dl>
-</dd>
-</dl>
-</p>
-</dd>
-</dl>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#USAGE EXAMPLE: To find busy (where SEGMENT_TY is 1 and where ARTERIAL_C is 1) streets from the existing seattle streets layer.</span>
+
+<span class="n">arterial_streets</span> <span class="o">=</span> <span class="n">find_existing_locations</span><span class="p">(</span><span class="n">input_layers</span><span class="o">=</span><span class="p">[</span><span class="n">bike_route_streets</span><span class="p">],</span>
+                <span class="n">expressions</span><span class="o">=</span><span class="p">[{</span><span class="s2">&quot;operator&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="s2">&quot;layer&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;where&quot;</span><span class="p">:</span><span class="s2">&quot;SEGMENT_TY = 1&quot;</span><span class="p">},</span>
+                             <span class="p">{</span><span class="s2">&quot;operator&quot;</span><span class="p">:</span><span class="s2">&quot;and&quot;</span><span class="p">,</span><span class="s2">&quot;layer&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;where&quot;</span><span class="p">:</span><span class="s2">&quot;ARTERIAL_C = 1&quot;</span><span class="p">}],</span>
+                               <span class="n">output_name</span><span class="o">=</span><span class="s1">&#39;ArterialStreets&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </div>
 <div class="section" id="derive-new-locations">
-<h2>derive_new_locations<a class="headerlink" href="#derive-new-locations" title="Permalink to this heading">¶</a></h2>
-<dl class="py function">
-<dt class="sig sig-object py" id="arcgis.features.find_locations.derive_new_locations">
-<span class="sig-prename descclassname"><span class="pre">arcgis.features.find_locations.</span></span><span class="sig-name descname"><span class="pre">derive_new_locations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_layers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expressions</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">estimate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">future</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.find_locations.derive_new_locations" title="Permalink to this definition">¶</a></dt>
+<h2>derive_new_locations<a class="headerlink" href="#derive-new-locations" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="arcgis.features.find_locations.derive_new_locations">
+<code class="sig-prename descclassname">arcgis.features.find_locations.</code><code class="sig-name descname">derive_new_locations</code><span class="sig-paren">(</span><em class="sig-param">input_layers=[]</em>, <em class="sig-param">expressions=[]</em>, <em class="sig-param">output_name=None</em>, <em class="sig-param">context=None</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">estimate=False</em>, <em class="sig-param">future=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.find_locations.derive_new_locations" title="Permalink to this definition">¶</a></dt>
 <dd><img alt="_images/derive_new_locations.png" src="_images/derive_new_locations.png" />
 <p>The <code class="docutils literal notranslate"><span class="pre">derive_new_locations</span></code> method derives new features from the input layers that meet a query you specify. A query is
 made up of one or more expressions. There are two types of expressions: attribute and spatial. An example of an
@@ -606,8 +563,8 @@ the parcel that is within the flood zone.</p></li>
 </ul>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 19%" />
-<col style="width: 81%" />
+<col style="width: 14%" />
+<col style="width: 86%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>Argument</strong></p></td>
@@ -838,51 +795,28 @@ is included in the output.</p></li>
 </table>
 </td>
 </tr>
-<tr class="row-even"><td><p>output_name</p></td>
-<td><p>Optional string or <a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureLayer" title="arcgis.features.FeatureLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureLayer</span></code></a>. Existing
-feature layer will cause the new layer to be appended to the Feature Service.
-If overwrite is True in context, new layer will overwrite existing layer.
-If output_name not indicated then new <a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureCollection" title="arcgis.features.FeatureCollection"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureCollection</span></code></a> created.</p></td>
+<tr class="row-odd"><td><p>output_name</p></td>
+<td><p>Optional string. If provided, the task will create a feature layer of the results. You define the name of the layer.                                           If output_name is not supplied, the task will return a feature collection.</p></td>
 </tr>
-<tr class="row-odd"><td><p>context</p></td>
-<td><p>Optional dict. Additional settings such as processing extent and output spatial reference.
-For derive_new_locations, there are three settings.</p>
-<ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">extent</span></code> - a bounding box that defines the analysis area. Only those features in the input_layer that intersect the bounding box will be analyzed.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">outSR</span></code> - the output features will be projected into the output spatial reference referred to by the <cite>wkid</cite>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">overwrite</span></code> - if True, then the feature layer in output_name will be overwritten with new feature layer. Available for ArcGIS Online or Enterprise 10.9.1+</p>
-<blockquote>
-<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example Usage</span>
-<span class="n">context</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;extent&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;xmin&quot;</span><span class="p">:</span> <span class="mf">3164569.408035</span><span class="p">,</span>
-                    <span class="s2">&quot;ymin&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">9187921.892449</span><span class="p">,</span>
-                    <span class="s2">&quot;xmax&quot;</span><span class="p">:</span> <span class="mf">3174104.927313</span><span class="p">,</span>
-                    <span class="s2">&quot;ymax&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">9175500.875353</span><span class="p">,</span>
-                    <span class="s2">&quot;spatialReference&quot;</span><span class="p">:{</span><span class="s2">&quot;wkid&quot;</span><span class="p">:</span><span class="mi">102100</span><span class="p">,</span><span class="s2">&quot;latestWkid&quot;</span><span class="p">:</span><span class="mi">3857</span><span class="p">}},</span>
-            <span class="s2">&quot;outSR&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;wkid&quot;</span><span class="p">:</span> <span class="mi">3857</span><span class="p">},</span>
-            <span class="s2">&quot;overwrite&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">}</span>
-</pre></div>
-</div>
-</div></blockquote>
-</li>
-</ul>
+<tr class="row-even"><td><p>context</p></td>
+<td><p>Optional string. Additional settings such as processing extent and output spatial reference. For                                                               <code class="docutils literal notranslate"><span class="pre">derive_new_locations</span></code>, there are two settings.</p>
+<ol class="arabic simple">
+<li><p>Extent (extent)-a bounding box that defines the analysis area. Only those points in the input_layers that intersect the bounding box will be analyzed.</p></li>
+<li><p>Output Spatial Reference (outSR)</p></li>
+</ol>
 </td>
 </tr>
-<tr class="row-even"><td><p>gis</p></td>
+<tr class="row-odd"><td><p>gis</p></td>
 <td><p>Optional, the GIS on which this tool runs. If not specified, the active GIS is used.</p></td>
 </tr>
-<tr class="row-odd"><td><p>estimate</p></td>
+<tr class="row-even"><td><p>estimate</p></td>
 <td><p>Optional boolean. Is true, the number of credits needed to run the operation will be returned as a float.</p></td>
 </tr>
-<tr class="row-even"><td><p>future</p></td>
+<tr class="row-odd"><td><p>future</p></td>
 <td><p>Optional boolean. If True, the result will be a GPJob object and results will be returned asynchronously.</p></td>
 </tr>
 </tbody>
 </table>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureLayer" title="arcgis.features.FeatureLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureLayer</span></code></a> if output_name is specified, else <a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureCollection" title="arcgis.features.FeatureCollection"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureCollection</span></code></a>.</p>
-</dd>
-</dl>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">USAGE</span> <span class="n">EXAMPLE</span><span class="p">:</span> <span class="n">To</span> <span class="n">Identify</span> <span class="n">areas</span> <span class="n">that</span> <span class="n">are</span> <span class="n">suitable</span> <span class="n">cougar</span> <span class="n">habitat</span> <span class="n">using</span> <span class="n">the</span> <span class="n">criteria</span> <span class="n">defined</span> <span class="n">by</span> <span class="n">experts</span><span class="o">.</span>
 
 <span class="n">new_location</span> <span class="o">=</span> <span class="n">derive_new_locations</span><span class="p">(</span><span class="n">input_layers</span><span class="o">=</span><span class="p">[</span><span class="n">slope</span><span class="p">,</span> <span class="n">vegetation</span><span class="p">,</span> <span class="n">streams</span><span class="p">,</span> <span class="n">highways</span><span class="p">],</span>
@@ -897,10 +831,10 @@ For derive_new_locations, there are three settings.</p>
 
 </div>
 <div class="section" id="find-similar-locations">
-<h2>find_similar_locations<a class="headerlink" href="#find-similar-locations" title="Permalink to this heading">¶</a></h2>
-<dl class="py function">
-<dt class="sig sig-object py" id="arcgis.features.find_locations.find_similar_locations">
-<span class="sig-prename descclassname"><span class="pre">arcgis.features.find_locations.</span></span><span class="sig-name descname"><span class="pre">find_similar_locations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_layer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">search_layer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">analysis_fields</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_query</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">number_of_results</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">estimate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">future</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.find_locations.find_similar_locations" title="Permalink to this definition">¶</a></dt>
+<h2>find_similar_locations<a class="headerlink" href="#find-similar-locations" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="arcgis.features.find_locations.find_similar_locations">
+<code class="sig-prename descclassname">arcgis.features.find_locations.</code><code class="sig-name descname">find_similar_locations</code><span class="sig-paren">(</span><em class="sig-param">input_layer</em>, <em class="sig-param">search_layer</em>, <em class="sig-param">analysis_fields=[]</em>, <em class="sig-param">input_query=None</em>, <em class="sig-param">number_of_results=0</em>, <em class="sig-param">output_name=None</em>, <em class="sig-param">context=None</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">estimate=False</em>, <em class="sig-param">future=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.find_locations.find_similar_locations" title="Permalink to this definition">¶</a></dt>
 <dd><img alt="_images/find_similar_locations.png" src="_images/find_similar_locations.png" />
 <p>The <code class="docutils literal notranslate"><span class="pre">find_similar_locations</span></code> method measures the similarity of candidate locations to one or more reference locations.</p>
 <p>Based on criteria you specify, Find <code class="docutils literal notranslate"><span class="pre">find_similar_locations</span></code> can answer questions such as the following:</p>
@@ -914,8 +848,8 @@ Finally, you supply a list of fields to use for measuring similarity. <code clas
 candidate locations by how closely they match your reference locations across all of the fields you have selected.</p>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 13%" />
-<col style="width: 87%" />
+<col style="width: 16%" />
+<col style="width: 84%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>Argument</strong></p></td>
@@ -973,32 +907,21 @@ The syntax of <code class="docutils literal notranslate"><span class="pre">input
 If <code class="docutils literal notranslate"><span class="pre">number_of_results</span></code> is not specified, or set to zero, all candidate locations will be ranked and output.</p></td>
 </tr>
 <tr class="row-odd"><td><p>output_name</p></td>
-<td><p>Optional string or <a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureLayer" title="arcgis.features.FeatureLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureLayer</span></code></a>. Existing
-feature layer will cause the new layer to be appended to the Feature Service.
-If overwrite is True in context, new layer will overwrite existing layer.
-If output_name not indicated then new <a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureCollection" title="arcgis.features.FeatureCollection"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureCollection</span></code></a> created.</p></td>
+<td><p>Optional string. If provided, the method will create a feature service of the results.
+You define the name of the service. If <code class="docutils literal notranslate"><span class="pre">output_name</span></code> is not supplied, the method will return a feature collection.</p></td>
 </tr>
 <tr class="row-even"><td><p>context</p></td>
-<td><p>Optional dict. Additional settings such as processing extent and output spatial reference.
-For find_similar_locations, there are three settings.</p>
-<ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">extent</span></code> - a bounding box that defines the analysis area. Only those features in the input_layer that intersect the bounding box will be analyzed.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">outSR</span></code> - the output features will be projected into the output spatial reference referred to by the <cite>wkid</cite>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">overwrite</span></code> - if True, then the feature layer in output_name will be overwritten with new feature layer. Available for ArcGIS Online or Enterprise 10.9.1+</p>
+<td><p>Optional string. Context contains additional settings that affect method execution.
+For <code class="docutils literal notranslate"><span class="pre">find_similar_locations</span></code>, there are two settings.</p>
+<ol class="arabic simple">
+<li><p>Extent (<code class="docutils literal notranslate"><span class="pre">extent</span></code>) - a bounding box that defines the analysis area. Only those features</p></li>
+</ol>
 <blockquote>
-<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example Usage</span>
-<span class="n">context</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;extent&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;xmin&quot;</span><span class="p">:</span> <span class="mf">3164569.408035</span><span class="p">,</span>
-                    <span class="s2">&quot;ymin&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">9187921.892449</span><span class="p">,</span>
-                    <span class="s2">&quot;xmax&quot;</span><span class="p">:</span> <span class="mf">3174104.927313</span><span class="p">,</span>
-                    <span class="s2">&quot;ymax&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">9175500.875353</span><span class="p">,</span>
-                    <span class="s2">&quot;spatialReference&quot;</span><span class="p">:{</span><span class="s2">&quot;wkid&quot;</span><span class="p">:</span><span class="mi">102100</span><span class="p">,</span><span class="s2">&quot;latestWkid&quot;</span><span class="p">:</span><span class="mi">3857</span><span class="p">}},</span>
-            <span class="s2">&quot;outSR&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;wkid&quot;</span><span class="p">:</span> <span class="mi">3857</span><span class="p">},</span>
-            <span class="s2">&quot;overwrite&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">}</span>
-</pre></div>
-</div>
+<div><p>in the <code class="docutils literal notranslate"><span class="pre">input_layer</span></code> that intersect the bounding box will be analyzed.</p>
 </div></blockquote>
-</li>
-</ul>
+<ol class="arabic simple">
+<li><p>Output Spatial Reference (<code class="docutils literal notranslate"><span class="pre">outSR</span></code>) - the output features will be projected into the output spatial reference.</p></li>
+</ol>
 </td>
 </tr>
 <tr class="row-odd"><td><p>estimate</p></td>
@@ -1011,8 +934,8 @@ For find_similar_locations, there are three settings.</p>
 </table>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><p><a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureLayer" title="arcgis.features.FeatureLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureLayer</span></code></a> if <code class="docutils literal notranslate"><span class="pre">output_name</span></code> is specified, else Python dictionary with the following keys:</p>
-<p>”similar_result_layer” : layer (<a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureCollection" title="arcgis.features.FeatureCollection"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureCollection</span></code></a>)</p>
+<dd class="field-odd"><p><p>result_layer : feature layer Item if <code class="docutils literal notranslate"><span class="pre">output_name</span></code> is specified, else Python dictionary with the following keys:</p>
+<p>”similar_result_layer” : layer (FeatureCollection)</p>
 <p>”process_info” : list of message</p>
 </p>
 </dd>
@@ -1028,10 +951,10 @@ For find_similar_locations, there are three settings.</p>
 
 </div>
 <div class="section" id="find-centroids">
-<h2>find_centroids<a class="headerlink" href="#find-centroids" title="Permalink to this heading">¶</a></h2>
-<dl class="py function">
-<dt class="sig sig-object py" id="arcgis.features.analysis.find_centroids">
-<span class="sig-prename descclassname"><span class="pre">arcgis.features.analysis.</span></span><span class="sig-name descname"><span class="pre">find_centroids</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_layer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">point_location</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">estimate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">future</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.analysis.find_centroids" title="Permalink to this definition">¶</a></dt>
+<h2>find_centroids<a class="headerlink" href="#find-centroids" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="arcgis.features.analysis.find_centroids">
+<code class="sig-prename descclassname">arcgis.features.analysis.</code><code class="sig-name descname">find_centroids</code><span class="sig-paren">(</span><em class="sig-param">input_layer</em>, <em class="sig-param">point_location=False</em>, <em class="sig-param">output_name=None</em>, <em class="sig-param">context=None</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">estimate=False</em>, <em class="sig-param">future=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.analysis.find_centroids" title="Permalink to this definition">¶</a></dt>
 <dd><img alt="_images/find_centroids.png" src="_images/find_centroids.png" />
 <p>The <code class="docutils literal notranslate"><span class="pre">find_centroids</span></code> method that finds and generates points from the representative center (centroid) of
 each input multipoint, line, or area feature. Finding the centroid of a feature is very common for many analytical
@@ -1039,8 +962,8 @@ workflows where the resulting points can then be used in other analytic workflow
 <p>For example, polygon features that contain demographic data can be converted to centroids that can be used in network analysis.</p>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 9%" />
-<col style="width: 91%" />
+<col style="width: 7%" />
+<col style="width: 93%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>Argument</strong></p></td>
@@ -1051,39 +974,23 @@ workflows where the resulting points can then be used in other analytic workflow
 </tr>
 <tr class="row-odd"><td><p>point_location</p></td>
 <td><p>Optional boolean. A Boolean value that determines the output location of the points.</p>
-<ul class="simple">
+<blockquote>
+<div><ul class="simple">
 <li><p>True - Output points will be the nearest point to the actual centroid, but located inside or contained by the bounds of the input feature.</p></li>
 <li><p>False - Output point locations will be determined by the calculated geometric center of each input feature. This is the default.</p></li>
 </ul>
+</div></blockquote>
 </td>
 </tr>
 <tr class="row-even"><td><p>output_name</p></td>
-<td><p>Optional string or <a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureLayer" title="arcgis.features.FeatureLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureLayer</span></code></a>. Existing
-feature layer will cause the new layer to be appended to the Feature Service.
-If overwrite is True in context, new layer will overwrite existing layer.
-If output_name not indicated then new <a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureCollection" title="arcgis.features.FeatureCollection"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureCollection</span></code></a> created.</p></td>
+<td><p>Optional string. If provided, the method will create a feature service of the results. You define the name of the service. If <code class="docutils literal notranslate"><span class="pre">output_name</span></code> is not supplied, the method will return a feature collection.</p></td>
 </tr>
 <tr class="row-odd"><td><p>context</p></td>
-<td><p>Optional dict. Additional settings such as processing extent and output spatial reference.
-For find_centroids, there are three settings.</p>
-<ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">extent</span></code> - a bounding box that defines the analysis area. Only those features in the input_layer that intersect the bounding box will be analyzed.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">outSR</span></code> - the output features will be projected into the output spatial reference referred to by the <cite>wkid</cite>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">overwrite</span></code> - if True, then the feature layer in output_name will be overwritten with new feature layer. Available for ArcGIS Online or Enterprise 10.9.1+</p>
-<blockquote>
-<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example Usage</span>
-<span class="n">context</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;extent&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;xmin&quot;</span><span class="p">:</span> <span class="mf">3164569.408035</span><span class="p">,</span>
-                    <span class="s2">&quot;ymin&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">9187921.892449</span><span class="p">,</span>
-                    <span class="s2">&quot;xmax&quot;</span><span class="p">:</span> <span class="mf">3174104.927313</span><span class="p">,</span>
-                    <span class="s2">&quot;ymax&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">9175500.875353</span><span class="p">,</span>
-                    <span class="s2">&quot;spatialReference&quot;</span><span class="p">:{</span><span class="s2">&quot;wkid&quot;</span><span class="p">:</span><span class="mi">102100</span><span class="p">,</span><span class="s2">&quot;latestWkid&quot;</span><span class="p">:</span><span class="mi">3857</span><span class="p">}},</span>
-            <span class="s2">&quot;outSR&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;wkid&quot;</span><span class="p">:</span> <span class="mi">3857</span><span class="p">},</span>
-            <span class="s2">&quot;overwrite&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">}</span>
-</pre></div>
-</div>
-</div></blockquote>
-</li>
-</ul>
+<td><p>Optional string. Context contains additional settings that affect method execution. For <code class="docutils literal notranslate"><span class="pre">find_centroids</span></code>, there are two settings.</p>
+<ol class="arabic simple">
+<li><p>Extent (<code class="docutils literal notranslate"><span class="pre">extent</span></code>) - a bounding box that defines the analysis area. Only those features in the <code class="docutils literal notranslate"><span class="pre">input_layer</span></code> that intersect the bounding box will be buffered.</p></li>
+<li><p>Output Spatial Reference (<code class="docutils literal notranslate"><span class="pre">outSR</span></code>) - the output features will be projected into the output spatial reference.</p></li>
+</ol>
 </td>
 </tr>
 <tr class="row-even"><td><p>estimate</p></td>
@@ -1096,7 +1003,7 @@ For find_centroids, there are three settings.</p>
 </table>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>result_layer : <a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureLayer" title="arcgis.features.FeatureLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureLayer</span></code></a> if <code class="docutils literal notranslate"><span class="pre">output_name</span></code> is specified, else <a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureCollection" title="arcgis.features.FeatureCollection"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureCollection</span></code></a>.</p>
+<dd class="field-odd"><p>result_layer : feature layer Item if <code class="docutils literal notranslate"><span class="pre">output_name</span></code> is specified, else Feature Collection.</p>
 </dd>
 </dl>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># USAGE EXAMPLE: To find centroids of madison fields nearest to the actual centroids.</span>
@@ -1110,10 +1017,10 @@ For find_centroids, there are three settings.</p>
 
 </div>
 <div class="section" id="choose-best-facilities">
-<h2>choose_best_facilities<a class="headerlink" href="#choose-best-facilities" title="Permalink to this heading">¶</a></h2>
-<dl class="py function">
-<dt class="sig sig-object py" id="arcgis.features.find_locations.choose_best_facilities">
-<span class="sig-prename descclassname"><span class="pre">arcgis.features.find_locations.</span></span><span class="sig-name descname"><span class="pre">choose_best_facilities</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">goal</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Allocate'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">demand_locations_layer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">demand</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">demand_field</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_travel_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2147483647</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_travel_range_field</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_travel_range_units</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Minutes'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">travel_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_of_day</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_zone_for_time_of_day</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'GeoLocal'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">travel_direction</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'FacilityToDemand'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">required_facilities_layer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">required_facilities_capacity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2147483647</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">required_facilities_capacity_field</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">candidate_facilities_layer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">candidate_count</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">candidate_facilities_capacity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2147483647</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">candidate_facilities_capacity_field</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">percent_demand_coverage</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">estimate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">point_barrier_layer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line_barrier_layer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">polygon_barrier_layer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">future</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.find_locations.choose_best_facilities" title="Permalink to this definition">¶</a></dt>
+<h2>choose_best_facilities<a class="headerlink" href="#choose-best-facilities" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="arcgis.features.find_locations.choose_best_facilities">
+<code class="sig-prename descclassname">arcgis.features.find_locations.</code><code class="sig-name descname">choose_best_facilities</code><span class="sig-paren">(</span><em class="sig-param">goal='Allocate'</em>, <em class="sig-param">demand_locations_layer=None</em>, <em class="sig-param">demand=1</em>, <em class="sig-param">demand_field=None</em>, <em class="sig-param">max_travel_range=2147483647</em>, <em class="sig-param">max_travel_range_field=None</em>, <em class="sig-param">max_travel_range_units='Minutes'</em>, <em class="sig-param">travel_mode=None</em>, <em class="sig-param">time_of_day=None</em>, <em class="sig-param">time_zone_for_time_of_day='GeoLocal'</em>, <em class="sig-param">travel_direction='FacilityToDemand'</em>, <em class="sig-param">required_facilities_layer=None</em>, <em class="sig-param">required_facilities_capacity=2147483647</em>, <em class="sig-param">required_facilities_capacity_field=None</em>, <em class="sig-param">candidate_facilities_layer=None</em>, <em class="sig-param">candidate_count=1</em>, <em class="sig-param">candidate_facilities_capacity=2147483647</em>, <em class="sig-param">candidate_facilities_capacity_field=None</em>, <em class="sig-param">percent_demand_coverage=100</em>, <em class="sig-param">output_name=None</em>, <em class="sig-param">context=None</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">estimate=False</em>, <em class="sig-param">point_barrier_layer=None</em>, <em class="sig-param">line_barrier_layer=None</em>, <em class="sig-param">polygon_barrier_layer=None</em>, <em class="sig-param">future=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.find_locations.choose_best_facilities" title="Permalink to this definition">¶</a></dt>
 <dd><img alt="_images/choose_best_facilities.png" src="_images/choose_best_facilities.png" />
 <p>The <code class="docutils literal notranslate"><span class="pre">choose_best_facilities</span></code> method finds the set of facilities that will best serve demand from surrounding areas.</p>
 <p>Facilities might be public institutions that offer a service, such as fire stations, schools, or libraries,
@@ -1301,32 +1208,19 @@ that you want the chosen and required facilities to capture.</p>
 </td>
 </tr>
 <tr class="row-odd"><td><p>output_name</p></td>
-<td><p>Optional string or <a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureLayer" title="arcgis.features.FeatureLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureLayer</span></code></a>. Existing
-feature layer will cause the new layer to be appended to the Feature Service.
-If overwrite is True in context, new layer will overwrite existing layer.
-If output_name not indicated then new <a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureCollection" title="arcgis.features.FeatureCollection"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureCollection</span></code></a> created.</p></td>
+<td><p>Optional string. If provided, the method will create a
+feature layer of the results. You define the name of the
+layer. If <code class="docutils literal notranslate"><span class="pre">output_name</span></code> is not supplied, the method will
+return a feature collection.</p></td>
 </tr>
 <tr class="row-even"><td><p>context</p></td>
-<td><p>Optional dict. Additional settings such as processing extent and output spatial reference.
-For choose_best_facilities, there are three settings.</p>
-<ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">extent</span></code> - a bounding box that defines the analysis area. Only those features in the input_layer that intersect the bounding box will be analyzed.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">outSR</span></code> - the output features will be projected into the output spatial reference referred to by the <cite>wkid</cite>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">overwrite</span></code> - if True, then the feature layer in output_name will be overwritten with new feature layer. Available for ArcGIS Online or Enterprise 10.9.1+</p>
-<blockquote>
-<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example Usage</span>
-   <span class="n">context</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;extent&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;xmin&quot;</span><span class="p">:</span> <span class="mf">3164569.408035</span><span class="p">,</span>
-                       <span class="s2">&quot;ymin&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">9187921.892449</span><span class="p">,</span>
-                       <span class="s2">&quot;xmax&quot;</span><span class="p">:</span> <span class="mf">3174104.927313</span><span class="p">,</span>
-                       <span class="s2">&quot;ymax&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">9175500.875353</span><span class="p">,</span>
-                       <span class="s2">&quot;spatialReference&quot;</span><span class="p">:{</span><span class="s2">&quot;wkid&quot;</span><span class="p">:</span><span class="mi">102100</span><span class="p">,</span><span class="s2">&quot;latestWkid&quot;</span><span class="p">:</span><span class="mi">3857</span><span class="p">}},</span>
-               <span class="s2">&quot;outSR&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;wkid&quot;</span><span class="p">:</span> <span class="mi">3857</span><span class="p">},</span>
-               <span class="s2">&quot;overwrite&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">}</span>
-</pre></div>
-</div>
-</div></blockquote>
-</li>
-</ul>
+<td><p>Optional string. Additional settings such as processing
+extent and output spatial reference. For
+<code class="docutils literal notranslate"><span class="pre">choose_best_facilities</span></code>, there are two settings.</p>
+<ol class="arabic simple">
+<li><p>Extent (<code class="docutils literal notranslate"><span class="pre">extent</span></code>) - a bounding box that defines the analysis area. Only those features in the input layer that intersect the bounding box will be enriched.</p></li>
+<li><p>Output Spatial Reference (<code class="docutils literal notranslate"><span class="pre">outSR</span></code>) - the output features will be projected into the output spatial reference.</p></li>
+</ol>
 </td>
 </tr>
 <tr class="row-odd"><td><p>gis</p></td>
@@ -1355,7 +1249,7 @@ segments can be modeled with a line barrier. See <a class="reference internal" h
 </td>
 </tr>
 <tr class="row-odd"><td><p>polygon_barrier_layer</p></td>
-<td><p>Optional layer. Specify one or more polygon features that completely restrict travel on the streets intersected by the polygons.</p>
+<td><p>Optional string. Specify one or more polygon features that completely restrict travel on the streets intersected by the polygons.</p>
 <p>One use of this type of barrier is to model floods covering areas of the street network and making road travel there impossible. See <a class="reference internal" href="arcgis.features.analysis.html#featureinput"><span class="std std-ref">Feature Input</span></a>.</p>
 </td>
 </tr>
@@ -1366,10 +1260,10 @@ segments can be modeled with a line barrier. See <a class="reference internal" h
 </table>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><p>When an output_name is specified, a <a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureCollection" title="arcgis.features.FeatureCollection"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureCollection</span></code></a> with 3 layers is returned (see dictionary below for details), else a dict with the following keys:</p>
-<p>”allocated_demand_locations_layer” : layer (<a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureCollection" title="arcgis.features.FeatureCollection"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureCollection</span></code></a>)</p>
-<p>”allocation_lines_layer”  : layer (<a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureCollection" title="arcgis.features.FeatureCollection"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureCollection</span></code></a>)</p>
-<p>”assigned_facilities_layer”   : layer (<a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureCollection" title="arcgis.features.FeatureCollection"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureCollection</span></code></a>)</p>
+<dd class="field-odd"><p><p>When an output_name is specified, a FeatureLayerCollection Item with 3 layers is returned (see dictionary below for details), else a dict with the following keys:</p>
+<p>”allocated_demand_locations_layer” : layer (FeatureCollection)</p>
+<p>”allocation_lines_layer”  : layer (FeatureCollection)</p>
+<p>”assigned_facilities_layer”   : layer (FeatureCollection)</p>
 </p>
 </dd>
 </dl>
@@ -1389,10 +1283,10 @@ segments can be modeled with a line barrier. See <a class="reference internal" h
 
 </div>
 <div class="section" id="create-viewshed">
-<h2>create_viewshed<a class="headerlink" href="#create-viewshed" title="Permalink to this heading">¶</a></h2>
-<dl class="py function">
-<dt class="sig sig-object py" id="arcgis.features.find_locations.create_viewshed">
-<span class="sig-prename descclassname"><span class="pre">arcgis.features.find_locations.</span></span><span class="sig-name descname"><span class="pre">create_viewshed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_layer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dem_resolution</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Finest'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maximum_distance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_distance_units</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Meters'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">observer_height</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">observer_height_units</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Meters'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_height</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_height_units</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Meters'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">generalize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">estimate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">future</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.find_locations.create_viewshed" title="Permalink to this definition">¶</a></dt>
+<h2>create_viewshed<a class="headerlink" href="#create-viewshed" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="arcgis.features.find_locations.create_viewshed">
+<code class="sig-prename descclassname">arcgis.features.find_locations.</code><code class="sig-name descname">create_viewshed</code><span class="sig-paren">(</span><em class="sig-param">input_layer</em>, <em class="sig-param">dem_resolution='Finest'</em>, <em class="sig-param">maximum_distance=None</em>, <em class="sig-param">max_distance_units='Meters'</em>, <em class="sig-param">observer_height=None</em>, <em class="sig-param">observer_height_units='Meters'</em>, <em class="sig-param">target_height=None</em>, <em class="sig-param">target_height_units='Meters'</em>, <em class="sig-param">generalize=True</em>, <em class="sig-param">output_name=None</em>, <em class="sig-param">context=None</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">estimate=False</em>, <em class="sig-param">future=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.find_locations.create_viewshed" title="Permalink to this definition">¶</a></dt>
 <dd><img alt="_images/create_viewshed.png" src="_images/create_viewshed.png" />
 <p>The create_viewshed method identifies visible areas based on the observer locations you provide.
 The results are areas where the observers can see the observed objects (and the observed objects can see the observers).</p>
@@ -1477,32 +1371,15 @@ The generalization process smooths the boundary of the visible areas and may rem
 </td>
 </tr>
 <tr class="row-odd"><td><p>output_name</p></td>
-<td><p>Optional string or <a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureLayer" title="arcgis.features.FeatureLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureLayer</span></code></a>. Existing
-feature layer will cause the new layer to be appended to the Feature Service.
-If overwrite is True in context, new layer will overwrite existing layer.
-If output_name not indicated then new <a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureCollection" title="arcgis.features.FeatureCollection"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureCollection</span></code></a> created.</p></td>
+<td><p>Optional string. Output feature service name. If not provided, a feature collection is returned.</p></td>
 </tr>
 <tr class="row-even"><td><p>context</p></td>
-<td><p>Optional dict. Additional settings such as processing extent and output spatial reference.
-For create_viewshed, there are three settings.</p>
-<ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">extent</span></code> - a bounding box that defines the analysis area. Only those features in the input_layer that intersect the bounding box will be analyzed.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">outSR</span></code> - the output features will be projected into the output spatial reference referred to by the <cite>wkid</cite>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">overwrite</span></code> - if True, then the feature layer in output_name will be overwritten with new feature layer. Available for ArcGIS Online or Enterprise 10.9.1+</p>
-<blockquote>
-<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example Usage</span>
-<span class="n">context</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;extent&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;xmin&quot;</span><span class="p">:</span> <span class="mf">3164569.408035</span><span class="p">,</span>
-                    <span class="s2">&quot;ymin&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">9187921.892449</span><span class="p">,</span>
-                    <span class="s2">&quot;xmax&quot;</span><span class="p">:</span> <span class="mf">3174104.927313</span><span class="p">,</span>
-                    <span class="s2">&quot;ymax&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">9175500.875353</span><span class="p">,</span>
-                    <span class="s2">&quot;spatialReference&quot;</span><span class="p">:{</span><span class="s2">&quot;wkid&quot;</span><span class="p">:</span><span class="mi">102100</span><span class="p">,</span><span class="s2">&quot;latestWkid&quot;</span><span class="p">:</span><span class="mi">3857</span><span class="p">}},</span>
-            <span class="s2">&quot;outSR&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;wkid&quot;</span><span class="p">:</span> <span class="mi">3857</span><span class="p">},</span>
-            <span class="s2">&quot;overwrite&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">}</span>
-</pre></div>
-</div>
-</div></blockquote>
-</li>
-</ul>
+<td><p>Optional dict. Context contains additional settings that affect task execution. For <code class="docutils literal notranslate"><span class="pre">create_viewshed</span></code>, there are two settings.</p>
+<ol class="arabic simple">
+<li><p>Extent (<code class="docutils literal notranslate"><span class="pre">extent</span></code>)-a bounding box that defines the analysis area. Only those points in the <code class="docutils literal notranslate"><span class="pre">input_layer</span></code>
+that intersect the bounding box will be analyzed.</p></li>
+<li><p>Output Spatial Reference (<code class="docutils literal notranslate"><span class="pre">outSR</span></code>) - the output features will be projected into the output spatial reference.</p></li>
+</ol>
 </td>
 </tr>
 <tr class="row-odd"><td><p>gis</p></td>
@@ -1516,7 +1393,7 @@ For create_viewshed, there are three settings.</p>
 </tr>
 </tbody>
 </table>
-<p>:returns result_layer : <a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureLayer" title="arcgis.features.FeatureLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureLayer</span></code></a> if output_name is specified, else <a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureCollection" title="arcgis.features.FeatureCollection"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureCollection</span></code></a>.</p>
+<p>:returns result_layer : feature layer Item if output_name is specified, else Feature Collection.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">USAGE</span> <span class="n">EXAMPLE</span><span class="p">:</span> <span class="n">To</span> <span class="n">create</span> <span class="n">viewshed</span> <span class="n">around</span> <span class="n">esri</span> <span class="n">headquarter</span> <span class="n">office</span><span class="o">.</span>
 
 <span class="n">viewshed3</span> <span class="o">=</span> <span class="n">create_viewshed</span><span class="p">(</span><span class="n">hq_lyr</span><span class="p">,</span>
@@ -1531,10 +1408,10 @@ For create_viewshed, there are three settings.</p>
 
 </div>
 <div class="section" id="create-watersheds">
-<h2>create_watersheds<a class="headerlink" href="#create-watersheds" title="Permalink to this heading">¶</a></h2>
-<dl class="py function">
-<dt class="sig sig-object py" id="arcgis.features.find_locations.create_watersheds">
-<span class="sig-prename descclassname"><span class="pre">arcgis.features.find_locations.</span></span><span class="sig-name descname"><span class="pre">create_watersheds</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_layer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">search_distance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">search_units</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Meters'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source_database</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'FINEST'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">generalize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">estimate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">future</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.find_locations.create_watersheds" title="Permalink to this definition">¶</a></dt>
+<h2>create_watersheds<a class="headerlink" href="#create-watersheds" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="arcgis.features.find_locations.create_watersheds">
+<code class="sig-prename descclassname">arcgis.features.find_locations.</code><code class="sig-name descname">create_watersheds</code><span class="sig-paren">(</span><em class="sig-param">input_layer</em>, <em class="sig-param">search_distance=None</em>, <em class="sig-param">search_units='Meters'</em>, <em class="sig-param">source_database='FINEST'</em>, <em class="sig-param">generalize=True</em>, <em class="sig-param">output_name=None</em>, <em class="sig-param">context=None</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">estimate=False</em>, <em class="sig-param">future=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.find_locations.create_watersheds" title="Permalink to this definition">¶</a></dt>
 <dd><img alt="_images/create_watersheds.png" src="_images/create_watersheds.png" />
 <p>The <code class="docutils literal notranslate"><span class="pre">create_watersheds</span></code> method determines the watershed, or upstream contributing area, for each point
 in your analysis layer. For example, suppose you have point features representing locations
@@ -1543,8 +1420,8 @@ Since the source of the contamination must be somewhere within the watershed ups
 point, you would use this tool to define the watersheds containing the sources of the contaminant.</p>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 14%" />
-<col style="width: 86%" />
+<col style="width: 16%" />
+<col style="width: 84%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>Parameter</strong></p></td>
@@ -1596,32 +1473,15 @@ to the cell edges of the original DEM.</p>
 </td>
 </tr>
 <tr class="row-odd"><td><p>output_name</p></td>
-<td><p>Optional string or <a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureLayer" title="arcgis.features.FeatureLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureLayer</span></code></a>. Existing
-feature layer will cause the new layer to be appended to the Feature Service.
-If overwrite is True in context, new layer will overwrite existing layer.
-If output_name not indicated then new <a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureCollection" title="arcgis.features.FeatureCollection"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureCollection</span></code></a> created.</p></td>
+<td><p>Optional string. Output feature service name. If not provided, a feature collection is returned.</p></td>
 </tr>
 <tr class="row-even"><td><p>context</p></td>
-<td><p>Optional dict. Additional settings such as processing extent and output spatial reference.
-For create_watersheds, there are three settings.</p>
-<ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">extent</span></code> - a bounding box that defines the analysis area. Only those features in the input_layer that intersect the bounding box will be analyzed.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">outSR</span></code> - the output features will be projected into the output spatial reference referred to by the <cite>wkid</cite>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">overwrite</span></code> - if True, then the feature layer in output_name will be overwritten with new feature layer. Available for ArcGIS Online or Enterprise 10.9.1+</p>
-<blockquote>
-<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example Usage</span>
-<span class="n">context</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;extent&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;xmin&quot;</span><span class="p">:</span> <span class="mf">3164569.408035</span><span class="p">,</span>
-                    <span class="s2">&quot;ymin&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">9187921.892449</span><span class="p">,</span>
-                    <span class="s2">&quot;xmax&quot;</span><span class="p">:</span> <span class="mf">3174104.927313</span><span class="p">,</span>
-                    <span class="s2">&quot;ymax&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">9175500.875353</span><span class="p">,</span>
-                    <span class="s2">&quot;spatialReference&quot;</span><span class="p">:{</span><span class="s2">&quot;wkid&quot;</span><span class="p">:</span><span class="mi">102100</span><span class="p">,</span><span class="s2">&quot;latestWkid&quot;</span><span class="p">:</span><span class="mi">3857</span><span class="p">}},</span>
-            <span class="s2">&quot;outSR&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;wkid&quot;</span><span class="p">:</span> <span class="mi">3857</span><span class="p">},</span>
-            <span class="s2">&quot;overwrite&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">}</span>
-</pre></div>
-</div>
-</div></blockquote>
-</li>
-</ul>
+<td><p>Optional dict. Context contains additional settings that affect task execution. For <code class="docutils literal notranslate"><span class="pre">create_watersheds</span></code>, there are two settings.</p>
+<ol class="arabic simple">
+<li><p>Extent (<code class="docutils literal notranslate"><span class="pre">extent</span></code>)-a bounding box that defines the analysis area. Only those points in the <code class="docutils literal notranslate"><span class="pre">input_layer</span></code>
+that intersect the bounding box will be analyzed.</p></li>
+<li><p>Output Spatial Reference (<code class="docutils literal notranslate"><span class="pre">outSR</span></code>) - the output features will be projected into the output spatial reference.</p></li>
+</ol>
 </td>
 </tr>
 <tr class="row-odd"><td><p>gis</p></td>
@@ -1635,7 +1495,7 @@ For create_watersheds, there are three settings.</p>
 </tr>
 </tbody>
 </table>
-<p>:returns result_layer : <a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureLayer" title="arcgis.features.FeatureLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureLayer</span></code></a> if output_name is specified, else <a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureCollection" title="arcgis.features.FeatureCollection"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureCollection</span></code></a>.</p>
+<p>:returns result_layer : feature layer Item if output_name is specified, else Feature Collection.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">USAGE</span> <span class="n">EXAMPLE</span><span class="p">:</span> <span class="n">To</span> <span class="n">create</span> <span class="n">watersheds</span> <span class="k">for</span> <span class="n">Chennai</span> <span class="n">lakes</span><span class="o">.</span>
 
 <span class="n">lakes_watershed</span> <span class="o">=</span> <span class="n">create_watersheds</span><span class="p">(</span><span class="n">lakes_lyr</span><span class="p">,</span>
@@ -1649,10 +1509,10 @@ For create_watersheds, there are three settings.</p>
 
 </div>
 <div class="section" id="trace-downstream">
-<h2>trace_downstream<a class="headerlink" href="#trace-downstream" title="Permalink to this heading">¶</a></h2>
-<dl class="py function">
-<dt class="sig sig-object py" id="arcgis.features.find_locations.trace_downstream">
-<span class="sig-prename descclassname"><span class="pre">arcgis.features.find_locations.</span></span><span class="sig-name descname"><span class="pre">trace_downstream</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_layer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split_distance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split_units</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Kilometers'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_distance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_distance_units</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Kilometers'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bounding_polygon_layer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source_database</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">generalize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">estimate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">future</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.find_locations.trace_downstream" title="Permalink to this definition">¶</a></dt>
+<h2>trace_downstream<a class="headerlink" href="#trace-downstream" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="arcgis.features.find_locations.trace_downstream">
+<code class="sig-prename descclassname">arcgis.features.find_locations.</code><code class="sig-name descname">trace_downstream</code><span class="sig-paren">(</span><em class="sig-param">input_layer</em>, <em class="sig-param">split_distance=None</em>, <em class="sig-param">split_units='Kilometers'</em>, <em class="sig-param">max_distance=None</em>, <em class="sig-param">max_distance_units='Kilometers'</em>, <em class="sig-param">bounding_polygon_layer=None</em>, <em class="sig-param">source_database=None</em>, <em class="sig-param">generalize=True</em>, <em class="sig-param">output_name=None</em>, <em class="sig-param">context=None</em>, <em class="sig-param">gis=None</em>, <em class="sig-param">estimate=False</em>, <em class="sig-param">future=False</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.features.find_locations.trace_downstream" title="Permalink to this definition">¶</a></dt>
 <dd><img alt="_images/trace_downstream.png" src="_images/trace_downstream.png" />
 <p>The <code class="docutils literal notranslate"><span class="pre">trace_downstream</span></code> method determines the trace, or flow path, in a downstream direction from the points in your analysis layer.</p>
 <p>For example, suppose you have point features representing sources of contamination and you want to determine where in your study
@@ -1662,8 +1522,8 @@ total length of the flow path, a specified maximum trace length, or clipped to a
 cases, if the total length of the trace path is returned, it will be from the source all the way to the ocean.</p>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 19%" />
-<col style="width: 81%" />
+<col style="width: 22%" />
+<col style="width: 78%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>Argument</strong></p></td>
@@ -1703,11 +1563,13 @@ lines will be clipped to the county boundary. See <a class="reference internal" 
 <tr class="row-even"><td><p>source_database</p></td>
 <td><p>Optional string. Keyword indicating the data source resolution that will be used in the analysis.</p>
 <p>Choice list: [‘Finest’, ‘30m’, ‘90m’].</p>
-<ul class="simple">
+<blockquote>
+<div><ul class="simple">
 <li><p>Finest: Finest resolution available at each location from all possible data sources.</p></li>
 <li><p>30m: The hydrologic source was built from 1 arc second - approximately 30 meter resolution, elevation data.</p></li>
 <li><p>90m: The hydrologic source was built from 3 arc second - approximately 90 meter resolution, elevation data.</p></li>
 </ul>
+</div></blockquote>
 <p>The default is ‘Finest’.</p>
 </td>
 </tr>
@@ -1716,32 +1578,20 @@ lines will be clipped to the county boundary. See <a class="reference internal" 
 into simpler lines or conform to the cell edges of the original DEM.</p></td>
 </tr>
 <tr class="row-even"><td><p>output_name</p></td>
-<td><p>Optional string or <a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureLayer" title="arcgis.features.FeatureLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureLayer</span></code></a>. Existing
-feature layer will cause the new layer to be appended to the Feature Service.
-If overwrite is True in context, new layer will overwrite existing layer.
-If output_name not indicated then new <a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureCollection" title="arcgis.features.FeatureCollection"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureCollection</span></code></a> created.</p></td>
+<td><p>Optional string. If provided, the task will create a feature service of the results.
+You define the name of the service. If <code class="docutils literal notranslate"><span class="pre">output_name</span></code> is not supplied, the task will return a feature collection.</p></td>
 </tr>
 <tr class="row-odd"><td><p>context</p></td>
-<td><p>Optional dict. Additional settings such as processing extent and output spatial reference.
-For trace_downstream, there are three settings.</p>
-<ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">extent</span></code> - a bounding box that defines the analysis area. Only those features in the input_layer that intersect the bounding box will be analyzed.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">outSR</span></code> - the output features will be projected into the output spatial reference referred to by the <cite>wkid</cite>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">overwrite</span></code> - if True, then the feature layer in output_name will be overwritten with new feature layer. Available for ArcGIS Online or Enterprise 10.9.1+</p>
+<td><p>Optional string. Context contains additional settings that affect task execution. For <code class="docutils literal notranslate"><span class="pre">trace_downstream</span></code>, there are two settings.</p>
+<ol class="arabic simple">
+<li><p>Extent (<code class="docutils literal notranslate"><span class="pre">extent</span></code>) - a bounding box that defines the analysis area. Only those points</p></li>
+</ol>
 <blockquote>
-<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example Usage</span>
-<span class="n">context</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;extent&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;xmin&quot;</span><span class="p">:</span> <span class="mf">3164569.408035</span><span class="p">,</span>
-                    <span class="s2">&quot;ymin&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">9187921.892449</span><span class="p">,</span>
-                    <span class="s2">&quot;xmax&quot;</span><span class="p">:</span> <span class="mf">3174104.927313</span><span class="p">,</span>
-                    <span class="s2">&quot;ymax&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">9175500.875353</span><span class="p">,</span>
-                    <span class="s2">&quot;spatialReference&quot;</span><span class="p">:{</span><span class="s2">&quot;wkid&quot;</span><span class="p">:</span><span class="mi">102100</span><span class="p">,</span><span class="s2">&quot;latestWkid&quot;</span><span class="p">:</span><span class="mi">3857</span><span class="p">}},</span>
-            <span class="s2">&quot;outSR&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;wkid&quot;</span><span class="p">:</span> <span class="mi">3857</span><span class="p">},</span>
-            <span class="s2">&quot;overwrite&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">}</span>
-</pre></div>
-</div>
+<div><p>in the <code class="docutils literal notranslate"><span class="pre">input_layer</span></code> that intersect the bounding box will have a downstream trace generated.</p>
 </div></blockquote>
-</li>
-</ul>
+<ol class="arabic simple">
+<li><p>Output Spatial Reference (<code class="docutils literal notranslate"><span class="pre">outSR</span></code>) - the output features will be projected into the output spatial reference.</p></li>
+</ol>
 </td>
 </tr>
 <tr class="row-even"><td><p>estimate</p></td>
@@ -1754,7 +1604,7 @@ For trace_downstream, there are three settings.</p>
 </table>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureLayer" title="arcgis.features.FeatureLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureLayer</span></code></a> if <code class="docutils literal notranslate"><span class="pre">output_name</span></code> is set, else <a class="reference internal" href="arcgis.features.toc.html#arcgis.features.FeatureCollection" title="arcgis.features.FeatureCollection"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureCollection</span></code></a>.</p>
+<dd class="field-odd"><p>feature layer collection if <code class="docutils literal notranslate"><span class="pre">output_name</span></code> is set, else feature collection.</p>
 </dd>
 </dl>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># USAGE EXAMPLE: To identify the path the water contamination  will take.</span>
@@ -1788,7 +1638,7 @@ For trace_downstream, there are three settings.</p>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2016-2022, Esri.
+        &#169; Copyright 2016-2021, Esri.
 
     </p>
   </div>
@@ -1809,12 +1659,12 @@ For trace_downstream, there are three settings.</p>
 
   </div>
   
-    Options v: 2.0.1
+    Options v: 1.9
 
   <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
       <span class="fa fa-book"> Pick an earlier version</span>
-      v: 2.0.1
+      v: 1.9
       <span class="fa fa-caret-down"></span>
     </span>
     <div class="rst-other-versions">
@@ -1822,18 +1672,6 @@ For trace_downstream, there are three settings.</p>
       
       <dl>
         <dt>Versions</dt>
-        
-          
-          <dd><a href="2.0.0/">2.0.0</a></dd>
-          
-        
-          
-          <dd><a href="1.9.1/">1.9.1</a></dd>
-          
-        
-          
-          <dd><a href="1.9.0/">1.9.0</a></dd>
-          
         
           
           <dd><a href="1.8.5/">1.8.5</a></dd>
