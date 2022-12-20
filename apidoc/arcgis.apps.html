@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>arcgis.apps module &mdash; arcgis 1.9 documentation</title>
+  <title>arcgis.apps module &mdash; arcgis 2.0.1 documentation</title>
   
 
   
@@ -32,11 +32,12 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="_static/sphinx_highlight.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -80,7 +81,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                1.9
+                2.0.1
               </div>
             
           
@@ -105,7 +106,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               
             
             
-              <p class="caption"><span class="caption-text">arcgis</span></p>
+              <p class="caption" role="heading"><span class="caption-text">arcgis</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="arcgis.gis.toc.html">arcgis.gis module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.env.html">arcgis.env module</a></li>
@@ -117,18 +118,40 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l1"><a class="reference internal" href="arcgis.geoenrichment.html">arcgis.geoenrichment module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.geometry.html">arcgis.geometry module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.geoprocessing.html">arcgis.geoprocessing module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.graph.html">arcgis.graph module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.mapping.toc.html">arcgis.mapping module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.realtime.html">arcgis.realtime module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.schematics.html">arcgis.schematics module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.widgets.html">arcgis.widgets module</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">arcgis.apps module</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#build-collector-url">build_collector_url</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#build-explorer-url">build_explorer_url</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#build-field-maps-url">build_field_maps_url</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#build-navigator-url">build_navigator_url</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#build-survey123-url">build_survey123_url</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#build-tracker-url">build_tracker_url</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#build-workforce-url">build_workforce_url</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#build-collector-url">build_collector_url</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#arcgis.apps.build_collector_url"><code class="docutils literal notranslate"><span class="pre">build_collector_url()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#build-explorer-url">build_explorer_url</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#arcgis.apps.build_explorer_url"><code class="docutils literal notranslate"><span class="pre">build_explorer_url()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#build-field-maps-url">build_field_maps_url</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#arcgis.apps.build_field_maps_url"><code class="docutils literal notranslate"><span class="pre">build_field_maps_url()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#build-navigator-url">build_navigator_url</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#arcgis.apps.build_navigator_url"><code class="docutils literal notranslate"><span class="pre">build_navigator_url()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#build-survey123-url">build_survey123_url</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#arcgis.apps.build_survey123_url"><code class="docutils literal notranslate"><span class="pre">build_survey123_url()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#build-tracker-url">build_tracker_url</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#arcgis.apps.build_tracker_url"><code class="docutils literal notranslate"><span class="pre">build_tracker_url()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#build-workforce-url">build_workforce_url</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#arcgis.apps.build_workforce_url"><code class="docutils literal notranslate"><span class="pre">build_workforce_url()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.apps.hub.html">arcgis.apps.hub module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.apps.dashboard.html">arcgis.apps.dashboard module</a></li>
@@ -141,6 +164,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.learn.toc.html">arcgis.learn module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.auth.html">arcgis.auth package</a></li>
 </ul>
 
             
@@ -212,12 +236,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <div class="section" id="module-arcgis.apps">
-<span id="arcgis-apps-module"></span><h1>arcgis.apps module<a class="headerlink" href="#module-arcgis.apps" title="Permalink to this headline">¶</a></h1>
+<span id="arcgis-apps-module"></span><h1>arcgis.apps module<a class="headerlink" href="#module-arcgis.apps" title="Permalink to this heading">¶</a></h1>
 <div class="section" id="build-collector-url">
-<h2>build_collector_url<a class="headerlink" href="#build-collector-url" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt id="arcgis.apps.build_collector_url">
-<code class="sig-prename descclassname">arcgis.apps.</code><code class="sig-name descname">build_collector_url</code><span class="sig-paren">(</span><em class="sig-param">webmap=None</em>, <em class="sig-param">center=None</em>, <em class="sig-param">feature_layer=None</em>, <em class="sig-param">fields=None</em>, <em class="sig-param">search=None</em>, <em class="sig-param">portal=None</em>, <em class="sig-param">action=None</em>, <em class="sig-param">geometry=None</em>, <em class="sig-param">callback=None</em>, <em class="sig-param">callback_prompt=None</em>, <em class="sig-param">feature_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.build_collector_url" title="Permalink to this definition">¶</a></dt>
+<h2>build_collector_url<a class="headerlink" href="#build-collector-url" title="Permalink to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="arcgis.apps.build_collector_url">
+<span class="sig-prename descclassname"><span class="pre">arcgis.apps.</span></span><span class="sig-name descname"><span class="pre">build_collector_url</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">webmap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">center</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_layer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fields</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">search</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">portal</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">geometry</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">callback</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">callback_prompt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.build_collector_url" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a url that can be used to open ArcGIS Collector</p>
 <table class="docutils align-default">
 <colgroup>
@@ -288,10 +312,10 @@ Value must be URL encoded</p></td>
 
 </div>
 <div class="section" id="build-explorer-url">
-<h2>build_explorer_url<a class="headerlink" href="#build-explorer-url" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt id="arcgis.apps.build_explorer_url">
-<code class="sig-prename descclassname">arcgis.apps.</code><code class="sig-name descname">build_explorer_url</code><span class="sig-paren">(</span><em class="sig-param">webmap=None</em>, <em class="sig-param">search=None</em>, <em class="sig-param">bookmark=None</em>, <em class="sig-param">center=None</em>, <em class="sig-param">scale=None</em>, <em class="sig-param">wkid=None</em>, <em class="sig-param">rotation=None</em>, <em class="sig-param">markup=None</em>, <em class="sig-param">url_type='Web'</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.build_explorer_url" title="Permalink to this definition">¶</a></dt>
+<h2>build_explorer_url<a class="headerlink" href="#build-explorer-url" title="Permalink to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="arcgis.apps.build_explorer_url">
+<span class="sig-prename descclassname"><span class="pre">arcgis.apps.</span></span><span class="sig-name descname"><span class="pre">build_explorer_url</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">webmap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">search</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bookmark</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">center</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wkid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rotation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">markup</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Web'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.build_explorer_url" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a url that can be used to open ArcGIS Explorer</p>
 <table class="docutils align-default">
 <colgroup>
@@ -341,10 +365,10 @@ The “lat,long” in WGS84 of where to center the map</p></td>
 
 </div>
 <div class="section" id="build-field-maps-url">
-<h2>build_field_maps_url<a class="headerlink" href="#build-field-maps-url" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt id="arcgis.apps.build_field_maps_url">
-<code class="sig-prename descclassname">arcgis.apps.</code><code class="sig-name descname">build_field_maps_url</code><span class="sig-paren">(</span><em class="sig-param">portal=None</em>, <em class="sig-param">action=None</em>, <em class="sig-param">webmap=None</em>, <em class="sig-param">scale=None</em>, <em class="sig-param">bookmark=None</em>, <em class="sig-param">wkid=None</em>, <em class="sig-param">center=None</em>, <em class="sig-param">search=None</em>, <em class="sig-param">feature_layer=None</em>, <em class="sig-param">fields=None</em>, <em class="sig-param">geometry=None</em>, <em class="sig-param">use_antenna_height=None</em>, <em class="sig-param">use_loc_profile=None</em>, <em class="sig-param">feature_id=None</em>, <em class="sig-param">callback=None</em>, <em class="sig-param">callback_prompt=None</em>, <em class="sig-param">anonymous=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.build_field_maps_url" title="Permalink to this definition">¶</a></dt>
+<h2>build_field_maps_url<a class="headerlink" href="#build-field-maps-url" title="Permalink to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="arcgis.apps.build_field_maps_url">
+<span class="sig-prename descclassname"><span class="pre">arcgis.apps.</span></span><span class="sig-name descname"><span class="pre">build_field_maps_url</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">portal</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">webmap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bookmark</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wkid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">center</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">search</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_layer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fields</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">geometry</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_antenna_height</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_loc_profile</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">callback</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">callback_prompt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">anonymous</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.build_field_maps_url" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a url that can be used to open ArcGIS Field Maps</p>
 <table class="docutils align-default">
 <colgroup>
@@ -450,10 +474,10 @@ sign-in to access. Accepts values of true or false.</p></td>
 
 </div>
 <div class="section" id="build-navigator-url">
-<h2>build_navigator_url<a class="headerlink" href="#build-navigator-url" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt id="arcgis.apps.build_navigator_url">
-<code class="sig-prename descclassname">arcgis.apps.</code><code class="sig-name descname">build_navigator_url</code><span class="sig-paren">(</span><em class="sig-param">start=None</em>, <em class="sig-param">stops=None</em>, <em class="sig-param">optimize=None</em>, <em class="sig-param">navigate=None</em>, <em class="sig-param">travel_mode=None</em>, <em class="sig-param">callback=None</em>, <em class="sig-param">callback_prompt=None</em>, <em class="sig-param">url_type='Web'</em>, <em class="sig-param">webmap=None</em>, <em class="sig-param">route_item=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.build_navigator_url" title="Permalink to this definition">¶</a></dt>
+<h2>build_navigator_url<a class="headerlink" href="#build-navigator-url" title="Permalink to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="arcgis.apps.build_navigator_url">
+<span class="sig-prename descclassname"><span class="pre">arcgis.apps.</span></span><span class="sig-name descname"><span class="pre">build_navigator_url</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stops</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">optimize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">navigate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">travel_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">callback</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">callback_prompt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Web'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">webmap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">route_item</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.build_navigator_url" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a url that can be used to open ArcGIS Navigator</p>
 <table class="docutils align-default">
 <colgroup>
@@ -514,10 +538,10 @@ The item id or item representing the route layer to open.</p></td>
 
 </div>
 <div class="section" id="build-survey123-url">
-<h2>build_survey123_url<a class="headerlink" href="#build-survey123-url" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt id="arcgis.apps.build_survey123_url">
-<code class="sig-prename descclassname">arcgis.apps.</code><code class="sig-name descname">build_survey123_url</code><span class="sig-paren">(</span><em class="sig-param">survey=None</em>, <em class="sig-param">center=None</em>, <em class="sig-param">fields=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.build_survey123_url" title="Permalink to this definition">¶</a></dt>
+<h2>build_survey123_url<a class="headerlink" href="#build-survey123-url" title="Permalink to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="arcgis.apps.build_survey123_url">
+<span class="sig-prename descclassname"><span class="pre">arcgis.apps.</span></span><span class="sig-name descname"><span class="pre">build_survey123_url</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">survey</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">center</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fields</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.build_survey123_url" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a url that can be used to open ArcGIS Survey123</p>
 <table class="docutils align-default">
 <colgroup>
@@ -550,10 +574,10 @@ item representing the survey to open.</p></td>
 
 </div>
 <div class="section" id="build-tracker-url">
-<h2>build_tracker_url<a class="headerlink" href="#build-tracker-url" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt id="arcgis.apps.build_tracker_url">
-<code class="sig-prename descclassname">arcgis.apps.</code><code class="sig-name descname">build_tracker_url</code><span class="sig-paren">(</span><em class="sig-param">portal_url=None</em>, <em class="sig-param">url_type='Web'</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.build_tracker_url" title="Permalink to this definition">¶</a></dt>
+<h2>build_tracker_url<a class="headerlink" href="#build-tracker-url" title="Permalink to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="arcgis.apps.build_tracker_url">
+<span class="sig-prename descclassname"><span class="pre">arcgis.apps.</span></span><span class="sig-name descname"><span class="pre">build_tracker_url</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">portal_url</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Web'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.build_tracker_url" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a url that can be used to open ArcGIS Tracker</p>
 <table class="docutils align-default">
 <colgroup>
@@ -582,10 +606,10 @@ is launched via the url scheme.</p></td>
 
 </div>
 <div class="section" id="build-workforce-url">
-<h2>build_workforce_url<a class="headerlink" href="#build-workforce-url" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt id="arcgis.apps.build_workforce_url">
-<code class="sig-prename descclassname">arcgis.apps.</code><code class="sig-name descname">build_workforce_url</code><span class="sig-paren">(</span><em class="sig-param">portal_url=None</em>, <em class="sig-param">url_type='Web'</em>, <em class="sig-param">webmap=None</em>, <em class="sig-param">assignment=None</em>, <em class="sig-param">assignment_status=None</em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.build_workforce_url" title="Permalink to this definition">¶</a></dt>
+<h2>build_workforce_url<a class="headerlink" href="#build-workforce-url" title="Permalink to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="arcgis.apps.build_workforce_url">
+<span class="sig-prename descclassname"><span class="pre">arcgis.apps.</span></span><span class="sig-name descname"><span class="pre">build_workforce_url</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">portal_url</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Web'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">webmap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">assignment</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">assignment_status</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.build_workforce_url" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a url that can be used to open ArcGIS Workforce</p>
 <table class="docutils align-default">
 <colgroup>
@@ -632,48 +656,143 @@ added to the URL.</p></td>
 
 </div>
 <div class="section" id="submodules">
-<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.apps.hub.html">arcgis.apps.hub module</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.hub.html#hub">Hub</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.hub.html#initiative">Initiative</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.hub.html#hub">Hub</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.hub.html#arcgis.apps.hub.Hub"><code class="docutils literal notranslate"><span class="pre">Hub</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.hub.html#initiative">Initiative</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.hub.html#arcgis.apps.hub.Initiative"><code class="docutils literal notranslate"><span class="pre">Initiative</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.apps.hub.html#indicator">Indicator</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.hub.html#event">Event</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.hub.html#initiativemanager">InitiativeManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.hub.html#event">Event</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.hub.html#arcgis.apps.hub.Event"><code class="docutils literal notranslate"><span class="pre">Event</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.hub.html#initiativemanager">InitiativeManager</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.hub.html#arcgis.apps.hub.InitiativeManager"><code class="docutils literal notranslate"><span class="pre">InitiativeManager</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.apps.hub.html#indicatormanager">IndicatorManager</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.hub.html#eventmanager">EventManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.hub.html#eventmanager">EventManager</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.hub.html#arcgis.apps.hub.EventManager"><code class="docutils literal notranslate"><span class="pre">EventManager</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.apps.dashboard.html">arcgis.apps.dashboard module</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.apps.dashboard.html#dashboard">Dashboard</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.dashboard.html#details">Details</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.dashboard.html#embeddedcontent">EmbeddedContent</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.dashboard.html#gauge">Gauge</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.dashboard.html#header">Header</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.dashboard.html#indicator">Indicator</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.dashboard.html#list">List</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.dashboard.html#maplegend">MapLegend</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.dashboard.html#piechart">PieChart</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.dashboard.html#richtext">RichText</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.dashboard.html#serialchart">SerialChart</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.dashboard.html#sidepanel">SidePanel</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.dashboard.html#datepicker">DatePicker</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.dashboard.html#categoryselector">CategorySelector</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.dashboard.html#numberselector">NumberSelector</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.dashboard.html#add-row">add_row</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.dashboard.html#add-column">add_column</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.dashboard.html#details">Details</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.dashboard.html#arcgis.apps.dashboard.Details"><code class="docutils literal notranslate"><span class="pre">Details</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.dashboard.html#embeddedcontent">EmbeddedContent</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.dashboard.html#arcgis.apps.dashboard.EmbeddedContent"><code class="docutils literal notranslate"><span class="pre">EmbeddedContent</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.dashboard.html#gauge">Gauge</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.dashboard.html#arcgis.apps.dashboard.Gauge"><code class="docutils literal notranslate"><span class="pre">Gauge</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.dashboard.html#header">Header</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.dashboard.html#arcgis.apps.dashboard.Header"><code class="docutils literal notranslate"><span class="pre">Header</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.dashboard.html#indicator">Indicator</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.dashboard.html#arcgis.apps.dashboard.Indicator"><code class="docutils literal notranslate"><span class="pre">Indicator</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.dashboard.html#indicatordata">IndicatorData</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.dashboard.html#arcgis.apps.dashboard.IndicatorData"><code class="docutils literal notranslate"><span class="pre">IndicatorData</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.dashboard.html#referencedata">ReferenceData</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.dashboard.html#arcgis.apps.dashboard.ReferenceData"><code class="docutils literal notranslate"><span class="pre">ReferenceData</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.dashboard.html#list">List</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.dashboard.html#arcgis.apps.dashboard.List"><code class="docutils literal notranslate"><span class="pre">List</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.dashboard.html#maplegend">MapLegend</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.dashboard.html#arcgis.apps.dashboard.MapLegend"><code class="docutils literal notranslate"><span class="pre">MapLegend</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.dashboard.html#piechart">PieChart</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.dashboard.html#arcgis.apps.dashboard.PieChart"><code class="docutils literal notranslate"><span class="pre">PieChart</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.dashboard.html#richtext">RichText</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.dashboard.html#arcgis.apps.dashboard.RichText"><code class="docutils literal notranslate"><span class="pre">RichText</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.dashboard.html#serialchart">SerialChart</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.dashboard.html#arcgis.apps.dashboard.SerialChart"><code class="docutils literal notranslate"><span class="pre">SerialChart</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.dashboard.html#sidepanel">SidePanel</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.dashboard.html#arcgis.apps.dashboard.SidePanel"><code class="docutils literal notranslate"><span class="pre">SidePanel</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.dashboard.html#datepicker">DatePicker</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.dashboard.html#arcgis.apps.dashboard.DatePicker"><code class="docutils literal notranslate"><span class="pre">DatePicker</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.dashboard.html#categoryselector">CategorySelector</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.dashboard.html#arcgis.apps.dashboard.CategorySelector"><code class="docutils literal notranslate"><span class="pre">CategorySelector</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.dashboard.html#numberselector">NumberSelector</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.dashboard.html#arcgis.apps.dashboard.NumberSelector"><code class="docutils literal notranslate"><span class="pre">NumberSelector</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.dashboard.html#add-row">add_row</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.dashboard.html#arcgis.apps.dashboard.add_row"><code class="docutils literal notranslate"><span class="pre">add_row</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.dashboard.html#add-column">add_column</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.dashboard.html#arcgis.apps.dashboard.add_column"><code class="docutils literal notranslate"><span class="pre">add_column</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.apps.workforce.html">arcgis.apps.workforce module</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.workforce.html#assignment">Assignment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.workforce.html#assignmenttype">AssignmentType</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.workforce.html#attachment">Attachment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.workforce.html#dispatcher">Dispatcher</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.workforce.html#integration">Integration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.workforce.html#project">Project</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.workforce.html#track">Track</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.workforce.html#worker">Worker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.workforce.html#assignment">Assignment</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.workforce.html#arcgis.apps.workforce.Assignment"><code class="docutils literal notranslate"><span class="pre">Assignment</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.workforce.html#assignmenttype">AssignmentType</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.workforce.html#arcgis.apps.workforce.AssignmentType"><code class="docutils literal notranslate"><span class="pre">AssignmentType</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.workforce.html#attachment">Attachment</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.workforce.html#arcgis.apps.workforce.Attachment"><code class="docutils literal notranslate"><span class="pre">Attachment</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.workforce.html#dispatcher">Dispatcher</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.workforce.html#arcgis.apps.workforce.Dispatcher"><code class="docutils literal notranslate"><span class="pre">Dispatcher</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.workforce.html#integration">Integration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.workforce.html#arcgis.apps.workforce.Integration"><code class="docutils literal notranslate"><span class="pre">Integration</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.workforce.html#project">Project</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.workforce.html#arcgis.apps.workforce.Project"><code class="docutils literal notranslate"><span class="pre">Project</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.workforce.html#track">Track</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.workforce.html#arcgis.apps.workforce.Track"><code class="docutils literal notranslate"><span class="pre">Track</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.workforce.html#worker">Worker</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.workforce.html#arcgis.apps.workforce.Worker"><code class="docutils literal notranslate"><span class="pre">Worker</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="arcgis.apps.workforce.html#submodules">Submodules</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.apps.workforce.managers.html">arcgis.apps.workforce.managers module</a></li>
 </ul>
@@ -681,19 +800,85 @@ added to the URL.</p></td>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.apps.storymap.html">arcgis.apps.storymap module</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.storymap.html#journalstorymap">JournalStoryMap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.storymap.html#storymap">StoryMap</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.storymap.html#arcgis.apps.storymap.story.StoryMap"><code class="docutils literal notranslate"><span class="pre">StoryMap</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.storymap.html#image">Image</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.storymap.html#arcgis.apps.storymap.story_content.Image"><code class="docutils literal notranslate"><span class="pre">Image</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.storymap.html#video">Video</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.storymap.html#arcgis.apps.storymap.story_content.Video"><code class="docutils literal notranslate"><span class="pre">Video</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.storymap.html#audio">Audio</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.storymap.html#arcgis.apps.storymap.story_content.Audio"><code class="docutils literal notranslate"><span class="pre">Audio</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.storymap.html#embed">Embed</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.storymap.html#arcgis.apps.storymap.story_content.Embed"><code class="docutils literal notranslate"><span class="pre">Embed</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.storymap.html#map">Map</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.storymap.html#arcgis.apps.storymap.story_content.Map"><code class="docutils literal notranslate"><span class="pre">Map</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.storymap.html#text">Text</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.storymap.html#arcgis.apps.storymap.story_content.Text"><code class="docutils literal notranslate"><span class="pre">Text</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.storymap.html#button">Button</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.storymap.html#arcgis.apps.storymap.story_content.Button"><code class="docutils literal notranslate"><span class="pre">Button</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.storymap.html#gallery">Gallery</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.storymap.html#arcgis.apps.storymap.story_content.Gallery"><code class="docutils literal notranslate"><span class="pre">Gallery</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.storymap.html#swipe">Swipe</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.storymap.html#arcgis.apps.storymap.story_content.Swipe"><code class="docutils literal notranslate"><span class="pre">Swipe</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.storymap.html#sidecar">Sidecar</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.storymap.html#arcgis.apps.storymap.story_content.Sidecar"><code class="docutils literal notranslate"><span class="pre">Sidecar</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.storymap.html#timeline">Timeline</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.storymap.html#arcgis.apps.storymap.story_content.Timeline"><code class="docutils literal notranslate"><span class="pre">Timeline</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.storymap.html#module-arcgis.apps.storymap.storymap">arcgis.apps.storymap.storymap module</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.apps.survey123.html">arcgis.apps.survey123 module</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.survey123.html#surveymanager">SurveyManager</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.survey123.html#survey">Survey</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.survey123.html#surveymanager">SurveyManager</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.survey123.html#arcgis.apps.survey123.SurveyManager"><code class="docutils literal notranslate"><span class="pre">SurveyManager</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.survey123.html#survey">Survey</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.survey123.html#arcgis.apps.survey123.Survey"><code class="docutils literal notranslate"><span class="pre">Survey</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.apps.tracker.html">arcgis.apps.tracker module</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.tracker.html#locationtrackingmanager">LocationTrackingManager</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.tracker.html#trackview">TrackView</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.tracker.html#trackviewermanager">TrackViewerManager</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.tracker.html#mobileusermanager">MobileUserManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.tracker.html#locationtrackingmanager">LocationTrackingManager</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.tracker.html#arcgis.apps.tracker.LocationTrackingManager"><code class="docutils literal notranslate"><span class="pre">LocationTrackingManager</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.tracker.html#trackview">TrackView</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.tracker.html#arcgis.apps.tracker.TrackView"><code class="docutils literal notranslate"><span class="pre">TrackView</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.tracker.html#trackviewermanager">TrackViewerManager</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.tracker.html#arcgis.apps.tracker.TrackViewerManager"><code class="docutils literal notranslate"><span class="pre">TrackViewerManager</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.apps.tracker.html#mobileusermanager">MobileUserManager</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.apps.tracker.html#arcgis.apps.tracker.MobileUserManager"><code class="docutils literal notranslate"><span class="pre">MobileUserManager</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -716,7 +901,7 @@ added to the URL.</p></td>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2016-2021, Esri.
+        &#169; Copyright 2016-2022, Esri.
 
     </p>
   </div>
@@ -737,12 +922,12 @@ added to the URL.</p></td>
 
   </div>
   
-    Options v: 1.9
+    Options v: 2.0.1
 
   <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
       <span class="fa fa-book"> Pick an earlier version</span>
-      v: 1.9
+      v: 2.0.1
       <span class="fa fa-caret-down"></span>
     </span>
     <div class="rst-other-versions">
@@ -750,6 +935,18 @@ added to the URL.</p></td>
       
       <dl>
         <dt>Versions</dt>
+        
+          
+          <dd><a href="2.0.0/">2.0.0</a></dd>
+          
+        
+          
+          <dd><a href="1.9.1/">1.9.1</a></dd>
+          
+        
+          
+          <dd><a href="1.9.0/">1.9.0</a></dd>
+          
         
           
           <dd><a href="1.8.5/">1.8.5</a></dd>
