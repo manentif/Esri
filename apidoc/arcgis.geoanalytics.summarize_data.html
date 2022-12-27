@@ -4,11 +4,10 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>arcgis.geoanalytics.summarize_data module &mdash; arcgis 2.0.0 documentation</title>
+  <title>arcgis.geoanalytics.summarize_data module &mdash; arcgis 2.0.1 documentation</title>
   
 
   
@@ -33,10 +32,12 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -80,7 +81,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                2.0.0
+                2.0.1
               </div>
             
           
@@ -105,7 +106,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               
             
             
-              <p><span class="caption-text">arcgis</span></p>
+              <p class="caption" role="heading"><span class="caption-text">arcgis</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="arcgis.gis.toc.html">arcgis.gis module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.env.html">arcgis.env module</a></li>
@@ -122,14 +123,38 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.find_locations.html">arcgis.geoanalytics.find_locations module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html">arcgis.geoanalytics.manage_data module</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">arcgis.geoanalytics.summarize_data module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#aggregate-points">aggregate_points</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#build-multivariable-grid">build_multivariable_grid</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#describe-dataset">describe_dataset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#join-features">join_features</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#reconstruct-tracks">reconstruct_tracks</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#summarize-attributes">summarize_attributes</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#summarize-within">summarize_within</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#summarize-center-and-dispersion">summarize_center_and_dispersion</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aggregate-points">aggregate_points</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#arcgis.geoanalytics.summarize_data.aggregate_points"><code class="docutils literal notranslate"><span class="pre">aggregate_points()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#build-multivariable-grid">build_multivariable_grid</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#arcgis.geoanalytics.summarize_data.build_multivariable_grid"><code class="docutils literal notranslate"><span class="pre">build_multivariable_grid()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#describe-dataset">describe_dataset</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#arcgis.geoanalytics.summarize_data.describe_dataset"><code class="docutils literal notranslate"><span class="pre">describe_dataset()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#join-features">join_features</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#arcgis.geoanalytics.summarize_data.join_features"><code class="docutils literal notranslate"><span class="pre">join_features()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#reconstruct-tracks">reconstruct_tracks</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#arcgis.geoanalytics.summarize_data.reconstruct_tracks"><code class="docutils literal notranslate"><span class="pre">reconstruct_tracks()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#summarize-attributes">summarize_attributes</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#arcgis.geoanalytics.summarize_data.summarize_attributes"><code class="docutils literal notranslate"><span class="pre">summarize_attributes()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#summarize-within">summarize_within</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#arcgis.geoanalytics.summarize_data.summarize_within"><code class="docutils literal notranslate"><span class="pre">summarize_within()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#summarize-center-and-dispersion">summarize_center_and_dispersion</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#arcgis.geoanalytics.summarize_data.summarize_center_and_dispersion"><code class="docutils literal notranslate"><span class="pre">summarize_center_and_dispersion()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.use_proximity.html">arcgis.geoanalytics.use_proximity module</a></li>
@@ -141,6 +166,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l1"><a class="reference internal" href="arcgis.geoenrichment.html">arcgis.geoenrichment module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.geometry.html">arcgis.geometry module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.geoprocessing.html">arcgis.geoprocessing module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.graph.html">arcgis.graph module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.mapping.toc.html">arcgis.mapping module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.realtime.html">arcgis.realtime module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.schematics.html">arcgis.schematics module</a></li>
@@ -220,19 +246,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJGGV5"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-  <section id="arcgis-geoanalytics-summarize-data-module">
-<h1>arcgis.geoanalytics.summarize_data module<a class="headerlink" href="#arcgis-geoanalytics-summarize-data-module" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="arcgis-geoanalytics-summarize-data-module">
+<h1>arcgis.geoanalytics.summarize_data module<a class="headerlink" href="#arcgis-geoanalytics-summarize-data-module" title="Permalink to this heading">¶</a></h1>
 <span class="target" id="module-arcgis.geoanalytics.summarize_data"></span><p>The Summarize Data module contains functions that calculate total counts, lengths, areas, and basic descriptive statistics of features and their attributes within areas or near other features.</p>
 <p>aggregate_points calculates statistics about points that fall within specified areas or bins.
 join_features calculates statistics about features that share a spatial, temporal, or attribute relationship with other features.
 reconstruct_tracks calculates statistics about points or polygons that belong to the same track and reconstructs inputs into tracks.
 summarize_attributes calculates statistics about feature or tabular data that share attributes.
 summarize_within calculates statistics for area features and attributes that overlap each other.</p>
-<section id="aggregate-points">
-<h2>aggregate_points<a class="headerlink" href="#aggregate-points" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="aggregate-points">
+<h2>aggregate_points<a class="headerlink" href="#aggregate-points" title="Permalink to this heading">¶</a></h2>
 <dl class="py function">
-<dt id="arcgis.geoanalytics.summarize_data.aggregate_points">
-<code class="sig-prename descclassname">arcgis.geoanalytics.summarize_data.</code><code class="sig-name descname">aggregate_points</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">point_layer</span></em>, <em class="sig-param"><span class="n">bin_type</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">bin_size</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">bin_size_unit</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">polygon_layer</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">time_step_interval</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">time_step_interval_unit</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">time_step_repeat_interval</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">time_step_repeat_interval_unit</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">time_step_reference</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">summary_fields</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.summarize_data.aggregate_points" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.geoanalytics.summarize_data.aggregate_points">
+<span class="sig-prename descclassname"><span class="pre">arcgis.geoanalytics.summarize_data.</span></span><span class="sig-name descname"><span class="pre">aggregate_points</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">point_layer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bin_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bin_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bin_size_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">polygon_layer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_step_interval</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_step_interval_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_step_repeat_interval</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_step_repeat_interval_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_step_reference</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">summary_fields</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">future</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.summarize_data.aggregate_points" title="Permalink to this definition">¶</a></dt>
 <dd><img alt="_images/aggregate_points1.png" src="_images/aggregate_points1.png" />
 <p>This <code class="docutils literal notranslate"><span class="pre">aggregate_points</span></code> tool works with a layer of point features and a layer of areas.
 The layer of areas can be an input polygon layer or it can be square or hexagonal bins calculated
@@ -398,12 +424,12 @@ results. The GPJob can be queried on the status of the execution.</p></td>
 </div>
 </dd></dl>
 
-</section>
-<section id="build-multivariable-grid">
-<h2>build_multivariable_grid<a class="headerlink" href="#build-multivariable-grid" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="build-multivariable-grid">
+<h2>build_multivariable_grid<a class="headerlink" href="#build-multivariable-grid" title="Permalink to this heading">¶</a></h2>
 <dl class="py function">
-<dt id="arcgis.geoanalytics.summarize_data.build_multivariable_grid">
-<code class="sig-prename descclassname">arcgis.geoanalytics.summarize_data.</code><code class="sig-name descname">build_multivariable_grid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_layers</span></em>, <em class="sig-param"><span class="n">variable_calculations</span></em>, <em class="sig-param"><span class="n">bin_size</span></em>, <em class="sig-param"><span class="n">bin_unit</span><span class="o">=</span><span class="default_value">'Meters'</span></em>, <em class="sig-param"><span class="n">bin_type</span><span class="o">=</span><span class="default_value">'Square'</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.summarize_data.build_multivariable_grid" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.geoanalytics.summarize_data.build_multivariable_grid">
+<span class="sig-prename descclassname"><span class="pre">arcgis.geoanalytics.summarize_data.</span></span><span class="sig-name descname"><span class="pre">build_multivariable_grid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_layers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variable_calculations</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bin_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bin_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Meters'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bin_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Square'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">future</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.summarize_data.build_multivariable_grid" title="Permalink to this definition">¶</a></dt>
 <dd><img alt="_images/Grid.png" src="_images/Grid.png" />
 <p>The <code class="docutils literal notranslate"><span class="pre">build_multivariable_grid</span></code> task works with one or more layers of point, line, or polygon features.
 The task generates a grid of square or hexagonal bins and compiles information about each input layer into each bin.
@@ -629,12 +655,12 @@ running analysis, a projection will be picked based on the extent of the data.</
 </div>
 </dd></dl>
 
-</section>
-<section id="describe-dataset">
-<h2>describe_dataset<a class="headerlink" href="#describe-dataset" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="describe-dataset">
+<h2>describe_dataset<a class="headerlink" href="#describe-dataset" title="Permalink to this heading">¶</a></h2>
 <dl class="py function">
-<dt id="arcgis.geoanalytics.summarize_data.describe_dataset">
-<code class="sig-prename descclassname">arcgis.geoanalytics.summarize_data.</code><code class="sig-name descname">describe_dataset</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_layer</span></em>, <em class="sig-param"><span class="n">extent_output</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">sample_size</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">return_tuple</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.summarize_data.describe_dataset" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.geoanalytics.summarize_data.describe_dataset">
+<span class="sig-prename descclassname"><span class="pre">arcgis.geoanalytics.summarize_data.</span></span><span class="sig-name descname"><span class="pre">describe_dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_layer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extent_output</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">future</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_tuple</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.summarize_data.describe_dataset" title="Permalink to this definition">¶</a></dt>
 <dd><img alt="_images/describe_dataset.png" src="_images/describe_dataset.png" />
 <p>The <code class="docutils literal notranslate"><span class="pre">describe_dataset</span></code> task provides an overview of your big data.
 The tool outputs a feature layer representing a sample of your
@@ -723,12 +749,12 @@ results. The GPJob can be queried on the status of the execution.</p></td>
 </div>
 </dd></dl>
 
-</section>
-<section id="join-features">
-<h2>join_features<a class="headerlink" href="#join-features" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="join-features">
+<h2>join_features<a class="headerlink" href="#join-features" title="Permalink to this heading">¶</a></h2>
 <dl class="py function">
-<dt id="arcgis.geoanalytics.summarize_data.join_features">
-<code class="sig-prename descclassname">arcgis.geoanalytics.summarize_data.</code><code class="sig-name descname">join_features</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">target_layer</span></em>, <em class="sig-param"><span class="n">join_layer</span></em>, <em class="sig-param"><span class="n">join_operation</span><span class="o">=</span><span class="default_value">'JoinOneToOne'</span></em>, <em class="sig-param"><span class="n">join_fields</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">summary_fields</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">spatial_relationship</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">spatial_near_distance</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">spatial_near_distance_unit</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">temporal_relationship</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">temporal_near_distance</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">temporal_near_distance_unit</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">attribute_relationship</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">join_condition</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">keep_target</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.summarize_data.join_features" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.geoanalytics.summarize_data.join_features">
+<span class="sig-prename descclassname"><span class="pre">arcgis.geoanalytics.summarize_data.</span></span><span class="sig-name descname"><span class="pre">join_features</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target_layer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">join_layer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">join_operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'JoinOneToOne'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">join_fields</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">summary_fields</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spatial_relationship</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spatial_near_distance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spatial_near_distance_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temporal_relationship</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temporal_near_distance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temporal_near_distance_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attribute_relationship</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">join_condition</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">future</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_target</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.summarize_data.join_features" title="Permalink to this definition">¶</a></dt>
 <dd><img alt="_images/join_features_geo.png" src="_images/join_features_geo.png" />
 <p>Using either feature layers or tabular data, you can join features and records based on
 specific relationships between the input layers or tables. Joins will be determined by
@@ -936,12 +962,12 @@ relationships with the join features (inner join). This option is only available
 </div>
 </dd></dl>
 
-</section>
-<section id="reconstruct-tracks">
-<h2>reconstruct_tracks<a class="headerlink" href="#reconstruct-tracks" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="reconstruct-tracks">
+<h2>reconstruct_tracks<a class="headerlink" href="#reconstruct-tracks" title="Permalink to this heading">¶</a></h2>
 <dl class="py function">
-<dt id="arcgis.geoanalytics.summarize_data.reconstruct_tracks">
-<code class="sig-prename descclassname">arcgis.geoanalytics.summarize_data.</code><code class="sig-name descname">reconstruct_tracks</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_layer</span></em>, <em class="sig-param"><span class="n">track_fields</span></em>, <em class="sig-param"><span class="n">method</span><span class="o">=</span><span class="default_value">'Planar'</span></em>, <em class="sig-param"><span class="n">buffer_field</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">summary_fields</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">distance_split</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">distance_split_unit</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">time_boundary_split</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">time_boundary_split_unit</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">time_boundary_reference</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">time_split</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">time_split_unit</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">arcade_split</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">split_boundary</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.summarize_data.reconstruct_tracks" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.geoanalytics.summarize_data.reconstruct_tracks">
+<span class="sig-prename descclassname"><span class="pre">arcgis.geoanalytics.summarize_data.</span></span><span class="sig-name descname"><span class="pre">reconstruct_tracks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_layer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">track_fields</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Planar'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">buffer_field</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">summary_fields</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distance_split</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distance_split_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_boundary_split</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_boundary_split_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_boundary_reference</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_split</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_split_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">future</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arcade_split</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split_boundary</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.summarize_data.reconstruct_tracks" title="Permalink to this definition">¶</a></dt>
 <dd><img alt="_images/reconstruct_tracks.png" src="_images/reconstruct_tracks.png" />
 <p>The <code class="docutils literal notranslate"><span class="pre">reconstruct_tracks</span></code> task works with a time-enabled layer of either point or polygon
 features that represents an instant in time. It first determines which features belong to a
@@ -1137,12 +1163,12 @@ is only available with ArcGIS Enterprise 10.9 and later.</p>
 </div>
 </dd></dl>
 
-</section>
-<section id="summarize-attributes">
-<h2>summarize_attributes<a class="headerlink" href="#summarize-attributes" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="summarize-attributes">
+<h2>summarize_attributes<a class="headerlink" href="#summarize-attributes" title="Permalink to this heading">¶</a></h2>
 <dl class="py function">
-<dt id="arcgis.geoanalytics.summarize_data.summarize_attributes">
-<code class="sig-prename descclassname">arcgis.geoanalytics.summarize_data.</code><code class="sig-name descname">summarize_attributes</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_layer</span></em>, <em class="sig-param"><span class="n">fields</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">summary_fields</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">time_step_interval</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">time_step_interval_unit</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">time_step_repeat_interval</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">time_step_repeat_interval_unit</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">time_step_reference</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.summarize_data.summarize_attributes" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.geoanalytics.summarize_data.summarize_attributes">
+<span class="sig-prename descclassname"><span class="pre">arcgis.geoanalytics.summarize_data.</span></span><span class="sig-name descname"><span class="pre">summarize_attributes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_layer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fields</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">summary_fields</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">future</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_step_interval</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_step_interval_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_step_repeat_interval</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_step_repeat_interval_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_step_reference</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.summarize_data.summarize_attributes" title="Permalink to this definition">¶</a></dt>
 <dd><img alt="_images/summarize_attributes.png" src="_images/summarize_attributes.png" />
 <table class="docutils align-default">
 <colgroup>
@@ -1256,12 +1282,12 @@ input points are time-enabled and of time type instant.</p></td>
 </div>
 </dd></dl>
 
-</section>
-<section id="summarize-within">
-<h2>summarize_within<a class="headerlink" href="#summarize-within" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="summarize-within">
+<h2>summarize_within<a class="headerlink" href="#summarize-within" title="Permalink to this heading">¶</a></h2>
 <dl class="py function">
-<dt id="arcgis.geoanalytics.summarize_data.summarize_within">
-<code class="sig-prename descclassname">arcgis.geoanalytics.summarize_data.</code><code class="sig-name descname">summarize_within</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">summarized_layer</span></em>, <em class="sig-param"><span class="n">summary_polygons</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">bin_type</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">bin_size</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">bin_size_unit</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">standard_summary_fields</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">weighted_summary_fields</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">sum_shape</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">shape_units</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">group_by_field</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">minority_majority</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">percent_shape</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.summarize_data.summarize_within" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.geoanalytics.summarize_data.summarize_within">
+<span class="sig-prename descclassname"><span class="pre">arcgis.geoanalytics.summarize_data.</span></span><span class="sig-name descname"><span class="pre">summarize_within</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">summarized_layer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">summary_polygons</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bin_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bin_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bin_size_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">standard_summary_fields</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weighted_summary_fields</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sum_shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape_units</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_by_field</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minority_majority</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">percent_shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">future</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.summarize_data.summarize_within" title="Permalink to this definition">¶</a></dt>
 <dd><img alt="_images/summarize_within_geo.png" src="_images/summarize_within_geo.png" />
 <p>The <code class="docutils literal notranslate"><span class="pre">summarize_within</span></code> task finds features (and portions of features) that are within the
 boundaries of areas in the first input layer. The following are examples:</p>
@@ -1458,12 +1484,12 @@ each sum within layer polygon. The default is false. This parameter is available
 </div>
 </dd></dl>
 
-</section>
-<section id="summarize-center-and-dispersion">
-<h2>summarize_center_and_dispersion<a class="headerlink" href="#summarize-center-and-dispersion" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="summarize-center-and-dispersion">
+<h2>summarize_center_and_dispersion<a class="headerlink" href="#summarize-center-and-dispersion" title="Permalink to this heading">¶</a></h2>
 <dl class="py function">
-<dt id="arcgis.geoanalytics.summarize_data.summarize_center_and_dispersion">
-<code class="sig-prename descclassname">arcgis.geoanalytics.summarize_data.</code><code class="sig-name descname">summarize_center_and_dispersion</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_layer</span></em>, <em class="sig-param"><span class="n">summary_type</span></em>, <em class="sig-param"><span class="n">ellipse_size</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">weight_field</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">group_fields</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.summarize_data.summarize_center_and_dispersion" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.geoanalytics.summarize_data.summarize_center_and_dispersion">
+<span class="sig-prename descclassname"><span class="pre">arcgis.geoanalytics.summarize_data.</span></span><span class="sig-name descname"><span class="pre">summarize_center_and_dispersion</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_layer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">summary_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ellipse_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight_field</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_fields</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">future</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.summarize_data.summarize_center_and_dispersion" title="Permalink to this definition">¶</a></dt>
 <dd><p>The <cite>summarize_center_and_dispersion</cite> task finds central features and directional
 distributions. It can be used to answer questions such as the following:</p>
 <blockquote>
@@ -1534,8 +1560,8 @@ The <cite>group_fields</cite> can be of integer, date, or string type.</p></td>
 </table>
 </dd></dl>
 
-</section>
-</section>
+</div>
+</div>
 
 
 
@@ -1573,12 +1599,12 @@ The <cite>group_fields</cite> can be of integer, date, or string type.</p></td>
 
   </div>
   
-    Options v: 2.0.0
+    Options v: 2.0.1
 
   <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
       <span class="fa fa-book"> Pick an earlier version</span>
-      v: 2.0.0
+      v: 2.0.1
       <span class="fa fa-caret-down"></span>
     </span>
     <div class="rst-other-versions">
@@ -1586,6 +1612,10 @@ The <cite>group_fields</cite> can be of integer, date, or string type.</p></td>
       
       <dl>
         <dt>Versions</dt>
+        
+          
+          <dd><a href="2.0.0/">2.0.0</a></dd>
+          
         
           
           <dd><a href="1.9.1/">1.9.1</a></dd>

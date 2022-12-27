@@ -4,11 +4,10 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>arcgis.realtime.velocity.input module &mdash; arcgis 2.0.0 documentation</title>
+  <title>arcgis.realtime.velocity.input module &mdash; arcgis 2.0.1 documentation</title>
   
 
   
@@ -33,10 +32,12 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -80,7 +81,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                2.0.0
+                2.0.1
               </div>
             
           
@@ -105,7 +106,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               
             
             
-              <p><span class="caption-text">arcgis</span></p>
+              <p class="caption" role="heading"><span class="caption-text">arcgis</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="arcgis.gis.toc.html">arcgis.gis module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.env.html">arcgis.env module</a></li>
@@ -117,6 +118,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l1"><a class="reference internal" href="arcgis.geoenrichment.html">arcgis.geoenrichment module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.geometry.html">arcgis.geometry module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.geoprocessing.html">arcgis.geoprocessing module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.graph.html">arcgis.graph module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.mapping.toc.html">arcgis.mapping module</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="arcgis.realtime.html">arcgis.realtime module</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="arcgis.realtime.html#streamlayer">StreamLayer</a></li>
@@ -133,13 +135,110 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l2 current"><a class="reference internal" href="arcgis.realtime.html#submodules">Submodules</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="arcgis.realtime.velocity.feeds.html">arcgis.realtime.velocity.feeds module</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">arcgis.realtime.velocity.input module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#delimitedformat">DelimitedFormat</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#esrijsonformat">EsriJsonFormat</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#geojsonformat">GeoJsonFormat</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#georssformat">GeoRssFormat</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#jsonformat">JsonFormat</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#rssformat">RssFormat</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#xmlformat">XMLFormat</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#delimitedformat">DelimitedFormat</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#arcgis.realtime.velocity.input.DelimitedFormat"><code class="docutils literal notranslate"><span class="pre">DelimitedFormat</span></code></a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.realtime.velocity.input.DelimitedFormat.T"><code class="docutils literal notranslate"><span class="pre">DelimitedFormat.T</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.realtime.velocity.input.DelimitedFormat.build_geometry_from_fields"><code class="docutils literal notranslate"><span class="pre">DelimitedFormat.build_geometry_from_fields</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.realtime.velocity.input.DelimitedFormat.date_format"><code class="docutils literal notranslate"><span class="pre">DelimitedFormat.date_format</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.realtime.velocity.input.DelimitedFormat.field_delimiter"><code class="docutils literal notranslate"><span class="pre">DelimitedFormat.field_delimiter</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.realtime.velocity.input.DelimitedFormat.geometry_field"><code class="docutils literal notranslate"><span class="pre">DelimitedFormat.geometry_field</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.realtime.velocity.input.DelimitedFormat.geometry_field_format"><code class="docutils literal notranslate"><span class="pre">DelimitedFormat.geometry_field_format</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.realtime.velocity.input.DelimitedFormat.has_header_row"><code class="docutils literal notranslate"><span class="pre">DelimitedFormat.has_header_row</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.realtime.velocity.input.DelimitedFormat.has_z_field"><code class="docutils literal notranslate"><span class="pre">DelimitedFormat.has_z_field</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.realtime.velocity.input.DelimitedFormat.name"><code class="docutils literal notranslate"><span class="pre">DelimitedFormat.name</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.realtime.velocity.input.DelimitedFormat.record_terminator"><code class="docutils literal notranslate"><span class="pre">DelimitedFormat.record_terminator</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.realtime.velocity.input.DelimitedFormat.x_field"><code class="docutils literal notranslate"><span class="pre">DelimitedFormat.x_field</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.realtime.velocity.input.DelimitedFormat.y_field"><code class="docutils literal notranslate"><span class="pre">DelimitedFormat.y_field</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.realtime.velocity.input.DelimitedFormat.z_field"><code class="docutils literal notranslate"><span class="pre">DelimitedFormat.z_field</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.realtime.velocity.input.DelimitedFormat.z_unit"><code class="docutils literal notranslate"><span class="pre">DelimitedFormat.z_unit</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#esrijsonformat">EsriJsonFormat</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#arcgis.realtime.velocity.input.EsriJsonFormat"><code class="docutils literal notranslate"><span class="pre">EsriJsonFormat</span></code></a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.realtime.velocity.input.EsriJsonFormat.T"><code class="docutils literal notranslate"><span class="pre">EsriJsonFormat.T</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.realtime.velocity.input.EsriJsonFormat.date_format"><code class="docutils literal notranslate"><span class="pre">EsriJsonFormat.date_format</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.realtime.velocity.input.EsriJsonFormat.name"><code class="docutils literal notranslate"><span class="pre">EsriJsonFormat.name</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#geojsonformat">GeoJsonFormat</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#arcgis.realtime.velocity.input.GeoJsonFormat"><code class="docutils literal notranslate"><span class="pre">GeoJsonFormat</span></code></a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.realtime.velocity.input.GeoJsonFormat.T"><code class="docutils literal notranslate"><span class="pre">GeoJsonFormat.T</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.realtime.velocity.input.GeoJsonFormat.date_format"><code class="docutils literal notranslate"><span class="pre">GeoJsonFormat.date_format</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.realtime.velocity.input.GeoJsonFormat.name"><code class="docutils literal notranslate"><span class="pre">GeoJsonFormat.name</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#georssformat">GeoRssFormat</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#arcgis.realtime.velocity.input.GeoRssFormat"><code class="docutils literal notranslate"><span class="pre">GeoRssFormat</span></code></a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.realtime.velocity.input.GeoRssFormat.T"><code class="docutils literal notranslate"><span class="pre">GeoRssFormat.T</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.realtime.velocity.input.GeoRssFormat.date_format"><code class="docutils literal notranslate"><span class="pre">GeoRssFormat.date_format</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.realtime.velocity.input.GeoRssFormat.name"><code class="docutils literal notranslate"><span class="pre">GeoRssFormat.name</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#jsonformat">JsonFormat</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#arcgis.realtime.velocity.input.JsonFormat"><code class="docutils literal notranslate"><span class="pre">JsonFormat</span></code></a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.realtime.velocity.input.JsonFormat.T"><code class="docutils literal notranslate"><span class="pre">JsonFormat.T</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.realtime.velocity.input.JsonFormat.build_geometry_from_fields"><code class="docutils literal notranslate"><span class="pre">JsonFormat.build_geometry_from_fields</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.realtime.velocity.input.JsonFormat.date_format"><code class="docutils literal notranslate"><span class="pre">JsonFormat.date_format</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.realtime.velocity.input.JsonFormat.field_flattening_exemptions"><code class="docutils literal notranslate"><span class="pre">JsonFormat.field_flattening_exemptions</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.realtime.velocity.input.JsonFormat.flatten"><code class="docutils literal notranslate"><span class="pre">JsonFormat.flatten</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.realtime.velocity.input.JsonFormat.geometry_field"><code class="docutils literal notranslate"><span class="pre">JsonFormat.geometry_field</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.realtime.velocity.input.JsonFormat.geometry_field_format"><code class="docutils literal notranslate"><span class="pre">JsonFormat.geometry_field_format</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.realtime.velocity.input.JsonFormat.has_z_field"><code class="docutils literal notranslate"><span class="pre">JsonFormat.has_z_field</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.realtime.velocity.input.JsonFormat.name"><code class="docutils literal notranslate"><span class="pre">JsonFormat.name</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.realtime.velocity.input.JsonFormat.root_node"><code class="docutils literal notranslate"><span class="pre">JsonFormat.root_node</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.realtime.velocity.input.JsonFormat.x_field"><code class="docutils literal notranslate"><span class="pre">JsonFormat.x_field</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.realtime.velocity.input.JsonFormat.y_field"><code class="docutils literal notranslate"><span class="pre">JsonFormat.y_field</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.realtime.velocity.input.JsonFormat.z_field"><code class="docutils literal notranslate"><span class="pre">JsonFormat.z_field</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.realtime.velocity.input.JsonFormat.z_unit"><code class="docutils literal notranslate"><span class="pre">JsonFormat.z_unit</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#rssformat">RssFormat</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#arcgis.realtime.velocity.input.RssFormat"><code class="docutils literal notranslate"><span class="pre">RssFormat</span></code></a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.realtime.velocity.input.RssFormat.T"><code class="docutils literal notranslate"><span class="pre">RssFormat.T</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.realtime.velocity.input.RssFormat.build_geometry_from_fields"><code class="docutils literal notranslate"><span class="pre">RssFormat.build_geometry_from_fields</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.realtime.velocity.input.RssFormat.date_format"><code class="docutils literal notranslate"><span class="pre">RssFormat.date_format</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.realtime.velocity.input.RssFormat.geometry_field"><code class="docutils literal notranslate"><span class="pre">RssFormat.geometry_field</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.realtime.velocity.input.RssFormat.geometry_field_format"><code class="docutils literal notranslate"><span class="pre">RssFormat.geometry_field_format</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.realtime.velocity.input.RssFormat.has_z_field"><code class="docutils literal notranslate"><span class="pre">RssFormat.has_z_field</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.realtime.velocity.input.RssFormat.name"><code class="docutils literal notranslate"><span class="pre">RssFormat.name</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.realtime.velocity.input.RssFormat.x_field"><code class="docutils literal notranslate"><span class="pre">RssFormat.x_field</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.realtime.velocity.input.RssFormat.y_field"><code class="docutils literal notranslate"><span class="pre">RssFormat.y_field</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.realtime.velocity.input.RssFormat.z_field"><code class="docutils literal notranslate"><span class="pre">RssFormat.z_field</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.realtime.velocity.input.RssFormat.z_unit"><code class="docutils literal notranslate"><span class="pre">RssFormat.z_unit</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#xmlformat">XMLFormat</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#arcgis.realtime.velocity.input.XMLFormat"><code class="docutils literal notranslate"><span class="pre">XMLFormat</span></code></a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.realtime.velocity.input.XMLFormat.T"><code class="docutils literal notranslate"><span class="pre">XMLFormat.T</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.realtime.velocity.input.XMLFormat.build_geometry_from_fields"><code class="docutils literal notranslate"><span class="pre">XMLFormat.build_geometry_from_fields</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.realtime.velocity.input.XMLFormat.date_format"><code class="docutils literal notranslate"><span class="pre">XMLFormat.date_format</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.realtime.velocity.input.XMLFormat.field_flattening_exemptions"><code class="docutils literal notranslate"><span class="pre">XMLFormat.field_flattening_exemptions</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.realtime.velocity.input.XMLFormat.flatten"><code class="docutils literal notranslate"><span class="pre">XMLFormat.flatten</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.realtime.velocity.input.XMLFormat.geometry_field"><code class="docutils literal notranslate"><span class="pre">XMLFormat.geometry_field</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.realtime.velocity.input.XMLFormat.geometry_field_format"><code class="docutils literal notranslate"><span class="pre">XMLFormat.geometry_field_format</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.realtime.velocity.input.XMLFormat.has_z_field"><code class="docutils literal notranslate"><span class="pre">XMLFormat.has_z_field</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.realtime.velocity.input.XMLFormat.name"><code class="docutils literal notranslate"><span class="pre">XMLFormat.name</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.realtime.velocity.input.XMLFormat.root_node"><code class="docutils literal notranslate"><span class="pre">XMLFormat.root_node</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.realtime.velocity.input.XMLFormat.x_field"><code class="docutils literal notranslate"><span class="pre">XMLFormat.x_field</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.realtime.velocity.input.XMLFormat.y_field"><code class="docutils literal notranslate"><span class="pre">XMLFormat.y_field</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.realtime.velocity.input.XMLFormat.z_field"><code class="docutils literal notranslate"><span class="pre">XMLFormat.z_field</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.realtime.velocity.input.XMLFormat.z_unit"><code class="docutils literal notranslate"><span class="pre">XMLFormat.z_unit</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -223,375 +322,382 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJGGV5"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-  <section id="module-arcgis.realtime.velocity.input">
-<span id="arcgis-realtime-velocity-input-module"></span><h1>arcgis.realtime.velocity.input module<a class="headerlink" href="#module-arcgis.realtime.velocity.input" title="Permalink to this headline">¶</a></h1>
-<section id="delimitedformat">
-<h2>DelimitedFormat<a class="headerlink" href="#delimitedformat" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="module-arcgis.realtime.velocity.input">
+<span id="arcgis-realtime-velocity-input-module"></span><h1>arcgis.realtime.velocity.input module<a class="headerlink" href="#module-arcgis.realtime.velocity.input" title="Permalink to this heading">¶</a></h1>
+<div class="section" id="delimitedformat">
+<h2>DelimitedFormat<a class="headerlink" href="#delimitedformat" title="Permalink to this heading">¶</a></h2>
 <dl class="py class">
-<dt id="arcgis.realtime.velocity.input.DelimitedFormat">
-<em class="property">class </em><code class="sig-prename descclassname">arcgis.realtime.velocity.input.</code><code class="sig-name descname">DelimitedFormat</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">record_terminator</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>str<span class="p">, </span>NoneType<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">field_delimiter</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>str<span class="p">, </span>NoneType<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">has_header_row</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>bool<span class="p">, </span>NoneType<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">date_format</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>str<span class="p">, </span>NoneType<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">build_geometry_from_fields</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>bool<span class="p">, </span>NoneType<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">x_field</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>str<span class="p">, </span>NoneType<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">y_field</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>str<span class="p">, </span>NoneType<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">has_z_field</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>bool<span class="p">, </span>NoneType<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">z_field</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>str<span class="p">, </span>NoneType<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">z_unit</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>int<span class="p">, </span>NoneType<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">geometry_field</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>str<span class="p">, </span>NoneType<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">geometry_field_format</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>str<span class="p">, </span>NoneType<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.realtime.velocity.input.DelimitedFormat" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.input.DelimitedFormat">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">arcgis.realtime.velocity.input.</span></span><span class="sig-name descname"><span class="pre">DelimitedFormat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">record_terminator</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">NoneType</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field_delimiter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">NoneType</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">has_header_row</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">NoneType</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">date_format</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">NoneType</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">build_geometry_from_fields</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">NoneType</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_field</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">NoneType</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_field</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">NoneType</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">has_z_field</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">NoneType</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z_field</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">NoneType</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z_unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">NoneType</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">geometry_field</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">NoneType</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">geometry_field_format</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">NoneType</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.realtime.velocity.input.DelimitedFormat" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="py attribute">
-<dt id="arcgis.realtime.velocity.input.DelimitedFormat.T">
-<code class="sig-name descname">T</code><em class="property"> = ~DelimitedFormat</em><a class="headerlink" href="#arcgis.realtime.velocity.input.DelimitedFormat.T" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.input.DelimitedFormat.T">
+<span class="sig-name descname"><span class="pre">T</span></span><a class="headerlink" href="#arcgis.realtime.velocity.input.DelimitedFormat.T" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of TypeVar(‘DelimitedFormat’)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.input.DelimitedFormat.build_geometry_from_fields">
+<span class="sig-name descname"><span class="pre">build_geometry_from_fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#arcgis.realtime.velocity.input.DelimitedFormat.build_geometry_from_fields" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="arcgis.realtime.velocity.input.DelimitedFormat.build_geometry_from_fields">
-<code class="sig-name descname">build_geometry_from_fields</code><em class="property">: Optional<span class="p">[</span>bool<span class="p">]</span></em><em class="property"> = None</em><a class="headerlink" href="#arcgis.realtime.velocity.input.DelimitedFormat.build_geometry_from_fields" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.input.DelimitedFormat.date_format">
+<span class="sig-name descname"><span class="pre">date_format</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#arcgis.realtime.velocity.input.DelimitedFormat.date_format" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="arcgis.realtime.velocity.input.DelimitedFormat.date_format">
-<code class="sig-name descname">date_format</code><em class="property">: Optional<span class="p">[</span>str<span class="p">]</span></em><em class="property"> = None</em><a class="headerlink" href="#arcgis.realtime.velocity.input.DelimitedFormat.date_format" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.input.DelimitedFormat.field_delimiter">
+<span class="sig-name descname"><span class="pre">field_delimiter</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#arcgis.realtime.velocity.input.DelimitedFormat.field_delimiter" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="arcgis.realtime.velocity.input.DelimitedFormat.field_delimiter">
-<code class="sig-name descname">field_delimiter</code><em class="property">: Optional<span class="p">[</span>str<span class="p">]</span></em><em class="property"> = None</em><a class="headerlink" href="#arcgis.realtime.velocity.input.DelimitedFormat.field_delimiter" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.input.DelimitedFormat.geometry_field">
+<span class="sig-name descname"><span class="pre">geometry_field</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#arcgis.realtime.velocity.input.DelimitedFormat.geometry_field" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="arcgis.realtime.velocity.input.DelimitedFormat.geometry_field">
-<code class="sig-name descname">geometry_field</code><em class="property">: Optional<span class="p">[</span>str<span class="p">]</span></em><em class="property"> = None</em><a class="headerlink" href="#arcgis.realtime.velocity.input.DelimitedFormat.geometry_field" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.input.DelimitedFormat.geometry_field_format">
+<span class="sig-name descname"><span class="pre">geometry_field_format</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#arcgis.realtime.velocity.input.DelimitedFormat.geometry_field_format" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="arcgis.realtime.velocity.input.DelimitedFormat.geometry_field_format">
-<code class="sig-name descname">geometry_field_format</code><em class="property">: Optional<span class="p">[</span>str<span class="p">]</span></em><em class="property"> = None</em><a class="headerlink" href="#arcgis.realtime.velocity.input.DelimitedFormat.geometry_field_format" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.input.DelimitedFormat.has_header_row">
+<span class="sig-name descname"><span class="pre">has_header_row</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#arcgis.realtime.velocity.input.DelimitedFormat.has_header_row" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="arcgis.realtime.velocity.input.DelimitedFormat.has_header_row">
-<code class="sig-name descname">has_header_row</code><em class="property">: Optional<span class="p">[</span>bool<span class="p">]</span></em><em class="property"> = None</em><a class="headerlink" href="#arcgis.realtime.velocity.input.DelimitedFormat.has_header_row" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.input.DelimitedFormat.has_z_field">
+<span class="sig-name descname"><span class="pre">has_z_field</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#arcgis.realtime.velocity.input.DelimitedFormat.has_z_field" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="arcgis.realtime.velocity.input.DelimitedFormat.has_z_field">
-<code class="sig-name descname">has_z_field</code><em class="property">: Optional<span class="p">[</span>bool<span class="p">]</span></em><em class="property"> = None</em><a class="headerlink" href="#arcgis.realtime.velocity.input.DelimitedFormat.has_z_field" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.input.DelimitedFormat.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'delimited'</span></em><a class="headerlink" href="#arcgis.realtime.velocity.input.DelimitedFormat.name" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="arcgis.realtime.velocity.input.DelimitedFormat.name">
-<code class="sig-name descname">name</code><em class="property">: ClassVar<span class="p">[</span>str<span class="p">]</span></em><em class="property"> = 'delimited'</em><a class="headerlink" href="#arcgis.realtime.velocity.input.DelimitedFormat.name" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.input.DelimitedFormat.record_terminator">
+<span class="sig-name descname"><span class="pre">record_terminator</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#arcgis.realtime.velocity.input.DelimitedFormat.record_terminator" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="arcgis.realtime.velocity.input.DelimitedFormat.record_terminator">
-<code class="sig-name descname">record_terminator</code><em class="property">: Optional<span class="p">[</span>str<span class="p">]</span></em><em class="property"> = None</em><a class="headerlink" href="#arcgis.realtime.velocity.input.DelimitedFormat.record_terminator" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.input.DelimitedFormat.x_field">
+<span class="sig-name descname"><span class="pre">x_field</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#arcgis.realtime.velocity.input.DelimitedFormat.x_field" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="arcgis.realtime.velocity.input.DelimitedFormat.x_field">
-<code class="sig-name descname">x_field</code><em class="property">: Optional<span class="p">[</span>str<span class="p">]</span></em><em class="property"> = None</em><a class="headerlink" href="#arcgis.realtime.velocity.input.DelimitedFormat.x_field" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.input.DelimitedFormat.y_field">
+<span class="sig-name descname"><span class="pre">y_field</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#arcgis.realtime.velocity.input.DelimitedFormat.y_field" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="arcgis.realtime.velocity.input.DelimitedFormat.y_field">
-<code class="sig-name descname">y_field</code><em class="property">: Optional<span class="p">[</span>str<span class="p">]</span></em><em class="property"> = None</em><a class="headerlink" href="#arcgis.realtime.velocity.input.DelimitedFormat.y_field" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.input.DelimitedFormat.z_field">
+<span class="sig-name descname"><span class="pre">z_field</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#arcgis.realtime.velocity.input.DelimitedFormat.z_field" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="arcgis.realtime.velocity.input.DelimitedFormat.z_field">
-<code class="sig-name descname">z_field</code><em class="property">: Optional<span class="p">[</span>str<span class="p">]</span></em><em class="property"> = None</em><a class="headerlink" href="#arcgis.realtime.velocity.input.DelimitedFormat.z_field" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt id="arcgis.realtime.velocity.input.DelimitedFormat.z_unit">
-<code class="sig-name descname">z_unit</code><em class="property">: Optional<span class="p">[</span>int<span class="p">]</span></em><em class="property"> = None</em><a class="headerlink" href="#arcgis.realtime.velocity.input.DelimitedFormat.z_unit" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.input.DelimitedFormat.z_unit">
+<span class="sig-name descname"><span class="pre">z_unit</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#arcgis.realtime.velocity.input.DelimitedFormat.z_unit" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-</section>
-<section id="esrijsonformat">
-<h2>EsriJsonFormat<a class="headerlink" href="#esrijsonformat" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="esrijsonformat">
+<h2>EsriJsonFormat<a class="headerlink" href="#esrijsonformat" title="Permalink to this heading">¶</a></h2>
 <dl class="py class">
-<dt id="arcgis.realtime.velocity.input.EsriJsonFormat">
-<em class="property">class </em><code class="sig-prename descclassname">arcgis.realtime.velocity.input.</code><code class="sig-name descname">EsriJsonFormat</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">date_format</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>str<span class="p">, </span>NoneType<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.realtime.velocity.input.EsriJsonFormat" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.input.EsriJsonFormat">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">arcgis.realtime.velocity.input.</span></span><span class="sig-name descname"><span class="pre">EsriJsonFormat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date_format</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">NoneType</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.realtime.velocity.input.EsriJsonFormat" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="py attribute">
-<dt id="arcgis.realtime.velocity.input.EsriJsonFormat.T">
-<code class="sig-name descname">T</code><em class="property"> = ~EsriJsonFormat</em><a class="headerlink" href="#arcgis.realtime.velocity.input.EsriJsonFormat.T" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.input.EsriJsonFormat.T">
+<span class="sig-name descname"><span class="pre">T</span></span><a class="headerlink" href="#arcgis.realtime.velocity.input.EsriJsonFormat.T" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of TypeVar(‘EsriJsonFormat’)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.input.EsriJsonFormat.date_format">
+<span class="sig-name descname"><span class="pre">date_format</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#arcgis.realtime.velocity.input.EsriJsonFormat.date_format" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="arcgis.realtime.velocity.input.EsriJsonFormat.date_format">
-<code class="sig-name descname">date_format</code><em class="property">: Optional<span class="p">[</span>str<span class="p">]</span></em><em class="property"> = None</em><a class="headerlink" href="#arcgis.realtime.velocity.input.EsriJsonFormat.date_format" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt id="arcgis.realtime.velocity.input.EsriJsonFormat.name">
-<code class="sig-name descname">name</code><em class="property">: ClassVar<span class="p">[</span>str<span class="p">]</span></em><em class="property"> = 'esri-json'</em><a class="headerlink" href="#arcgis.realtime.velocity.input.EsriJsonFormat.name" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.input.EsriJsonFormat.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'esri-json'</span></em><a class="headerlink" href="#arcgis.realtime.velocity.input.EsriJsonFormat.name" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-</section>
-<section id="geojsonformat">
-<h2>GeoJsonFormat<a class="headerlink" href="#geojsonformat" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="geojsonformat">
+<h2>GeoJsonFormat<a class="headerlink" href="#geojsonformat" title="Permalink to this heading">¶</a></h2>
 <dl class="py class">
-<dt id="arcgis.realtime.velocity.input.GeoJsonFormat">
-<em class="property">class </em><code class="sig-prename descclassname">arcgis.realtime.velocity.input.</code><code class="sig-name descname">GeoJsonFormat</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">date_format</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>str<span class="p">, </span>NoneType<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.realtime.velocity.input.GeoJsonFormat" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.input.GeoJsonFormat">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">arcgis.realtime.velocity.input.</span></span><span class="sig-name descname"><span class="pre">GeoJsonFormat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date_format</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">NoneType</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.realtime.velocity.input.GeoJsonFormat" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="py attribute">
-<dt id="arcgis.realtime.velocity.input.GeoJsonFormat.T">
-<code class="sig-name descname">T</code><em class="property"> = ~GeoJsonFormat</em><a class="headerlink" href="#arcgis.realtime.velocity.input.GeoJsonFormat.T" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.input.GeoJsonFormat.T">
+<span class="sig-name descname"><span class="pre">T</span></span><a class="headerlink" href="#arcgis.realtime.velocity.input.GeoJsonFormat.T" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of TypeVar(‘GeoJsonFormat’)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.input.GeoJsonFormat.date_format">
+<span class="sig-name descname"><span class="pre">date_format</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#arcgis.realtime.velocity.input.GeoJsonFormat.date_format" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="arcgis.realtime.velocity.input.GeoJsonFormat.date_format">
-<code class="sig-name descname">date_format</code><em class="property">: Optional<span class="p">[</span>str<span class="p">]</span></em><em class="property"> = None</em><a class="headerlink" href="#arcgis.realtime.velocity.input.GeoJsonFormat.date_format" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt id="arcgis.realtime.velocity.input.GeoJsonFormat.name">
-<code class="sig-name descname">name</code><em class="property">: ClassVar<span class="p">[</span>str<span class="p">]</span></em><em class="property"> = 'geo-json'</em><a class="headerlink" href="#arcgis.realtime.velocity.input.GeoJsonFormat.name" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.input.GeoJsonFormat.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'geo-json'</span></em><a class="headerlink" href="#arcgis.realtime.velocity.input.GeoJsonFormat.name" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-</section>
-<section id="georssformat">
-<h2>GeoRssFormat<a class="headerlink" href="#georssformat" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="georssformat">
+<h2>GeoRssFormat<a class="headerlink" href="#georssformat" title="Permalink to this heading">¶</a></h2>
 <dl class="py class">
-<dt id="arcgis.realtime.velocity.input.GeoRssFormat">
-<em class="property">class </em><code class="sig-prename descclassname">arcgis.realtime.velocity.input.</code><code class="sig-name descname">GeoRssFormat</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">date_format</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>str<span class="p">, </span>NoneType<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.realtime.velocity.input.GeoRssFormat" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.input.GeoRssFormat">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">arcgis.realtime.velocity.input.</span></span><span class="sig-name descname"><span class="pre">GeoRssFormat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date_format</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">NoneType</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.realtime.velocity.input.GeoRssFormat" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="py attribute">
-<dt id="arcgis.realtime.velocity.input.GeoRssFormat.T">
-<code class="sig-name descname">T</code><em class="property"> = ~GeoRssFormat</em><a class="headerlink" href="#arcgis.realtime.velocity.input.GeoRssFormat.T" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.input.GeoRssFormat.T">
+<span class="sig-name descname"><span class="pre">T</span></span><a class="headerlink" href="#arcgis.realtime.velocity.input.GeoRssFormat.T" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of TypeVar(‘GeoRssFormat’)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.input.GeoRssFormat.date_format">
+<span class="sig-name descname"><span class="pre">date_format</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#arcgis.realtime.velocity.input.GeoRssFormat.date_format" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="arcgis.realtime.velocity.input.GeoRssFormat.date_format">
-<code class="sig-name descname">date_format</code><em class="property">: Optional<span class="p">[</span>str<span class="p">]</span></em><em class="property"> = None</em><a class="headerlink" href="#arcgis.realtime.velocity.input.GeoRssFormat.date_format" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt id="arcgis.realtime.velocity.input.GeoRssFormat.name">
-<code class="sig-name descname">name</code><em class="property">: ClassVar<span class="p">[</span>str<span class="p">]</span></em><em class="property"> = 'geo-rss-format'</em><a class="headerlink" href="#arcgis.realtime.velocity.input.GeoRssFormat.name" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.input.GeoRssFormat.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'geo-rss-format'</span></em><a class="headerlink" href="#arcgis.realtime.velocity.input.GeoRssFormat.name" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-</section>
-<section id="jsonformat">
-<h2>JsonFormat<a class="headerlink" href="#jsonformat" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="jsonformat">
+<h2>JsonFormat<a class="headerlink" href="#jsonformat" title="Permalink to this heading">¶</a></h2>
 <dl class="py class">
-<dt id="arcgis.realtime.velocity.input.JsonFormat">
-<em class="property">class </em><code class="sig-prename descclassname">arcgis.realtime.velocity.input.</code><code class="sig-name descname">JsonFormat</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">root_node</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>str<span class="p">, </span>NoneType<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">flatten</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>bool<span class="p">, </span>NoneType<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">field_flattening_exemptions</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>str<span class="p">, </span>NoneType<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">date_format</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>str<span class="p">, </span>NoneType<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">build_geometry_from_fields</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>bool<span class="p">, </span>NoneType<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">x_field</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>str<span class="p">, </span>NoneType<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">y_field</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>str<span class="p">, </span>NoneType<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">has_z_field</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>bool<span class="p">, </span>NoneType<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">z_field</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>str<span class="p">, </span>NoneType<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">z_unit</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>int<span class="p">, </span>NoneType<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">geometry_field</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>str<span class="p">, </span>NoneType<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">geometry_field_format</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>str<span class="p">, </span>NoneType<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.realtime.velocity.input.JsonFormat" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.input.JsonFormat">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">arcgis.realtime.velocity.input.</span></span><span class="sig-name descname"><span class="pre">JsonFormat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root_node</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">NoneType</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flatten</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">NoneType</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field_flattening_exemptions</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">NoneType</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">date_format</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">NoneType</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">build_geometry_from_fields</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">NoneType</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_field</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">NoneType</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_field</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">NoneType</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">has_z_field</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">NoneType</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z_field</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">NoneType</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z_unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">NoneType</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">geometry_field</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">NoneType</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">geometry_field_format</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">NoneType</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.realtime.velocity.input.JsonFormat" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="py attribute">
-<dt id="arcgis.realtime.velocity.input.JsonFormat.T">
-<code class="sig-name descname">T</code><em class="property"> = ~JsonFormat</em><a class="headerlink" href="#arcgis.realtime.velocity.input.JsonFormat.T" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.input.JsonFormat.T">
+<span class="sig-name descname"><span class="pre">T</span></span><a class="headerlink" href="#arcgis.realtime.velocity.input.JsonFormat.T" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of TypeVar(‘JsonFormat’)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.input.JsonFormat.build_geometry_from_fields">
+<span class="sig-name descname"><span class="pre">build_geometry_from_fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#arcgis.realtime.velocity.input.JsonFormat.build_geometry_from_fields" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="arcgis.realtime.velocity.input.JsonFormat.build_geometry_from_fields">
-<code class="sig-name descname">build_geometry_from_fields</code><em class="property">: Optional<span class="p">[</span>bool<span class="p">]</span></em><em class="property"> = None</em><a class="headerlink" href="#arcgis.realtime.velocity.input.JsonFormat.build_geometry_from_fields" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.input.JsonFormat.date_format">
+<span class="sig-name descname"><span class="pre">date_format</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#arcgis.realtime.velocity.input.JsonFormat.date_format" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="arcgis.realtime.velocity.input.JsonFormat.date_format">
-<code class="sig-name descname">date_format</code><em class="property">: Optional<span class="p">[</span>str<span class="p">]</span></em><em class="property"> = None</em><a class="headerlink" href="#arcgis.realtime.velocity.input.JsonFormat.date_format" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.input.JsonFormat.field_flattening_exemptions">
+<span class="sig-name descname"><span class="pre">field_flattening_exemptions</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#arcgis.realtime.velocity.input.JsonFormat.field_flattening_exemptions" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="arcgis.realtime.velocity.input.JsonFormat.field_flattening_exemptions">
-<code class="sig-name descname">field_flattening_exemptions</code><em class="property">: Optional<span class="p">[</span>str<span class="p">]</span></em><em class="property"> = None</em><a class="headerlink" href="#arcgis.realtime.velocity.input.JsonFormat.field_flattening_exemptions" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.input.JsonFormat.flatten">
+<span class="sig-name descname"><span class="pre">flatten</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#arcgis.realtime.velocity.input.JsonFormat.flatten" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="arcgis.realtime.velocity.input.JsonFormat.flatten">
-<code class="sig-name descname">flatten</code><em class="property">: Optional<span class="p">[</span>bool<span class="p">]</span></em><em class="property"> = None</em><a class="headerlink" href="#arcgis.realtime.velocity.input.JsonFormat.flatten" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.input.JsonFormat.geometry_field">
+<span class="sig-name descname"><span class="pre">geometry_field</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#arcgis.realtime.velocity.input.JsonFormat.geometry_field" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="arcgis.realtime.velocity.input.JsonFormat.geometry_field">
-<code class="sig-name descname">geometry_field</code><em class="property">: Optional<span class="p">[</span>str<span class="p">]</span></em><em class="property"> = None</em><a class="headerlink" href="#arcgis.realtime.velocity.input.JsonFormat.geometry_field" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.input.JsonFormat.geometry_field_format">
+<span class="sig-name descname"><span class="pre">geometry_field_format</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#arcgis.realtime.velocity.input.JsonFormat.geometry_field_format" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="arcgis.realtime.velocity.input.JsonFormat.geometry_field_format">
-<code class="sig-name descname">geometry_field_format</code><em class="property">: Optional<span class="p">[</span>str<span class="p">]</span></em><em class="property"> = None</em><a class="headerlink" href="#arcgis.realtime.velocity.input.JsonFormat.geometry_field_format" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.input.JsonFormat.has_z_field">
+<span class="sig-name descname"><span class="pre">has_z_field</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#arcgis.realtime.velocity.input.JsonFormat.has_z_field" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="arcgis.realtime.velocity.input.JsonFormat.has_z_field">
-<code class="sig-name descname">has_z_field</code><em class="property">: Optional<span class="p">[</span>bool<span class="p">]</span></em><em class="property"> = None</em><a class="headerlink" href="#arcgis.realtime.velocity.input.JsonFormat.has_z_field" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.input.JsonFormat.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'json'</span></em><a class="headerlink" href="#arcgis.realtime.velocity.input.JsonFormat.name" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="arcgis.realtime.velocity.input.JsonFormat.name">
-<code class="sig-name descname">name</code><em class="property">: ClassVar<span class="p">[</span>str<span class="p">]</span></em><em class="property"> = 'json'</em><a class="headerlink" href="#arcgis.realtime.velocity.input.JsonFormat.name" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.input.JsonFormat.root_node">
+<span class="sig-name descname"><span class="pre">root_node</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#arcgis.realtime.velocity.input.JsonFormat.root_node" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="arcgis.realtime.velocity.input.JsonFormat.root_node">
-<code class="sig-name descname">root_node</code><em class="property">: Optional<span class="p">[</span>str<span class="p">]</span></em><em class="property"> = None</em><a class="headerlink" href="#arcgis.realtime.velocity.input.JsonFormat.root_node" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.input.JsonFormat.x_field">
+<span class="sig-name descname"><span class="pre">x_field</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#arcgis.realtime.velocity.input.JsonFormat.x_field" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="arcgis.realtime.velocity.input.JsonFormat.x_field">
-<code class="sig-name descname">x_field</code><em class="property">: Optional<span class="p">[</span>str<span class="p">]</span></em><em class="property"> = None</em><a class="headerlink" href="#arcgis.realtime.velocity.input.JsonFormat.x_field" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.input.JsonFormat.y_field">
+<span class="sig-name descname"><span class="pre">y_field</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#arcgis.realtime.velocity.input.JsonFormat.y_field" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="arcgis.realtime.velocity.input.JsonFormat.y_field">
-<code class="sig-name descname">y_field</code><em class="property">: Optional<span class="p">[</span>str<span class="p">]</span></em><em class="property"> = None</em><a class="headerlink" href="#arcgis.realtime.velocity.input.JsonFormat.y_field" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.input.JsonFormat.z_field">
+<span class="sig-name descname"><span class="pre">z_field</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#arcgis.realtime.velocity.input.JsonFormat.z_field" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="arcgis.realtime.velocity.input.JsonFormat.z_field">
-<code class="sig-name descname">z_field</code><em class="property">: Optional<span class="p">[</span>str<span class="p">]</span></em><em class="property"> = None</em><a class="headerlink" href="#arcgis.realtime.velocity.input.JsonFormat.z_field" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt id="arcgis.realtime.velocity.input.JsonFormat.z_unit">
-<code class="sig-name descname">z_unit</code><em class="property">: Optional<span class="p">[</span>int<span class="p">]</span></em><em class="property"> = None</em><a class="headerlink" href="#arcgis.realtime.velocity.input.JsonFormat.z_unit" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.input.JsonFormat.z_unit">
+<span class="sig-name descname"><span class="pre">z_unit</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#arcgis.realtime.velocity.input.JsonFormat.z_unit" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-</section>
-<section id="rssformat">
-<h2>RssFormat<a class="headerlink" href="#rssformat" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="rssformat">
+<h2>RssFormat<a class="headerlink" href="#rssformat" title="Permalink to this heading">¶</a></h2>
 <dl class="py class">
-<dt id="arcgis.realtime.velocity.input.RssFormat">
-<em class="property">class </em><code class="sig-prename descclassname">arcgis.realtime.velocity.input.</code><code class="sig-name descname">RssFormat</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">date_format</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>str<span class="p">, </span>NoneType<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">build_geometry_from_fields</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>bool<span class="p">, </span>NoneType<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">x_field</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>str<span class="p">, </span>NoneType<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">y_field</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>str<span class="p">, </span>NoneType<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">has_z_field</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>bool<span class="p">, </span>NoneType<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">z_field</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>str<span class="p">, </span>NoneType<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">z_unit</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>int<span class="p">, </span>NoneType<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">geometry_field</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>str<span class="p">, </span>NoneType<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">geometry_field_format</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>str<span class="p">, </span>NoneType<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.realtime.velocity.input.RssFormat" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.input.RssFormat">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">arcgis.realtime.velocity.input.</span></span><span class="sig-name descname"><span class="pre">RssFormat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date_format</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">NoneType</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">build_geometry_from_fields</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">NoneType</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_field</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">NoneType</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_field</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">NoneType</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">has_z_field</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">NoneType</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z_field</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">NoneType</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z_unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">NoneType</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">geometry_field</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">NoneType</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">geometry_field_format</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">NoneType</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.realtime.velocity.input.RssFormat" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="py attribute">
-<dt id="arcgis.realtime.velocity.input.RssFormat.T">
-<code class="sig-name descname">T</code><em class="property"> = ~RssFormat</em><a class="headerlink" href="#arcgis.realtime.velocity.input.RssFormat.T" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.input.RssFormat.T">
+<span class="sig-name descname"><span class="pre">T</span></span><a class="headerlink" href="#arcgis.realtime.velocity.input.RssFormat.T" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of TypeVar(‘RssFormat’)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.input.RssFormat.build_geometry_from_fields">
+<span class="sig-name descname"><span class="pre">build_geometry_from_fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#arcgis.realtime.velocity.input.RssFormat.build_geometry_from_fields" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="arcgis.realtime.velocity.input.RssFormat.build_geometry_from_fields">
-<code class="sig-name descname">build_geometry_from_fields</code><em class="property">: Optional<span class="p">[</span>bool<span class="p">]</span></em><em class="property"> = None</em><a class="headerlink" href="#arcgis.realtime.velocity.input.RssFormat.build_geometry_from_fields" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.input.RssFormat.date_format">
+<span class="sig-name descname"><span class="pre">date_format</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#arcgis.realtime.velocity.input.RssFormat.date_format" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="arcgis.realtime.velocity.input.RssFormat.date_format">
-<code class="sig-name descname">date_format</code><em class="property">: Optional<span class="p">[</span>str<span class="p">]</span></em><em class="property"> = None</em><a class="headerlink" href="#arcgis.realtime.velocity.input.RssFormat.date_format" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.input.RssFormat.geometry_field">
+<span class="sig-name descname"><span class="pre">geometry_field</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#arcgis.realtime.velocity.input.RssFormat.geometry_field" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="arcgis.realtime.velocity.input.RssFormat.geometry_field">
-<code class="sig-name descname">geometry_field</code><em class="property">: Optional<span class="p">[</span>str<span class="p">]</span></em><em class="property"> = None</em><a class="headerlink" href="#arcgis.realtime.velocity.input.RssFormat.geometry_field" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.input.RssFormat.geometry_field_format">
+<span class="sig-name descname"><span class="pre">geometry_field_format</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#arcgis.realtime.velocity.input.RssFormat.geometry_field_format" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="arcgis.realtime.velocity.input.RssFormat.geometry_field_format">
-<code class="sig-name descname">geometry_field_format</code><em class="property">: Optional<span class="p">[</span>str<span class="p">]</span></em><em class="property"> = None</em><a class="headerlink" href="#arcgis.realtime.velocity.input.RssFormat.geometry_field_format" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.input.RssFormat.has_z_field">
+<span class="sig-name descname"><span class="pre">has_z_field</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#arcgis.realtime.velocity.input.RssFormat.has_z_field" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="arcgis.realtime.velocity.input.RssFormat.has_z_field">
-<code class="sig-name descname">has_z_field</code><em class="property">: Optional<span class="p">[</span>bool<span class="p">]</span></em><em class="property"> = None</em><a class="headerlink" href="#arcgis.realtime.velocity.input.RssFormat.has_z_field" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.input.RssFormat.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'rss-format'</span></em><a class="headerlink" href="#arcgis.realtime.velocity.input.RssFormat.name" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="arcgis.realtime.velocity.input.RssFormat.name">
-<code class="sig-name descname">name</code><em class="property">: ClassVar<span class="p">[</span>str<span class="p">]</span></em><em class="property"> = 'rss-format'</em><a class="headerlink" href="#arcgis.realtime.velocity.input.RssFormat.name" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.input.RssFormat.x_field">
+<span class="sig-name descname"><span class="pre">x_field</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#arcgis.realtime.velocity.input.RssFormat.x_field" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="arcgis.realtime.velocity.input.RssFormat.x_field">
-<code class="sig-name descname">x_field</code><em class="property">: Optional<span class="p">[</span>str<span class="p">]</span></em><em class="property"> = None</em><a class="headerlink" href="#arcgis.realtime.velocity.input.RssFormat.x_field" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.input.RssFormat.y_field">
+<span class="sig-name descname"><span class="pre">y_field</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#arcgis.realtime.velocity.input.RssFormat.y_field" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="arcgis.realtime.velocity.input.RssFormat.y_field">
-<code class="sig-name descname">y_field</code><em class="property">: Optional<span class="p">[</span>str<span class="p">]</span></em><em class="property"> = None</em><a class="headerlink" href="#arcgis.realtime.velocity.input.RssFormat.y_field" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.input.RssFormat.z_field">
+<span class="sig-name descname"><span class="pre">z_field</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#arcgis.realtime.velocity.input.RssFormat.z_field" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="arcgis.realtime.velocity.input.RssFormat.z_field">
-<code class="sig-name descname">z_field</code><em class="property">: Optional<span class="p">[</span>str<span class="p">]</span></em><em class="property"> = None</em><a class="headerlink" href="#arcgis.realtime.velocity.input.RssFormat.z_field" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt id="arcgis.realtime.velocity.input.RssFormat.z_unit">
-<code class="sig-name descname">z_unit</code><em class="property">: Optional<span class="p">[</span>int<span class="p">]</span></em><em class="property"> = None</em><a class="headerlink" href="#arcgis.realtime.velocity.input.RssFormat.z_unit" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.input.RssFormat.z_unit">
+<span class="sig-name descname"><span class="pre">z_unit</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#arcgis.realtime.velocity.input.RssFormat.z_unit" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-</section>
-<section id="xmlformat">
-<h2>XMLFormat<a class="headerlink" href="#xmlformat" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="xmlformat">
+<h2>XMLFormat<a class="headerlink" href="#xmlformat" title="Permalink to this heading">¶</a></h2>
 <dl class="py class">
-<dt id="arcgis.realtime.velocity.input.XMLFormat">
-<em class="property">class </em><code class="sig-prename descclassname">arcgis.realtime.velocity.input.</code><code class="sig-name descname">XMLFormat</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">root_node</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>str<span class="p">, </span>NoneType<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">flatten</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>bool<span class="p">, </span>NoneType<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">field_flattening_exemptions</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>str<span class="p">, </span>NoneType<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">date_format</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>str<span class="p">, </span>NoneType<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">build_geometry_from_fields</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>bool<span class="p">, </span>NoneType<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">x_field</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>str<span class="p">, </span>NoneType<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">y_field</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>str<span class="p">, </span>NoneType<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">has_z_field</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>bool<span class="p">, </span>NoneType<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">z_field</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>str<span class="p">, </span>NoneType<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">z_unit</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>int<span class="p">, </span>NoneType<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">geometry_field</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>str<span class="p">, </span>NoneType<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">geometry_field_format</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>str<span class="p">, </span>NoneType<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.realtime.velocity.input.XMLFormat" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.input.XMLFormat">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">arcgis.realtime.velocity.input.</span></span><span class="sig-name descname"><span class="pre">XMLFormat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root_node</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">NoneType</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flatten</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">NoneType</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field_flattening_exemptions</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">NoneType</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">date_format</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">NoneType</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">build_geometry_from_fields</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">NoneType</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_field</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">NoneType</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_field</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">NoneType</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">has_z_field</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">NoneType</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z_field</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">NoneType</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z_unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">NoneType</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">geometry_field</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">NoneType</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">geometry_field_format</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">NoneType</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.realtime.velocity.input.XMLFormat" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="py attribute">
-<dt id="arcgis.realtime.velocity.input.XMLFormat.T">
-<code class="sig-name descname">T</code><em class="property"> = ~XMLFormat</em><a class="headerlink" href="#arcgis.realtime.velocity.input.XMLFormat.T" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.input.XMLFormat.T">
+<span class="sig-name descname"><span class="pre">T</span></span><a class="headerlink" href="#arcgis.realtime.velocity.input.XMLFormat.T" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of TypeVar(‘XMLFormat’)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.input.XMLFormat.build_geometry_from_fields">
+<span class="sig-name descname"><span class="pre">build_geometry_from_fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#arcgis.realtime.velocity.input.XMLFormat.build_geometry_from_fields" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="arcgis.realtime.velocity.input.XMLFormat.build_geometry_from_fields">
-<code class="sig-name descname">build_geometry_from_fields</code><em class="property">: Optional<span class="p">[</span>bool<span class="p">]</span></em><em class="property"> = None</em><a class="headerlink" href="#arcgis.realtime.velocity.input.XMLFormat.build_geometry_from_fields" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.input.XMLFormat.date_format">
+<span class="sig-name descname"><span class="pre">date_format</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#arcgis.realtime.velocity.input.XMLFormat.date_format" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="arcgis.realtime.velocity.input.XMLFormat.date_format">
-<code class="sig-name descname">date_format</code><em class="property">: Optional<span class="p">[</span>str<span class="p">]</span></em><em class="property"> = None</em><a class="headerlink" href="#arcgis.realtime.velocity.input.XMLFormat.date_format" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.input.XMLFormat.field_flattening_exemptions">
+<span class="sig-name descname"><span class="pre">field_flattening_exemptions</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#arcgis.realtime.velocity.input.XMLFormat.field_flattening_exemptions" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="arcgis.realtime.velocity.input.XMLFormat.field_flattening_exemptions">
-<code class="sig-name descname">field_flattening_exemptions</code><em class="property">: Optional<span class="p">[</span>str<span class="p">]</span></em><em class="property"> = None</em><a class="headerlink" href="#arcgis.realtime.velocity.input.XMLFormat.field_flattening_exemptions" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.input.XMLFormat.flatten">
+<span class="sig-name descname"><span class="pre">flatten</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#arcgis.realtime.velocity.input.XMLFormat.flatten" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="arcgis.realtime.velocity.input.XMLFormat.flatten">
-<code class="sig-name descname">flatten</code><em class="property">: Optional<span class="p">[</span>bool<span class="p">]</span></em><em class="property"> = None</em><a class="headerlink" href="#arcgis.realtime.velocity.input.XMLFormat.flatten" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.input.XMLFormat.geometry_field">
+<span class="sig-name descname"><span class="pre">geometry_field</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#arcgis.realtime.velocity.input.XMLFormat.geometry_field" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="arcgis.realtime.velocity.input.XMLFormat.geometry_field">
-<code class="sig-name descname">geometry_field</code><em class="property">: Optional<span class="p">[</span>str<span class="p">]</span></em><em class="property"> = None</em><a class="headerlink" href="#arcgis.realtime.velocity.input.XMLFormat.geometry_field" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.input.XMLFormat.geometry_field_format">
+<span class="sig-name descname"><span class="pre">geometry_field_format</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#arcgis.realtime.velocity.input.XMLFormat.geometry_field_format" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="arcgis.realtime.velocity.input.XMLFormat.geometry_field_format">
-<code class="sig-name descname">geometry_field_format</code><em class="property">: Optional<span class="p">[</span>str<span class="p">]</span></em><em class="property"> = None</em><a class="headerlink" href="#arcgis.realtime.velocity.input.XMLFormat.geometry_field_format" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.input.XMLFormat.has_z_field">
+<span class="sig-name descname"><span class="pre">has_z_field</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#arcgis.realtime.velocity.input.XMLFormat.has_z_field" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="arcgis.realtime.velocity.input.XMLFormat.has_z_field">
-<code class="sig-name descname">has_z_field</code><em class="property">: Optional<span class="p">[</span>bool<span class="p">]</span></em><em class="property"> = None</em><a class="headerlink" href="#arcgis.realtime.velocity.input.XMLFormat.has_z_field" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.input.XMLFormat.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'xml'</span></em><a class="headerlink" href="#arcgis.realtime.velocity.input.XMLFormat.name" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="arcgis.realtime.velocity.input.XMLFormat.name">
-<code class="sig-name descname">name</code><em class="property">: ClassVar<span class="p">[</span>str<span class="p">]</span></em><em class="property"> = 'xml'</em><a class="headerlink" href="#arcgis.realtime.velocity.input.XMLFormat.name" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.input.XMLFormat.root_node">
+<span class="sig-name descname"><span class="pre">root_node</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#arcgis.realtime.velocity.input.XMLFormat.root_node" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="arcgis.realtime.velocity.input.XMLFormat.root_node">
-<code class="sig-name descname">root_node</code><em class="property">: Optional<span class="p">[</span>str<span class="p">]</span></em><em class="property"> = None</em><a class="headerlink" href="#arcgis.realtime.velocity.input.XMLFormat.root_node" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.input.XMLFormat.x_field">
+<span class="sig-name descname"><span class="pre">x_field</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#arcgis.realtime.velocity.input.XMLFormat.x_field" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="arcgis.realtime.velocity.input.XMLFormat.x_field">
-<code class="sig-name descname">x_field</code><em class="property">: Optional<span class="p">[</span>str<span class="p">]</span></em><em class="property"> = None</em><a class="headerlink" href="#arcgis.realtime.velocity.input.XMLFormat.x_field" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.input.XMLFormat.y_field">
+<span class="sig-name descname"><span class="pre">y_field</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#arcgis.realtime.velocity.input.XMLFormat.y_field" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="arcgis.realtime.velocity.input.XMLFormat.y_field">
-<code class="sig-name descname">y_field</code><em class="property">: Optional<span class="p">[</span>str<span class="p">]</span></em><em class="property"> = None</em><a class="headerlink" href="#arcgis.realtime.velocity.input.XMLFormat.y_field" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.input.XMLFormat.z_field">
+<span class="sig-name descname"><span class="pre">z_field</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#arcgis.realtime.velocity.input.XMLFormat.z_field" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="arcgis.realtime.velocity.input.XMLFormat.z_field">
-<code class="sig-name descname">z_field</code><em class="property">: Optional<span class="p">[</span>str<span class="p">]</span></em><em class="property"> = None</em><a class="headerlink" href="#arcgis.realtime.velocity.input.XMLFormat.z_field" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt id="arcgis.realtime.velocity.input.XMLFormat.z_unit">
-<code class="sig-name descname">z_unit</code><em class="property">: Optional<span class="p">[</span>int<span class="p">]</span></em><em class="property"> = None</em><a class="headerlink" href="#arcgis.realtime.velocity.input.XMLFormat.z_unit" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.input.XMLFormat.z_unit">
+<span class="sig-name descname"><span class="pre">z_unit</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#arcgis.realtime.velocity.input.XMLFormat.z_unit" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-</section>
-</section>
+</div>
+</div>
 
 
 
@@ -629,12 +735,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   </div>
   
-    Options v: 2.0.0
+    Options v: 2.0.1
 
   <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
       <span class="fa fa-book"> Pick an earlier version</span>
-      v: 2.0.0
+      v: 2.0.1
       <span class="fa fa-caret-down"></span>
     </span>
     <div class="rst-other-versions">
@@ -642,6 +748,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       
       <dl>
         <dt>Versions</dt>
+        
+          
+          <dd><a href="2.0.0/">2.0.0</a></dd>
+          
         
           
           <dd><a href="1.9.1/">1.9.1</a></dd>

@@ -4,11 +4,10 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>arcgis.gis.agoserver module &mdash; arcgis 2.0.0 documentation</title>
+  <title>arcgis.gis.agoserver module &mdash; arcgis 2.0.1 documentation</title>
   
 
   
@@ -33,10 +32,12 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -80,7 +81,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                2.0.0
+                2.0.1
               </div>
             
           
@@ -105,7 +106,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               
             
             
-              <p><span class="caption-text">arcgis</span></p>
+              <p class="caption" role="heading"><span class="caption-text">arcgis</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="arcgis.gis.toc.html">arcgis.gis module</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#gis">GIS</a></li>
@@ -134,15 +135,43 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l3"><a class="reference internal" href="arcgis.gis.admin.html">arcgis.gis.admin module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.gis.server.html">arcgis.gis.server module</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">arcgis.gis.agoserver module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#agolservicesdirectory">AGOLServicesDirectory</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#agolserversmanager">AGOLServersManager</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#agolservermanager">AGOLServerManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agolservicesdirectory">AGOLServicesDirectory</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#arcgis.gis.agoserver.AGOLServicesDirectory"><code class="docutils literal notranslate"><span class="pre">AGOLServicesDirectory</span></code></a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.agoserver.AGOLServicesDirectory.folders"><code class="docutils literal notranslate"><span class="pre">AGOLServicesDirectory.folders</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.agoserver.AGOLServicesDirectory.properties"><code class="docutils literal notranslate"><span class="pre">AGOLServicesDirectory.properties</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.agoserver.AGOLServicesDirectory.services"><code class="docutils literal notranslate"><span class="pre">AGOLServicesDirectory.services</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#agolserversmanager">AGOLServersManager</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#arcgis.gis.agoserver.AGOLServersManager"><code class="docutils literal notranslate"><span class="pre">AGOLServersManager</span></code></a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.agoserver.AGOLServersManager.feature_server"><code class="docutils literal notranslate"><span class="pre">AGOLServersManager.feature_server</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.agoserver.AGOLServersManager.list"><code class="docutils literal notranslate"><span class="pre">AGOLServersManager.list()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.agoserver.AGOLServersManager.properties"><code class="docutils literal notranslate"><span class="pre">AGOLServersManager.properties</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.agoserver.AGOLServersManager.tile_server"><code class="docutils literal notranslate"><span class="pre">AGOLServersManager.tile_server</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#agolservermanager">AGOLServerManager</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#arcgis.gis.agoserver.AGOLServerManager"><code class="docutils literal notranslate"><span class="pre">AGOLServerManager</span></code></a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.agoserver.AGOLServerManager.get"><code class="docutils literal notranslate"><span class="pre">AGOLServerManager.get()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.agoserver.AGOLServerManager.is_tile_server"><code class="docutils literal notranslate"><span class="pre">AGOLServerManager.is_tile_server</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.agoserver.AGOLServerManager.properties"><code class="docutils literal notranslate"><span class="pre">AGOLServerManager.properties</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.agoserver.AGOLServerManager.services"><code class="docutils literal notranslate"><span class="pre">AGOLServerManager.services</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.agoserver.AGOLServerManager.status"><code class="docutils literal notranslate"><span class="pre">AGOLServerManager.status()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.gis.mission.html">arcgis.gis.mission module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.gis.nb.html">arcgis.gis.nb module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.gis.workflowmanager.html">arcgis.gis.workflowmanager module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.gis.tasks.html">arcgis.gis.tasks module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.gis.sharing.html">arcgis.gis.sharing module</a></li>
 </ul>
 </li>
 </ul>
@@ -156,6 +185,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l1"><a class="reference internal" href="arcgis.geoenrichment.html">arcgis.geoenrichment module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.geometry.html">arcgis.geometry module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.geoprocessing.html">arcgis.geoprocessing module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.graph.html">arcgis.graph module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.mapping.toc.html">arcgis.mapping module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.realtime.html">arcgis.realtime module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.schematics.html">arcgis.schematics module</a></li>
@@ -235,13 +265,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJGGV5"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-  <section id="arcgis-gis-agoserver-module">
-<h1>arcgis.gis.agoserver module<a class="headerlink" href="#arcgis-gis-agoserver-module" title="Permalink to this headline">¶</a></h1>
-<span class="target" id="module-arcgis.gis.agoserver"></span><section id="agolservicesdirectory">
-<h2>AGOLServicesDirectory<a class="headerlink" href="#agolservicesdirectory" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="arcgis-gis-agoserver-module">
+<h1>arcgis.gis.agoserver module<a class="headerlink" href="#arcgis-gis-agoserver-module" title="Permalink to this heading">¶</a></h1>
+<span class="target" id="module-arcgis.gis.agoserver"></span><div class="section" id="agolservicesdirectory">
+<h2>AGOLServicesDirectory<a class="headerlink" href="#agolservicesdirectory" title="Permalink to this heading">¶</a></h2>
 <dl class="py class">
-<dt id="arcgis.gis.agoserver.AGOLServicesDirectory">
-<em class="property">class </em><code class="sig-prename descclassname">arcgis.gis.agoserver.</code><code class="sig-name descname">AGOLServicesDirectory</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">gis</span><span class="p">:</span> <span class="n"><a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.GIS" title="arcgis.gis.GIS">arcgis.gis.GIS</a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.agoserver.AGOLServicesDirectory" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.gis.agoserver.AGOLServicesDirectory">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">arcgis.gis.agoserver.</span></span><span class="sig-name descname"><span class="pre">AGOLServicesDirectory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gis</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.agoserver.AGOLServicesDirectory" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>The ArcGIS Online ServicesDirectory displays the hosted services for
 a site.</p>
@@ -262,9 +292,9 @@ a site.</p>
 </tr>
 </tbody>
 </table>
-<dl class="py method">
-<dt id="arcgis.gis.agoserver.AGOLServicesDirectory.folders">
-<em class="property">property </em><code class="sig-name descname">folders</code><a class="headerlink" href="#arcgis.gis.agoserver.AGOLServicesDirectory.folders" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="arcgis.gis.agoserver.AGOLServicesDirectory.folders">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">folders</span></span><a class="headerlink" href="#arcgis.gis.agoserver.AGOLServicesDirectory.folders" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a list of folder names</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -273,9 +303,9 @@ a site.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="arcgis.gis.agoserver.AGOLServicesDirectory.properties">
-<em class="property">property </em><code class="sig-name descname">properties</code><a class="headerlink" href="#arcgis.gis.agoserver.AGOLServicesDirectory.properties" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="arcgis.gis.agoserver.AGOLServicesDirectory.properties">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">properties</span></span><a class="headerlink" href="#arcgis.gis.agoserver.AGOLServicesDirectory.properties" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the server’s properties</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -284,20 +314,20 @@ a site.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="arcgis.gis.agoserver.AGOLServicesDirectory.services">
-<em class="property">property </em><code class="sig-name descname">services</code><a class="headerlink" href="#arcgis.gis.agoserver.AGOLServicesDirectory.services" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="arcgis.gis.agoserver.AGOLServicesDirectory.services">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">services</span></span><a class="headerlink" href="#arcgis.gis.agoserver.AGOLServicesDirectory.services" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns a list of services hosted on ArcGIS Online Server</p>
 </dd></dl>
 
 </dd></dl>
 
-</section>
-<section id="agolserversmanager">
-<h2>AGOLServersManager<a class="headerlink" href="#agolserversmanager" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="agolserversmanager">
+<h2>AGOLServersManager<a class="headerlink" href="#agolserversmanager" title="Permalink to this heading">¶</a></h2>
 <dl class="py class">
-<dt id="arcgis.gis.agoserver.AGOLServersManager">
-<em class="property">class </em><code class="sig-prename descclassname">arcgis.gis.agoserver.</code><code class="sig-name descname">AGOLServersManager</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">gis</span><span class="p">:</span> <span class="n"><a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.GIS" title="arcgis.gis.GIS">arcgis.gis.GIS</a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.agoserver.AGOLServersManager" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.gis.agoserver.AGOLServersManager">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">arcgis.gis.agoserver.</span></span><span class="sig-name descname"><span class="pre">AGOLServersManager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gis</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.agoserver.AGOLServersManager" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>This class allows users to work with hosted tile and feature services on
 ArcGIS Online.</p>
@@ -315,15 +345,15 @@ ArcGIS Online.</p>
 </tr>
 </tbody>
 </table>
-<dl class="py method">
-<dt id="arcgis.gis.agoserver.AGOLServersManager.feature_server">
-<em class="property">property </em><code class="sig-name descname">feature_server</code><a class="headerlink" href="#arcgis.gis.agoserver.AGOLServersManager.feature_server" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="arcgis.gis.agoserver.AGOLServersManager.feature_server">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">feature_server</span></span><a class="headerlink" href="#arcgis.gis.agoserver.AGOLServersManager.feature_server" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns a list of Feature Administrative Servers</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="arcgis.gis.agoserver.AGOLServersManager.list">
-<code class="sig-name descname">list</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>arcgis.gis.agoserver._admin.AGOLServerManager<span class="p">]</span><a class="headerlink" href="#arcgis.gis.agoserver.AGOLServersManager.list" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.gis.agoserver.AGOLServersManager.list">
+<span class="sig-name descname"><span class="pre">list</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.agoserver.AGOLServersManager.list" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a list of all server managers</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -332,9 +362,9 @@ ArcGIS Online.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="arcgis.gis.agoserver.AGOLServersManager.properties">
-<em class="property">property </em><code class="sig-name descname">properties</code><a class="headerlink" href="#arcgis.gis.agoserver.AGOLServersManager.properties" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="arcgis.gis.agoserver.AGOLServersManager.properties">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">properties</span></span><a class="headerlink" href="#arcgis.gis.agoserver.AGOLServersManager.properties" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the properties of the server</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -343,20 +373,20 @@ ArcGIS Online.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="arcgis.gis.agoserver.AGOLServersManager.tile_server">
-<em class="property">property </em><code class="sig-name descname">tile_server</code><a class="headerlink" href="#arcgis.gis.agoserver.AGOLServersManager.tile_server" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="arcgis.gis.agoserver.AGOLServersManager.tile_server">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">tile_server</span></span><a class="headerlink" href="#arcgis.gis.agoserver.AGOLServersManager.tile_server" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns a list of Tile Administrative Servers</p>
 </dd></dl>
 
 </dd></dl>
 
-</section>
-<section id="agolservermanager">
-<h2>AGOLServerManager<a class="headerlink" href="#agolservermanager" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="agolservermanager">
+<h2>AGOLServerManager<a class="headerlink" href="#agolservermanager" title="Permalink to this heading">¶</a></h2>
 <dl class="py class">
-<dt id="arcgis.gis.agoserver.AGOLServerManager">
-<em class="property">class </em><code class="sig-prename descclassname">arcgis.gis.agoserver.</code><code class="sig-name descname">AGOLServerManager</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">gis</span><span class="p">:</span> <span class="n"><a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.GIS" title="arcgis.gis.GIS">arcgis.gis.GIS</a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.agoserver.AGOLServerManager" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.gis.agoserver.AGOLServerManager">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">arcgis.gis.agoserver.</span></span><span class="sig-name descname"><span class="pre">AGOLServerManager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gis</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.agoserver.AGOLServerManager" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Represents a Single AGO Server</p>
 <table class="docutils align-default">
@@ -377,8 +407,8 @@ ArcGIS Online.</p>
 </tbody>
 </table>
 <dl class="py method">
-<dt id="arcgis.gis.agoserver.AGOLServerManager.get">
-<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; Union<span class="p">[</span>arcgis.mapping._types.VectorTileLayerManager<span class="p">, </span>arcgis.raster._layer.ImageryLayerCacheManager<span class="p">, </span>arcgis.mapping._scenelyrs._lyrs.SceneLayerManager<span class="p">, </span><a class="reference internal" href="arcgis.features.managers.html#arcgis.features.managers.FeatureLayerCollectionManager" title="arcgis.features.managers.FeatureLayerCollectionManager">arcgis.features.managers.FeatureLayerCollectionManager</a><span class="p">, </span>arcgis.mapping._types.MapImageLayerManager<span class="p">]</span><a class="headerlink" href="#arcgis.gis.agoserver.AGOLServerManager.get" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.gis.agoserver.AGOLServerManager.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.agoserver.AGOLServerManager.get" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a single service manager.</p>
 <table class="docutils align-default">
 <colgroup>
@@ -405,9 +435,9 @@ MapImageLayerManager]</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="arcgis.gis.agoserver.AGOLServerManager.is_tile_server">
-<em class="property">property </em><code class="sig-name descname">is_tile_server</code><a class="headerlink" href="#arcgis.gis.agoserver.AGOLServerManager.is_tile_server" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="arcgis.gis.agoserver.AGOLServerManager.is_tile_server">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">is_tile_server</span></span><a class="headerlink" href="#arcgis.gis.agoserver.AGOLServerManager.is_tile_server" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns if the server if hosting tiles or not</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -416,9 +446,9 @@ MapImageLayerManager]</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="arcgis.gis.agoserver.AGOLServerManager.properties">
-<em class="property">property </em><code class="sig-name descname">properties</code><a class="headerlink" href="#arcgis.gis.agoserver.AGOLServerManager.properties" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="arcgis.gis.agoserver.AGOLServerManager.properties">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">properties</span></span><a class="headerlink" href="#arcgis.gis.agoserver.AGOLServerManager.properties" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the server’s properties. This call is cached for 25 seconds.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -427,9 +457,9 @@ MapImageLayerManager]</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="arcgis.gis.agoserver.AGOLServerManager.services">
-<em class="property">property </em><code class="sig-name descname">services</code><a class="headerlink" href="#arcgis.gis.agoserver.AGOLServerManager.services" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="arcgis.gis.agoserver.AGOLServerManager.services">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">services</span></span><a class="headerlink" href="#arcgis.gis.agoserver.AGOLServerManager.services" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the Administrative Endpoints</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -439,8 +469,8 @@ MapImageLayerManager]</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="arcgis.gis.agoserver.AGOLServerManager.status">
-<code class="sig-name descname">status</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; str<a class="headerlink" href="#arcgis.gis.agoserver.AGOLServerManager.status" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.gis.agoserver.AGOLServerManager.status">
+<span class="sig-name descname"><span class="pre">status</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.agoserver.AGOLServerManager.status" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the status of a given service by name.</p>
 <table class="docutils align-default">
 <colgroup>
@@ -465,8 +495,8 @@ MapImageLayerManager]</p>
 
 </dd></dl>
 
-</section>
-</section>
+</div>
+</div>
 
 
 
@@ -504,12 +534,12 @@ MapImageLayerManager]</p>
 
   </div>
   
-    Options v: 2.0.0
+    Options v: 2.0.1
 
   <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
       <span class="fa fa-book"> Pick an earlier version</span>
-      v: 2.0.0
+      v: 2.0.1
       <span class="fa fa-caret-down"></span>
     </span>
     <div class="rst-other-versions">
@@ -517,6 +547,10 @@ MapImageLayerManager]</p>
       
       <dl>
         <dt>Versions</dt>
+        
+          
+          <dd><a href="2.0.0/">2.0.0</a></dd>
+          
         
           
           <dd><a href="1.9.1/">1.9.1</a></dd>

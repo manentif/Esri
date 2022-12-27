@@ -4,11 +4,10 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>arcgis.auth.tools package &mdash; arcgis 2.0.0 documentation</title>
+  <title>arcgis.auth.tools package &mdash; arcgis 2.0.1 documentation</title>
   
 
   
@@ -33,10 +32,12 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -79,7 +80,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                2.0.0
+                2.0.1
               </div>
             
           
@@ -104,7 +105,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               
             
             
-              <p><span class="caption-text">arcgis</span></p>
+              <p class="caption" role="heading"><span class="caption-text">arcgis</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="arcgis.gis.toc.html">arcgis.gis module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.env.html">arcgis.env module</a></li>
@@ -116,6 +117,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l1"><a class="reference internal" href="arcgis.geoenrichment.html">arcgis.geoenrichment module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.geometry.html">arcgis.geometry module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.geoprocessing.html">arcgis.geoprocessing module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.graph.html">arcgis.graph module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.mapping.toc.html">arcgis.mapping module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.realtime.html">arcgis.realtime module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.schematics.html">arcgis.schematics module</a></li>
@@ -126,9 +128,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l2 current"><a class="reference internal" href="arcgis.auth.html#subpackages">Subpackages</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="#">arcgis.auth.tools package</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#submodules">Submodules</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#module-arcgis.auth.tools.certificate">arcgis.auth.tools.certificate module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#module-arcgis.auth.tools.verifycontext">arcgis.auth.tools.verifycontext module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#module-arcgis.auth.tools">Module contents</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-arcgis.auth.tools.certificate">arcgis.auth.tools.certificate module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#arcgis.auth.tools.certificate.pfx_to_pem"><code class="docutils literal notranslate"><span class="pre">pfx_to_pem()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#module-arcgis.auth.tools.verifycontext">arcgis.auth.tools.verifycontext module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#arcgis.auth.tools.verifycontext.no_ssl_verification"><code class="docutils literal notranslate"><span class="pre">no_ssl_verification()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#module-arcgis.auth.tools">Module contents</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#arcgis.auth.tools.LazyLoader"><code class="docutils literal notranslate"><span class="pre">LazyLoader</span></code></a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.auth.tools.LazyLoader.check_module_exists"><code class="docutils literal notranslate"><span class="pre">LazyLoader.check_module_exists()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="#arcgis.auth.tools.no_ssl_verification"><code class="docutils literal notranslate"><span class="pre">no_ssl_verification()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#arcgis.auth.tools.parse_url"><code class="docutils literal notranslate"><span class="pre">parse_url()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#arcgis.auth.tools.pfx_to_pem"><code class="docutils literal notranslate"><span class="pre">pfx_to_pem()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -210,17 +227,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJGGV5"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-  <section id="arcgis-auth-tools-package">
-<h1>arcgis.auth.tools package<a class="headerlink" href="#arcgis-auth-tools-package" title="Permalink to this headline">¶</a></h1>
-<section id="submodules">
-<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
-</section>
-<section id="module-arcgis.auth.tools.certificate">
-<span id="arcgis-auth-tools-certificate-module"></span><h2>arcgis.auth.tools.certificate module<a class="headerlink" href="#module-arcgis.auth.tools.certificate" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="arcgis-auth-tools-package">
+<h1>arcgis.auth.tools package<a class="headerlink" href="#arcgis-auth-tools-package" title="Permalink to this heading">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="module-arcgis.auth.tools.certificate">
+<span id="arcgis-auth-tools-certificate-module"></span><h2>arcgis.auth.tools.certificate module<a class="headerlink" href="#module-arcgis.auth.tools.certificate" title="Permalink to this heading">¶</a></h2>
 <p>Tools to assist users to work with PKI Certificates</p>
 <dl class="py function">
-<dt id="arcgis.auth.tools.certificate.pfx_to_pem">
-<code class="sig-prename descclassname">arcgis.auth.tools.certificate.</code><code class="sig-name descname">pfx_to_pem</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pfx_path</span></em>, <em class="sig-param"><span class="n">pfx_password</span></em>, <em class="sig-param"><span class="n">folder</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">use_openssl</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.auth.tools.certificate.pfx_to_pem" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.auth.tools.certificate.pfx_to_pem">
+<span class="sig-prename descclassname"><span class="pre">arcgis.auth.tools.certificate.</span></span><span class="sig-name descname"><span class="pre">pfx_to_pem</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pfx_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pfx_password</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">folder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_openssl</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.auth.tools.certificate.pfx_to_pem" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decrypts the .pfx file to be used with requests.</p>
 <table class="docutils align-default">
 <colgroup>
@@ -255,20 +272,20 @@ File path to cert_file located in a tempfile location</p>
 </dl>
 </dd></dl>
 
-</section>
-<section id="module-arcgis.auth.tools.verifycontext">
-<span id="arcgis-auth-tools-verifycontext-module"></span><h2>arcgis.auth.tools.verifycontext module<a class="headerlink" href="#module-arcgis.auth.tools.verifycontext" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-arcgis.auth.tools.verifycontext">
+<span id="arcgis-auth-tools-verifycontext-module"></span><h2>arcgis.auth.tools.verifycontext module<a class="headerlink" href="#module-arcgis.auth.tools.verifycontext" title="Permalink to this heading">¶</a></h2>
 <dl class="py function">
-<dt id="arcgis.auth.tools.verifycontext.no_ssl_verification">
-<code class="sig-prename descclassname">arcgis.auth.tools.verifycontext.</code><code class="sig-name descname">no_ssl_verification</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.auth.tools.verifycontext.no_ssl_verification" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.auth.tools.verifycontext.no_ssl_verification">
+<span class="sig-prename descclassname"><span class="pre">arcgis.auth.tools.verifycontext.</span></span><span class="sig-name descname"><span class="pre">no_ssl_verification</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.auth.tools.verifycontext.no_ssl_verification" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-</section>
-<section id="module-arcgis.auth.tools">
-<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-arcgis.auth.tools" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-arcgis.auth.tools">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-arcgis.auth.tools" title="Permalink to this heading">¶</a></h2>
 <dl class="py class">
-<dt id="arcgis.auth.tools.LazyLoader">
-<em class="property">class </em><code class="sig-prename descclassname">arcgis.auth.tools.</code><code class="sig-name descname">LazyLoader</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">module_name</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">submod_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">strict</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.auth.tools.LazyLoader" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.auth.tools.LazyLoader">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">arcgis.auth.tools.</span></span><span class="sig-name descname"><span class="pre">LazyLoader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">submod_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.auth.tools.LazyLoader" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">module</span></code></p>
 <p>Lazy load modules</p>
 <p>np = LazyLoader(“numpy”)
@@ -276,21 +293,21 @@ pd = LazyLoader(“pandas”)
 arcpy = LazyLoader(“arcpy”, strict=True)
 cf = LazyLoader(module_name=”concurrent.futures”)</p>
 <dl class="py method">
-<dt id="arcgis.auth.tools.LazyLoader.check_module_exists">
-<em class="property">static </em><code class="sig-name descname">check_module_exists</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#arcgis.auth.tools.LazyLoader.check_module_exists" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.auth.tools.LazyLoader.check_module_exists">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">check_module_exists</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.auth.tools.LazyLoader.check_module_exists" title="Permalink to this definition">¶</a></dt>
 <dd><p>Checks if a module exists</p>
 </dd></dl>
 
 </dd></dl>
 
 <dl class="py function">
-<dt id="arcgis.auth.tools.no_ssl_verification">
-<code class="sig-prename descclassname">arcgis.auth.tools.</code><code class="sig-name descname">no_ssl_verification</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.auth.tools.no_ssl_verification" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.auth.tools.no_ssl_verification">
+<span class="sig-prename descclassname"><span class="pre">arcgis.auth.tools.</span></span><span class="sig-name descname"><span class="pre">no_ssl_verification</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.auth.tools.no_ssl_verification" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt id="arcgis.auth.tools.parse_url">
-<code class="sig-prename descclassname">arcgis.auth.tools.</code><code class="sig-name descname">parse_url</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; object<a class="headerlink" href="#arcgis.auth.tools.parse_url" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.auth.tools.parse_url">
+<span class="sig-prename descclassname"><span class="pre">arcgis.auth.tools.</span></span><span class="sig-name descname"><span class="pre">parse_url</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.auth.tools.parse_url" title="Permalink to this definition">¶</a></dt>
 <dd><p>Parses a URL string into it’s pieces.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -300,8 +317,8 @@ cf = LazyLoader(module_name=”concurrent.futures”)</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="arcgis.auth.tools.pfx_to_pem">
-<code class="sig-prename descclassname">arcgis.auth.tools.</code><code class="sig-name descname">pfx_to_pem</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pfx_path</span></em>, <em class="sig-param"><span class="n">pfx_password</span></em>, <em class="sig-param"><span class="n">folder</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">use_openssl</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.auth.tools.pfx_to_pem" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.auth.tools.pfx_to_pem">
+<span class="sig-prename descclassname"><span class="pre">arcgis.auth.tools.</span></span><span class="sig-name descname"><span class="pre">pfx_to_pem</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pfx_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pfx_password</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">folder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_openssl</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.auth.tools.pfx_to_pem" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decrypts the .pfx file to be used with requests.</p>
 <table class="docutils align-default">
 <colgroup>
@@ -336,8 +353,8 @@ File path to cert_file located in a tempfile location</p>
 </dl>
 </dd></dl>
 
-</section>
-</section>
+</div>
+</div>
 
 
 
@@ -374,12 +391,12 @@ File path to cert_file located in a tempfile location</p>
 
   </div>
   
-    Options v: 2.0.0
+    Options v: 2.0.1
 
   <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
       <span class="fa fa-book"> Pick an earlier version</span>
-      v: 2.0.0
+      v: 2.0.1
       <span class="fa fa-caret-down"></span>
     </span>
     <div class="rst-other-versions">
@@ -387,6 +404,10 @@ File path to cert_file located in a tempfile location</p>
       
       <dl>
         <dt>Versions</dt>
+        
+          
+          <dd><a href="2.0.0/">2.0.0</a></dd>
+          
         
           
           <dd><a href="1.9.1/">1.9.1</a></dd>

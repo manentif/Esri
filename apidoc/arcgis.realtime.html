@@ -4,11 +4,10 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>arcgis.realtime module &mdash; arcgis 2.0.0 documentation</title>
+  <title>arcgis.realtime module &mdash; arcgis 2.0.1 documentation</title>
   
 
   
@@ -33,10 +32,12 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -80,7 +81,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                2.0.0
+                2.0.1
               </div>
             
           
@@ -105,7 +106,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               
             
             
-              <p><span class="caption-text">arcgis</span></p>
+              <p class="caption" role="heading"><span class="caption-text">arcgis</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="arcgis.gis.toc.html">arcgis.gis module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.env.html">arcgis.env module</a></li>
@@ -117,19 +118,105 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l1"><a class="reference internal" href="arcgis.geoenrichment.html">arcgis.geoenrichment module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.geometry.html">arcgis.geometry module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.geoprocessing.html">arcgis.geoprocessing module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.graph.html">arcgis.graph module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.mapping.toc.html">arcgis.mapping module</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">arcgis.realtime module</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#streamlayer">StreamLayer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#velocity">Velocity</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#feedsmanager">FeedsManager</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#realtimeanalyticsmanager">RealTimeAnalyticsManager</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#bigdataanalyticsmanager">BigDataAnalyticsManager</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#feed">Feed</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#realtimeanalytics">RealTimeAnalytics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#bigdataanalytics">BigDataAnalytics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#basicauth">BasicAuth</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#certificateauth">CertificateAuth</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#noauth">NoAuth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#streamlayer">StreamLayer</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#arcgis.realtime.StreamLayer"><code class="docutils literal notranslate"><span class="pre">StreamLayer</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#arcgis.realtime.StreamLayer.filter"><code class="docutils literal notranslate"><span class="pre">StreamLayer.filter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#arcgis.realtime.StreamLayer.out_sr"><code class="docutils literal notranslate"><span class="pre">StreamLayer.out_sr</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#arcgis.realtime.StreamLayer.subscribe"><code class="docutils literal notranslate"><span class="pre">StreamLayer.subscribe()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#velocity">Velocity</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#arcgis.realtime.Velocity"><code class="docutils literal notranslate"><span class="pre">Velocity</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#arcgis.realtime.Velocity.bigdata_analytics"><code class="docutils literal notranslate"><span class="pre">Velocity.bigdata_analytics</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#arcgis.realtime.Velocity.feeds"><code class="docutils literal notranslate"><span class="pre">Velocity.feeds</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#arcgis.realtime.Velocity.realtime_analytics"><code class="docutils literal notranslate"><span class="pre">Velocity.realtime_analytics</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#feedsmanager">FeedsManager</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#arcgis.realtime.velocity.FeedsManager"><code class="docutils literal notranslate"><span class="pre">FeedsManager</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#arcgis.realtime.velocity.FeedsManager.create"><code class="docutils literal notranslate"><span class="pre">FeedsManager.create()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#arcgis.realtime.velocity.FeedsManager.get"><code class="docutils literal notranslate"><span class="pre">FeedsManager.get()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#arcgis.realtime.velocity.FeedsManager.items"><code class="docutils literal notranslate"><span class="pre">FeedsManager.items</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#realtimeanalyticsmanager">RealTimeAnalyticsManager</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#arcgis.realtime.velocity.RealTimeAnalyticsManager"><code class="docutils literal notranslate"><span class="pre">RealTimeAnalyticsManager</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#arcgis.realtime.velocity.RealTimeAnalyticsManager.get"><code class="docutils literal notranslate"><span class="pre">RealTimeAnalyticsManager.get()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#arcgis.realtime.velocity.RealTimeAnalyticsManager.items"><code class="docutils literal notranslate"><span class="pre">RealTimeAnalyticsManager.items</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#bigdataanalyticsmanager">BigDataAnalyticsManager</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#arcgis.realtime.velocity.BigDataAnalyticsManager"><code class="docutils literal notranslate"><span class="pre">BigDataAnalyticsManager</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#arcgis.realtime.velocity.BigDataAnalyticsManager.get"><code class="docutils literal notranslate"><span class="pre">BigDataAnalyticsManager.get()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#arcgis.realtime.velocity.BigDataAnalyticsManager.items"><code class="docutils literal notranslate"><span class="pre">BigDataAnalyticsManager.items</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#feed">Feed</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#arcgis.realtime.velocity.Feed"><code class="docutils literal notranslate"><span class="pre">Feed</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#arcgis.realtime.velocity.Feed.delete"><code class="docutils literal notranslate"><span class="pre">Feed.delete()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#arcgis.realtime.velocity.Feed.metrics"><code class="docutils literal notranslate"><span class="pre">Feed.metrics</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#arcgis.realtime.velocity.Feed.start"><code class="docutils literal notranslate"><span class="pre">Feed.start()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#arcgis.realtime.velocity.Feed.status"><code class="docutils literal notranslate"><span class="pre">Feed.status</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#arcgis.realtime.velocity.Feed.stop"><code class="docutils literal notranslate"><span class="pre">Feed.stop()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#realtimeanalytics">RealTimeAnalytics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#arcgis.realtime.velocity.RealTimeAnalytics"><code class="docutils literal notranslate"><span class="pre">RealTimeAnalytics</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#arcgis.realtime.velocity.RealTimeAnalytics.delete"><code class="docutils literal notranslate"><span class="pre">RealTimeAnalytics.delete()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#arcgis.realtime.velocity.RealTimeAnalytics.metrics"><code class="docutils literal notranslate"><span class="pre">RealTimeAnalytics.metrics</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#arcgis.realtime.velocity.RealTimeAnalytics.start"><code class="docutils literal notranslate"><span class="pre">RealTimeAnalytics.start()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#arcgis.realtime.velocity.RealTimeAnalytics.status"><code class="docutils literal notranslate"><span class="pre">RealTimeAnalytics.status</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#arcgis.realtime.velocity.RealTimeAnalytics.stop"><code class="docutils literal notranslate"><span class="pre">RealTimeAnalytics.stop()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#bigdataanalytics">BigDataAnalytics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#arcgis.realtime.velocity.BigDataAnalytics"><code class="docutils literal notranslate"><span class="pre">BigDataAnalytics</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#arcgis.realtime.velocity.BigDataAnalytics.delete"><code class="docutils literal notranslate"><span class="pre">BigDataAnalytics.delete()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#arcgis.realtime.velocity.BigDataAnalytics.metrics"><code class="docutils literal notranslate"><span class="pre">BigDataAnalytics.metrics</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#arcgis.realtime.velocity.BigDataAnalytics.start"><code class="docutils literal notranslate"><span class="pre">BigDataAnalytics.start()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#arcgis.realtime.velocity.BigDataAnalytics.status"><code class="docutils literal notranslate"><span class="pre">BigDataAnalytics.status</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#arcgis.realtime.velocity.BigDataAnalytics.stop"><code class="docutils literal notranslate"><span class="pre">BigDataAnalytics.stop()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#basicauth">BasicAuth</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#arcgis.realtime.velocity.BasicAuth"><code class="docutils literal notranslate"><span class="pre">BasicAuth</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#arcgis.realtime.velocity.BasicAuth.password"><code class="docutils literal notranslate"><span class="pre">BasicAuth.password</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#arcgis.realtime.velocity.BasicAuth.username"><code class="docutils literal notranslate"><span class="pre">BasicAuth.username</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#certificateauth">CertificateAuth</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#arcgis.realtime.velocity.CertificateAuth"><code class="docutils literal notranslate"><span class="pre">CertificateAuth</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#arcgis.realtime.velocity.CertificateAuth.password"><code class="docutils literal notranslate"><span class="pre">CertificateAuth.password</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#arcgis.realtime.velocity.CertificateAuth.pfx_file_http_location"><code class="docutils literal notranslate"><span class="pre">CertificateAuth.pfx_file_http_location</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#noauth">NoAuth</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#arcgis.realtime.velocity.NoAuth"><code class="docutils literal notranslate"><span class="pre">NoAuth</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.realtime.velocity.feeds.html">arcgis.realtime.velocity.feeds module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.realtime.velocity.input.html">arcgis.realtime.velocity.input module</a></li>
@@ -212,56 +299,60 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJGGV5"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-  <section id="module-arcgis.realtime">
-<span id="arcgis-realtime-module"></span><h1>arcgis.realtime module<a class="headerlink" href="#module-arcgis.realtime" title="Permalink to this headline">¶</a></h1>
-<p>The arcgis.velocity module provides API functions mapping to automate the ArcGIS Velocity REST API.
-ArcGIS Velocity is a real-time and big data processing and analysis capability of ArcGIS Online.
-It enables you to ingest, visualize, analyze, store, and act upon data from Internet of Things (IoT) sensors.</p>
-<p>The arcgis.realtime.StreamLayer provides types and functions for receiving real-time data feeds and sensor data streamed from
+  <div class="section" id="module-arcgis.realtime">
+<span id="arcgis-realtime-module"></span><h1>arcgis.realtime module<a class="headerlink" href="#module-arcgis.realtime" title="Permalink to this heading">¶</a></h1>
+<p>The arcgis.realtime module provides API functions to work with and automate real-time data feeds, continuous processing and analysis of streaming data, and stream layers.</p>
+<p>This module contains the following:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>arcgis.realtime.StreamLayer provides types and functions for receiving real-time data feeds and sensor data streamed from
 the GIS to perform continuous processing and analysis. It includes support for stream layers that allow Python scripts
-to subscribe to the streamed feature data or broadcast updates or alerts.</p>
-<section id="streamlayer">
-<h2>StreamLayer<a class="headerlink" href="#streamlayer" title="Permalink to this headline">¶</a></h2>
+to subscribe to the streamed feature data or broadcast updates or alerts.</p></li>
+<li><p>arcgis.realtime.Velocity and its submodules provide API functions to automate the ArcGIS Velocity REST API.</p></li>
+</ul>
+</div></blockquote>
+<div class="section" id="streamlayer">
+<h2>StreamLayer<a class="headerlink" href="#streamlayer" title="Permalink to this heading">¶</a></h2>
 <dl class="py class">
-<dt id="arcgis.realtime.StreamLayer">
-<em class="property">class </em><code class="sig-prename descclassname">arcgis.realtime.</code><code class="sig-name descname">StreamLayer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.realtime.StreamLayer" title="Permalink to this definition">¶</a></dt>
-<dd><p>Stream layers allow Python scripts to subscribe to the feature data streamed from the GIS using the
-GeoEvent Processor or broadcast updates or alerts. This class can be used to perform continuous processing and
-analysis of real-time data as it’s received.</p>
-<dl class="py method">
-<dt id="arcgis.realtime.StreamLayer.filter">
-<em class="property">property </em><code class="sig-name descname">filter</code><a class="headerlink" href="#arcgis.realtime.StreamLayer.filter" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.realtime.StreamLayer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">arcgis.realtime.</span></span><span class="sig-name descname"><span class="pre">StreamLayer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.realtime.StreamLayer" title="Permalink to this definition">¶</a></dt>
+<dd><p>arcgis.realtime.StreamLayer allows Python scripts to subscribe to the feature data streamed from the GIS, using ArcGIS
+GeoEvent Server or ArcGIS Velocity, or to broadcast updates and alerts. This class can be used to perform continuous processing and
+analysis on streaming data as it is received.</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="arcgis.realtime.StreamLayer.filter">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">filter</span></span><a class="headerlink" href="#arcgis.realtime.StreamLayer.filter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get/Set property used for filtering the streamed features so they meet spatial and SQL like criteria,
-and return the specified fields</p>
+and return the specified fields.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="arcgis.realtime.StreamLayer.out_sr">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">out_sr</span></span><a class="headerlink" href="#arcgis.realtime.StreamLayer.out_sr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get/Set the spatial reference of the streamed features.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="arcgis.realtime.StreamLayer.out_sr">
-<em class="property">property </em><code class="sig-name descname">out_sr</code><a class="headerlink" href="#arcgis.realtime.StreamLayer.out_sr" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get/Set the spatial reference of the streamed features</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="arcgis.realtime.StreamLayer.subscribe">
-<code class="sig-name descname">subscribe</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">on_features</span></em>, <em class="sig-param"><span class="n">on_open</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">on_disconnect</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">on_error</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.realtime.StreamLayer.subscribe" title="Permalink to this definition">¶</a></dt>
-<dd><p>Allows Python scripts to subscribe to the feature data streamed from the GIS using the
-GeoEvent Processor. Subscribing to the streamed data can be used to perform continuous processing and analysis
-of real-time data as it’s received.
-:param on_features: callback function that is called every time features are streamed to the client
-:param on_open: callback function called when the connection to the streaming server is created
-:param on_disconnect: callback function called when the connection to the streaming server is closed
-:param on_error: callback function called if the connection recieves an error</p>
+<dt class="sig sig-object py" id="arcgis.realtime.StreamLayer.subscribe">
+<span class="sig-name descname"><span class="pre">subscribe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">on_features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on_open</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on_disconnect</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on_error</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.realtime.StreamLayer.subscribe" title="Permalink to this definition">¶</a></dt>
+<dd><p>Allows Python scripts to subscribe to the feature data streamed from the GIS using ArcGIS
+GeoEvent Server or ArcGIS Velocity. Subscribing to the streamed data can be used to perform continuous processing and analysis
+of real-time data as it is received.
+:param on_features: callback function that is called every time features are streamed to the client.
+:param on_open: callback function called when the connection to the streaming server is created.
+:param on_disconnect: callback function called when the connection to the streaming server is closed.
+:param on_error: callback function called if the connection recieves an error.</p>
 </dd></dl>
 
 </dd></dl>
 
-</section>
-<section id="velocity">
-<h2>Velocity<a class="headerlink" href="#velocity" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="velocity">
+<h2>Velocity<a class="headerlink" href="#velocity" title="Permalink to this heading">¶</a></h2>
 <dl class="py class">
-<dt id="arcgis.realtime.Velocity">
-<em class="property">class </em><code class="sig-prename descclassname">arcgis.realtime.</code><code class="sig-name descname">Velocity</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">gis</span><span class="p">:</span> <span class="n"><a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.GIS" title="arcgis.gis.GIS">arcgis.gis.GIS</a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.realtime.Velocity" title="Permalink to this definition">¶</a></dt>
-<dd><p>Provides access to Realtime Analytics, Big data Analytics and Feeds in Velocity</p>
+<dt class="sig sig-object py" id="arcgis.realtime.Velocity">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">arcgis.realtime.</span></span><span class="sig-name descname"><span class="pre">Velocity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gis</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.realtime.Velocity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Provides access to real-time analytics, big data analytics, and feeds in ArcGIS Velocity.</p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 21%" />
@@ -272,7 +363,7 @@ of real-time data as it’s received.
 <td><p><strong>Description</strong></p></td>
 </tr>
 <tr class="row-even"><td><p>url</p></td>
-<td><p>velocity org URL</p></td>
+<td><p>URL of the ArcGIS Velocity organization.</p></td>
 </tr>
 <tr class="row-odd"><td><p>gis</p></td>
 <td><p>an authenticated <code class="xref py py-class docutils literal notranslate"><span class="pre">arcigs.gis.GIS</span></code> object.</p></td>
@@ -296,10 +387,10 @@ of real-time data as it’s received.
 <span class="n">velocity</span>
 </pre></div>
 </div>
-<dl class="py method">
-<dt id="arcgis.realtime.Velocity.bigdata_analytics">
-<em class="property">property </em><code class="sig-name descname">bigdata_analytics</code><a class="headerlink" href="#arcgis.realtime.Velocity.bigdata_analytics" title="Permalink to this definition">¶</a></dt>
-<dd><p>Provides access to the resource manager for managing configured Big data analytics tasks with ArcGIS Velocity.</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="arcgis.realtime.Velocity.bigdata_analytics">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">bigdata_analytics</span></span><a class="headerlink" href="#arcgis.realtime.Velocity.bigdata_analytics" title="Permalink to this definition">¶</a></dt>
+<dd><p>Provides access to the resource manager for managing configured big data analytic tasks in ArcGIS Velocity.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><a class="reference internal" href="#arcgis.realtime.velocity.BigDataAnalyticsManager" title="arcgis.realtime.velocity.BigDataAnalyticsManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">BigDataAnalyticsManager</span></code></a></p>
@@ -313,10 +404,10 @@ of real-time data as it’s received.
 </div>
 </dd></dl>
 
-<dl class="py method">
-<dt id="arcgis.realtime.Velocity.feeds">
-<em class="property">property </em><code class="sig-name descname">feeds</code><a class="headerlink" href="#arcgis.realtime.Velocity.feeds" title="Permalink to this definition">¶</a></dt>
-<dd><p>Provides access to the resource manager for managing configured Feeds with ArcGIS Velocity.</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="arcgis.realtime.Velocity.feeds">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">feeds</span></span><a class="headerlink" href="#arcgis.realtime.Velocity.feeds" title="Permalink to this definition">¶</a></dt>
+<dd><p>Provides access to the resource manager for managing configured feeds in ArcGIS Velocity.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><a class="reference internal" href="#arcgis.realtime.velocity.FeedsManager" title="arcgis.realtime.velocity.FeedsManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeedsManager</span></code></a></p>
@@ -330,11 +421,11 @@ of real-time data as it’s received.
 </div>
 </dd></dl>
 
-<dl class="py method">
-<dt id="arcgis.realtime.Velocity.realtime_analytics">
-<em class="property">property </em><code class="sig-name descname">realtime_analytics</code><a class="headerlink" href="#arcgis.realtime.Velocity.realtime_analytics" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="arcgis.realtime.Velocity.realtime_analytics">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">realtime_analytics</span></span><a class="headerlink" href="#arcgis.realtime.Velocity.realtime_analytics" title="Permalink to this definition">¶</a></dt>
 <dd><blockquote>
-<div><p>Provides access to  the resource manager for managing configured Real-time analytics tasks with ArcGIS Velocity.</p>
+<div><p>Provides access to the resource manager for managing configured real-time analytic tasks in ArcGIS Velocity.</p>
 </div></blockquote>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -351,13 +442,13 @@ of real-time data as it’s received.
 
 </dd></dl>
 
-</section>
-<section id="feedsmanager">
-<h2>FeedsManager<a class="headerlink" href="#feedsmanager" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="feedsmanager">
+<h2>FeedsManager<a class="headerlink" href="#feedsmanager" title="Permalink to this heading">¶</a></h2>
 <dl class="py class">
-<dt id="arcgis.realtime.velocity.FeedsManager">
-<em class="property">class </em><code class="sig-prename descclassname">arcgis.realtime.velocity.</code><code class="sig-name descname">FeedsManager</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">gis</span><span class="p">:</span> <span class="n"><a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.GIS" title="arcgis.gis.GIS">arcgis.gis.GIS</a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.realtime.velocity.FeedsManager" title="Permalink to this definition">¶</a></dt>
-<dd><p>Use to get feeds item</p>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.FeedsManager">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">arcgis.realtime.velocity.</span></span><span class="sig-name descname"><span class="pre">FeedsManager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gis</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.realtime.velocity.FeedsManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Used to manage a feed item.</p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 21%" />
@@ -368,17 +459,17 @@ of real-time data as it’s received.
 <td><p><strong>Description</strong></p></td>
 </tr>
 <tr class="row-even"><td><p>url</p></td>
-<td><p>velocity org URL</p></td>
+<td><p>URL of the ArcGIS Velocity organization.</p></td>
 </tr>
 <tr class="row-odd"><td><p>gis</p></td>
-<td><p>an authenticated <code class="xref py py-class docutils literal notranslate"><span class="pre">arcigs.gis.GIS</span></code> object.</p></td>
+<td><p>An authenticated <code class="xref py py-class docutils literal notranslate"><span class="pre">arcigs.gis.GIS</span></code> object.</p></td>
 </tr>
 </tbody>
 </table>
 <dl class="py method">
-<dt id="arcgis.realtime.velocity.FeedsManager.create">
-<code class="sig-name descname">create</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">feed</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; arcgis.realtime.velocity._feed.Feed<a class="headerlink" href="#arcgis.realtime.velocity.FeedsManager.create" title="Permalink to this definition">¶</a></dt>
-<dd><p>Creates a new feed configuration</p>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.FeedsManager.create">
+<span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.realtime.velocity.FeedsManager.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a new feed configuration.</p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 18%" />
@@ -389,7 +480,7 @@ of real-time data as it’s received.
 <td><p><strong>Description</strong></p></td>
 </tr>
 <tr class="row-even"><td><p>feed</p></td>
-<td><p>An instance of feed like RSS, HTTP Poller etc.</p></td>
+<td><p>An instance of a feed such as RSS or HTTP Poller.</p></td>
 </tr>
 </tbody>
 </table>
@@ -514,9 +605,9 @@ of real-time data as it’s received.
 </dd></dl>
 
 <dl class="py method">
-<dt id="arcgis.realtime.velocity.FeedsManager.get">
-<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">id</span></em><span class="sig-paren">)</span> &#x2192; arcgis.realtime.velocity._feed.Feed<a class="headerlink" href="#arcgis.realtime.velocity.FeedsManager.get" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get Feed by id</p>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.FeedsManager.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.realtime.velocity.FeedsManager.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get feed by ID.</p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 18%" />
@@ -527,7 +618,7 @@ of real-time data as it’s received.
 <td><p><strong>Description</strong></p></td>
 </tr>
 <tr class="row-even"><td><p>id</p></td>
-<td><p>unique id of a feed</p></td>
+<td><p>Unique ID of a feed.</p></td>
 </tr>
 </tbody>
 </table>
@@ -544,10 +635,10 @@ of real-time data as it’s received.
 </div>
 </dd></dl>
 
-<dl class="py method">
-<dt id="arcgis.realtime.velocity.FeedsManager.items">
-<em class="property">property </em><code class="sig-name descname">items</code><a class="headerlink" href="#arcgis.realtime.velocity.FeedsManager.items" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get all Feeds</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.FeedsManager.items">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">items</span></span><a class="headerlink" href="#arcgis.realtime.velocity.FeedsManager.items" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get all feeds.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>returns a collection of all configured feed tasks with feed id and feed label.</p>
@@ -563,13 +654,13 @@ of real-time data as it’s received.
 
 </dd></dl>
 
-</section>
-<section id="realtimeanalyticsmanager">
-<h2>RealTimeAnalyticsManager<a class="headerlink" href="#realtimeanalyticsmanager" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="realtimeanalyticsmanager">
+<h2>RealTimeAnalyticsManager<a class="headerlink" href="#realtimeanalyticsmanager" title="Permalink to this heading">¶</a></h2>
 <dl class="py class">
-<dt id="arcgis.realtime.velocity.RealTimeAnalyticsManager">
-<em class="property">class </em><code class="sig-prename descclassname">arcgis.realtime.velocity.</code><code class="sig-name descname">RealTimeAnalyticsManager</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">gis</span><span class="p">:</span> <span class="n"><a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.GIS" title="arcgis.gis.GIS">arcgis.gis.GIS</a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.realtime.velocity.RealTimeAnalyticsManager" title="Permalink to this definition">¶</a></dt>
-<dd><p>Use to get real-time analytics item</p>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.RealTimeAnalyticsManager">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">arcgis.realtime.velocity.</span></span><span class="sig-name descname"><span class="pre">RealTimeAnalyticsManager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gis</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.realtime.velocity.RealTimeAnalyticsManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Used to manage real-time analytic items.</p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 21%" />
@@ -580,7 +671,7 @@ of real-time data as it’s received.
 <td><p><strong>Description</strong></p></td>
 </tr>
 <tr class="row-even"><td><p>url</p></td>
-<td><p>velocity org URL</p></td>
+<td><p>URL of the ArcGIS Velocity organization.</p></td>
 </tr>
 <tr class="row-odd"><td><p>gis</p></td>
 <td><p>an authenticated <code class="xref py py-class docutils literal notranslate"><span class="pre">arcigs.gis.GIS</span></code> object.</p></td>
@@ -588,9 +679,9 @@ of real-time data as it’s received.
 </tbody>
 </table>
 <dl class="py method">
-<dt id="arcgis.realtime.velocity.RealTimeAnalyticsManager.get">
-<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">id</span></em><span class="sig-paren">)</span> &#x2192; arcgis.realtime.velocity._realtime_analytics.RealTimeAnalytics<a class="headerlink" href="#arcgis.realtime.velocity.RealTimeAnalyticsManager.get" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get real-time analytics by id</p>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.RealTimeAnalyticsManager.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.realtime.velocity.RealTimeAnalyticsManager.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get real-time analytic item by ID.</p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 21%" />
@@ -601,7 +692,7 @@ of real-time data as it’s received.
 <td><p><strong>Description</strong></p></td>
 </tr>
 <tr class="row-even"><td><p>id</p></td>
-<td><p>unique id of a real-time analytics</p></td>
+<td><p>Unique ID of a real-time analytic.</p></td>
 </tr>
 </tbody>
 </table>
@@ -618,10 +709,10 @@ of real-time data as it’s received.
 </div>
 </dd></dl>
 
-<dl class="py method">
-<dt id="arcgis.realtime.velocity.RealTimeAnalyticsManager.items">
-<em class="property">property </em><code class="sig-name descname">items</code><a class="headerlink" href="#arcgis.realtime.velocity.RealTimeAnalyticsManager.items" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get all real-time analytics items.</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.RealTimeAnalyticsManager.items">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">items</span></span><a class="headerlink" href="#arcgis.realtime.velocity.RealTimeAnalyticsManager.items" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get all real-time analytic items.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>returns a collection of all real-time analytics items with id and label.</p>
@@ -637,13 +728,13 @@ of real-time data as it’s received.
 
 </dd></dl>
 
-</section>
-<section id="bigdataanalyticsmanager">
-<h2>BigDataAnalyticsManager<a class="headerlink" href="#bigdataanalyticsmanager" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="bigdataanalyticsmanager">
+<h2>BigDataAnalyticsManager<a class="headerlink" href="#bigdataanalyticsmanager" title="Permalink to this heading">¶</a></h2>
 <dl class="py class">
-<dt id="arcgis.realtime.velocity.BigDataAnalyticsManager">
-<em class="property">class </em><code class="sig-prename descclassname">arcgis.realtime.velocity.</code><code class="sig-name descname">BigDataAnalyticsManager</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">gis</span><span class="p">:</span> <span class="n"><a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.GIS" title="arcgis.gis.GIS">arcgis.gis.GIS</a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.realtime.velocity.BigDataAnalyticsManager" title="Permalink to this definition">¶</a></dt>
-<dd><p>Use to get big data analytics item</p>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.BigDataAnalyticsManager">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">arcgis.realtime.velocity.</span></span><span class="sig-name descname"><span class="pre">BigDataAnalyticsManager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gis</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.realtime.velocity.BigDataAnalyticsManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Used to manage big data analytic items.</p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 21%" />
@@ -654,17 +745,17 @@ of real-time data as it’s received.
 <td><p><strong>Description</strong></p></td>
 </tr>
 <tr class="row-even"><td><p>url</p></td>
-<td><p>velocity org URL</p></td>
+<td><p>URL of the ArcGIS Velocity organization.</p></td>
 </tr>
 <tr class="row-odd"><td><p>gis</p></td>
-<td><p>an authenticated <code class="xref py py-class docutils literal notranslate"><span class="pre">arcigs.gis.GIS</span></code> object.</p></td>
+<td><p>An authenticated <code class="xref py py-class docutils literal notranslate"><span class="pre">arcigs.gis.GIS</span></code> object.</p></td>
 </tr>
 </tbody>
 </table>
 <dl class="py method">
-<dt id="arcgis.realtime.velocity.BigDataAnalyticsManager.get">
-<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">id</span></em><span class="sig-paren">)</span> &#x2192; arcgis.realtime.velocity._bigdata_analytics.BigDataAnalytics<a class="headerlink" href="#arcgis.realtime.velocity.BigDataAnalyticsManager.get" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get big data analytics by id</p>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.BigDataAnalyticsManager.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.realtime.velocity.BigDataAnalyticsManager.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get big data analytic items by ID.</p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 18%" />
@@ -675,7 +766,7 @@ of real-time data as it’s received.
 <td><p><strong>Description</strong></p></td>
 </tr>
 <tr class="row-even"><td><p>id</p></td>
-<td><p>Unique id of a big data task</p></td>
+<td><p>Unique ID of a big data analytic task.</p></td>
 </tr>
 </tbody>
 </table>
@@ -692,10 +783,10 @@ of real-time data as it’s received.
 </div>
 </dd></dl>
 
-<dl class="py method">
-<dt id="arcgis.realtime.velocity.BigDataAnalyticsManager.items">
-<em class="property">property </em><code class="sig-name descname">items</code><a class="headerlink" href="#arcgis.realtime.velocity.BigDataAnalyticsManager.items" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get all big data analytics items</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.BigDataAnalyticsManager.items">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">items</span></span><a class="headerlink" href="#arcgis.realtime.velocity.BigDataAnalyticsManager.items" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get all big data analytic items.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>returns a collection of all configured Big Data Analytics items</p>
@@ -711,17 +802,17 @@ of real-time data as it’s received.
 
 </dd></dl>
 
-</section>
-<section id="feed">
-<h2>Feed<a class="headerlink" href="#feed" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="feed">
+<h2>Feed<a class="headerlink" href="#feed" title="Permalink to this heading">¶</a></h2>
 <dl class="py class">
-<dt id="arcgis.realtime.velocity.Feed">
-<em class="property">class </em><code class="sig-prename descclassname">arcgis.realtime.velocity.</code><code class="sig-name descname">Feed</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">gis</span><span class="p">:</span> <span class="n"><a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.GIS" title="arcgis.gis.GIS">arcgis.gis.GIS</a></span></em>, <em class="sig-param"><span class="n">util</span><span class="p">:</span> <span class="n">arcgis.realtime.velocity._util._Util</span></em>, <em class="sig-param"><span class="n">item</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>Dict<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.realtime.velocity.Feed" title="Permalink to this definition">¶</a></dt>
-<dd><p>Feed class implements Task and provides public facing methods to access Feeds API endpoints</p>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.Feed">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">arcgis.realtime.velocity.</span></span><span class="sig-name descname"><span class="pre">Feed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">util</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">item</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.realtime.velocity.Feed" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <code class="docutils literal notranslate"><span class="pre">Feed</span></code> class implements Task and provides public facing methods to access Feed API endpoints.</p>
 <dl class="py method">
-<dt id="arcgis.realtime.velocity.Feed.delete">
-<code class="sig-name descname">delete</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#arcgis.realtime.velocity.Feed.delete" title="Permalink to this definition">¶</a></dt>
-<dd><p>Deletes an existing feed instance</p>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.Feed.delete">
+<span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.realtime.velocity.Feed.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes an existing Feed instance.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>A boolean containing True (for success) or
@@ -737,10 +828,10 @@ False (for failure) a dictionary with details is returned.</p>
 </div>
 </dd></dl>
 
-<dl class="py method">
-<dt id="arcgis.realtime.velocity.Feed.metrics">
-<em class="property">property </em><code class="sig-name descname">metrics</code><a class="headerlink" href="#arcgis.realtime.velocity.Feed.metrics" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the metrics of the running Feed for the given id</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.Feed.metrics">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">metrics</span></span><a class="headerlink" href="#arcgis.realtime.velocity.Feed.metrics" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the metrics of the running Feed for the given ID.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>response of feed metrics</p>
@@ -757,9 +848,9 @@ False (for failure) a dictionary with details is returned.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="arcgis.realtime.velocity.Feed.start">
-<code class="sig-name descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; Dict<a class="headerlink" href="#arcgis.realtime.velocity.Feed.start" title="Permalink to this definition">¶</a></dt>
-<dd><p>Start the Feed for the given id</p>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.Feed.start">
+<span class="sig-name descname"><span class="pre">start</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.realtime.velocity.Feed.start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start the Feed for the given ID.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>response of feed start</p>
@@ -774,10 +865,10 @@ False (for failure) a dictionary with details is returned.</p>
 </div>
 </dd></dl>
 
-<dl class="py method">
-<dt id="arcgis.realtime.velocity.Feed.status">
-<em class="property">property </em><code class="sig-name descname">status</code><a class="headerlink" href="#arcgis.realtime.velocity.Feed.status" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the status of the running Feed for the given id
+<dl class="py property">
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.Feed.status">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">status</span></span><a class="headerlink" href="#arcgis.realtime.velocity.Feed.status" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the status of the running Feed for the given ID.
 :return: response of Feed status</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Retrieve status of sample_feed</span>
 
@@ -791,9 +882,9 @@ False (for failure) a dictionary with details is returned.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="arcgis.realtime.velocity.Feed.stop">
-<code class="sig-name descname">stop</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; Dict<a class="headerlink" href="#arcgis.realtime.velocity.Feed.stop" title="Permalink to this definition">¶</a></dt>
-<dd><p>Stop the Feed for the given id
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.Feed.stop">
+<span class="sig-name descname"><span class="pre">stop</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.realtime.velocity.Feed.stop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stop the Feed for the given ID.
 Return True if the Feed was successfully stopped.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -811,18 +902,18 @@ Return True if the Feed was successfully stopped.</p>
 
 </dd></dl>
 
-</section>
-<section id="realtimeanalytics">
-<h2>RealTimeAnalytics<a class="headerlink" href="#realtimeanalytics" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="realtimeanalytics">
+<h2>RealTimeAnalytics<a class="headerlink" href="#realtimeanalytics" title="Permalink to this heading">¶</a></h2>
 <dl class="py class">
-<dt id="arcgis.realtime.velocity.RealTimeAnalytics">
-<em class="property">class </em><code class="sig-prename descclassname">arcgis.realtime.velocity.</code><code class="sig-name descname">RealTimeAnalytics</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">gis</span><span class="p">:</span> <span class="n"><a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.GIS" title="arcgis.gis.GIS">arcgis.gis.GIS</a></span></em>, <em class="sig-param"><span class="n">util</span><span class="p">:</span> <span class="n">arcgis.realtime.velocity._util._Util</span></em>, <em class="sig-param"><span class="n">item</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>Dict<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.realtime.velocity.RealTimeAnalytics" title="Permalink to this definition">¶</a></dt>
-<dd><p>RealTimeAnalytics class implements Task and provides public facing methods to
-access RealTimeAnalytics API endpoints</p>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.RealTimeAnalytics">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">arcgis.realtime.velocity.</span></span><span class="sig-name descname"><span class="pre">RealTimeAnalytics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">util</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">item</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.realtime.velocity.RealTimeAnalytics" title="Permalink to this definition">¶</a></dt>
+<dd><p>the <code class="docutils literal notranslate"><span class="pre">RealTimeAnalytics</span></code> class implements Task and provides public facing methods to
+access RealTimeAnalytics API endpoints.</p>
 <dl class="py method">
-<dt id="arcgis.realtime.velocity.RealTimeAnalytics.delete">
-<code class="sig-name descname">delete</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#arcgis.realtime.velocity.RealTimeAnalytics.delete" title="Permalink to this definition">¶</a></dt>
-<dd><p>Deletes an existing Real-Time Analytics task instance</p>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.RealTimeAnalytics.delete">
+<span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.realtime.velocity.RealTimeAnalytics.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes an existing Real-Time Analytics task instance.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>A boolean containing True (for success) or False (for failure) a dictionary with details is returned.</p>
@@ -837,10 +928,10 @@ access RealTimeAnalytics API endpoints</p>
 </div>
 </dd></dl>
 
-<dl class="py method">
-<dt id="arcgis.realtime.velocity.RealTimeAnalytics.metrics">
-<em class="property">property </em><code class="sig-name descname">metrics</code><a class="headerlink" href="#arcgis.realtime.velocity.RealTimeAnalytics.metrics" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the metrics of the running Real-Time Analytics for the given id</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.RealTimeAnalytics.metrics">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">metrics</span></span><a class="headerlink" href="#arcgis.realtime.velocity.RealTimeAnalytics.metrics" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the metrics of the running Real-Time Analytics for the given ID.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>response of Real-Time Analytics metrics</p>
@@ -857,9 +948,9 @@ access RealTimeAnalytics API endpoints</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="arcgis.realtime.velocity.RealTimeAnalytics.start">
-<code class="sig-name descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; Dict<a class="headerlink" href="#arcgis.realtime.velocity.RealTimeAnalytics.start" title="Permalink to this definition">¶</a></dt>
-<dd><p>Start the Real-Time Analytics for the given id</p>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.RealTimeAnalytics.start">
+<span class="sig-name descname"><span class="pre">start</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.realtime.velocity.RealTimeAnalytics.start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start the Real-Time Analytics for the given ID.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>response of realtime_analytics start</p>
@@ -874,10 +965,10 @@ access RealTimeAnalytics API endpoints</p>
 </div>
 </dd></dl>
 
-<dl class="py method">
-<dt id="arcgis.realtime.velocity.RealTimeAnalytics.status">
-<em class="property">property </em><code class="sig-name descname">status</code><a class="headerlink" href="#arcgis.realtime.velocity.RealTimeAnalytics.status" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the status of the running Real-Time Analytics for the given id</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.RealTimeAnalytics.status">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">status</span></span><a class="headerlink" href="#arcgis.realtime.velocity.RealTimeAnalytics.status" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the status of the running Real-Time Analytics for the given ID.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>response of Real-Time Analytics status</p>
@@ -894,9 +985,9 @@ access RealTimeAnalytics API endpoints</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="arcgis.realtime.velocity.RealTimeAnalytics.stop">
-<code class="sig-name descname">stop</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; Dict<a class="headerlink" href="#arcgis.realtime.velocity.RealTimeAnalytics.stop" title="Permalink to this definition">¶</a></dt>
-<dd><p>Stop the Real-Time Analytics for the given id
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.RealTimeAnalytics.stop">
+<span class="sig-name descname"><span class="pre">stop</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.realtime.velocity.RealTimeAnalytics.stop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stop the Real-Time Analytics for the given ID.
 Return True if the the Real-Time Analytics was successfully stopped.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -914,18 +1005,18 @@ Return True if the the Real-Time Analytics was successfully stopped.</p>
 
 </dd></dl>
 
-</section>
-<section id="bigdataanalytics">
-<h2>BigDataAnalytics<a class="headerlink" href="#bigdataanalytics" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="bigdataanalytics">
+<h2>BigDataAnalytics<a class="headerlink" href="#bigdataanalytics" title="Permalink to this heading">¶</a></h2>
 <dl class="py class">
-<dt id="arcgis.realtime.velocity.BigDataAnalytics">
-<em class="property">class </em><code class="sig-prename descclassname">arcgis.realtime.velocity.</code><code class="sig-name descname">BigDataAnalytics</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">gis</span><span class="p">:</span> <span class="n"><a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.GIS" title="arcgis.gis.GIS">arcgis.gis.GIS</a></span></em>, <em class="sig-param"><span class="n">util</span><span class="p">:</span> <span class="n">arcgis.realtime.velocity._util._Util</span></em>, <em class="sig-param"><span class="n">item</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>Dict<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.realtime.velocity.BigDataAnalytics" title="Permalink to this definition">¶</a></dt>
-<dd><p>BigDataAnalytics class implements Task and provides public facing methods to
-access BigDataAnalytics API endpoints</p>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.BigDataAnalytics">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">arcgis.realtime.velocity.</span></span><span class="sig-name descname"><span class="pre">BigDataAnalytics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">util</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">item</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.realtime.velocity.BigDataAnalytics" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <code class="docutils literal notranslate"><span class="pre">BigDataAnalytics</span></code> class implements Task and provides public facing methods to
+access BigDataAnalytics API endpoints.</p>
 <dl class="py method">
-<dt id="arcgis.realtime.velocity.BigDataAnalytics.delete">
-<code class="sig-name descname">delete</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#arcgis.realtime.velocity.BigDataAnalytics.delete" title="Permalink to this definition">¶</a></dt>
-<dd><p>Deletes an existing Big Data Analytics instance</p>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.BigDataAnalytics.delete">
+<span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.realtime.velocity.BigDataAnalytics.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes an existing Big Data Analytics instance.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>A boolean containing True (for success) or
@@ -941,10 +1032,10 @@ False (for failure) a dictionary with details is returned.</p>
 </div>
 </dd></dl>
 
-<dl class="py method">
-<dt id="arcgis.realtime.velocity.BigDataAnalytics.metrics">
-<em class="property">property </em><code class="sig-name descname">metrics</code><a class="headerlink" href="#arcgis.realtime.velocity.BigDataAnalytics.metrics" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the metrics of the running Big Data Analytics for the given id</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.BigDataAnalytics.metrics">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">metrics</span></span><a class="headerlink" href="#arcgis.realtime.velocity.BigDataAnalytics.metrics" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the metrics of the running Big Data Analytics for the given ID.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>response of Big Data Analytics metrics</p>
@@ -961,9 +1052,9 @@ False (for failure) a dictionary with details is returned.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="arcgis.realtime.velocity.BigDataAnalytics.start">
-<code class="sig-name descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; Dict<a class="headerlink" href="#arcgis.realtime.velocity.BigDataAnalytics.start" title="Permalink to this definition">¶</a></dt>
-<dd><p>Start the Big Data Analytics for the given id</p>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.BigDataAnalytics.start">
+<span class="sig-name descname"><span class="pre">start</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.realtime.velocity.BigDataAnalytics.start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start the Big Data Analytics for the given ID.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>response of bigdata_analytics start</p>
@@ -978,10 +1069,10 @@ False (for failure) a dictionary with details is returned.</p>
 </div>
 </dd></dl>
 
-<dl class="py method">
-<dt id="arcgis.realtime.velocity.BigDataAnalytics.status">
-<em class="property">property </em><code class="sig-name descname">status</code><a class="headerlink" href="#arcgis.realtime.velocity.BigDataAnalytics.status" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the status of the running Big Data Analytics for the given id</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.BigDataAnalytics.status">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">status</span></span><a class="headerlink" href="#arcgis.realtime.velocity.BigDataAnalytics.status" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the status of the running Big Data Analytics for the given ID.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>response of Big Data Analytics status</p>
@@ -998,9 +1089,9 @@ False (for failure) a dictionary with details is returned.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="arcgis.realtime.velocity.BigDataAnalytics.stop">
-<code class="sig-name descname">stop</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; Dict<a class="headerlink" href="#arcgis.realtime.velocity.BigDataAnalytics.stop" title="Permalink to this definition">¶</a></dt>
-<dd><p>Stop the Big Data Analytics for the given id
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.BigDataAnalytics.stop">
+<span class="sig-name descname"><span class="pre">stop</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.realtime.velocity.BigDataAnalytics.stop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stop the Big Data Analytics for the given ID.
 Return True if the Big Data Analytics was successfully stopped.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -1018,13 +1109,13 @@ Return True if the Big Data Analytics was successfully stopped.</p>
 
 </dd></dl>
 
-</section>
-<section id="basicauth">
-<h2>BasicAuth<a class="headerlink" href="#basicauth" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="basicauth">
+<h2>BasicAuth<a class="headerlink" href="#basicauth" title="Permalink to this heading">¶</a></h2>
 <dl class="py class">
-<dt id="arcgis.realtime.velocity.BasicAuth">
-<em class="property">class </em><code class="sig-prename descclassname">arcgis.realtime.velocity.</code><code class="sig-name descname">BasicAuth</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">username</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">password</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.realtime.velocity.BasicAuth" title="Permalink to this definition">¶</a></dt>
-<dd><p>This dataclass is used to specify a Basic HTTP Authentication scenario using username and password</p>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.BasicAuth">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">arcgis.realtime.velocity.</span></span><span class="sig-name descname"><span class="pre">BasicAuth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">username</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.realtime.velocity.BasicAuth" title="Permalink to this definition">¶</a></dt>
+<dd><p>This dataclass is used to specify a Basic HTTP Authentication scenario using username and password.</p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 21%" />
@@ -1035,31 +1126,31 @@ Return True if the Big Data Analytics was successfully stopped.</p>
 <td><p><strong>Description</strong></p></td>
 </tr>
 <tr class="row-even"><td><p>username</p></td>
-<td><p>str. Username for basic authentication</p></td>
+<td><p>str. Username for basic authentication.</p></td>
 </tr>
 <tr class="row-odd"><td><p>password</p></td>
-<td><p>str. Password for basic authentication</p></td>
+<td><p>str. Password for basic authentication.</p></td>
 </tr>
 </tbody>
 </table>
 <dl class="py attribute">
-<dt id="arcgis.realtime.velocity.BasicAuth.password">
-<code class="sig-name descname">password</code><em class="property">: str</em><a class="headerlink" href="#arcgis.realtime.velocity.BasicAuth.password" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.BasicAuth.password">
+<span class="sig-name descname"><span class="pre">password</span></span><a class="headerlink" href="#arcgis.realtime.velocity.BasicAuth.password" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="arcgis.realtime.velocity.BasicAuth.username">
-<code class="sig-name descname">username</code><em class="property">: str</em><a class="headerlink" href="#arcgis.realtime.velocity.BasicAuth.username" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.BasicAuth.username">
+<span class="sig-name descname"><span class="pre">username</span></span><a class="headerlink" href="#arcgis.realtime.velocity.BasicAuth.username" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-</section>
-<section id="certificateauth">
-<h2>CertificateAuth<a class="headerlink" href="#certificateauth" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="certificateauth">
+<h2>CertificateAuth<a class="headerlink" href="#certificateauth" title="Permalink to this heading">¶</a></h2>
 <dl class="py class">
-<dt id="arcgis.realtime.velocity.CertificateAuth">
-<em class="property">class </em><code class="sig-prename descclassname">arcgis.realtime.velocity.</code><code class="sig-name descname">CertificateAuth</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pfx_file_http_location</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">password</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.realtime.velocity.CertificateAuth" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.CertificateAuth">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">arcgis.realtime.velocity.</span></span><span class="sig-name descname"><span class="pre">CertificateAuth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pfx_file_http_location</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.realtime.velocity.CertificateAuth" title="Permalink to this definition">¶</a></dt>
 <dd><p>This dataclass is used to specify a Basic HTTP Authentication scenario using username and password.</p>
 <table class="docutils align-default">
 <colgroup>
@@ -1071,79 +1162,169 @@ Return True if the Big Data Analytics was successfully stopped.</p>
 <td><p><strong>Description</strong></p></td>
 </tr>
 <tr class="row-even"><td><p>pfx_file_http_location</p></td>
-<td><p>str. HTTP path of the PFX file</p></td>
+<td><p>str. HTTP path of the PFX file.</p></td>
 </tr>
 <tr class="row-odd"><td><p>password</p></td>
-<td><p>str. Password for Certificate authentication</p></td>
+<td><p>str. Password for certificate authentication.</p></td>
 </tr>
 </tbody>
 </table>
 <dl class="py attribute">
-<dt id="arcgis.realtime.velocity.CertificateAuth.password">
-<code class="sig-name descname">password</code><em class="property">: str</em><a class="headerlink" href="#arcgis.realtime.velocity.CertificateAuth.password" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.CertificateAuth.password">
+<span class="sig-name descname"><span class="pre">password</span></span><a class="headerlink" href="#arcgis.realtime.velocity.CertificateAuth.password" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt id="arcgis.realtime.velocity.CertificateAuth.pfx_file_http_location">
-<code class="sig-name descname">pfx_file_http_location</code><em class="property">: str</em><a class="headerlink" href="#arcgis.realtime.velocity.CertificateAuth.pfx_file_http_location" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.CertificateAuth.pfx_file_http_location">
+<span class="sig-name descname"><span class="pre">pfx_file_http_location</span></span><a class="headerlink" href="#arcgis.realtime.velocity.CertificateAuth.pfx_file_http_location" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-</section>
-<section id="noauth">
-<h2>NoAuth<a class="headerlink" href="#noauth" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="noauth">
+<h2>NoAuth<a class="headerlink" href="#noauth" title="Permalink to this heading">¶</a></h2>
 <dl class="py class">
-<dt id="arcgis.realtime.velocity.NoAuth">
-<em class="property">class </em><code class="sig-prename descclassname">arcgis.realtime.velocity.</code><code class="sig-name descname">NoAuth</code><a class="headerlink" href="#arcgis.realtime.velocity.NoAuth" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.realtime.velocity.NoAuth">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">arcgis.realtime.velocity.</span></span><span class="sig-name descname"><span class="pre">NoAuth</span></span><a class="headerlink" href="#arcgis.realtime.velocity.NoAuth" title="Permalink to this definition">¶</a></dt>
 <dd><p>This dataclass is used to specify the no HTTP authentication scenario.</p>
 </dd></dl>
 
-</section>
-<section id="submodules">
-<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.realtime.velocity.feeds.html">arcgis.realtime.velocity.feeds module</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.realtime.velocity.feeds.html#rss">RSS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.realtime.velocity.feeds.html#httppoller">HttpPoller</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.realtime.velocity.feeds.html#httpreceiver">HttpReceiver</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.realtime.velocity.feeds.html#httpsimulator">HttpSimulator</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.realtime.velocity.feeds.html#awsiot">AWSIoT</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.realtime.velocity.feeds.html#azureeventhub">AzureEventHub</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.realtime.velocity.feeds.html#azureservicebus">AzureServiceBus</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.realtime.velocity.feeds.html#ciscoedgeintelligence">CiscoEdgeIntelligence</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.realtime.velocity.feeds.html#featurelayer">FeatureLayer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.realtime.velocity.feeds.html#streamlayer">StreamLayer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.realtime.velocity.feeds.html#geotab">Geotab</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.realtime.velocity.feeds.html#kafka">Kafka</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.realtime.velocity.feeds.html#mqtt">MQTT</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.realtime.velocity.feeds.html#rabbitmq">RabbitMQ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.realtime.velocity.feeds.html#verizonconnectreveal">VerizonConnectReveal</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.realtime.velocity.feeds.html#websocket">WebSocket</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.realtime.velocity.feeds.html#noauth">NoAuth</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.realtime.velocity.feeds.html#saslplain">SASLPlain</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.realtime.velocity.feeds.html#xyzgeometry">XYZGeometry</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.realtime.velocity.feeds.html#singlefieldgeometry">SingleFieldGeometry</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.realtime.velocity.feeds.html#timeinstant">TimeInstant</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.realtime.velocity.feeds.html#timeinterval">TimeInterval</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.realtime.velocity.feeds.html#runinterval">RunInterval</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.realtime.velocity.feeds.html#rss">RSS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.realtime.velocity.feeds.html#arcgis.realtime.velocity.feeds.RSS"><code class="docutils literal notranslate"><span class="pre">RSS</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.realtime.velocity.feeds.html#httppoller">HttpPoller</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.realtime.velocity.feeds.html#arcgis.realtime.velocity.feeds.HttpPoller"><code class="docutils literal notranslate"><span class="pre">HttpPoller</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.realtime.velocity.feeds.html#httpreceiver">HttpReceiver</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.realtime.velocity.feeds.html#arcgis.realtime.velocity.feeds.HttpReceiver"><code class="docutils literal notranslate"><span class="pre">HttpReceiver</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.realtime.velocity.feeds.html#httpsimulator">HttpSimulator</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.realtime.velocity.feeds.html#arcgis.realtime.velocity.feeds.HttpSimulator"><code class="docutils literal notranslate"><span class="pre">HttpSimulator</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.realtime.velocity.feeds.html#awsiot">AWSIoT</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.realtime.velocity.feeds.html#arcgis.realtime.velocity.feeds.AWSIoT"><code class="docutils literal notranslate"><span class="pre">AWSIoT</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.realtime.velocity.feeds.html#azureeventhub">AzureEventHub</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.realtime.velocity.feeds.html#arcgis.realtime.velocity.feeds.AzureEventHub"><code class="docutils literal notranslate"><span class="pre">AzureEventHub</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.realtime.velocity.feeds.html#azureservicebus">AzureServiceBus</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.realtime.velocity.feeds.html#arcgis.realtime.velocity.feeds.AzureServiceBus"><code class="docutils literal notranslate"><span class="pre">AzureServiceBus</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.realtime.velocity.feeds.html#ciscoedgeintelligence">CiscoEdgeIntelligence</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.realtime.velocity.feeds.html#arcgis.realtime.velocity.feeds.CiscoEdgeIntelligence"><code class="docutils literal notranslate"><span class="pre">CiscoEdgeIntelligence</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.realtime.velocity.feeds.html#featurelayer">FeatureLayer</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.realtime.velocity.feeds.html#arcgis.realtime.velocity.feeds.FeatureLayer"><code class="docutils literal notranslate"><span class="pre">FeatureLayer</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.realtime.velocity.feeds.html#streamlayer">StreamLayer</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.realtime.velocity.feeds.html#arcgis.realtime.velocity.feeds.StreamLayer"><code class="docutils literal notranslate"><span class="pre">StreamLayer</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.realtime.velocity.feeds.html#geotab">Geotab</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.realtime.velocity.feeds.html#arcgis.realtime.velocity.feeds.Geotab"><code class="docutils literal notranslate"><span class="pre">Geotab</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.realtime.velocity.feeds.html#kafka">Kafka</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.realtime.velocity.feeds.html#arcgis.realtime.velocity.feeds.Kafka"><code class="docutils literal notranslate"><span class="pre">Kafka</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.realtime.velocity.feeds.html#mqtt">MQTT</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.realtime.velocity.feeds.html#arcgis.realtime.velocity.feeds.MQTT"><code class="docutils literal notranslate"><span class="pre">MQTT</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.realtime.velocity.feeds.html#rabbitmq">RabbitMQ</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.realtime.velocity.feeds.html#arcgis.realtime.velocity.feeds.RabbitMQ"><code class="docutils literal notranslate"><span class="pre">RabbitMQ</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.realtime.velocity.feeds.html#verizonconnectreveal">VerizonConnectReveal</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.realtime.velocity.feeds.html#arcgis.realtime.velocity.feeds.VerizonConnectReveal"><code class="docutils literal notranslate"><span class="pre">VerizonConnectReveal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.realtime.velocity.feeds.html#websocket">WebSocket</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.realtime.velocity.feeds.html#arcgis.realtime.velocity.feeds.WebSocket"><code class="docutils literal notranslate"><span class="pre">WebSocket</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.realtime.velocity.feeds.html#noauth">NoAuth</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.realtime.velocity.feeds.html#arcgis.realtime.velocity.feeds.NoAuth"><code class="docutils literal notranslate"><span class="pre">NoAuth</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.realtime.velocity.feeds.html#saslplain">SASLPlain</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.realtime.velocity.feeds.html#arcgis.realtime.velocity.feeds.SASLPlain"><code class="docutils literal notranslate"><span class="pre">SASLPlain</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.realtime.velocity.feeds.html#xyzgeometry">XYZGeometry</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.realtime.velocity.feeds.html#arcgis.realtime.velocity.feeds.XYZGeometry"><code class="docutils literal notranslate"><span class="pre">XYZGeometry</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.realtime.velocity.feeds.html#singlefieldgeometry">SingleFieldGeometry</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.realtime.velocity.feeds.html#arcgis.realtime.velocity.feeds.SingleFieldGeometry"><code class="docutils literal notranslate"><span class="pre">SingleFieldGeometry</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.realtime.velocity.feeds.html#timeinstant">TimeInstant</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.realtime.velocity.feeds.html#arcgis.realtime.velocity.feeds.TimeInstant"><code class="docutils literal notranslate"><span class="pre">TimeInstant</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.realtime.velocity.feeds.html#timeinterval">TimeInterval</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.realtime.velocity.feeds.html#arcgis.realtime.velocity.feeds.TimeInterval"><code class="docutils literal notranslate"><span class="pre">TimeInterval</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.realtime.velocity.feeds.html#runinterval">RunInterval</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.realtime.velocity.feeds.html#arcgis.realtime.velocity.feeds.RunInterval"><code class="docutils literal notranslate"><span class="pre">RunInterval</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.realtime.velocity.input.html">arcgis.realtime.velocity.input module</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.realtime.velocity.input.html#delimitedformat">DelimitedFormat</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.realtime.velocity.input.html#esrijsonformat">EsriJsonFormat</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.realtime.velocity.input.html#geojsonformat">GeoJsonFormat</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.realtime.velocity.input.html#georssformat">GeoRssFormat</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.realtime.velocity.input.html#jsonformat">JsonFormat</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.realtime.velocity.input.html#rssformat">RssFormat</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcgis.realtime.velocity.input.html#xmlformat">XMLFormat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.realtime.velocity.input.html#delimitedformat">DelimitedFormat</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.realtime.velocity.input.html#arcgis.realtime.velocity.input.DelimitedFormat"><code class="docutils literal notranslate"><span class="pre">DelimitedFormat</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.realtime.velocity.input.html#esrijsonformat">EsriJsonFormat</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.realtime.velocity.input.html#arcgis.realtime.velocity.input.EsriJsonFormat"><code class="docutils literal notranslate"><span class="pre">EsriJsonFormat</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.realtime.velocity.input.html#geojsonformat">GeoJsonFormat</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.realtime.velocity.input.html#arcgis.realtime.velocity.input.GeoJsonFormat"><code class="docutils literal notranslate"><span class="pre">GeoJsonFormat</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.realtime.velocity.input.html#georssformat">GeoRssFormat</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.realtime.velocity.input.html#arcgis.realtime.velocity.input.GeoRssFormat"><code class="docutils literal notranslate"><span class="pre">GeoRssFormat</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.realtime.velocity.input.html#jsonformat">JsonFormat</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.realtime.velocity.input.html#arcgis.realtime.velocity.input.JsonFormat"><code class="docutils literal notranslate"><span class="pre">JsonFormat</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.realtime.velocity.input.html#rssformat">RssFormat</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.realtime.velocity.input.html#arcgis.realtime.velocity.input.RssFormat"><code class="docutils literal notranslate"><span class="pre">RssFormat</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="arcgis.realtime.velocity.input.html#xmlformat">XMLFormat</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.realtime.velocity.input.html#arcgis.realtime.velocity.input.XMLFormat"><code class="docutils literal notranslate"><span class="pre">XMLFormat</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
 
@@ -1181,12 +1362,12 @@ Return True if the Big Data Analytics was successfully stopped.</p>
 
   </div>
   
-    Options v: 2.0.0
+    Options v: 2.0.1
 
   <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
       <span class="fa fa-book"> Pick an earlier version</span>
-      v: 2.0.0
+      v: 2.0.1
       <span class="fa fa-caret-down"></span>
     </span>
     <div class="rst-other-versions">
@@ -1194,6 +1375,10 @@ Return True if the Big Data Analytics was successfully stopped.</p>
       
       <dl>
         <dt>Versions</dt>
+        
+          
+          <dd><a href="2.0.0/">2.0.0</a></dd>
+          
         
           
           <dd><a href="1.9.1/">1.9.1</a></dd>

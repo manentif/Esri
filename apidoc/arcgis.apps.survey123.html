@@ -4,11 +4,10 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>arcgis.apps.survey123 module &mdash; arcgis 2.0.0 documentation</title>
+  <title>arcgis.apps.survey123 module &mdash; arcgis 2.0.1 documentation</title>
   
 
   
@@ -33,10 +32,12 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -80,7 +81,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                2.0.0
+                2.0.1
               </div>
             
           
@@ -105,7 +106,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               
             
             
-              <p><span class="caption-text">arcgis</span></p>
+              <p class="caption" role="heading"><span class="caption-text">arcgis</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="arcgis.gis.toc.html">arcgis.gis module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.env.html">arcgis.env module</a></li>
@@ -117,6 +118,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l1"><a class="reference internal" href="arcgis.geoenrichment.html">arcgis.geoenrichment module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.geometry.html">arcgis.geometry module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.geoprocessing.html">arcgis.geoprocessing module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.graph.html">arcgis.graph module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.mapping.toc.html">arcgis.mapping module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.realtime.html">arcgis.realtime module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.schematics.html">arcgis.schematics module</a></li>
@@ -135,8 +137,31 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l3"><a class="reference internal" href="arcgis.apps.workforce.html">arcgis.apps.workforce module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.apps.storymap.html">arcgis.apps.storymap module</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">arcgis.apps.survey123 module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#surveymanager">SurveyManager</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#survey">Survey</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#surveymanager">SurveyManager</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#arcgis.apps.survey123.SurveyManager"><code class="docutils literal notranslate"><span class="pre">SurveyManager</span></code></a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.apps.survey123.SurveyManager.get"><code class="docutils literal notranslate"><span class="pre">SurveyManager.get()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.apps.survey123.SurveyManager.surveys"><code class="docutils literal notranslate"><span class="pre">SurveyManager.surveys</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#survey">Survey</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#arcgis.apps.survey123.Survey"><code class="docutils literal notranslate"><span class="pre">Survey</span></code></a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.apps.survey123.Survey.check_template_syntax"><code class="docutils literal notranslate"><span class="pre">Survey.check_template_syntax()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.apps.survey123.Survey.create_report_template"><code class="docutils literal notranslate"><span class="pre">Survey.create_report_template()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.apps.survey123.Survey.create_sample_report"><code class="docutils literal notranslate"><span class="pre">Survey.create_sample_report()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.apps.survey123.Survey.download"><code class="docutils literal notranslate"><span class="pre">Survey.download()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.apps.survey123.Survey.estimate"><code class="docutils literal notranslate"><span class="pre">Survey.estimate()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.apps.survey123.Survey.generate_report"><code class="docutils literal notranslate"><span class="pre">Survey.generate_report()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.apps.survey123.Survey.properties"><code class="docutils literal notranslate"><span class="pre">Survey.properties</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.apps.survey123.Survey.report_templates"><code class="docutils literal notranslate"><span class="pre">Survey.report_templates</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.apps.survey123.Survey.reports"><code class="docutils literal notranslate"><span class="pre">Survey.reports</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.apps.survey123.Survey.update_report_template"><code class="docutils literal notranslate"><span class="pre">Survey.update_report_template()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.apps.survey123.Survey.upload_report_template"><code class="docutils literal notranslate"><span class="pre">Survey.upload_report_template()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.apps.tracker.html">arcgis.apps.tracker module</a></li>
@@ -218,36 +243,36 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJGGV5"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-  <section id="module-arcgis.apps.survey123">
-<span id="arcgis-apps-survey123-module"></span><h1>arcgis.apps.survey123 module<a class="headerlink" href="#module-arcgis.apps.survey123" title="Permalink to this headline">¶</a></h1>
-<section id="surveymanager">
-<h2>SurveyManager<a class="headerlink" href="#surveymanager" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="module-arcgis.apps.survey123">
+<span id="arcgis-apps-survey123-module"></span><h1>arcgis.apps.survey123 module<a class="headerlink" href="#module-arcgis.apps.survey123" title="Permalink to this heading">¶</a></h1>
+<div class="section" id="surveymanager">
+<h2>SurveyManager<a class="headerlink" href="#surveymanager" title="Permalink to this heading">¶</a></h2>
 <dl class="py class">
-<dt id="arcgis.apps.survey123.SurveyManager">
-<em class="property">class </em><code class="sig-prename descclassname">arcgis.apps.survey123.</code><code class="sig-name descname">SurveyManager</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">gis</span></em>, <em class="sig-param"><span class="n">baseurl</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.survey123.SurveyManager" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.apps.survey123.SurveyManager">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">arcgis.apps.survey123.</span></span><span class="sig-name descname"><span class="pre">SurveyManager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">baseurl</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.survey123.SurveyManager" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Survey Manager allows users and administrators of Survey 123 Surveys to
 analysis, report on , and access the data for various surveys.</p>
 <dl class="py method">
-<dt id="arcgis.apps.survey123.SurveyManager.get">
-<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">survey_id</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.survey123.SurveyManager.get" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.apps.survey123.SurveyManager.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">survey_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.survey123.SurveyManager.get" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns a single <cite>Survey</cite> object from and Item ID or Item</p>
 </dd></dl>
 
-<dl class="py method">
-<dt id="arcgis.apps.survey123.SurveyManager.surveys">
-<em class="property">property </em><code class="sig-name descname">surveys</code><a class="headerlink" href="#arcgis.apps.survey123.SurveyManager.surveys" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="arcgis.apps.survey123.SurveyManager.surveys">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">surveys</span></span><a class="headerlink" href="#arcgis.apps.survey123.SurveyManager.surveys" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns a list of existing Survey</p>
 </dd></dl>
 
 </dd></dl>
 
-</section>
-<section id="survey">
-<h2>Survey<a class="headerlink" href="#survey" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="survey">
+<h2>Survey<a class="headerlink" href="#survey" title="Permalink to this heading">¶</a></h2>
 <dl class="py class">
-<dt id="arcgis.apps.survey123.Survey">
-<em class="property">class </em><code class="sig-prename descclassname">arcgis.apps.survey123.</code><code class="sig-name descname">Survey</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">item</span></em>, <em class="sig-param"><span class="n">sm</span></em>, <em class="sig-param"><span class="n">baseurl</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.survey123.Survey" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.apps.survey123.Survey">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">arcgis.apps.survey123.</span></span><span class="sig-name descname"><span class="pre">Survey</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">item</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">baseurl</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.survey123.Survey" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>A <cite>Survey</cite> is a single instance of a survey project. This class contains
 the <cite>Item</cite> information and properties to access the underlying dataset
@@ -257,8 +282,8 @@ that was generated by the <cite>Survey</cite> form.</p>
 <p>In addition to exporting data to various formats, a <cite>Survey’s</cite> data can
 be exported as reports.</p>
 <dl class="py method">
-<dt id="arcgis.apps.survey123.Survey.check_template_syntax">
-<code class="sig-name descname">check_template_syntax</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">template_file</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.survey123.Survey.check_template_syntax" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.apps.survey123.Survey.check_template_syntax">
+<span class="sig-name descname"><span class="pre">check_template_syntax</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">template_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.survey123.Survey.check_template_syntax" title="Permalink to this definition">¶</a></dt>
 <dd><p>A sync operation to check any syntax which will lead to a failure
 when generating reports in the given feature.</p>
 <table class="docutils align-default">
@@ -283,8 +308,8 @@ when generating reports in the given feature.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="arcgis.apps.survey123.Survey.create_report_template">
-<code class="sig-name descname">create_report_template</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">template_type</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.survey123.Survey.create_report_template" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.apps.survey123.Survey.create_report_template">
+<span class="sig-name descname"><span class="pre">create_report_template</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">template_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.survey123.Survey.create_report_template" title="Permalink to this definition">¶</a></dt>
 <dd><p>The <cite>create_report_template</cite> creates a simple default template that
 can be downloaded locally, editted and uploaded back up as a report
 template.</p>
@@ -312,8 +337,8 @@ Default is <cite>individual</cite>.</p></td>
 </dd></dl>
 
 <dl class="py method">
-<dt id="arcgis.apps.survey123.Survey.create_sample_report">
-<code class="sig-name descname">create_sample_report</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">report_template</span><span class="p">:</span> <span class="n"><a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.Item" title="arcgis.gis.Item">arcgis.gis.Item</a></span></em>, <em class="sig-param"><span class="n">where</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">'1=1'</span></em>, <em class="sig-param"><span class="n">utc_offset</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">'+00:00'</span></em>, <em class="sig-param"><span class="n">report_title</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">merge_files</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">survey_item</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span><a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.Item" title="arcgis.gis.Item">arcgis.gis.Item</a><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">webmap_item</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span><a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.Item" title="arcgis.gis.Item">arcgis.gis.Item</a><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">map_scale</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">locale</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">'en'</span></em><span class="sig-paren">)</span> &#x2192; str<a class="headerlink" href="#arcgis.apps.survey123.Survey.create_sample_report" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.apps.survey123.Survey.create_sample_report">
+<span class="sig-name descname"><span class="pre">create_sample_report</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">report_template</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">where</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'1=1'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">utc_offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'+00:00'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">report_title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">merge_files</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">survey_item</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">webmap_item</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">locale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'en'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.survey123.Survey.create_sample_report" title="Permalink to this definition">¶</a></dt>
 <dd><p>Similar task to generate_report for creating test sample report, and refining
 a report template before generating any formal report.</p>
 <table class="docutils align-default">
@@ -339,11 +364,11 @@ users timezone. Example: EST - “+04:00”</p></td>
 </tr>
 <tr class="row-odd"><td><p>report_title</p></td>
 <td><p>Optional String. Specify the file name (without extension) of the
-result report file. For example, if outputFormat is .pdf, input:
+result report file. For example, if outputFormat is .pdf, input:
 “abc” -&gt; output: “abc.pdf”; input: “abc.docx” -&gt; output: “abc.docx.pdf”.</p>
-<p>If packageFiles is true, outputReportName will be used for report files
-inside the packaged file. If mergeFiles is either nextPage or continuous,
-outputReportName will be used as the merged file name.</p>
+<p>If packageFiles is true, outputReportName will be used for report files
+inside the packaged file. If mergeFiles is either nextPage or continuous,
+outputReportName will be used as the merged file name.</p>
 </td>
 </tr>
 <tr class="row-even"><td><p>merge_files</p></td>
@@ -383,8 +408,8 @@ each question inside a survey.</p></td>
 </dd></dl>
 
 <dl class="py method">
-<dt id="arcgis.apps.survey123.Survey.download">
-<code class="sig-name descname">download</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">export_format</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">save_folder</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; str<a class="headerlink" href="#arcgis.apps.survey123.Survey.download" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.apps.survey123.Survey.download">
+<span class="sig-name descname"><span class="pre">download</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">export_format</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_folder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.survey123.Survey.download" title="Permalink to this definition">¶</a></dt>
 <dd><p>Exports the Survey’s data to other format</p>
 <table class="docutils align-default">
 <colgroup>
@@ -413,8 +438,8 @@ acceptable: File Geodatabase, Shapefile, CSV, and DF.</p></td>
 </dd></dl>
 
 <dl class="py method">
-<dt id="arcgis.apps.survey123.Survey.estimate">
-<code class="sig-name descname">estimate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">report_template</span><span class="p">:</span> <span class="n"><a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.Item" title="arcgis.gis.Item">arcgis.gis.Item</a></span></em>, <em class="sig-param"><span class="n">where</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">'1=1'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.survey123.Survey.estimate" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.apps.survey123.Survey.estimate">
+<span class="sig-name descname"><span class="pre">estimate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">report_template</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">where</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'1=1'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.survey123.Survey.estimate" title="Permalink to this definition">¶</a></dt>
 <dd><p>An operation to estimate how many credits are required for a task
 with the given parameters.</p>
 <table class="docutils align-default">
@@ -446,9 +471,9 @@ generated for each feature/record.</p></td>
 </dd></dl>
 
 <dl class="py method">
-<dt id="arcgis.apps.survey123.Survey.generate_report">
-<code class="sig-name descname">generate_report</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">report_template</span><span class="p">:</span> <span class="n"><a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.Item" title="arcgis.gis.Item">arcgis.gis.Item</a></span></em>, <em class="sig-param"><span class="n">where</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">'1=1'</span></em>, <em class="sig-param"><span class="n">utc_offset</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">'+00:00'</span></em>, <em class="sig-param"><span class="n">report_title</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">package_name</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_format</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">'docx'</span></em>, <em class="sig-param"><span class="n">folder_id</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">merge_files</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">survey_item</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span><a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.Item" title="arcgis.gis.Item">arcgis.gis.Item</a><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">webmap_item</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span><a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.Item" title="arcgis.gis.Item">arcgis.gis.Item</a><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">map_scale</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">locale</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">'en'</span></em><span class="sig-paren">)</span> &#x2192; str<a class="headerlink" href="#arcgis.apps.survey123.Survey.generate_report" title="Permalink to this definition">¶</a></dt>
-<dd><p>Creates a MS Word Report.  The <cite>generate_report</cite> method allows users to either save the
+<dt class="sig sig-object py" id="arcgis.apps.survey123.Survey.generate_report">
+<span class="sig-name descname"><span class="pre">generate_report</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">report_template</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">where</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'1=1'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">utc_offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'+00:00'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">report_title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">package_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'docx'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">folder_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">merge_files</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">survey_item</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">webmap_item</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">locale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'en'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.survey123.Survey.generate_report" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a MS Word Report or PDF.  The <cite>generate_report</cite> method allows users to either save the
 report to the enterprise or export it directly to disk.</p>
 <p>To save to disk, do not specify a <cite>folder_id</cite>.</p>
 <p>For additional information on parameters, see <a class="reference external" href="https://developers.arcgis.com/survey123/api-reference/rest/report/#create-report">Create Report</a>.</p>
@@ -531,15 +556,15 @@ each question inside a survey.</p></td>
 for <a class="reference internal" href="#arcgis.apps.survey123.Survey.generate_report" title="arcgis.apps.survey123.Survey.generate_report"><code class="xref py py-func docutils literal notranslate"><span class="pre">generate_report()</span></code></a> job.</p>
 </dd></dl>
 
-<dl class="py method">
-<dt id="arcgis.apps.survey123.Survey.properties">
-<em class="property">property </em><code class="sig-name descname">properties</code><a class="headerlink" href="#arcgis.apps.survey123.Survey.properties" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="arcgis.apps.survey123.Survey.properties">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">properties</span></span><a class="headerlink" href="#arcgis.apps.survey123.Survey.properties" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns the properties of the survey</p>
 </dd></dl>
 
-<dl class="py method">
-<dt id="arcgis.apps.survey123.Survey.report_templates">
-<em class="property">property </em><code class="sig-name descname">report_templates</code><a class="headerlink" href="#arcgis.apps.survey123.Survey.report_templates" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="arcgis.apps.survey123.Survey.report_templates">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">report_templates</span></span><a class="headerlink" href="#arcgis.apps.survey123.Survey.report_templates" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a list of saved report items</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -548,15 +573,15 @@ for <a class="reference internal" href="#arcgis.apps.survey123.Survey.generate_r
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="arcgis.apps.survey123.Survey.reports">
-<em class="property">property </em><code class="sig-name descname">reports</code><a class="headerlink" href="#arcgis.apps.survey123.Survey.reports" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="arcgis.apps.survey123.Survey.reports">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">reports</span></span><a class="headerlink" href="#arcgis.apps.survey123.Survey.reports" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns a list of generated reports</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="arcgis.apps.survey123.Survey.update_report_template">
-<code class="sig-name descname">update_report_template</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">template_file</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.survey123.Survey.update_report_template" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.apps.survey123.Survey.update_report_template">
+<span class="sig-name descname"><span class="pre">update_report_template</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">template_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.survey123.Survey.update_report_template" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check report template syntax to idenfify any syntax which will lead to a failure
 when generating reports in the given feature and updates existing Report template Org item.</p>
 <table class="docutils align-default">
@@ -582,8 +607,8 @@ The updated template name must match the name of the existing template item.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="arcgis.apps.survey123.Survey.upload_report_template">
-<code class="sig-name descname">upload_report_template</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">template_file</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">template_name</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.survey123.Survey.upload_report_template" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.apps.survey123.Survey.upload_report_template">
+<span class="sig-name descname"><span class="pre">upload_report_template</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">template_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">template_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.apps.survey123.Survey.upload_report_template" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check report template syntax to idenfify any syntax which will lead to a failure
 when generating reports in the given feature. Uploads the report to the organization
 and associates it with the survey.</p>
@@ -614,8 +639,8 @@ the name of the docx file will be used.</p></td>
 
 </dd></dl>
 
-</section>
-</section>
+</div>
+</div>
 
 
 
@@ -653,12 +678,12 @@ the name of the docx file will be used.</p></td>
 
   </div>
   
-    Options v: 2.0.0
+    Options v: 2.0.1
 
   <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
       <span class="fa fa-book"> Pick an earlier version</span>
-      v: 2.0.0
+      v: 2.0.1
       <span class="fa fa-caret-down"></span>
     </span>
     <div class="rst-other-versions">
@@ -666,6 +691,10 @@ the name of the docx file will be used.</p></td>
       
       <dl>
         <dt>Versions</dt>
+        
+          
+          <dd><a href="2.0.0/">2.0.0</a></dd>
+          
         
           
           <dd><a href="1.9.1/">1.9.1</a></dd>

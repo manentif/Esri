@@ -4,11 +4,10 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>arcgis.geoanalytics.find_locations module &mdash; arcgis 2.0.0 documentation</title>
+  <title>arcgis.geoanalytics.find_locations module &mdash; arcgis 2.0.1 documentation</title>
   
 
   
@@ -33,10 +32,12 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -80,7 +81,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                2.0.0
+                2.0.1
               </div>
             
           
@@ -105,7 +106,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               
             
             
-              <p><span class="caption-text">arcgis</span></p>
+              <p class="caption" role="heading"><span class="caption-text">arcgis</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="arcgis.gis.toc.html">arcgis.gis module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.env.html">arcgis.env module</a></li>
@@ -120,10 +121,26 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.analyze_patterns.html">arcgis.geoanalytics.analyze_patterns module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.data_enrichment.html">arcgis.geoanalytics.data_enrichment module</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">arcgis.geoanalytics.find_locations module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#detect-incidents">detect_incidents</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#find-dwell-locations">find_dwell_locations</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#find-similar-locations">find_similar_locations</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#geocode-locations">geocode_locations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#detect-incidents">detect_incidents</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#arcgis.geoanalytics.find_locations.detect_incidents"><code class="docutils literal notranslate"><span class="pre">detect_incidents()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#find-dwell-locations">find_dwell_locations</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#arcgis.geoanalytics.find_locations.find_dwell_locations"><code class="docutils literal notranslate"><span class="pre">find_dwell_locations()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#find-similar-locations">find_similar_locations</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#arcgis.geoanalytics.find_locations.find_similar_locations"><code class="docutils literal notranslate"><span class="pre">find_similar_locations()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#geocode-locations">geocode_locations</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#arcgis.geoanalytics.find_locations.geocode_locations"><code class="docutils literal notranslate"><span class="pre">geocode_locations()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#snap-tracks">snap_tracks</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#arcgis.geoanalytics.find_locations.snap_tracks"><code class="docutils literal notranslate"><span class="pre">snap_tracks()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.manage_data.html">arcgis.geoanalytics.manage_data module</a></li>
@@ -137,6 +154,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l1"><a class="reference internal" href="arcgis.geoenrichment.html">arcgis.geoenrichment module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.geometry.html">arcgis.geometry module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.geoprocessing.html">arcgis.geoprocessing module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.graph.html">arcgis.graph module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.mapping.toc.html">arcgis.mapping module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.realtime.html">arcgis.realtime module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.schematics.html">arcgis.schematics module</a></li>
@@ -216,15 +234,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJGGV5"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-  <section id="arcgis-geoanalytics-find-locations-module">
-<h1>arcgis.geoanalytics.find_locations module<a class="headerlink" href="#arcgis-geoanalytics-find-locations-module" title="Permalink to this headline">¶</a></h1>
-<span class="target" id="module-arcgis.geoanalytics.find_locations"></span><p>These tools are used to identify areas that meet a number of different criteria you specify.</p>
+  <div class="section" id="module-arcgis.geoanalytics.find_locations">
+<span id="arcgis-geoanalytics-find-locations-module"></span><h1>arcgis.geoanalytics.find_locations module<a class="headerlink" href="#module-arcgis.geoanalytics.find_locations" title="Permalink to this heading">¶</a></h1>
+<p>These tools are used to identify areas that meet a number of different criteria you specify.</p>
 <p>find_similar_locations finds locations most similar to one or more reference locations based on criteria you specify.</p>
-<section id="detect-incidents">
-<h2>detect_incidents<a class="headerlink" href="#detect-incidents" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="detect-incidents">
+<h2>detect_incidents<a class="headerlink" href="#detect-incidents" title="Permalink to this heading">¶</a></h2>
 <dl class="py function">
-<dt id="arcgis.geoanalytics.find_locations.detect_incidents">
-<code class="sig-prename descclassname">arcgis.geoanalytics.find_locations.</code><code class="sig-name descname">detect_incidents</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_layer</span></em>, <em class="sig-param"><span class="n">track_fields</span></em>, <em class="sig-param"><span class="n">start_condition_expression</span></em>, <em class="sig-param"><span class="n">end_condition_expression</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_mode</span><span class="o">=</span><span class="default_value">'AllFeatures'</span></em>, <em class="sig-param"><span class="n">time_boundary_split</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">time_split_unit</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">time_reference</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.find_locations.detect_incidents" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.geoanalytics.find_locations.detect_incidents">
+<span class="sig-prename descclassname"><span class="pre">arcgis.geoanalytics.find_locations.</span></span><span class="sig-name descname"><span class="pre">detect_incidents</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_layer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">track_fields</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_condition_expression</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_condition_expression</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AllFeatures'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_boundary_split</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_split_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_reference</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">future</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.find_locations.detect_incidents" title="Permalink to this definition">¶</a></dt>
 <dd><img alt="_images/detect_incidents.png" src="_images/detect_incidents.png" />
 <p>The <code class="docutils literal notranslate"><span class="pre">detect_incidents</span></code> task works with a time-enabled layer of points,
 lines, areas, or tables that represents an instant in time. Using
@@ -367,12 +385,12 @@ results. The GPJob can be queried on the status of the execution.</p>
 </div>
 </dd></dl>
 
-</section>
-<section id="find-dwell-locations">
-<h2>find_dwell_locations<a class="headerlink" href="#find-dwell-locations" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="find-dwell-locations">
+<h2>find_dwell_locations<a class="headerlink" href="#find-dwell-locations" title="Permalink to this heading">¶</a></h2>
 <dl class="py function">
-<dt id="arcgis.geoanalytics.find_locations.find_dwell_locations">
-<code class="sig-prename descclassname">arcgis.geoanalytics.find_locations.</code><code class="sig-name descname">find_dwell_locations</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_layer</span></em>, <em class="sig-param"><span class="n">track_fields</span></em>, <em class="sig-param"><span class="n">distance_tolerance</span></em>, <em class="sig-param"><span class="n">distance_unit</span></em>, <em class="sig-param"><span class="n">time_tolerance</span></em>, <em class="sig-param"><span class="n">time_unit</span></em>, <em class="sig-param"><span class="n">summary_fields</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">method</span><span class="o">=</span><span class="default_value">'Planar'</span></em>, <em class="sig-param"><span class="n">dwell_type</span><span class="o">=</span><span class="default_value">'DwellMeanCenters'</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">time_boundary_split</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">time_boundary_unit</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">time_boundary_ref</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.find_locations.find_dwell_locations" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.geoanalytics.find_locations.find_dwell_locations">
+<span class="sig-prename descclassname"><span class="pre">arcgis.geoanalytics.find_locations.</span></span><span class="sig-name descname"><span class="pre">find_dwell_locations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_layer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">track_fields</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distance_tolerance</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distance_unit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_tolerance</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_unit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">summary_fields</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Planar'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dwell_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'DwellMeanCenters'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">future</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_boundary_split</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_boundary_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_boundary_ref</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.find_locations.find_dwell_locations" title="Permalink to this definition">¶</a></dt>
 <dd><img alt="_images/find_similar_locations.png" src="_images/find_similar_locations.png" />
 <p>The <code class="docutils literal notranslate"><span class="pre">find_dwell_locations</span></code> works with time-enabled points of type instant
 to find where points dwell within a specific distance and duration.</p>
@@ -539,12 +557,12 @@ begin from. This parameter was introduced in ArcGIS Enterprise 10.8.1.</p></td>
 </dl>
 </dd></dl>
 
-</section>
-<section id="find-similar-locations">
-<h2>find_similar_locations<a class="headerlink" href="#find-similar-locations" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="find-similar-locations">
+<h2>find_similar_locations<a class="headerlink" href="#find-similar-locations" title="Permalink to this heading">¶</a></h2>
 <dl class="py function">
-<dt id="arcgis.geoanalytics.find_locations.find_similar_locations">
-<code class="sig-prename descclassname">arcgis.geoanalytics.find_locations.</code><code class="sig-name descname">find_similar_locations</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_layer</span></em>, <em class="sig-param"><span class="n">search_layer</span></em>, <em class="sig-param"><span class="n">analysis_fields</span></em>, <em class="sig-param"><span class="n">most_or_least_similar</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">'MostSimilar'</span></em>, <em class="sig-param"><span class="n">match_method</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">'AttributeValues'</span></em>, <em class="sig-param"><span class="n">number_of_results</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">10</span></em>, <em class="sig-param"><span class="n">append_fields</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">return_tuple</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.find_locations.find_similar_locations" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.geoanalytics.find_locations.find_similar_locations">
+<span class="sig-prename descclassname"><span class="pre">arcgis.geoanalytics.find_locations.</span></span><span class="sig-name descname"><span class="pre">find_similar_locations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_layer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">search_layer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">analysis_fields</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">most_or_least_similar</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'MostSimilar'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">match_method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AttributeValues'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">number_of_results</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">append_fields</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">future</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_tuple</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.find_locations.find_similar_locations" title="Permalink to this definition">¶</a></dt>
 <dd><img alt="_images/find_similar_locations.png" src="_images/find_similar_locations.png" />
 <p>The <code class="docutils literal notranslate"><span class="pre">find_similar_locations</span></code> task measures the similarity of candidate locations to one or more reference locations.</p>
 <p>Based on criteria you specify, <code class="docutils literal notranslate"><span class="pre">find_similar_locations</span></code> can answer questions such as the following:</p>
@@ -689,12 +707,12 @@ You define the name of the service.</p></td>
 </div>
 </dd></dl>
 
-</section>
-<section id="geocode-locations">
-<h2>geocode_locations<a class="headerlink" href="#geocode-locations" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="geocode-locations">
+<h2>geocode_locations<a class="headerlink" href="#geocode-locations" title="Permalink to this heading">¶</a></h2>
 <dl class="py function">
-<dt id="arcgis.geoanalytics.find_locations.geocode_locations">
-<code class="sig-prename descclassname">arcgis.geoanalytics.find_locations.</code><code class="sig-name descname">geocode_locations</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_layer</span></em>, <em class="sig-param"><span class="n">country</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">category</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">include_attributes</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">locator_parameters</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">geocode_service</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">geocode_parameters</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.find_locations.geocode_locations" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.geoanalytics.find_locations.geocode_locations">
+<span class="sig-prename descclassname"><span class="pre">arcgis.geoanalytics.find_locations.</span></span><span class="sig-name descname"><span class="pre">geocode_locations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_layer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">country</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">category</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_attributes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">locator_parameters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">geocode_service</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">geocode_parameters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">future</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.find_locations.geocode_locations" title="Permalink to this definition">¶</a></dt>
 <dd><img alt="_images/geocode_locations.png" src="_images/geocode_locations.png" />
 <p>The <code class="docutils literal notranslate"><span class="pre">geocode_locations</span></code> task geocodes a table from a big data file share.
 The task uses a geocode utility service configured with your portal. If you
@@ -810,8 +828,116 @@ results. The GPJob can be queried on the status of the execution.</p></td>
 </div>
 </dd></dl>
 
-</section>
-</section>
+</div>
+<div class="section" id="snap-tracks">
+<h2>snap_tracks<a class="headerlink" href="#snap-tracks" title="Permalink to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="arcgis.geoanalytics.find_locations.snap_tracks">
+<span class="sig-prename descclassname"><span class="pre">arcgis.geoanalytics.find_locations.</span></span><span class="sig-name descname"><span class="pre">snap_tracks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">point_layer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">polyline_layer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">track_fields</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">connectivity_field_matching</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">search_distance</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">search_distance_unit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distance_method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Planar'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AllFeatures'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">polyline_fields_to_include</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">direction_field_matching</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">future</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.find_locations.snap_tracks" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <cite>snap_tracks</cite> method matches track points to polylines.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 89%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Argument</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>point_layer</p></td>
+<td><p>Required layer. The track point features that will be matched
+to polylines. See <a class="reference internal" href="arcgis.geoanalytics.toc.html#gaxfeatureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>polyline_layer</p></td>
+<td><p>Required layer. The polyline features to which track points
+will be matched. See <a class="reference internal" href="arcgis.geoanalytics.toc.html#gaxfeatureinput"><span class="std std-ref">Feature Input</span></a>.</p></td>
+</tr>
+<tr class="row-even"><td><p>track_fields</p></td>
+<td><p>Required string. The fields used to identify distinct tracks.
+There can be multiple <code class="docutils literal notranslate"><span class="pre">track_fields</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>connectivity_field_matching</p></td>
+<td><p>Required Dict[str,Any]. The polyline layer fields that will be
+used to define the connectivity of the input polyline features.</p>
+<p>The following values are required:</p>
+<ul class="simple">
+<li><p>polylineID - The unique identifier for the line</p></li>
+<li><p>fromNodeID - The node where the travel along a line is moving away from</p></li>
+<li><p>toNodeID - The node where the travel along a line is moving to</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>search_distance</p></td>
+<td><p>Required float. The maximum distance allowed between a point
+and any polyline in order to be considered a match. It is
+recommended to use values less than or equal to 50 meters.
+Larger distances will result in a longer process time and less
+accurate results.</p></td>
+</tr>
+<tr class="row-odd"><td><p>search_distance_unit</p></td>
+<td><p>Required String. The unit of the <cite>search_distance</cite>.</p></td>
+</tr>
+<tr class="row-even"><td><p>distance_method</p></td>
+<td><p>Optional String. The method used to calculate search distances
+between points and lines. There are two methods to choose from:
+<cite>Geodesic</cite> and <cite>Planar</cite>. The Geodesic method calculates
+distances geodesically and will allow tracks to cross the
+anti-meridian. This method is appropriate for large areas and
+any geographic coordinate system. The Planar method calculates
+distances using a plane method and will not cross the
+anti-meridian.
+The default is ‘Planar’.</p></td>
+</tr>
+<tr class="row-odd"><td><p>output_mode</p></td>
+<td><p>Optional string. Determines which features are returned.</p>
+<p>Choice list: [AllFeatures’, ‘Incidents’]</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">AllFeatures</span></code> - All of the input features are returned.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Incidents</span></code> - Only features that were found to be incidents
+are returned.</p></li>
+</ul>
+<p>The default value is ‘AllFeatures’.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>polyline_fields_to_include</p></td>
+<td><p>Optional String. One or more fields from the polyine layer that
+will be included in the output result.</p></td>
+</tr>
+<tr class="row-odd"><td><p>direction_field_matching</p></td>
+<td><p>Optional dict[str, Any]. The polyline layer field and attribute
+values that will be used to define the direction of the input
+polyline features.</p></td>
+</tr>
+<tr class="row-even"><td><p>output_name</p></td>
+<td><p>Optional string, The task will create a feature service of the
+results. You define the name of the service.</p></td>
+</tr>
+<tr class="row-odd"><td><p>gis</p></td>
+<td><p>Optional GIS, the GIS on which this tool runs. If not
+specified, the active GIS is used.</p></td>
+</tr>
+<tr class="row-even"><td><p>context</p></td>
+<td><p>Optional dict. The context parameter contains additional settings that affect task execution. For this task, there are four settings:</p>
+<ol class="arabic simple">
+<li><p>Extent (<code class="docutils literal notranslate"><span class="pre">extent</span></code>) - A bounding box that defines the analysis area. Only those features that intersect the bounding box will be analyzed.</p></li>
+<li><p>Processing spatial reference (<code class="docutils literal notranslate"><span class="pre">processSR</span></code>) - The features will be projected into this coordinate system for analysis.</p></li>
+<li><p>Output spatial reference (<code class="docutils literal notranslate"><span class="pre">outSR</span></code>) - The features will be projected into this coordinate system after the analysis to be saved. The output spatial reference for the spatiotemporal big data store is always WGS84.</p></li>
+<li><p>Data store (<code class="docutils literal notranslate"><span class="pre">dataStore</span></code>) - Results will be saved to the specified data store. For ArcGIS Enterprise, the default is the spatiotemporal big data store.</p></li>
+</ol>
+</td>
+</tr>
+<tr class="row-odd"><td><p>future</p></td>
+<td><p>Optional boolean. If True, a GPJob is returned instead of
+results. The GPJob can be queried on the status of the execution.</p>
+<p>The default value is ‘False’.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
 
 
 
@@ -849,12 +975,12 @@ results. The GPJob can be queried on the status of the execution.</p></td>
 
   </div>
   
-    Options v: 2.0.0
+    Options v: 2.0.1
 
   <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
       <span class="fa fa-book"> Pick an earlier version</span>
-      v: 2.0.0
+      v: 2.0.1
       <span class="fa fa-caret-down"></span>
     </span>
     <div class="rst-other-versions">
@@ -862,6 +988,10 @@ results. The GPJob can be queried on the status of the execution.</p></td>
       
       <dl>
         <dt>Versions</dt>
+        
+          
+          <dd><a href="2.0.0/">2.0.0</a></dd>
+          
         
           
           <dd><a href="1.9.1/">1.9.1</a></dd>

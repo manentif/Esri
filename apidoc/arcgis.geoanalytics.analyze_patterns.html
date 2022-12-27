@@ -4,11 +4,10 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>arcgis.geoanalytics.analyze_patterns module &mdash; arcgis 2.0.0 documentation</title>
+  <title>arcgis.geoanalytics.analyze_patterns module &mdash; arcgis 2.0.1 documentation</title>
   
 
   
@@ -33,10 +32,12 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -80,7 +81,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                2.0.0
+                2.0.1
               </div>
             
           
@@ -105,7 +106,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               
             
             
-              <p><span class="caption-text">arcgis</span></p>
+              <p class="caption" role="heading"><span class="caption-text">arcgis</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="arcgis.gis.toc.html">arcgis.gis module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.env.html">arcgis.env module</a></li>
@@ -118,13 +119,34 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l2"><a class="reference internal" href="arcgis.geoanalytics.toc.html#is-supported">is_supported</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="arcgis.geoanalytics.toc.html#submodules">Submodules</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="#">arcgis.geoanalytics.analyze_patterns module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#calculate-density">calculate_density</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#create-space-time-cube">create_space_time_cube</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#find-hot-spots">find_hot_spots</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#find-point-clusters">find_point_clusters</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#forest">forest</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#glr">glr</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#gwr">gwr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#calculate-density">calculate_density</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#arcgis.geoanalytics.analyze_patterns.calculate_density"><code class="docutils literal notranslate"><span class="pre">calculate_density()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#create-space-time-cube">create_space_time_cube</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#arcgis.geoanalytics.analyze_patterns.create_space_time_cube"><code class="docutils literal notranslate"><span class="pre">create_space_time_cube()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#find-hot-spots">find_hot_spots</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#arcgis.geoanalytics.analyze_patterns.find_hot_spots"><code class="docutils literal notranslate"><span class="pre">find_hot_spots()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#find-point-clusters">find_point_clusters</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#arcgis.geoanalytics.analyze_patterns.find_point_clusters"><code class="docutils literal notranslate"><span class="pre">find_point_clusters()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#forest">forest</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#arcgis.geoanalytics.analyze_patterns.forest"><code class="docutils literal notranslate"><span class="pre">forest()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#glr">glr</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#arcgis.geoanalytics.analyze_patterns.glr"><code class="docutils literal notranslate"><span class="pre">glr()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#gwr">gwr</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#arcgis.geoanalytics.analyze_patterns.gwr"><code class="docutils literal notranslate"><span class="pre">gwr()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.data_enrichment.html">arcgis.geoanalytics.data_enrichment module</a></li>
@@ -140,6 +162,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l1"><a class="reference internal" href="arcgis.geoenrichment.html">arcgis.geoenrichment module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.geometry.html">arcgis.geometry module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.geoprocessing.html">arcgis.geoprocessing module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.graph.html">arcgis.graph module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.mapping.toc.html">arcgis.mapping module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.realtime.html">arcgis.realtime module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.schematics.html">arcgis.schematics module</a></li>
@@ -219,16 +242,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJGGV5"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-  <section id="arcgis-geoanalytics-analyze-patterns-module">
-<h1>arcgis.geoanalytics.analyze_patterns module<a class="headerlink" href="#arcgis-geoanalytics-analyze-patterns-module" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="arcgis-geoanalytics-analyze-patterns-module">
+<h1>arcgis.geoanalytics.analyze_patterns module<a class="headerlink" href="#arcgis-geoanalytics-analyze-patterns-module" title="Permalink to this heading">¶</a></h1>
 <span class="target" id="module-arcgis.geoanalytics.analyze_patterns"></span><p>These tools help you identify, quantify, and visualize spatial patterns in your data.</p>
 <p>calculate_density takes known quantities of some phenomenon and spreads these quantities across the map.
 find_hot_spots identifies statistically significant clustering in the spatial pattern of your data.</p>
-<section id="calculate-density">
-<h2>calculate_density<a class="headerlink" href="#calculate-density" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="calculate-density">
+<h2>calculate_density<a class="headerlink" href="#calculate-density" title="Permalink to this heading">¶</a></h2>
 <dl class="py function">
-<dt id="arcgis.geoanalytics.analyze_patterns.calculate_density">
-<code class="sig-prename descclassname">arcgis.geoanalytics.analyze_patterns.</code><code class="sig-name descname">calculate_density</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_layer</span></em>, <em class="sig-param"><span class="n">fields</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">weight</span><span class="o">=</span><span class="default_value">'Uniform'</span></em>, <em class="sig-param"><span class="n">bin_type</span><span class="o">=</span><span class="default_value">'Square'</span></em>, <em class="sig-param"><span class="n">bin_size</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">bin_size_unit</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">time_step_interval</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">time_step_interval_unit</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">time_step_repeat_interval</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">time_step_repeat_interval_unit</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">time_step_reference</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">radius</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">radius_unit</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">area_units</span><span class="o">=</span><span class="default_value">'SquareKilometers'</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.analyze_patterns.calculate_density" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.geoanalytics.analyze_patterns.calculate_density">
+<span class="sig-prename descclassname"><span class="pre">arcgis.geoanalytics.analyze_patterns.</span></span><span class="sig-name descname"><span class="pre">calculate_density</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_layer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fields</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Uniform'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bin_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Square'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bin_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bin_size_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_step_interval</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_step_interval_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_step_repeat_interval</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_step_repeat_interval_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_step_reference</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">area_units</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'SquareKilometers'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">future</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.analyze_patterns.calculate_density" title="Permalink to this definition">¶</a></dt>
 <dd><img alt="_images/calculate_density1.png" src="_images/calculate_density1.png" />
 <p>The <code class="docutils literal notranslate"><span class="pre">calculate_density</span></code> tool creates a density map from point features by spreading known quantities of some
 phenomenon (represented as attributes of the points) across the map. The result is a layer of areas classified
@@ -390,12 +413,12 @@ results. The GPJob can be queried on the status of the execution.</p></td>
 </div>
 </dd></dl>
 
-</section>
-<section id="create-space-time-cube">
-<h2>create_space_time_cube<a class="headerlink" href="#create-space-time-cube" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="create-space-time-cube">
+<h2>create_space_time_cube<a class="headerlink" href="#create-space-time-cube" title="Permalink to this heading">¶</a></h2>
 <dl class="py function">
-<dt id="arcgis.geoanalytics.analyze_patterns.create_space_time_cube">
-<code class="sig-prename descclassname">arcgis.geoanalytics.analyze_patterns.</code><code class="sig-name descname">create_space_time_cube</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">point_layer</span><span class="p">:</span> <span class="n">arcgis.features.feature.FeatureSet</span></em>, <em class="sig-param"><span class="n">bin_size</span><span class="p">:</span> <span class="n">float</span></em>, <em class="sig-param"><span class="n">bin_size_unit</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">time_step_interval</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">time_step_interval_unit</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">time_step_alignment</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">time_step_reference</span><span class="p">:</span> <span class="n">datetime.datetime</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">summary_fields</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">False</span></em><span class="sig-paren">)</span> &#x2192; arcgis.geoprocessing._types.DataFile<a class="headerlink" href="#arcgis.geoanalytics.analyze_patterns.create_space_time_cube" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.geoanalytics.analyze_patterns.create_space_time_cube">
+<span class="sig-prename descclassname"><span class="pre">arcgis.geoanalytics.analyze_patterns.</span></span><span class="sig-name descname"><span class="pre">create_space_time_cube</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">point_layer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bin_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bin_size_unit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_step_interval</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_step_interval_unit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_step_alignment</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_step_reference</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">summary_fields</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">future</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.analyze_patterns.create_space_time_cube" title="Permalink to this definition">¶</a></dt>
 <dd><img alt="_images/create_space_time_cube.png" src="_images/create_space_time_cube.png" />
 <p><code class="docutils literal notranslate"><span class="pre">create_space_time_cube</span></code> works with a layer of point features that are time enabled.
 It aggregates the data into a three-dimensional cube of space-time bins.
@@ -525,12 +548,12 @@ When you browse to the output url, your netCDF will automatically download to yo
 </div>
 </dd></dl>
 
-</section>
-<section id="find-hot-spots">
-<h2>find_hot_spots<a class="headerlink" href="#find-hot-spots" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="find-hot-spots">
+<h2>find_hot_spots<a class="headerlink" href="#find-hot-spots" title="Permalink to this heading">¶</a></h2>
 <dl class="py function">
-<dt id="arcgis.geoanalytics.analyze_patterns.find_hot_spots">
-<code class="sig-prename descclassname">arcgis.geoanalytics.analyze_patterns.</code><code class="sig-name descname">find_hot_spots</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">point_layer</span></em>, <em class="sig-param"><span class="n">bin_size</span><span class="o">=</span><span class="default_value">5</span></em>, <em class="sig-param"><span class="n">bin_size_unit</span><span class="o">=</span><span class="default_value">'Miles'</span></em>, <em class="sig-param"><span class="n">neighborhood_distance</span><span class="o">=</span><span class="default_value">5</span></em>, <em class="sig-param"><span class="n">neighborhood_distance_unit</span><span class="o">=</span><span class="default_value">'Miles'</span></em>, <em class="sig-param"><span class="n">time_step_interval</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">time_step_interval_unit</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">time_step_alignment</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">time_step_reference</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.analyze_patterns.find_hot_spots" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.geoanalytics.analyze_patterns.find_hot_spots">
+<span class="sig-prename descclassname"><span class="pre">arcgis.geoanalytics.analyze_patterns.</span></span><span class="sig-name descname"><span class="pre">find_hot_spots</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">point_layer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bin_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bin_size_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Miles'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">neighborhood_distance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">neighborhood_distance_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Miles'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_step_interval</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_step_interval_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_step_alignment</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_step_reference</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">future</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.analyze_patterns.find_hot_spots" title="Permalink to this definition">¶</a></dt>
 <dd><img alt="_images/geo_find_hot_spots.png" src="_images/geo_find_hot_spots.png" />
 <p>The <code class="docutils literal notranslate"><span class="pre">find_hot_spots</span></code> tool analyzes point data (such as crime incidents, traffic accidents, trees, and so on)
 or field values associated with points. It finds statistically significant spatial clusters of high incidents (hot spots)
@@ -654,12 +677,12 @@ The output spatial reference for the spatiotemporal big data store is always WGS
 </div>
 </dd></dl>
 
-</section>
-<section id="find-point-clusters">
-<h2>find_point_clusters<a class="headerlink" href="#find-point-clusters" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="find-point-clusters">
+<h2>find_point_clusters<a class="headerlink" href="#find-point-clusters" title="Permalink to this heading">¶</a></h2>
 <dl class="py function">
-<dt id="arcgis.geoanalytics.analyze_patterns.find_point_clusters">
-<code class="sig-prename descclassname">arcgis.geoanalytics.analyze_patterns.</code><code class="sig-name descname">find_point_clusters</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_layer</span></em>, <em class="sig-param"><span class="n">method</span></em>, <em class="sig-param"><span class="n">min_feature_clusters</span></em>, <em class="sig-param"><span class="n">search_distance</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">distance_unit</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">time_method</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">search_duration</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">duration_unit</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.analyze_patterns.find_point_clusters" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.geoanalytics.analyze_patterns.find_point_clusters">
+<span class="sig-prename descclassname"><span class="pre">arcgis.geoanalytics.analyze_patterns.</span></span><span class="sig-name descname"><span class="pre">find_point_clusters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_layer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_feature_clusters</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">search_distance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distance_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">future</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">search_duration</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">duration_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.analyze_patterns.find_point_clusters" title="Permalink to this definition">¶</a></dt>
 <dd><p>This tool extracts clusters from your input point features and identifies any surrounding noise.</p>
 <p>For example, a nongovernmental organization is studying a particular pest-borne disease. It has
 a point dataset representing households in a study area, some of which are infested, and some of
@@ -749,12 +772,12 @@ not be used with HDBSCAN or space-only DBSCAN.</p></td>
 </dl>
 </dd></dl>
 
-</section>
-<section id="forest">
-<h2>forest<a class="headerlink" href="#forest" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="forest">
+<h2>forest<a class="headerlink" href="#forest" title="Permalink to this heading">¶</a></h2>
 <dl class="py function">
-<dt id="arcgis.geoanalytics.analyze_patterns.forest">
-<code class="sig-prename descclassname">arcgis.geoanalytics.analyze_patterns.</code><code class="sig-name descname">forest</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_layer</span></em>, <em class="sig-param"><span class="n">var_prediction</span></em>, <em class="sig-param"><span class="n">var_explanatory</span></em>, <em class="sig-param"><span class="n">trees</span></em>, <em class="sig-param"><span class="n">max_tree_depth</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">random_vars</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">sample_size</span><span class="o">=</span><span class="default_value">100</span></em>, <em class="sig-param"><span class="n">min_leaf_size</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">prediction_type</span><span class="o">=</span><span class="default_value">'train'</span></em>, <em class="sig-param"><span class="n">features_to_predict</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">validation</span><span class="o">=</span><span class="default_value">10</span></em>, <em class="sig-param"><span class="n">importance_tbl</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">exp_var_matching</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">return_tuple</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.analyze_patterns.forest" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.geoanalytics.analyze_patterns.forest">
+<span class="sig-prename descclassname"><span class="pre">arcgis.geoanalytics.analyze_patterns.</span></span><span class="sig-name descname"><span class="pre">forest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_layer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">var_prediction</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">var_explanatory</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trees</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_tree_depth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_vars</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_leaf_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prediction_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'train'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">features_to_predict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">validation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">importance_tbl</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exp_var_matching</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">future</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_tuple</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.analyze_patterns.forest" title="Permalink to this definition">¶</a></dt>
 <dd><img alt="_images/forest.png" src="_images/forest.png" />
 <p>The ‘forest’ method is a forest-based classification and regression
 task that creates models and generates predictions using an adaptation of
@@ -993,12 +1016,12 @@ results. The GPJob can be queried on the status of the execution.</p>
 </div>
 </dd></dl>
 
-</section>
-<section id="glr">
-<h2>glr<a class="headerlink" href="#glr" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="glr">
+<h2>glr<a class="headerlink" href="#glr" title="Permalink to this heading">¶</a></h2>
 <dl class="py function">
-<dt id="arcgis.geoanalytics.analyze_patterns.glr">
-<code class="sig-prename descclassname">arcgis.geoanalytics.analyze_patterns.</code><code class="sig-name descname">glr</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_layer</span></em>, <em class="sig-param"><span class="n">var_dependent</span></em>, <em class="sig-param"><span class="n">var_explanatory</span></em>, <em class="sig-param"><span class="n">regression_family</span><span class="o">=</span><span class="default_value">'Continuous'</span></em>, <em class="sig-param"><span class="n">features_to_predict</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gen_coeff_table</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">exp_var_matching</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">dep_mapping</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">return_tuple</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.analyze_patterns.glr" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.geoanalytics.analyze_patterns.glr">
+<span class="sig-prename descclassname"><span class="pre">arcgis.geoanalytics.analyze_patterns.</span></span><span class="sig-name descname"><span class="pre">glr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_layer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">var_dependent</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">var_explanatory</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">regression_family</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Continuous'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">features_to_predict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gen_coeff_table</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exp_var_matching</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dep_mapping</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">future</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_tuple</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.analyze_patterns.glr" title="Permalink to this definition">¶</a></dt>
 <dd><img alt="_images/glr.png" src="_images/glr.png" />
 <p>This tool performs Generalized Linear Regression (<code class="docutils literal notranslate"><span class="pre">glr</span></code>) to generate
 predictions or to model a dependent variable’s relationship to a set of
@@ -1156,12 +1179,12 @@ results. The GPJob can be queried on the status of the execution.</p>
 </div>
 </dd></dl>
 
-</section>
-<section id="gwr">
-<h2>gwr<a class="headerlink" href="#gwr" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="gwr">
+<h2>gwr<a class="headerlink" href="#gwr" title="Permalink to this heading">¶</a></h2>
 <dl class="py function">
-<dt id="arcgis.geoanalytics.analyze_patterns.gwr">
-<code class="sig-prename descclassname">arcgis.geoanalytics.analyze_patterns.</code><code class="sig-name descname">gwr</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_layer</span></em>, <em class="sig-param"><span class="n">explanatory_variables</span></em>, <em class="sig-param"><span class="n">dependent_variable</span></em>, <em class="sig-param"><span class="n">model_type</span><span class="o">=</span><span class="default_value">'Continuous'</span></em>, <em class="sig-param"><span class="n">neighborhood_selection_method</span><span class="o">=</span><span class="default_value">'UserDefined'</span></em>, <em class="sig-param"><span class="n">neighborhood_type</span><span class="o">=</span><span class="default_value">'NumberOfNeighbors'</span></em>, <em class="sig-param"><span class="n">distance_band</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">distance_band_unit</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">number_of_neighbors</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">local_weighting_scheme</span><span class="o">=</span><span class="default_value">'BiSquare'</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.analyze_patterns.gwr" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.geoanalytics.analyze_patterns.gwr">
+<span class="sig-prename descclassname"><span class="pre">arcgis.geoanalytics.analyze_patterns.</span></span><span class="sig-name descname"><span class="pre">gwr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_layer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">explanatory_variables</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dependent_variable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Continuous'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">neighborhood_selection_method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'UserDefined'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">neighborhood_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'NumberOfNeighbors'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distance_band</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distance_band_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">number_of_neighbors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">local_weighting_scheme</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'BiSquare'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">future</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.analyze_patterns.gwr" title="Permalink to this definition">¶</a></dt>
 <dd><p>This tool performs GeographicallyWeightedRegression (GWR), which is a
 local form of linear regression used to model spatially varying
 relationships.</p>
@@ -1269,8 +1292,8 @@ results. The GPJob can be queried on the status of the execution.</p>
 </table>
 </dd></dl>
 
-</section>
-</section>
+</div>
+</div>
 
 
 
@@ -1308,12 +1331,12 @@ results. The GPJob can be queried on the status of the execution.</p>
 
   </div>
   
-    Options v: 2.0.0
+    Options v: 2.0.1
 
   <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
       <span class="fa fa-book"> Pick an earlier version</span>
-      v: 2.0.0
+      v: 2.0.1
       <span class="fa fa-caret-down"></span>
     </span>
     <div class="rst-other-versions">
@@ -1321,6 +1344,10 @@ results. The GPJob can be queried on the status of the execution.</p>
       
       <dl>
         <dt>Versions</dt>
+        
+          
+          <dd><a href="2.0.0/">2.0.0</a></dd>
+          
         
           
           <dd><a href="1.9.1/">1.9.1</a></dd>

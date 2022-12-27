@@ -4,11 +4,10 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>arcgis.geoanalytics.manage_data module &mdash; arcgis 2.0.0 documentation</title>
+  <title>arcgis.geoanalytics.manage_data module &mdash; arcgis 2.0.1 documentation</title>
   
 
   
@@ -33,10 +32,12 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -80,7 +81,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                2.0.0
+                2.0.1
               </div>
             
           
@@ -105,7 +106,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               
             
             
-              <p><span class="caption-text">arcgis</span></p>
+              <p class="caption" role="heading"><span class="caption-text">arcgis</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="arcgis.gis.toc.html">arcgis.gis module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.env.html">arcgis.env module</a></li>
@@ -121,14 +122,38 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.data_enrichment.html">arcgis.geoanalytics.data_enrichment module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.find_locations.html">arcgis.geoanalytics.find_locations module</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">arcgis.geoanalytics.manage_data module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#append-data">append_data</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#calculate-fields">calculate_fields</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#clip-layer">clip_layer</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#copy-to-data-store">copy_to_data_store</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#dissolve-boundaries">dissolve_boundaries</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#merge-layers">merge_layers</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#overlay-data">overlay_data</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#run-python-script">run_python_script</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#append-data">append_data</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#arcgis.geoanalytics.manage_data.append_data"><code class="docutils literal notranslate"><span class="pre">append_data()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#calculate-fields">calculate_fields</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#arcgis.geoanalytics.manage_data.calculate_fields"><code class="docutils literal notranslate"><span class="pre">calculate_fields()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#clip-layer">clip_layer</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#arcgis.geoanalytics.manage_data.clip_layer"><code class="docutils literal notranslate"><span class="pre">clip_layer()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#copy-to-data-store">copy_to_data_store</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#arcgis.geoanalytics.manage_data.copy_to_data_store"><code class="docutils literal notranslate"><span class="pre">copy_to_data_store()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#dissolve-boundaries">dissolve_boundaries</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#arcgis.geoanalytics.manage_data.dissolve_boundaries"><code class="docutils literal notranslate"><span class="pre">dissolve_boundaries()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#merge-layers">merge_layers</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#arcgis.geoanalytics.manage_data.merge_layers"><code class="docutils literal notranslate"><span class="pre">merge_layers()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#overlay-data">overlay_data</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#arcgis.geoanalytics.manage_data.overlay_data"><code class="docutils literal notranslate"><span class="pre">overlay_data()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#run-python-script">run_python_script</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#arcgis.geoanalytics.manage_data.run_python_script"><code class="docutils literal notranslate"><span class="pre">run_python_script()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.summarize_data.html">arcgis.geoanalytics.summarize_data module</a></li>
@@ -141,6 +166,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l1"><a class="reference internal" href="arcgis.geoenrichment.html">arcgis.geoenrichment module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.geometry.html">arcgis.geometry module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.geoprocessing.html">arcgis.geoprocessing module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.graph.html">arcgis.graph module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.mapping.toc.html">arcgis.mapping module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.realtime.html">arcgis.realtime module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.schematics.html">arcgis.schematics module</a></li>
@@ -220,15 +246,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJGGV5"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-  <section id="arcgis-geoanalytics-manage-data-module">
-<h1>arcgis.geoanalytics.manage_data module<a class="headerlink" href="#arcgis-geoanalytics-manage-data-module" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="arcgis-geoanalytics-manage-data-module">
+<h1>arcgis.geoanalytics.manage_data module<a class="headerlink" href="#arcgis-geoanalytics-manage-data-module" title="Permalink to this heading">¶</a></h1>
 <span class="target" id="module-arcgis.geoanalytics.manage_data"></span><p>These tools are used for the day-to-day management of geographic and tabular data.</p>
 <p>copy_to_data_store copies data to your ArcGIS Data Store and creates a layer in your web GIS.</p>
-<section id="append-data">
-<h2>append_data<a class="headerlink" href="#append-data" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="append-data">
+<h2>append_data<a class="headerlink" href="#append-data" title="Permalink to this heading">¶</a></h2>
 <dl class="py function">
-<dt id="arcgis.geoanalytics.manage_data.append_data">
-<code class="sig-prename descclassname">arcgis.geoanalytics.manage_data.</code><code class="sig-name descname">append_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_layer</span></em>, <em class="sig-param"><span class="n">append_layer</span></em>, <em class="sig-param"><span class="n">field_mapping</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.manage_data.append_data" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.geoanalytics.manage_data.append_data">
+<span class="sig-prename descclassname"><span class="pre">arcgis.geoanalytics.manage_data.</span></span><span class="sig-name descname"><span class="pre">append_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_layer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">append_layer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field_mapping</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">future</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.manage_data.append_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Only available at ArcGIS Enterprise 10.6.1 and later.</p>
 <p>The Append Data task appends tabular, point, line, or polygon data to an existing layer.
 The input layer must be a hosted feature layer. The tool will add the appended data as
@@ -325,12 +351,12 @@ execution.</p></td>
 </dl>
 </dd></dl>
 
-</section>
-<section id="calculate-fields">
-<h2>calculate_fields<a class="headerlink" href="#calculate-fields" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="calculate-fields">
+<h2>calculate_fields<a class="headerlink" href="#calculate-fields" title="Permalink to this heading">¶</a></h2>
 <dl class="py function">
-<dt id="arcgis.geoanalytics.manage_data.calculate_fields">
-<code class="sig-prename descclassname">arcgis.geoanalytics.manage_data.</code><code class="sig-name descname">calculate_fields</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_layer</span></em>, <em class="sig-param"><span class="n">field_name</span></em>, <em class="sig-param"><span class="n">data_type</span></em>, <em class="sig-param"><span class="n">expression</span></em>, <em class="sig-param"><span class="n">track_aware</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">track_fields</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">time_boundary_split</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">time_split_unit</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">time_reference</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.manage_data.calculate_fields" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.geoanalytics.manage_data.calculate_fields">
+<span class="sig-prename descclassname"><span class="pre">arcgis.geoanalytics.manage_data.</span></span><span class="sig-name descname"><span class="pre">calculate_fields</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_layer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expression</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">track_aware</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">track_fields</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_boundary_split</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_split_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_reference</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">future</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.manage_data.calculate_fields" title="Permalink to this definition">¶</a></dt>
 <dd><img alt="_images/calculate_field.png" src="_images/calculate_field.png" />
 <p>The <code class="docutils literal notranslate"><span class="pre">calculate_fields</span></code> task works with a layer to create and populate a
 new field. The output is a new feature layer, that is the same as the
@@ -427,12 +453,12 @@ specified, the active GIS is used.</p></td>
 </div>
 </dd></dl>
 
-</section>
-<section id="clip-layer">
-<h2>clip_layer<a class="headerlink" href="#clip-layer" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="clip-layer">
+<h2>clip_layer<a class="headerlink" href="#clip-layer" title="Permalink to this heading">¶</a></h2>
 <dl class="py function">
-<dt id="arcgis.geoanalytics.manage_data.clip_layer">
-<code class="sig-prename descclassname">arcgis.geoanalytics.manage_data.</code><code class="sig-name descname">clip_layer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_layer</span></em>, <em class="sig-param"><span class="n">clip_layer</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.manage_data.clip_layer" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.geoanalytics.manage_data.clip_layer">
+<span class="sig-prename descclassname"><span class="pre">arcgis.geoanalytics.manage_data.</span></span><span class="sig-name descname"><span class="pre">clip_layer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_layer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clip_layer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">future</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.manage_data.clip_layer" title="Permalink to this definition">¶</a></dt>
 <dd><img alt="_images/clip_layer.png" src="_images/clip_layer.png" />
 <p><code class="docutils literal notranslate"><span class="pre">clip_layer</span></code> features from one layer to the extent of a boundary layer. Use this tool to cut out a piece
 of one feature class using one or more of the features in another feature class as a cookie
@@ -503,12 +529,12 @@ results. The GPJob can be queried on the status of the execution.</p></td>
 </div>
 </dd></dl>
 
-</section>
-<section id="copy-to-data-store">
-<h2>copy_to_data_store<a class="headerlink" href="#copy-to-data-store" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="copy-to-data-store">
+<h2>copy_to_data_store<a class="headerlink" href="#copy-to-data-store" title="Permalink to this heading">¶</a></h2>
 <dl class="py function">
-<dt id="arcgis.geoanalytics.manage_data.copy_to_data_store">
-<code class="sig-prename descclassname">arcgis.geoanalytics.manage_data.</code><code class="sig-name descname">copy_to_data_store</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_layer</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.manage_data.copy_to_data_store" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.geoanalytics.manage_data.copy_to_data_store">
+<span class="sig-prename descclassname"><span class="pre">arcgis.geoanalytics.manage_data.</span></span><span class="sig-name descname"><span class="pre">copy_to_data_store</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_layer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">future</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.manage_data.copy_to_data_store" title="Permalink to this definition">¶</a></dt>
 <dd><img alt="_images/copy_to_data_store.png" src="_images/copy_to_data_store.png" />
 <p>The <code class="docutils literal notranslate"><span class="pre">copy_to_data_store</span></code> task takes an input layer and copies it to a data store.
 Data is copied to ArcGIS Data Store, configured as either a relational or
@@ -573,12 +599,12 @@ feature service with only those features that were within the specified map exte
 </div>
 </dd></dl>
 
-</section>
-<section id="dissolve-boundaries">
-<h2>dissolve_boundaries<a class="headerlink" href="#dissolve-boundaries" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="dissolve-boundaries">
+<h2>dissolve_boundaries<a class="headerlink" href="#dissolve-boundaries" title="Permalink to this heading">¶</a></h2>
 <dl class="py function">
-<dt id="arcgis.geoanalytics.manage_data.dissolve_boundaries">
-<code class="sig-prename descclassname">arcgis.geoanalytics.manage_data.</code><code class="sig-name descname">dissolve_boundaries</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_layer</span></em>, <em class="sig-param"><span class="n">dissolve_fields</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">summary_fields</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">multipart</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.manage_data.dissolve_boundaries" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.geoanalytics.manage_data.dissolve_boundaries">
+<span class="sig-prename descclassname"><span class="pre">arcgis.geoanalytics.manage_data.</span></span><span class="sig-name descname"><span class="pre">dissolve_boundaries</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_layer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dissolve_fields</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">summary_fields</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">multipart</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">future</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.manage_data.dissolve_boundaries" title="Permalink to this definition">¶</a></dt>
 <dd><img alt="_images/dissolve_boundaries.png" src="_images/dissolve_boundaries.png" />
 <p>The <code class="docutils literal notranslate"><span class="pre">dissolve_boundaries</span></code> task finds polygons that intersect or have the same field values
 and merges them together to form a single polygon.</p>
@@ -695,12 +721,12 @@ results. The GPJob can be queried on the status of the execution.</p></td>
 </div>
 </dd></dl>
 
-</section>
-<section id="merge-layers">
-<h2>merge_layers<a class="headerlink" href="#merge-layers" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="merge-layers">
+<h2>merge_layers<a class="headerlink" href="#merge-layers" title="Permalink to this heading">¶</a></h2>
 <dl class="py function">
-<dt id="arcgis.geoanalytics.manage_data.merge_layers">
-<code class="sig-prename descclassname">arcgis.geoanalytics.manage_data.</code><code class="sig-name descname">merge_layers</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_layer</span></em>, <em class="sig-param"><span class="n">merge_layer</span></em>, <em class="sig-param"><span class="n">merge_attributes</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.manage_data.merge_layers" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.geoanalytics.manage_data.merge_layers">
+<span class="sig-prename descclassname"><span class="pre">arcgis.geoanalytics.manage_data.</span></span><span class="sig-name descname"><span class="pre">merge_layers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_layer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">merge_layer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">merge_attributes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">future</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.manage_data.merge_layers" title="Permalink to this definition">¶</a></dt>
 <dd><img alt="_images/merge_layers.png" src="_images/merge_layers.png" />
 <p>The <code class="docutils literal notranslate"><span class="pre">merge_layers</span></code> task combines two feature layers to create a single output layer. The tool
 requires that both layers have the same geometry type (tabular, point, line, or polygon). If
@@ -815,12 +841,12 @@ results. The GPJob can be queried on the status of the execution.</p>
 </div>
 </dd></dl>
 
-</section>
-<section id="overlay-data">
-<h2>overlay_data<a class="headerlink" href="#overlay-data" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="overlay-data">
+<h2>overlay_data<a class="headerlink" href="#overlay-data" title="Permalink to this heading">¶</a></h2>
 <dl class="py function">
-<dt id="arcgis.geoanalytics.manage_data.overlay_data">
-<code class="sig-prename descclassname">arcgis.geoanalytics.manage_data.</code><code class="sig-name descname">overlay_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_layer</span></em>, <em class="sig-param"><span class="n">overlay_layer</span></em>, <em class="sig-param"><span class="n">overlay_type</span><span class="o">=</span><span class="default_value">'intersect'</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">include_overlaps</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.manage_data.overlay_data" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.geoanalytics.manage_data.overlay_data">
+<span class="sig-prename descclassname"><span class="pre">arcgis.geoanalytics.manage_data.</span></span><span class="sig-name descname"><span class="pre">overlay_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_layer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overlay_layer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overlay_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'intersect'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_overlaps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">future</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.manage_data.overlay_data" title="Permalink to this definition">¶</a></dt>
 <dd><img alt="_images/overlay_layers.png" src="_images/overlay_layers.png" />
 <p>The <code class="docutils literal notranslate"><span class="pre">overlay_data</span></code> task combines two or more layers into one single layer.
 You can think of overlay as peering through a stack of maps and creating a single
@@ -919,7 +945,7 @@ and <code class="docutils literal notranslate"><span class="pre">overlay_layer</
 </table>
 </td>
 </tr>
-<tr class="row-even"><td><p>include_overlaps</p></td>
+<tr class="row-odd"><td><p>include_overlaps</p></td>
 <td><p>Optional boolean. Determines whether input features in the same dataset contain
 overlapping features. The default is <cite>True</cite>. Change this parameter to <cite>False</cite>
 if you don’t want self-intersecting features for the input layer or the
@@ -929,13 +955,13 @@ The parameter is not used for 10.7 or later and will always be <cite>True</cite>
 <p>The default value is ‘True’.</p>
 </td>
 </tr>
-<tr class="row-odd"><td><p>output_name</p></td>
+<tr class="row-even"><td><p>output_name</p></td>
 <td><p>Optional string. The task will create a feature service of the results. You define the name of the service.</p></td>
 </tr>
-<tr class="row-even"><td><p>gis</p></td>
+<tr class="row-odd"><td><p>gis</p></td>
 <td><p>Optional GIS. The GIS object where the analysis will take place.</p></td>
 </tr>
-<tr class="row-odd"><td><p>context</p></td>
+<tr class="row-even"><td><p>context</p></td>
 <td><p>Optional dict. The context parameter contains additional settings that affect task execution. For this task, there are four settings:</p>
 <ol class="arabic simple">
 <li><p>Extent (<code class="docutils literal notranslate"><span class="pre">extent</span></code>) - A bounding box that defines the analysis area. Only those features that intersect the bounding box will be analyzed.</p></li>
@@ -945,7 +971,7 @@ The parameter is not used for 10.7 or later and will always be <cite>True</cite>
 </ol>
 </td>
 </tr>
-<tr class="row-even"><td><p>future</p></td>
+<tr class="row-odd"><td><p>future</p></td>
 <td><p>Optional boolean. If ‘True’, a GPJob is returned instead of
 results. The GPJob can be queried on the status of the execution.</p>
 <p>The default value is ‘False’.</p>
@@ -968,12 +994,12 @@ results. The GPJob can be queried on the status of the execution.</p>
 </div>
 </dd></dl>
 
-</section>
-<section id="run-python-script">
-<h2>run_python_script<a class="headerlink" href="#run-python-script" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="run-python-script">
+<h2>run_python_script<a class="headerlink" href="#run-python-script" title="Permalink to this heading">¶</a></h2>
 <dl class="py function">
-<dt id="arcgis.geoanalytics.manage_data.run_python_script">
-<code class="sig-prename descclassname">arcgis.geoanalytics.manage_data.</code><code class="sig-name descname">run_python_script</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">code</span></em>, <em class="sig-param"><span class="n">layers</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">parameters</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">param_as_input</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.manage_data.run_python_script" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.geoanalytics.manage_data.run_python_script">
+<span class="sig-prename descclassname"><span class="pre">arcgis.geoanalytics.manage_data.</span></span><span class="sig-name descname"><span class="pre">run_python_script</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">code</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">future</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parameters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">param_as_input</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.manage_data.run_python_script" title="Permalink to this definition">¶</a></dt>
 <dd><p>The <code class="docutils literal notranslate"><span class="pre">run_python_script</span></code> method executes a Python script on your ArcGIS
 GeoAnalytics Server site. In the script, you can create an analysis
 pipeline by chaining together multiple GeoAnalytics Tools without
@@ -1091,8 +1117,8 @@ The variable name is called <strong>user_variables</strong>.</p>
 </div>
 </dd></dl>
 
-</section>
-</section>
+</div>
+</div>
 
 
 
@@ -1130,12 +1156,12 @@ The variable name is called <strong>user_variables</strong>.</p>
 
   </div>
   
-    Options v: 2.0.0
+    Options v: 2.0.1
 
   <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
       <span class="fa fa-book"> Pick an earlier version</span>
-      v: 2.0.0
+      v: 2.0.1
       <span class="fa fa-caret-down"></span>
     </span>
     <div class="rst-other-versions">
@@ -1143,6 +1169,10 @@ The variable name is called <strong>user_variables</strong>.</p>
       
       <dl>
         <dt>Versions</dt>
+        
+          
+          <dd><a href="2.0.0/">2.0.0</a></dd>
+          
         
           
           <dd><a href="1.9.1/">1.9.1</a></dd>

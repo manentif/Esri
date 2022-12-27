@@ -4,11 +4,10 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>arcgis.gis.nb module &mdash; arcgis 2.0.0 documentation</title>
+  <title>arcgis.gis.nb module &mdash; arcgis 2.0.1 documentation</title>
   
 
   
@@ -33,10 +32,12 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -80,7 +81,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                2.0.0
+                2.0.1
               </div>
             
           
@@ -105,7 +106,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               
             
             
-              <p><span class="caption-text">arcgis</span></p>
+              <p class="caption" role="heading"><span class="caption-text">arcgis</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="arcgis.gis.toc.html">arcgis.gis module</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="arcgis.gis.toc.html#gis">GIS</a></li>
@@ -136,31 +137,217 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l3"><a class="reference internal" href="arcgis.gis.agoserver.html">arcgis.gis.agoserver module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.gis.mission.html">arcgis.gis.mission module</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">arcgis.gis.nb module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#notebookserver">NotebookServer</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#notebookmanager">NotebookManager</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#notebook">Notebook</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#runtime">Runtime</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#snapshotmanager">SnapshotManager</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#snapshot">SnapShot</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#systemmanager">SystemManager</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#container">Container</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#containernotebook">ContainerNotebook</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#directorymanager">DirectoryManager</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#webadaptor">WebAdaptor</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#webadaptormanager">WebAdaptorManager</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#sitemanager">SiteManager</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#logmanager">LogManager</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#machinemanager">MachineManager</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#machine">Machine</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#securitymanager">SecurityManager</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#notebookdataaccess">NotebookDataAccess</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#notebookfile">NotebookFile</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#notebookserver">NotebookServer</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#arcgis.gis.nb.NotebookServer"><code class="docutils literal notranslate"><span class="pre">NotebookServer</span></code></a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.NotebookServer.data_access"><code class="docutils literal notranslate"><span class="pre">NotebookServer.data_access</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.NotebookServer.health_check"><code class="docutils literal notranslate"><span class="pre">NotebookServer.health_check</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.NotebookServer.info"><code class="docutils literal notranslate"><span class="pre">NotebookServer.info</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.NotebookServer.logs"><code class="docutils literal notranslate"><span class="pre">NotebookServer.logs</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.NotebookServer.machine"><code class="docutils literal notranslate"><span class="pre">NotebookServer.machine</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.NotebookServer.notebooks"><code class="docutils literal notranslate"><span class="pre">NotebookServer.notebooks</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.NotebookServer.properties"><code class="docutils literal notranslate"><span class="pre">NotebookServer.properties</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.NotebookServer.security"><code class="docutils literal notranslate"><span class="pre">NotebookServer.security</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.NotebookServer.services"><code class="docutils literal notranslate"><span class="pre">NotebookServer.services()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.NotebookServer.site"><code class="docutils literal notranslate"><span class="pre">NotebookServer.site</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.NotebookServer.system"><code class="docutils literal notranslate"><span class="pre">NotebookServer.system</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.NotebookServer.url"><code class="docutils literal notranslate"><span class="pre">NotebookServer.url</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.NotebookServer.version"><code class="docutils literal notranslate"><span class="pre">NotebookServer.version</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#notebookmanager">NotebookManager</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#arcgis.gis.nb.NotebookManager"><code class="docutils literal notranslate"><span class="pre">NotebookManager</span></code></a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.NotebookManager.execute_notebook"><code class="docutils literal notranslate"><span class="pre">NotebookManager.execute_notebook()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.NotebookManager.list"><code class="docutils literal notranslate"><span class="pre">NotebookManager.list()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.NotebookManager.open_notebook"><code class="docutils literal notranslate"><span class="pre">NotebookManager.open_notebook()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.NotebookManager.properties"><code class="docutils literal notranslate"><span class="pre">NotebookManager.properties</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.NotebookManager.restore_runtime"><code class="docutils literal notranslate"><span class="pre">NotebookManager.restore_runtime()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.NotebookManager.runtimes"><code class="docutils literal notranslate"><span class="pre">NotebookManager.runtimes</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.NotebookManager.snapshots"><code class="docutils literal notranslate"><span class="pre">NotebookManager.snapshots</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#notebook">Notebook</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#arcgis.gis.nb.Notebook"><code class="docutils literal notranslate"><span class="pre">Notebook</span></code></a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.Notebook.close"><code class="docutils literal notranslate"><span class="pre">Notebook.close()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.Notebook.properties"><code class="docutils literal notranslate"><span class="pre">Notebook.properties</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#runtime">Runtime</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#arcgis.gis.nb.Runtime"><code class="docutils literal notranslate"><span class="pre">Runtime</span></code></a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.Runtime.delete"><code class="docutils literal notranslate"><span class="pre">Runtime.delete()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.Runtime.manifest"><code class="docutils literal notranslate"><span class="pre">Runtime.manifest</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.Runtime.properties"><code class="docutils literal notranslate"><span class="pre">Runtime.properties</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.Runtime.update"><code class="docutils literal notranslate"><span class="pre">Runtime.update()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#snapshotmanager">SnapshotManager</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#arcgis.gis.nb.SnapshotManager"><code class="docutils literal notranslate"><span class="pre">SnapshotManager</span></code></a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.SnapshotManager.create"><code class="docutils literal notranslate"><span class="pre">SnapshotManager.create()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.SnapshotManager.list"><code class="docutils literal notranslate"><span class="pre">SnapshotManager.list()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.SnapshotManager.properties"><code class="docutils literal notranslate"><span class="pre">SnapshotManager.properties</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#snapshot">SnapShot</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#arcgis.gis.nb.SnapShot"><code class="docutils literal notranslate"><span class="pre">SnapShot</span></code></a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.SnapShot.delete"><code class="docutils literal notranslate"><span class="pre">SnapShot.delete()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.SnapShot.download"><code class="docutils literal notranslate"><span class="pre">SnapShot.download()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.SnapShot.restore"><code class="docutils literal notranslate"><span class="pre">SnapShot.restore()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.SnapShot.save_as_item"><code class="docutils literal notranslate"><span class="pre">SnapShot.save_as_item()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#systemmanager">SystemManager</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#arcgis.gis.nb.SystemManager"><code class="docutils literal notranslate"><span class="pre">SystemManager</span></code></a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.SystemManager.config_store"><code class="docutils literal notranslate"><span class="pre">SystemManager.config_store</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.SystemManager.containers"><code class="docutils literal notranslate"><span class="pre">SystemManager.containers</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.SystemManager.delete_all_jobs"><code class="docutils literal notranslate"><span class="pre">SystemManager.delete_all_jobs()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.SystemManager.directories"><code class="docutils literal notranslate"><span class="pre">SystemManager.directories</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.SystemManager.job_details"><code class="docutils literal notranslate"><span class="pre">SystemManager.job_details()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.SystemManager.jobs"><code class="docutils literal notranslate"><span class="pre">SystemManager.jobs</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.SystemManager.licenses"><code class="docutils literal notranslate"><span class="pre">SystemManager.licenses</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.SystemManager.list_jobs"><code class="docutils literal notranslate"><span class="pre">SystemManager.list_jobs()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.SystemManager.properties"><code class="docutils literal notranslate"><span class="pre">SystemManager.properties</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.SystemManager.recent_statistics"><code class="docutils literal notranslate"><span class="pre">SystemManager.recent_statistics</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.SystemManager.web_adaptors"><code class="docutils literal notranslate"><span class="pre">SystemManager.web_adaptors</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#container">Container</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#arcgis.gis.nb.Container"><code class="docutils literal notranslate"><span class="pre">Container</span></code></a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.Container.logs"><code class="docutils literal notranslate"><span class="pre">Container.logs()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.Container.notebooks"><code class="docutils literal notranslate"><span class="pre">Container.notebooks</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.Container.properties"><code class="docutils literal notranslate"><span class="pre">Container.properties</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.Container.sessions"><code class="docutils literal notranslate"><span class="pre">Container.sessions</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.Container.shutdown"><code class="docutils literal notranslate"><span class="pre">Container.shutdown()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.Container.statistics"><code class="docutils literal notranslate"><span class="pre">Container.statistics</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.Container.terminate"><code class="docutils literal notranslate"><span class="pre">Container.terminate()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#containernotebook">ContainerNotebook</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#arcgis.gis.nb.ContainerNotebook"><code class="docutils literal notranslate"><span class="pre">ContainerNotebook</span></code></a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.ContainerNotebook.close"><code class="docutils literal notranslate"><span class="pre">ContainerNotebook.close()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.ContainerNotebook.properties"><code class="docutils literal notranslate"><span class="pre">ContainerNotebook.properties</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#directorymanager">DirectoryManager</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#arcgis.gis.nb.DirectoryManager"><code class="docutils literal notranslate"><span class="pre">DirectoryManager</span></code></a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.DirectoryManager.list"><code class="docutils literal notranslate"><span class="pre">DirectoryManager.list()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.DirectoryManager.properties"><code class="docutils literal notranslate"><span class="pre">DirectoryManager.properties</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.DirectoryManager.register"><code class="docutils literal notranslate"><span class="pre">DirectoryManager.register()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.DirectoryManager.unregister"><code class="docutils literal notranslate"><span class="pre">DirectoryManager.unregister()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#webadaptor">WebAdaptor</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#arcgis.gis.nb.WebAdaptor"><code class="docutils literal notranslate"><span class="pre">WebAdaptor</span></code></a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.WebAdaptor.unregister"><code class="docutils literal notranslate"><span class="pre">WebAdaptor.unregister()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#webadaptormanager">WebAdaptorManager</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#arcgis.gis.nb.WebAdaptorManager"><code class="docutils literal notranslate"><span class="pre">WebAdaptorManager</span></code></a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.WebAdaptorManager.config"><code class="docutils literal notranslate"><span class="pre">WebAdaptorManager.config</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.WebAdaptorManager.list"><code class="docutils literal notranslate"><span class="pre">WebAdaptorManager.list()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.WebAdaptorManager.properties"><code class="docutils literal notranslate"><span class="pre">WebAdaptorManager.properties</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.WebAdaptorManager.register"><code class="docutils literal notranslate"><span class="pre">WebAdaptorManager.register()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#sitemanager">SiteManager</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#arcgis.gis.nb.SiteManager"><code class="docutils literal notranslate"><span class="pre">SiteManager</span></code></a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.SiteManager.export_site"><code class="docutils literal notranslate"><span class="pre">SiteManager.export_site()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.SiteManager.import_site"><code class="docutils literal notranslate"><span class="pre">SiteManager.import_site()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.SiteManager.properties"><code class="docutils literal notranslate"><span class="pre">SiteManager.properties</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#logmanager">LogManager</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#arcgis.gis.nb.LogManager"><code class="docutils literal notranslate"><span class="pre">LogManager</span></code></a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.LogManager.clean"><code class="docutils literal notranslate"><span class="pre">LogManager.clean()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.LogManager.properties"><code class="docutils literal notranslate"><span class="pre">LogManager.properties</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.LogManager.query"><code class="docutils literal notranslate"><span class="pre">LogManager.query()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.LogManager.settings"><code class="docutils literal notranslate"><span class="pre">LogManager.settings</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#machinemanager">MachineManager</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#arcgis.gis.nb.MachineManager"><code class="docutils literal notranslate"><span class="pre">MachineManager</span></code></a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.MachineManager.list"><code class="docutils literal notranslate"><span class="pre">MachineManager.list()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.MachineManager.properties"><code class="docutils literal notranslate"><span class="pre">MachineManager.properties</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#machine">Machine</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#arcgis.gis.nb.Machine"><code class="docutils literal notranslate"><span class="pre">Machine</span></code></a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.Machine.create_self_signed_cert"><code class="docutils literal notranslate"><span class="pre">Machine.create_self_signed_cert()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.Machine.delete_certificate"><code class="docutils literal notranslate"><span class="pre">Machine.delete_certificate()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.Machine.export_certificate"><code class="docutils literal notranslate"><span class="pre">Machine.export_certificate()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.Machine.generate_CSR"><code class="docutils literal notranslate"><span class="pre">Machine.generate_CSR()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.Machine.hardware"><code class="docutils literal notranslate"><span class="pre">Machine.hardware</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.Machine.import_CA_signed_certificate"><code class="docutils literal notranslate"><span class="pre">Machine.import_CA_signed_certificate()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.Machine.import_existing_server_certificate"><code class="docutils literal notranslate"><span class="pre">Machine.import_existing_server_certificate()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.Machine.import_root_certificate"><code class="docutils literal notranslate"><span class="pre">Machine.import_root_certificate()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.Machine.properties"><code class="docutils literal notranslate"><span class="pre">Machine.properties</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.Machine.ssl_certificate"><code class="docutils literal notranslate"><span class="pre">Machine.ssl_certificate()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.Machine.ssl_certificates"><code class="docutils literal notranslate"><span class="pre">Machine.ssl_certificates</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.Machine.status"><code class="docutils literal notranslate"><span class="pre">Machine.status</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.Machine.unregister"><code class="docutils literal notranslate"><span class="pre">Machine.unregister()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#securitymanager">SecurityManager</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#arcgis.gis.nb.SecurityManager"><code class="docutils literal notranslate"><span class="pre">SecurityManager</span></code></a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb.SecurityManager.configuration"><code class="docutils literal notranslate"><span class="pre">SecurityManager.configuration</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#notebookdataaccess">NotebookDataAccess</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#arcgis.gis.nb._dataaccess.NotebookDataAccess"><code class="docutils literal notranslate"><span class="pre">NotebookDataAccess</span></code></a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb._dataaccess.NotebookDataAccess.files"><code class="docutils literal notranslate"><span class="pre">NotebookDataAccess.files</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb._dataaccess.NotebookDataAccess.upload"><code class="docutils literal notranslate"><span class="pre">NotebookDataAccess.upload()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#notebookfile">NotebookFile</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#arcgis.gis.nb._dataaccess.NotebookFile"><code class="docutils literal notranslate"><span class="pre">NotebookFile</span></code></a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb._dataaccess.NotebookFile.download"><code class="docutils literal notranslate"><span class="pre">NotebookFile.download()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb._dataaccess.NotebookFile.erase"><code class="docutils literal notranslate"><span class="pre">NotebookFile.erase()</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="#arcgis.gis.nb._dataaccess.NotebookFile.properties"><code class="docutils literal notranslate"><span class="pre">NotebookFile.properties</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l4"><a class="reference internal" href="#nbservicesmanager">NBServicesManager</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#nbservice">NBService</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.gis.workflowmanager.html">arcgis.gis.workflowmanager module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.gis.tasks.html">arcgis.gis.tasks module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcgis.gis.sharing.html">arcgis.gis.sharing module</a></li>
 </ul>
 </li>
 </ul>
@@ -174,6 +361,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l1"><a class="reference internal" href="arcgis.geoenrichment.html">arcgis.geoenrichment module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.geometry.html">arcgis.geometry module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.geoprocessing.html">arcgis.geoprocessing module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.graph.html">arcgis.graph module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.mapping.toc.html">arcgis.mapping module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.realtime.html">arcgis.realtime module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.schematics.html">arcgis.schematics module</a></li>
@@ -253,24 +441,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJGGV5"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-  <section id="module-arcgis.gis.nb">
-<span id="arcgis-gis-nb-module"></span><h1>arcgis.gis.nb module<a class="headerlink" href="#module-arcgis.gis.nb" title="Permalink to this headline">¶</a></h1>
-<section id="notebookserver">
-<h2>NotebookServer<a class="headerlink" href="#notebookserver" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="module-arcgis.gis.nb">
+<span id="arcgis-gis-nb-module"></span><h1>arcgis.gis.nb module<a class="headerlink" href="#module-arcgis.gis.nb" title="Permalink to this heading">¶</a></h1>
+<div class="section" id="notebookserver">
+<h2>NotebookServer<a class="headerlink" href="#notebookserver" title="Permalink to this heading">¶</a></h2>
 <dl class="py class">
-<dt id="arcgis.gis.nb.NotebookServer">
-<em class="property">class </em><code class="sig-prename descclassname">arcgis.gis.nb.</code><code class="sig-name descname">NotebookServer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span></em>, <em class="sig-param"><span class="n">gis</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.NotebookServer" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.gis.nb.NotebookServer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">arcgis.gis.nb.</span></span><span class="sig-name descname"><span class="pre">NotebookServer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gis</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.NotebookServer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Provides access to the ArcGIS Notebook Server administration API.</p>
-<dl class="py method">
-<dt id="arcgis.gis.nb.NotebookServer.data_access">
-<em class="property">property </em><code class="sig-name descname">data_access</code><a class="headerlink" href="#arcgis.gis.nb.NotebookServer.data_access" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="arcgis.gis.nb.NotebookServer.data_access">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">data_access</span></span><a class="headerlink" href="#arcgis.gis.nb.NotebookServer.data_access" title="Permalink to this definition">¶</a></dt>
 <dd><p>Provides access to managing files stored on notebook server.</p>
 </dd></dl>
 
-<dl class="py method">
-<dt id="arcgis.gis.nb.NotebookServer.health_check">
-<em class="property">property </em><code class="sig-name descname">health_check</code><a class="headerlink" href="#arcgis.gis.nb.NotebookServer.health_check" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="arcgis.gis.nb.NotebookServer.health_check">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">health_check</span></span><a class="headerlink" href="#arcgis.gis.nb.NotebookServer.health_check" title="Permalink to this definition">¶</a></dt>
 <dd><p>The <cite>health_check</cite> verifies that your ArcGIS Notebook Server site
 has been created, and that its Docker environment has been
 correctly configured.</p>
@@ -282,9 +470,9 @@ correctly configured.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="arcgis.gis.nb.NotebookServer.info">
-<em class="property">property </em><code class="sig-name descname">info</code><a class="headerlink" href="#arcgis.gis.nb.NotebookServer.info" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="arcgis.gis.nb.NotebookServer.info">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">info</span></span><a class="headerlink" href="#arcgis.gis.nb.NotebookServer.info" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns information about the server site itself</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -293,9 +481,9 @@ correctly configured.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="arcgis.gis.nb.NotebookServer.logs">
-<em class="property">property </em><code class="sig-name descname">logs</code><a class="headerlink" href="#arcgis.gis.nb.NotebookServer.logs" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="arcgis.gis.nb.NotebookServer.logs">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">logs</span></span><a class="headerlink" href="#arcgis.gis.nb.NotebookServer.logs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Provides access to the notebook server’s logging system</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -304,9 +492,9 @@ correctly configured.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="arcgis.gis.nb.NotebookServer.machine">
-<em class="property">property </em><code class="sig-name descname">machine</code><a class="headerlink" href="#arcgis.gis.nb.NotebookServer.machine" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="arcgis.gis.nb.NotebookServer.machine">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">machine</span></span><a class="headerlink" href="#arcgis.gis.nb.NotebookServer.machine" title="Permalink to this definition">¶</a></dt>
 <dd><p>Provides access to managing the registered machines with ArcGIS
 Notebook Server</p>
 <dl class="field-list simple">
@@ -316,9 +504,9 @@ Notebook Server</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="arcgis.gis.nb.NotebookServer.notebooks">
-<em class="property">property </em><code class="sig-name descname">notebooks</code><a class="headerlink" href="#arcgis.gis.nb.NotebookServer.notebooks" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="arcgis.gis.nb.NotebookServer.notebooks">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">notebooks</span></span><a class="headerlink" href="#arcgis.gis.nb.NotebookServer.notebooks" title="Permalink to this definition">¶</a></dt>
 <dd><p>Provides access to managing the ArcGIS Notebook Server’s
 Notebooks</p>
 <dl class="field-list simple">
@@ -328,15 +516,15 @@ Notebooks</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="arcgis.gis.nb.NotebookServer.properties">
-<em class="property">property </em><code class="sig-name descname">properties</code><a class="headerlink" href="#arcgis.gis.nb.NotebookServer.properties" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="arcgis.gis.nb.NotebookServer.properties">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">properties</span></span><a class="headerlink" href="#arcgis.gis.nb.NotebookServer.properties" title="Permalink to this definition">¶</a></dt>
 <dd><p>Properties of the object</p>
 </dd></dl>
 
-<dl class="py method">
-<dt id="arcgis.gis.nb.NotebookServer.security">
-<em class="property">property </em><code class="sig-name descname">security</code><a class="headerlink" href="#arcgis.gis.nb.NotebookServer.security" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="arcgis.gis.nb.NotebookServer.security">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">security</span></span><a class="headerlink" href="#arcgis.gis.nb.NotebookServer.security" title="Permalink to this definition">¶</a></dt>
 <dd><p>Provides access to managing the ArcGIS Notebook Server’s security
 settings.</p>
 <dl class="field-list simple">
@@ -347,8 +535,8 @@ settings.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="arcgis.gis.nb.NotebookServer.services">
-<code class="sig-name descname">services</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.NotebookServer.services" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.gis.nb.NotebookServer.services">
+<span class="sig-name descname"><span class="pre">services</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.NotebookServer.services" title="Permalink to this definition">¶</a></dt>
 <dd><p>Provices access to managing notebook created geoprocessing tools</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -357,9 +545,9 @@ settings.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="arcgis.gis.nb.NotebookServer.site">
-<em class="property">property </em><code class="sig-name descname">site</code><a class="headerlink" href="#arcgis.gis.nb.NotebookServer.site" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="arcgis.gis.nb.NotebookServer.site">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">site</span></span><a class="headerlink" href="#arcgis.gis.nb.NotebookServer.site" title="Permalink to this definition">¶</a></dt>
 <dd><p>Provides access to the notebook server’s site management operations</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -368,9 +556,9 @@ settings.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="arcgis.gis.nb.NotebookServer.system">
-<em class="property">property </em><code class="sig-name descname">system</code><a class="headerlink" href="#arcgis.gis.nb.NotebookServer.system" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="arcgis.gis.nb.NotebookServer.system">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">system</span></span><a class="headerlink" href="#arcgis.gis.nb.NotebookServer.system" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns access to the system properties of the ArcGIS Notebook Server</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -379,15 +567,15 @@ settings.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="arcgis.gis.nb.NotebookServer.url">
-<em class="property">property </em><code class="sig-name descname">url</code><a class="headerlink" href="#arcgis.gis.nb.NotebookServer.url" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="arcgis.gis.nb.NotebookServer.url">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">url</span></span><a class="headerlink" href="#arcgis.gis.nb.NotebookServer.url" title="Permalink to this definition">¶</a></dt>
 <dd><p>The URL of the notebook server.</p>
 </dd></dl>
 
-<dl class="py method">
-<dt id="arcgis.gis.nb.NotebookServer.version">
-<em class="property">property </em><code class="sig-name descname">version</code><a class="headerlink" href="#arcgis.gis.nb.NotebookServer.version" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="arcgis.gis.nb.NotebookServer.version">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">version</span></span><a class="headerlink" href="#arcgis.gis.nb.NotebookServer.version" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the notebook server version</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -398,17 +586,17 @@ settings.</p>
 
 </dd></dl>
 
-</section>
-<section id="notebookmanager">
-<h2>NotebookManager<a class="headerlink" href="#notebookmanager" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="notebookmanager">
+<h2>NotebookManager<a class="headerlink" href="#notebookmanager" title="Permalink to this heading">¶</a></h2>
 <dl class="py class">
-<dt id="arcgis.gis.nb.NotebookManager">
-<em class="property">class </em><code class="sig-prename descclassname">arcgis.gis.nb.</code><code class="sig-name descname">NotebookManager</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span></em>, <em class="sig-param"><span class="n">gis</span></em>, <em class="sig-param"><span class="n">nbs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.NotebookManager" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.gis.nb.NotebookManager">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">arcgis.gis.nb.</span></span><span class="sig-name descname"><span class="pre">NotebookManager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nbs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.NotebookManager" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Provides access to managing a site’s notebooks</p>
 <dl class="py method">
-<dt id="arcgis.gis.nb.NotebookManager.execute_notebook">
-<code class="sig-name descname">execute_notebook</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">item</span></em>, <em class="sig-param"><span class="n">update_portal_item</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">parameters</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">save_parameters</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.NotebookManager.execute_notebook" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.gis.nb.NotebookManager.execute_notebook">
+<span class="sig-name descname"><span class="pre">execute_notebook</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">item</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">update_portal_item</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parameters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_parameters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">future</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.NotebookManager.execute_notebook" title="Permalink to this definition">¶</a></dt>
 <dd><p>The Execute Notebook operation allows administrators to remotely
 run a notebook in their ArcGIS Notebook Server site. The notebook
 specified in the operation will be run with all cells in order.</p>
@@ -480,8 +668,8 @@ returns a notebook job that will let you view the results as needed.</p></td>
 </dd></dl>
 
 <dl class="py method">
-<dt id="arcgis.gis.nb.NotebookManager.list">
-<code class="sig-name descname">list</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.NotebookManager.list" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.gis.nb.NotebookManager.list">
+<span class="sig-name descname"><span class="pre">list</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.NotebookManager.list" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a list of notebook instances on the Notebook Server</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -491,8 +679,8 @@ returns a notebook job that will let you view the results as needed.</p></td>
 </dd></dl>
 
 <dl class="py method">
-<dt id="arcgis.gis.nb.NotebookManager.open_notebook">
-<code class="sig-name descname">open_notebook</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">itemid</span></em>, <em class="sig-param"><span class="n">templateid</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">nb_runtimeid</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">template_nb</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.NotebookManager.open_notebook" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.gis.nb.NotebookManager.open_notebook">
+<span class="sig-name descname"><span class="pre">open_notebook</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">itemid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">templateid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nb_runtimeid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">template_nb</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.NotebookManager.open_notebook" title="Permalink to this definition">¶</a></dt>
 <dd><p>Opens a notebook on the notebook server</p>
 <table class="docutils align-default">
 <colgroup>
@@ -533,23 +721,23 @@ system templates, look at the sample notebooks group:</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="arcgis.gis.nb.NotebookManager.properties">
-<em class="property">property </em><code class="sig-name descname">properties</code><a class="headerlink" href="#arcgis.gis.nb.NotebookManager.properties" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="arcgis.gis.nb.NotebookManager.properties">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">properties</span></span><a class="headerlink" href="#arcgis.gis.nb.NotebookManager.properties" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns the properties of the resource</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="arcgis.gis.nb.NotebookManager.restore_runtime">
-<code class="sig-name descname">restore_runtime</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.NotebookManager.restore_runtime" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.gis.nb.NotebookManager.restore_runtime">
+<span class="sig-name descname"><span class="pre">restore_runtime</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.NotebookManager.restore_runtime" title="Permalink to this definition">¶</a></dt>
 <dd><p>This operation restores the two default notebook runtimes in ArcGIS
 Notebook Server - ArcGIS Notebook Python 3 Standard and ArcGIS
 Notebook Python 3 Advanced - to their original settings.</p>
 </dd></dl>
 
-<dl class="py method">
-<dt id="arcgis.gis.nb.NotebookManager.runtimes">
-<em class="property">property </em><code class="sig-name descname">runtimes</code><a class="headerlink" href="#arcgis.gis.nb.NotebookManager.runtimes" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="arcgis.gis.nb.NotebookManager.runtimes">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">runtimes</span></span><a class="headerlink" href="#arcgis.gis.nb.NotebookManager.runtimes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a list of all runtimes</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -558,9 +746,9 @@ Notebook Python 3 Advanced - to their original settings.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="arcgis.gis.nb.NotebookManager.snapshots">
-<em class="property">property </em><code class="sig-name descname">snapshots</code><a class="headerlink" href="#arcgis.gis.nb.NotebookManager.snapshots" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="arcgis.gis.nb.NotebookManager.snapshots">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">snapshots</span></span><a class="headerlink" href="#arcgis.gis.nb.NotebookManager.snapshots" title="Permalink to this definition">¶</a></dt>
 <dd><p>Provides access to managing Notebook’s snapshots</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -571,17 +759,17 @@ Notebook Python 3 Advanced - to their original settings.</p>
 
 </dd></dl>
 
-</section>
-<section id="notebook">
-<h2>Notebook<a class="headerlink" href="#notebook" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="notebook">
+<h2>Notebook<a class="headerlink" href="#notebook" title="Permalink to this heading">¶</a></h2>
 <dl class="py class">
-<dt id="arcgis.gis.nb.Notebook">
-<em class="property">class </em><code class="sig-prename descclassname">arcgis.gis.nb.</code><code class="sig-name descname">Notebook</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span></em>, <em class="sig-param"><span class="n">item_id</span></em>, <em class="sig-param"><span class="n">properties</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.Notebook" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.gis.nb.Notebook">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">arcgis.gis.nb.</span></span><span class="sig-name descname"><span class="pre">Notebook</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">item_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">properties</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.Notebook" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>This represents an individual notebook resource in the notebook server.</p>
 <dl class="py method">
-<dt id="arcgis.gis.nb.Notebook.close">
-<code class="sig-name descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.Notebook.close" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.gis.nb.Notebook.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.Notebook.close" title="Permalink to this definition">¶</a></dt>
 <dd><p>This operation stops a running notebook. You can use it to free up
 space in your notebook container. Idle notebooks are automatically
 cleaned up according to the duration defined by the
@@ -594,25 +782,25 @@ is 24 hours.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="arcgis.gis.nb.Notebook.properties">
-<em class="property">property </em><code class="sig-name descname">properties</code><a class="headerlink" href="#arcgis.gis.nb.Notebook.properties" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="arcgis.gis.nb.Notebook.properties">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">properties</span></span><a class="headerlink" href="#arcgis.gis.nb.Notebook.properties" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns the properties of the resource</p>
 </dd></dl>
 
 </dd></dl>
 
-</section>
-<section id="runtime">
-<h2>Runtime<a class="headerlink" href="#runtime" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="runtime">
+<h2>Runtime<a class="headerlink" href="#runtime" title="Permalink to this heading">¶</a></h2>
 <dl class="py class">
-<dt id="arcgis.gis.nb.Runtime">
-<em class="property">class </em><code class="sig-prename descclassname">arcgis.gis.nb.</code><code class="sig-name descname">Runtime</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span></em>, <em class="sig-param"><span class="n">gis</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.Runtime" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.gis.nb.Runtime">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">arcgis.gis.nb.</span></span><span class="sig-name descname"><span class="pre">Runtime</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gis</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.Runtime" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Provides information about the properties of a specific notebook runtime in your ArcGIS Notebook Server site</p>
 <dl class="py method">
-<dt id="arcgis.gis.nb.Runtime.delete">
-<code class="sig-name descname">delete</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.Runtime.delete" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.gis.nb.Runtime.delete">
+<span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.Runtime.delete" title="Permalink to this definition">¶</a></dt>
 <dd><p>Deletes the current runtime from the ArcGIS Notebook Server</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -621,9 +809,9 @@ is 24 hours.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="arcgis.gis.nb.Runtime.manifest">
-<em class="property">property </em><code class="sig-name descname">manifest</code><a class="headerlink" href="#arcgis.gis.nb.Runtime.manifest" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="arcgis.gis.nb.Runtime.manifest">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">manifest</span></span><a class="headerlink" href="#arcgis.gis.nb.Runtime.manifest" title="Permalink to this definition">¶</a></dt>
 <dd><p>This resource returns a JSON representation of all the Python
 libraries supported in the specified notebook runtime. Notebook
 authors who open notebooks using this runtime are able to import
@@ -635,15 +823,15 @@ any of the libraries in the manifest into their notebooks.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="arcgis.gis.nb.Runtime.properties">
-<em class="property">property </em><code class="sig-name descname">properties</code><a class="headerlink" href="#arcgis.gis.nb.Runtime.properties" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="arcgis.gis.nb.Runtime.properties">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">properties</span></span><a class="headerlink" href="#arcgis.gis.nb.Runtime.properties" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns the properties of the resource</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="arcgis.gis.nb.Runtime.update">
-<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">image_id</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">max_cpu</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">max_memory</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">memory_unit</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">max_swap_memory</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">swap_memory_unit</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">shared_memory</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">docker_runtime</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">shared_unit</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">version</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">container_type</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">pull_string</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">require_advanced_priv</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">manifest</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.Runtime.update" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.gis.nb.Runtime.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_cpu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_memory</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">memory_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_swap_memory</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">swap_memory_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shared_memory</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">docker_runtime</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shared_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">version</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">container_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pull_string</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">require_advanced_priv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">manifest</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.Runtime.update" title="Permalink to this definition">¶</a></dt>
 <dd><p>This operation allows you to update the properties of a notebook
 runtime in ArcGIS Notebook Server. These settings will be applied
 to every container to which the runtime is applied.</p>
@@ -657,17 +845,17 @@ processing units (GPUs).</p>
 
 </dd></dl>
 
-</section>
-<section id="snapshotmanager">
-<h2>SnapshotManager<a class="headerlink" href="#snapshotmanager" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="snapshotmanager">
+<h2>SnapshotManager<a class="headerlink" href="#snapshotmanager" title="Permalink to this heading">¶</a></h2>
 <dl class="py class">
-<dt id="arcgis.gis.nb.SnapshotManager">
-<em class="property">class </em><code class="sig-prename descclassname">arcgis.gis.nb.</code><code class="sig-name descname">SnapshotManager</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span></em>, <em class="sig-param"><span class="n">gis</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.SnapshotManager" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.gis.nb.SnapshotManager">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">arcgis.gis.nb.</span></span><span class="sig-name descname"><span class="pre">SnapshotManager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gis</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.SnapshotManager" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Allows for management and creation of snapshots (save points) for ArcGIS Notebooks.</p>
 <dl class="py method">
-<dt id="arcgis.gis.nb.SnapshotManager.create">
-<code class="sig-name descname">create</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">item</span></em>, <em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">description</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">notebook_json</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">access</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.SnapshotManager.create" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.gis.nb.SnapshotManager.create">
+<span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">item</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">notebook_json</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">access</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.SnapshotManager.create" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a Snapshot of a Given Item.</p>
 <table class="docutils align-default">
 <colgroup>
@@ -705,8 +893,8 @@ than what is in the current notebook provide it here.</p></td>
 </dd></dl>
 
 <dl class="py method">
-<dt id="arcgis.gis.nb.SnapshotManager.list">
-<code class="sig-name descname">list</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">item</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.SnapshotManager.list" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.gis.nb.SnapshotManager.list">
+<span class="sig-name descname"><span class="pre">list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">item</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.SnapshotManager.list" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a list of SnapShots for a notebook item.</p>
 <table class="docutils align-default">
 <colgroup>
@@ -729,25 +917,25 @@ than what is in the current notebook provide it here.</p></td>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="arcgis.gis.nb.SnapshotManager.properties">
-<em class="property">property </em><code class="sig-name descname">properties</code><a class="headerlink" href="#arcgis.gis.nb.SnapshotManager.properties" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="arcgis.gis.nb.SnapshotManager.properties">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">properties</span></span><a class="headerlink" href="#arcgis.gis.nb.SnapshotManager.properties" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns the properties of the endpoint</p>
 </dd></dl>
 
 </dd></dl>
 
-</section>
-<section id="snapshot">
-<h2>SnapShot<a class="headerlink" href="#snapshot" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="snapshot">
+<h2>SnapShot<a class="headerlink" href="#snapshot" title="Permalink to this heading">¶</a></h2>
 <dl class="py class">
-<dt id="arcgis.gis.nb.SnapShot">
-<em class="property">class </em><code class="sig-prename descclassname">arcgis.gis.nb.</code><code class="sig-name descname">SnapShot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">item</span><span class="p">:</span> <span class="n"><a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.Item" title="arcgis.gis.Item">arcgis.gis.Item</a></span></em>, <em class="sig-param"><span class="n">sm</span><span class="p">:</span> <span class="n">arcgis.gis.nb._snapshot.SnapshotManager</span></em>, <em class="sig-param"><span class="n">properties</span><span class="p">:</span> <span class="n">dict</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.SnapShot" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.gis.nb.SnapShot">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">arcgis.gis.nb.</span></span><span class="sig-name descname"><span class="pre">SnapShot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">item</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">properties</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.SnapShot" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>A single snapshot instance for a Notebook item.</p>
 <dl class="py method">
-<dt id="arcgis.gis.nb.SnapShot.delete">
-<code class="sig-name descname">delete</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.SnapShot.delete" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.gis.nb.SnapShot.delete">
+<span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.SnapShot.delete" title="Permalink to this definition">¶</a></dt>
 <dd><p>Deletes a snapshot associated with the notebook item</p>
 <table class="docutils align-default">
 <colgroup>
@@ -774,8 +962,8 @@ than what is in the current notebook provide it here.</p></td>
 </dd></dl>
 
 <dl class="py method">
-<dt id="arcgis.gis.nb.SnapShot.download">
-<code class="sig-name descname">download</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.SnapShot.download" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.gis.nb.SnapShot.download">
+<span class="sig-name descname"><span class="pre">download</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.SnapShot.download" title="Permalink to this definition">¶</a></dt>
 <dd><p>Retrieves a snap shot locally on disk.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -785,8 +973,8 @@ than what is in the current notebook provide it here.</p></td>
 </dd></dl>
 
 <dl class="py method">
-<dt id="arcgis.gis.nb.SnapShot.restore">
-<code class="sig-name descname">restore</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">preserve</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">description</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.SnapShot.restore" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.gis.nb.SnapShot.restore">
+<span class="sig-name descname"><span class="pre">restore</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">preserve</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.SnapShot.restore" title="Permalink to this definition">¶</a></dt>
 <dd><p>Rolls back the notebook to a previous snapshot state</p>
 <table class="docutils align-default">
 <colgroup>
@@ -816,8 +1004,8 @@ than what is in the current notebook provide it here.</p></td>
 </dd></dl>
 
 <dl class="py method">
-<dt id="arcgis.gis.nb.SnapShot.save_as_item">
-<code class="sig-name descname">save_as_item</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">title</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.SnapShot.save_as_item" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.gis.nb.SnapShot.save_as_item">
+<span class="sig-name descname"><span class="pre">save_as_item</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">title</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.SnapShot.save_as_item" title="Permalink to this definition">¶</a></dt>
 <dd><p>Converts a Snapshot to a new notebook <cite>Item</cite>.</p>
 <table class="docutils align-default">
 <colgroup>
@@ -842,21 +1030,21 @@ than what is in the current notebook provide it here.</p></td>
 
 </dd></dl>
 
-</section>
-<section id="systemmanager">
-<h2>SystemManager<a class="headerlink" href="#systemmanager" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="systemmanager">
+<h2>SystemManager<a class="headerlink" href="#systemmanager" title="Permalink to this heading">¶</a></h2>
 <dl class="py class">
-<dt id="arcgis.gis.nb.SystemManager">
-<em class="property">class </em><code class="sig-prename descclassname">arcgis.gis.nb.</code><code class="sig-name descname">SystemManager</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">gis</span><span class="p">:</span> <span class="n"><a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.GIS" title="arcgis.gis.GIS">arcgis.gis.GIS</a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.SystemManager" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.gis.nb.SystemManager">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">arcgis.gis.nb.</span></span><span class="sig-name descname"><span class="pre">SystemManager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gis</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.SystemManager" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>The System resource is a collection of server-wide resources in your
 ArcGIS Notebook Server site. Within this resource, you can access
 information and perform operations pertaining to licenses, Web
 Adaptors, containers, server properties, directories, Jobs, and the
 configuration store.</p>
-<dl class="py method">
-<dt id="arcgis.gis.nb.SystemManager.config_store">
-<em class="property">property </em><code class="sig-name descname">config_store</code><a class="headerlink" href="#arcgis.gis.nb.SystemManager.config_store" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="arcgis.gis.nb.SystemManager.config_store">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">config_store</span></span><a class="headerlink" href="#arcgis.gis.nb.SystemManager.config_store" title="Permalink to this definition">¶</a></dt>
 <dd><p>The configuration store maintains configurations for ArcGIS Notebook
 Server. Typical configurations include all the resources such as
 machines and security rules that are required to power the site. In
@@ -877,9 +1065,9 @@ configurations in a hierarchy of folders and files.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="arcgis.gis.nb.SystemManager.containers">
-<em class="property">property </em><code class="sig-name descname">containers</code><a class="headerlink" href="#arcgis.gis.nb.SystemManager.containers" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="arcgis.gis.nb.SystemManager.containers">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">containers</span></span><a class="headerlink" href="#arcgis.gis.nb.SystemManager.containers" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a list of active containers.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -889,8 +1077,8 @@ configurations in a hierarchy of folders and files.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="arcgis.gis.nb.SystemManager.delete_all_jobs">
-<code class="sig-name descname">delete_all_jobs</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#arcgis.gis.nb.SystemManager.delete_all_jobs" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.gis.nb.SystemManager.delete_all_jobs">
+<span class="sig-name descname"><span class="pre">delete_all_jobs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.SystemManager.delete_all_jobs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Administrators can clean up an open notebook and execute notebook
 jobs on demand. Administrators can view and delete all jobs.
 Non-administrative users with create and edit notebook privileges
@@ -903,9 +1091,9 @@ Only jobs in completed or failed states will be cleaned up.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="arcgis.gis.nb.SystemManager.directories">
-<em class="property">property </em><code class="sig-name descname">directories</code><a class="headerlink" href="#arcgis.gis.nb.SystemManager.directories" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="arcgis.gis.nb.SystemManager.directories">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">directories</span></span><a class="headerlink" href="#arcgis.gis.nb.SystemManager.directories" title="Permalink to this definition">¶</a></dt>
 <dd><p>Provides access to registering directories</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -915,8 +1103,8 @@ Only jobs in completed or failed states will be cleaned up.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="arcgis.gis.nb.SystemManager.job_details">
-<code class="sig-name descname">job_details</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">job_id</span></em><span class="sig-paren">)</span> &#x2192; Dict<span class="p">[</span>str<span class="p">, </span>Any<span class="p">]</span><a class="headerlink" href="#arcgis.gis.nb.SystemManager.job_details" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.gis.nb.SystemManager.job_details">
+<span class="sig-name descname"><span class="pre">job_details</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">job_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.SystemManager.job_details" title="Permalink to this definition">¶</a></dt>
 <dd><p>A job represents the asynchronous execution of an operation in
 ArcGIS Notebook Server. You can acquire progress information by
 periodically querying the job.</p>
@@ -941,9 +1129,9 @@ periodically querying the job.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="arcgis.gis.nb.SystemManager.jobs">
-<em class="property">property </em><code class="sig-name descname">jobs</code><a class="headerlink" href="#arcgis.gis.nb.SystemManager.jobs" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="arcgis.gis.nb.SystemManager.jobs">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">jobs</span></span><a class="headerlink" href="#arcgis.gis.nb.SystemManager.jobs" title="Permalink to this definition">¶</a></dt>
 <dd><p>This resource is a collection of all the administrative jobs
 (asynchronous operations) created within your site. When operations
 that support asynchronous execution are run, ArcGIS Notebook Server
@@ -956,9 +1144,9 @@ and messages.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="arcgis.gis.nb.SystemManager.licenses">
-<em class="property">property </em><code class="sig-name descname">licenses</code><a class="headerlink" href="#arcgis.gis.nb.SystemManager.licenses" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="arcgis.gis.nb.SystemManager.licenses">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">licenses</span></span><a class="headerlink" href="#arcgis.gis.nb.SystemManager.licenses" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets the license resource list.  The licenses resource lists the
 current license level of ArcGIS Notebook Sever and all authorized
 extensions. Contact Esri Customer Service if you have questions
@@ -966,8 +1154,8 @@ about license levels or expiration properties.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="arcgis.gis.nb.SystemManager.list_jobs">
-<code class="sig-name descname">list_jobs</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">num</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">100</span></em>, <em class="sig-param"><span class="n">details</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">False</span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>Dict<span class="p">[</span>str<span class="p">, </span>Any<span class="p">]</span><span class="p">]</span><a class="headerlink" href="#arcgis.gis.nb.SystemManager.list_jobs" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.gis.nb.SystemManager.list_jobs">
+<span class="sig-name descname"><span class="pre">list_jobs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">details</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.SystemManager.list_jobs" title="Permalink to this definition">¶</a></dt>
 <dd><p>This resource is a collection of all the administrative jobs
 (asynchronous operations) created within your site. When operations
 that support asynchronous execution are run, ArcGIS Notebook Server
@@ -1000,9 +1188,9 @@ This is only valid on 10.9+.</p></td>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="arcgis.gis.nb.SystemManager.properties">
-<em class="property">property </em><code class="sig-name descname">properties</code><a class="headerlink" href="#arcgis.gis.nb.SystemManager.properties" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="arcgis.gis.nb.SystemManager.properties">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">properties</span></span><a class="headerlink" href="#arcgis.gis.nb.SystemManager.properties" title="Permalink to this definition">¶</a></dt>
 <dd><p>ArcGIS Notebook Server has configuration properties that govern
 some of its intricate behavior. This resource is a container for
 these properties. The properties are available to all server
@@ -1028,9 +1216,9 @@ objects and extensions through the server environment interface.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="arcgis.gis.nb.SystemManager.recent_statistics">
-<em class="property">property </em><code class="sig-name descname">recent_statistics</code><a class="headerlink" href="#arcgis.gis.nb.SystemManager.recent_statistics" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="arcgis.gis.nb.SystemManager.recent_statistics">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">recent_statistics</span></span><a class="headerlink" href="#arcgis.gis.nb.SystemManager.recent_statistics" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns statistics about the current state of the notebook server</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -1039,9 +1227,9 @@ objects and extensions through the server environment interface.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="arcgis.gis.nb.SystemManager.web_adaptors">
-<em class="property">property </em><code class="sig-name descname">web_adaptors</code><a class="headerlink" href="#arcgis.gis.nb.SystemManager.web_adaptors" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="arcgis.gis.nb.SystemManager.web_adaptors">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">web_adaptors</span></span><a class="headerlink" href="#arcgis.gis.nb.SystemManager.web_adaptors" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns a list of web adapters</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -1052,17 +1240,17 @@ objects and extensions through the server environment interface.</p>
 
 </dd></dl>
 
-</section>
-<section id="container">
-<h2>Container<a class="headerlink" href="#container" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="container">
+<h2>Container<a class="headerlink" href="#container" title="Permalink to this heading">¶</a></h2>
 <dl class="py class">
-<dt id="arcgis.gis.nb.Container">
-<em class="property">class </em><code class="sig-prename descclassname">arcgis.gis.nb.</code><code class="sig-name descname">Container</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span></em>, <em class="sig-param"><span class="n">gis</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.Container" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.gis.nb.Container">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">arcgis.gis.nb.</span></span><span class="sig-name descname"><span class="pre">Container</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gis</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.Container" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>This represents a single hosted notebook container.</p>
 <dl class="py method">
-<dt id="arcgis.gis.nb.Container.logs">
-<code class="sig-name descname">logs</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">count</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">1000</span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>str<span class="p">]</span><a class="headerlink" href="#arcgis.gis.nb.Container.logs" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.gis.nb.Container.logs">
+<span class="sig-name descname"><span class="pre">logs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">count</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.Container.logs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the container logs</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -1071,21 +1259,21 @@ objects and extensions through the server environment interface.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="arcgis.gis.nb.Container.notebooks">
-<em class="property">property </em><code class="sig-name descname">notebooks</code><a class="headerlink" href="#arcgis.gis.nb.Container.notebooks" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="arcgis.gis.nb.Container.notebooks">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">notebooks</span></span><a class="headerlink" href="#arcgis.gis.nb.Container.notebooks" title="Permalink to this definition">¶</a></dt>
 <dd><p>A list of all notebooks currently open in the container</p>
 </dd></dl>
 
-<dl class="py method">
-<dt id="arcgis.gis.nb.Container.properties">
-<em class="property">property </em><code class="sig-name descname">properties</code><a class="headerlink" href="#arcgis.gis.nb.Container.properties" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="arcgis.gis.nb.Container.properties">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">properties</span></span><a class="headerlink" href="#arcgis.gis.nb.Container.properties" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns the properties of the resource</p>
 </dd></dl>
 
-<dl class="py method">
-<dt id="arcgis.gis.nb.Container.sessions">
-<em class="property">property </em><code class="sig-name descname">sessions</code><a class="headerlink" href="#arcgis.gis.nb.Container.sessions" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="arcgis.gis.nb.Container.sessions">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">sessions</span></span><a class="headerlink" href="#arcgis.gis.nb.Container.sessions" title="Permalink to this definition">¶</a></dt>
 <dd><p>When an ArcGIS Notebook is opened in a container, a computational
 engine called a kernel is launched; the kernel runs while the notebook
 is active and executes all the work done by the notebook. This
@@ -1129,8 +1317,8 @@ to provide information about current notebook sessions.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="arcgis.gis.nb.Container.shutdown">
-<code class="sig-name descname">shutdown</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.Container.shutdown" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.gis.nb.Container.shutdown">
+<span class="sig-name descname"><span class="pre">shutdown</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.Container.shutdown" title="Permalink to this definition">¶</a></dt>
 <dd><p>Terminates the current container</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -1139,16 +1327,16 @@ to provide information about current notebook sessions.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="arcgis.gis.nb.Container.statistics">
-<em class="property">property </em><code class="sig-name descname">statistics</code><a class="headerlink" href="#arcgis.gis.nb.Container.statistics" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="arcgis.gis.nb.Container.statistics">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">statistics</span></span><a class="headerlink" href="#arcgis.gis.nb.Container.statistics" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns information about the current container</p>
 <p>:return:Dict[str,Any]</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="arcgis.gis.nb.Container.terminate">
-<code class="sig-name descname">terminate</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#arcgis.gis.nb.Container.terminate" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.gis.nb.Container.terminate">
+<span class="sig-name descname"><span class="pre">terminate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.Container.terminate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Stops the container</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -1159,17 +1347,17 @@ to provide information about current notebook sessions.</p>
 
 </dd></dl>
 
-</section>
-<section id="containernotebook">
-<h2>ContainerNotebook<a class="headerlink" href="#containernotebook" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="containernotebook">
+<h2>ContainerNotebook<a class="headerlink" href="#containernotebook" title="Permalink to this heading">¶</a></h2>
 <dl class="py class">
-<dt id="arcgis.gis.nb.ContainerNotebook">
-<em class="property">class </em><code class="sig-prename descclassname">arcgis.gis.nb.</code><code class="sig-name descname">ContainerNotebook</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">gis</span><span class="p">:</span> <span class="n"><a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.GIS" title="arcgis.gis.GIS">arcgis.gis.GIS</a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.ContainerNotebook" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.gis.nb.ContainerNotebook">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">arcgis.gis.nb.</span></span><span class="sig-name descname"><span class="pre">ContainerNotebook</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gis</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.ContainerNotebook" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Represents an individual notebook container</p>
 <dl class="py method">
-<dt id="arcgis.gis.nb.ContainerNotebook.close">
-<code class="sig-name descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#arcgis.gis.nb.ContainerNotebook.close" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.gis.nb.ContainerNotebook.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.ContainerNotebook.close" title="Permalink to this definition">¶</a></dt>
 <dd><p>This operation stops a running notebook</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -1178,9 +1366,9 @@ to provide information about current notebook sessions.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="arcgis.gis.nb.ContainerNotebook.properties">
-<em class="property">property </em><code class="sig-name descname">properties</code><a class="headerlink" href="#arcgis.gis.nb.ContainerNotebook.properties" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="arcgis.gis.nb.ContainerNotebook.properties">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">properties</span></span><a class="headerlink" href="#arcgis.gis.nb.ContainerNotebook.properties" title="Permalink to this definition">¶</a></dt>
 <dd><p>The container notebook properties</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -1191,17 +1379,17 @@ to provide information about current notebook sessions.</p>
 
 </dd></dl>
 
-</section>
-<section id="directorymanager">
-<h2>DirectoryManager<a class="headerlink" href="#directorymanager" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="directorymanager">
+<h2>DirectoryManager<a class="headerlink" href="#directorymanager" title="Permalink to this heading">¶</a></h2>
 <dl class="py class">
-<dt id="arcgis.gis.nb.DirectoryManager">
-<em class="property">class </em><code class="sig-prename descclassname">arcgis.gis.nb.</code><code class="sig-name descname">DirectoryManager</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">gis</span><span class="p">:</span> <span class="n"><a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.GIS" title="arcgis.gis.GIS">arcgis.gis.GIS</a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.DirectoryManager" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.gis.nb.DirectoryManager">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">arcgis.gis.nb.</span></span><span class="sig-name descname"><span class="pre">DirectoryManager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gis</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.DirectoryManager" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>A manages and maintains a collection of all server directories.</p>
 <dl class="py method">
-<dt id="arcgis.gis.nb.DirectoryManager.list">
-<code class="sig-name descname">list</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>Dict<span class="p">[</span>str<span class="p">, </span>Any<span class="p">]</span><span class="p">]</span><a class="headerlink" href="#arcgis.gis.nb.DirectoryManager.list" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.gis.nb.DirectoryManager.list">
+<span class="sig-name descname"><span class="pre">list</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.DirectoryManager.list" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns the current registered directories</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -1210,15 +1398,15 @@ to provide information about current notebook sessions.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="arcgis.gis.nb.DirectoryManager.properties">
-<em class="property">property </em><code class="sig-name descname">properties</code><a class="headerlink" href="#arcgis.gis.nb.DirectoryManager.properties" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="arcgis.gis.nb.DirectoryManager.properties">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">properties</span></span><a class="headerlink" href="#arcgis.gis.nb.DirectoryManager.properties" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns the properties of the resource</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="arcgis.gis.nb.DirectoryManager.register">
-<code class="sig-name descname">register</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">path</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">directory_type</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#arcgis.gis.nb.DirectoryManager.register" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.gis.nb.DirectoryManager.register">
+<span class="sig-name descname"><span class="pre">register</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">directory_type</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.DirectoryManager.register" title="Permalink to this definition">¶</a></dt>
 <dd><p>This operation registers a new data directory from your local
 machine with the ArcGIS Notebook Server site. Registering a local
 folder as a data directory allows your notebook authors to work with
@@ -1251,8 +1439,8 @@ files in the folder.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="arcgis.gis.nb.DirectoryManager.unregister">
-<code class="sig-name descname">unregister</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">directory_id</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#arcgis.gis.nb.DirectoryManager.unregister" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.gis.nb.DirectoryManager.unregister">
+<span class="sig-name descname"><span class="pre">unregister</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">directory_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.DirectoryManager.unregister" title="Permalink to this definition">¶</a></dt>
 <dd><p>This operation unregisters an existing directory from the ArcGIS
 Notebook Server site.</p>
 <table class="docutils align-default">
@@ -1278,12 +1466,12 @@ Notebook Server site.</p>
 
 </dd></dl>
 
-</section>
-<section id="webadaptor">
-<h2>WebAdaptor<a class="headerlink" href="#webadaptor" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="webadaptor">
+<h2>WebAdaptor<a class="headerlink" href="#webadaptor" title="Permalink to this heading">¶</a></h2>
 <dl class="py class">
-<dt id="arcgis.gis.nb.WebAdaptor">
-<em class="property">class </em><code class="sig-prename descclassname">arcgis.gis.nb.</code><code class="sig-name descname">WebAdaptor</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span></em>, <em class="sig-param"><span class="n">gis</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.WebAdaptor" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.gis.nb.WebAdaptor">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">arcgis.gis.nb.</span></span><span class="sig-name descname"><span class="pre">WebAdaptor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gis</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.WebAdaptor" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>This resource provides information about the ArcGIS Web Adaptor
 configured with your ArcGIS Notebook Server site. ArcGIS Web Adaptor
@@ -1307,25 +1495,25 @@ looking up roles and permissions) is still enforced by the server site.</p>
 update the maximum size of the file sent using WebSocket by updating your
 site’s webSocketMaxHeapSize property.</p>
 <dl class="py method">
-<dt id="arcgis.gis.nb.WebAdaptor.unregister">
-<code class="sig-name descname">unregister</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.WebAdaptor.unregister" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.gis.nb.WebAdaptor.unregister">
+<span class="sig-name descname"><span class="pre">unregister</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.WebAdaptor.unregister" title="Permalink to this definition">¶</a></dt>
 <dd><p>Unregisters a WebAdaptor for the Notebook Server
 :return: boolean</p>
 </dd></dl>
 
 </dd></dl>
 
-</section>
-<section id="webadaptormanager">
-<h2>WebAdaptorManager<a class="headerlink" href="#webadaptormanager" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="webadaptormanager">
+<h2>WebAdaptorManager<a class="headerlink" href="#webadaptormanager" title="Permalink to this heading">¶</a></h2>
 <dl class="py class">
-<dt id="arcgis.gis.nb.WebAdaptorManager">
-<em class="property">class </em><code class="sig-prename descclassname">arcgis.gis.nb.</code><code class="sig-name descname">WebAdaptorManager</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">gis</span><span class="p">:</span> <span class="n"><a class="reference internal" href="arcgis.gis.toc.html#arcgis.gis.GIS" title="arcgis.gis.GIS">arcgis.gis.GIS</a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.WebAdaptorManager" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.gis.nb.WebAdaptorManager">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">arcgis.gis.nb.</span></span><span class="sig-name descname"><span class="pre">WebAdaptorManager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gis</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.WebAdaptorManager" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Manages and configures web adaptors for the ArcGIS Notebook Server.</p>
-<dl class="py method">
-<dt id="arcgis.gis.nb.WebAdaptorManager.config">
-<em class="property">property </em><code class="sig-name descname">config</code><a class="headerlink" href="#arcgis.gis.nb.WebAdaptorManager.config" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="arcgis.gis.nb.WebAdaptorManager.config">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">config</span></span><a class="headerlink" href="#arcgis.gis.nb.WebAdaptorManager.config" title="Permalink to this definition">¶</a></dt>
 <dd><p>This is a property that allows for the retreival and manipulation of web adaptors.</p>
 <p>You can use this operation to change the Web Adaptor configuration
 and the sharedkey attribute. The sharedkey attribute must be present
@@ -1353,8 +1541,8 @@ adaptor. Always include the web adaptor’s sharedkey attribute.</p></td>
 </dd></dl>
 
 <dl class="py method">
-<dt id="arcgis.gis.nb.WebAdaptorManager.list">
-<code class="sig-name descname">list</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>arcgis.gis.nb._system.WebAdaptor<span class="p">]</span><a class="headerlink" href="#arcgis.gis.nb.WebAdaptorManager.list" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.gis.nb.WebAdaptorManager.list">
+<span class="sig-name descname"><span class="pre">list</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.WebAdaptorManager.list" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns all registered Web Adapters</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -1363,15 +1551,15 @@ adaptor. Always include the web adaptor’s sharedkey attribute.</p></td>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="arcgis.gis.nb.WebAdaptorManager.properties">
-<em class="property">property </em><code class="sig-name descname">properties</code><a class="headerlink" href="#arcgis.gis.nb.WebAdaptorManager.properties" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="arcgis.gis.nb.WebAdaptorManager.properties">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">properties</span></span><a class="headerlink" href="#arcgis.gis.nb.WebAdaptorManager.properties" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns the properties of the resource</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="arcgis.gis.nb.WebAdaptorManager.register">
-<code class="sig-name descname">register</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">ip</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">webadaptor_url</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">http_port</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">https_port</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">description</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">''</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.WebAdaptorManager.register" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.gis.nb.WebAdaptorManager.register">
+<span class="sig-name descname"><span class="pre">register</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ip</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">webadaptor_url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">http_port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">https_port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.WebAdaptorManager.register" title="Permalink to this definition">¶</a></dt>
 <dd><p>Registers a new <a class="reference internal" href="#arcgis.gis.nb.WebAdaptor" title="arcgis.gis.nb.WebAdaptor"><code class="xref py py-class docutils literal notranslate"><span class="pre">web</span> <span class="pre">adapter</span></code></a>.</p>
 <table class="docutils align-default">
 <colgroup>
@@ -1411,17 +1599,17 @@ adaptor. Always include the web adaptor’s sharedkey attribute.</p></td>
 
 </dd></dl>
 
-</section>
-<section id="sitemanager">
-<h2>SiteManager<a class="headerlink" href="#sitemanager" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="sitemanager">
+<h2>SiteManager<a class="headerlink" href="#sitemanager" title="Permalink to this heading">¶</a></h2>
 <dl class="py class">
-<dt id="arcgis.gis.nb.SiteManager">
-<em class="property">class </em><code class="sig-prename descclassname">arcgis.gis.nb.</code><code class="sig-name descname">SiteManager</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span></em>, <em class="sig-param"><span class="n">notebook</span></em>, <em class="sig-param"><span class="n">gis</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.SiteManager" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.gis.nb.SiteManager">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">arcgis.gis.nb.</span></span><span class="sig-name descname"><span class="pre">SiteManager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">notebook</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gis</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.SiteManager" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Provides the ability to update and restore notebook sites.</p>
 <dl class="py method">
-<dt id="arcgis.gis.nb.SiteManager.export_site">
-<code class="sig-name descname">export_site</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.SiteManager.export_site" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.gis.nb.SiteManager.export_site">
+<span class="sig-name descname"><span class="pre">export_site</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">location</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.SiteManager.export_site" title="Permalink to this definition">¶</a></dt>
 <dd><p>ArcGIS Notebook Server provides this operation to back up the site’s
 configuration store, along with the importSite operation to restore
 a site configuration from a backup. The configuration store hosts
@@ -1459,8 +1647,8 @@ operation. Among them:</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="arcgis.gis.nb.SiteManager.import_site">
-<code class="sig-name descname">import_site</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.SiteManager.import_site" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.gis.nb.SiteManager.import_site">
+<span class="sig-name descname"><span class="pre">import_site</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">location</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.SiteManager.import_site" title="Permalink to this definition">¶</a></dt>
 <dd><p>ArcGIS Notebook Server provides this operation to restore a site
 configuration from a backup. The backup will have been created and
 exported by the exportSite operation as a ZIP file with the
@@ -1493,26 +1681,26 @@ operation completes, as a report will be delivered to the page.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="arcgis.gis.nb.SiteManager.properties">
-<em class="property">property </em><code class="sig-name descname">properties</code><a class="headerlink" href="#arcgis.gis.nb.SiteManager.properties" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="arcgis.gis.nb.SiteManager.properties">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">properties</span></span><a class="headerlink" href="#arcgis.gis.nb.SiteManager.properties" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns the properties of the resource</p>
 </dd></dl>
 
 </dd></dl>
 
-</section>
-<section id="logmanager">
-<h2>LogManager<a class="headerlink" href="#logmanager" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="logmanager">
+<h2>LogManager<a class="headerlink" href="#logmanager" title="Permalink to this heading">¶</a></h2>
 <dl class="py class">
-<dt id="arcgis.gis.nb.LogManager">
-<em class="property">class </em><code class="sig-prename descclassname">arcgis.gis.nb.</code><code class="sig-name descname">LogManager</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span></em>, <em class="sig-param"><span class="n">gis</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.LogManager" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.gis.nb.LogManager">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">arcgis.gis.nb.</span></span><span class="sig-name descname"><span class="pre">LogManager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gis</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.LogManager" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Logs are the records written by the various components of Notebook server.
 You can query the logs and change various log settings.</p>
 <dl class="py method">
-<dt id="arcgis.gis.nb.LogManager.clean">
-<code class="sig-name descname">clean</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.LogManager.clean" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.gis.nb.LogManager.clean">
+<span class="sig-name descname"><span class="pre">clean</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.LogManager.clean" title="Permalink to this definition">¶</a></dt>
 <dd><p>Deletes all the log files on all server machines in the site. This is an irreversible
 operation.</p>
 <p>This operation forces the server to clean the logs, which has the effect of freeing
@@ -1525,15 +1713,15 @@ the server periodically purges old logs.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="arcgis.gis.nb.LogManager.properties">
-<em class="property">property </em><code class="sig-name descname">properties</code><a class="headerlink" href="#arcgis.gis.nb.LogManager.properties" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="arcgis.gis.nb.LogManager.properties">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">properties</span></span><a class="headerlink" href="#arcgis.gis.nb.LogManager.properties" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns the properties of the resource</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="arcgis.gis.nb.LogManager.query">
-<code class="sig-name descname">query</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">start_time</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">end_time</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">since_server_start</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">level</span><span class="o">=</span><span class="default_value">'WARNING'</span></em>, <em class="sig-param"><span class="n">services</span><span class="o">=</span><span class="default_value">'*'</span></em>, <em class="sig-param"><span class="n">machines</span><span class="o">=</span><span class="default_value">'*'</span></em>, <em class="sig-param"><span class="n">server</span><span class="o">=</span><span class="default_value">'*'</span></em>, <em class="sig-param"><span class="n">codes</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">process_IDs</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">export</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">export_type</span><span class="o">=</span><span class="default_value">'CSV'</span></em>, <em class="sig-param"><span class="n">out_path</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.LogManager.query" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.gis.nb.LogManager.query">
+<span class="sig-name descname"><span class="pre">query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start_time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">since_server_start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'WARNING'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">services</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'*'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">machines</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'*'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">server</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'*'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">codes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">process_IDs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">export</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">export_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'CSV'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.LogManager.query" title="Permalink to this definition">¶</a></dt>
 <dd><p>The query operation on the logs resource provides a way to
 aggregate, filter, and page through logs across the entire site.</p>
 <table class="docutils align-default">
@@ -1606,9 +1794,9 @@ output log file path is returned.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="arcgis.gis.nb.LogManager.settings">
-<em class="property">property </em><code class="sig-name descname">settings</code><a class="headerlink" href="#arcgis.gis.nb.LogManager.settings" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="arcgis.gis.nb.LogManager.settings">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">settings</span></span><a class="headerlink" href="#arcgis.gis.nb.LogManager.settings" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get/set the current log settings.</p>
 <table class="docutils align-default">
 <colgroup>
@@ -1633,42 +1821,42 @@ output log file path is returned.</p>
 
 </dd></dl>
 
-</section>
-<section id="machinemanager">
-<h2>MachineManager<a class="headerlink" href="#machinemanager" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="machinemanager">
+<h2>MachineManager<a class="headerlink" href="#machinemanager" title="Permalink to this heading">¶</a></h2>
 <dl class="py class">
-<dt id="arcgis.gis.nb.MachineManager">
-<em class="property">class </em><code class="sig-prename descclassname">arcgis.gis.nb.</code><code class="sig-name descname">MachineManager</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span></em>, <em class="sig-param"><span class="n">gis</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.MachineManager" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.gis.nb.MachineManager">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">arcgis.gis.nb.</span></span><span class="sig-name descname"><span class="pre">MachineManager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gis</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.MachineManager" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>This resource provides the name and URL of the ArcGIS Notebook
 Server machine in the site.</p>
 <dl class="py method">
-<dt id="arcgis.gis.nb.MachineManager.list">
-<code class="sig-name descname">list</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.MachineManager.list" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.gis.nb.MachineManager.list">
+<span class="sig-name descname"><span class="pre">list</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.MachineManager.list" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns all machine instances</p>
 </dd></dl>
 
-<dl class="py method">
-<dt id="arcgis.gis.nb.MachineManager.properties">
-<em class="property">property </em><code class="sig-name descname">properties</code><a class="headerlink" href="#arcgis.gis.nb.MachineManager.properties" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="arcgis.gis.nb.MachineManager.properties">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">properties</span></span><a class="headerlink" href="#arcgis.gis.nb.MachineManager.properties" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns the properties of the resource</p>
 </dd></dl>
 
 </dd></dl>
 
-</section>
-<section id="machine">
-<h2>Machine<a class="headerlink" href="#machine" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="machine">
+<h2>Machine<a class="headerlink" href="#machine" title="Permalink to this heading">¶</a></h2>
 <dl class="py class">
-<dt id="arcgis.gis.nb.Machine">
-<em class="property">class </em><code class="sig-prename descclassname">arcgis.gis.nb.</code><code class="sig-name descname">Machine</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span></em>, <em class="sig-param"><span class="n">gis</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.Machine" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.gis.nb.Machine">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">arcgis.gis.nb.</span></span><span class="sig-name descname"><span class="pre">Machine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gis</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.Machine" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>This resource provides information about the machine in your ArcGIS
 Notebook Server site.  You can update some of these properties
 using the Edit Machine operation.</p>
 <dl class="py method">
-<dt id="arcgis.gis.nb.Machine.create_self_signed_cert">
-<code class="sig-name descname">create_self_signed_cert</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">alias</span></em>, <em class="sig-param"><span class="n">keysize</span></em>, <em class="sig-param"><span class="n">common_name</span></em>, <em class="sig-param"><span class="n">org_unit</span></em>, <em class="sig-param"><span class="n">organization</span></em>, <em class="sig-param"><span class="n">city</span></em>, <em class="sig-param"><span class="n">state</span></em>, <em class="sig-param"><span class="n">country</span></em>, <em class="sig-param"><span class="n">keyalg</span><span class="o">=</span><span class="default_value">'RSA'</span></em>, <em class="sig-param"><span class="n">sigalg</span><span class="o">=</span><span class="default_value">'SHA1withRSA'</span></em>, <em class="sig-param"><span class="n">validity</span><span class="o">=</span><span class="default_value">90</span></em>, <em class="sig-param"><span class="n">san</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.Machine.create_self_signed_cert" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.gis.nb.Machine.create_self_signed_cert">
+<span class="sig-name descname"><span class="pre">create_self_signed_cert</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alias</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keysize</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">common_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">org_unit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">organization</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">city</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">country</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keyalg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'RSA'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigalg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'SHA1withRSA'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">validity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">90</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">san</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.Machine.create_self_signed_cert" title="Permalink to this definition">¶</a></dt>
 <dd><p>Use this operation to create a self-signed certificate or as a
 starting point for getting a production-ready CA-signed certificate.
 ArcGIS Notebook Server will generate a certificate for you and store
@@ -1760,8 +1948,8 @@ value: <a class="reference external" href="DNS:www.esri.com,DNS:esri,IP:10.60.1.
 </dd></dl>
 
 <dl class="py method">
-<dt id="arcgis.gis.nb.Machine.delete_certificate">
-<code class="sig-name descname">delete_certificate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">certificate</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.Machine.delete_certificate" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.gis.nb.Machine.delete_certificate">
+<span class="sig-name descname"><span class="pre">delete_certificate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">certificate</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.Machine.delete_certificate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Deletes a SSL certificate using the certificate alias.</p>
 <table class="docutils align-default">
 <colgroup>
@@ -1785,8 +1973,8 @@ value: <a class="reference external" href="DNS:www.esri.com,DNS:esri,IP:10.60.1.
 </dd></dl>
 
 <dl class="py method">
-<dt id="arcgis.gis.nb.Machine.export_certificate">
-<code class="sig-name descname">export_certificate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">certificate</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.Machine.export_certificate" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.gis.nb.Machine.export_certificate">
+<span class="sig-name descname"><span class="pre">export_certificate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">certificate</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.Machine.export_certificate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Downloads an SSL certificate. The file returned by the
 server is an X.509 certificate. The downloaded certificate can then
 be imported into a client that is making HTTP requests.</p>
@@ -1812,8 +2000,8 @@ be imported into a client that is making HTTP requests.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="arcgis.gis.nb.Machine.generate_CSR">
-<code class="sig-name descname">generate_CSR</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">certificate</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.Machine.generate_CSR" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.gis.nb.Machine.generate_CSR">
+<span class="sig-name descname"><span class="pre">generate_CSR</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">certificate</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.Machine.generate_CSR" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generates a certificate signing request (CSR) for a
 self-signed certificate. A CSR is required by a CA to create a
 digitally signed version of your certificate.  Supply the certificate
@@ -1839,9 +2027,9 @@ object that was created with method ssl_certificate.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="arcgis.gis.nb.Machine.hardware">
-<em class="property">property </em><code class="sig-name descname">hardware</code><a class="headerlink" href="#arcgis.gis.nb.Machine.hardware" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="arcgis.gis.nb.Machine.hardware">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">hardware</span></span><a class="headerlink" href="#arcgis.gis.nb.Machine.hardware" title="Permalink to this definition">¶</a></dt>
 <dd><p>This resource displays hardware information for the machine in your
 ArcGIS Notebook Server site. It updates the information when it
 detects any change to the configuration of your machine, as well
@@ -1854,8 +2042,8 @@ as each time the machine is restarted.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="arcgis.gis.nb.Machine.import_CA_signed_certificate">
-<code class="sig-name descname">import_CA_signed_certificate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">certificate</span></em>, <em class="sig-param"><span class="n">ca_signed_certificate</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.Machine.import_CA_signed_certificate" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.gis.nb.Machine.import_CA_signed_certificate">
+<span class="sig-name descname"><span class="pre">import_CA_signed_certificate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">certificate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ca_signed_certificate</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.Machine.import_CA_signed_certificate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Imports a certificate authority (CA)-signed SSL certificate into the key store.</p>
 <table class="docutils align-default">
 <colgroup>
@@ -1883,8 +2071,8 @@ signed certificate file.</p></td>
 </dd></dl>
 
 <dl class="py method">
-<dt id="arcgis.gis.nb.Machine.import_existing_server_certificate">
-<code class="sig-name descname">import_existing_server_certificate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">alias</span></em>, <em class="sig-param"><span class="n">cert_password</span></em>, <em class="sig-param"><span class="n">cert_file</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.Machine.import_existing_server_certificate" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.gis.nb.Machine.import_existing_server_certificate">
+<span class="sig-name descname"><span class="pre">import_existing_server_certificate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alias</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cert_password</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cert_file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.Machine.import_existing_server_certificate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Imports an existing server certificate, stored in
 the PKCS #12 format, into the keystore.
 If the certificate is a CA-signed certificate, you must first
@@ -1919,8 +2107,8 @@ identifies it.</p></td>
 </dd></dl>
 
 <dl class="py method">
-<dt id="arcgis.gis.nb.Machine.import_root_certificate">
-<code class="sig-name descname">import_root_certificate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">alias</span></em>, <em class="sig-param"><span class="n">root_CA_certificate</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.Machine.import_root_certificate" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.gis.nb.Machine.import_root_certificate">
+<span class="sig-name descname"><span class="pre">import_root_certificate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alias</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root_CA_certificate</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.Machine.import_root_certificate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Imports a certificate authority’s (CA) root and intermediate
 certificates into the keystore.</p>
 <p>To create a production quality CA-signed certificate, you need to
@@ -1953,9 +2141,9 @@ CA or specific intermediate certificates.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="arcgis.gis.nb.Machine.properties">
-<em class="property">property </em><code class="sig-name descname">properties</code><a class="headerlink" href="#arcgis.gis.nb.Machine.properties" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="arcgis.gis.nb.Machine.properties">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">properties</span></span><a class="headerlink" href="#arcgis.gis.nb.Machine.properties" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get/Set the properties on the ArcGIS Notebook Server machine.</p>
 <p>Set operation allows you to update properties on the ArcGIS
 Notebook Server machine.</p>
@@ -1965,8 +2153,8 @@ your firewall allows communication through port 11443.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="arcgis.gis.nb.Machine.ssl_certificate">
-<code class="sig-name descname">ssl_certificate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">certificate</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.Machine.ssl_certificate" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.gis.nb.Machine.ssl_certificate">
+<span class="sig-name descname"><span class="pre">ssl_certificate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">certificate</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.Machine.ssl_certificate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Provides the self-signed certificate object.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1996,17 +2184,17 @@ grab information from.</p></td>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="arcgis.gis.nb.Machine.ssl_certificates">
-<em class="property">property </em><code class="sig-name descname">ssl_certificates</code><a class="headerlink" href="#arcgis.gis.nb.Machine.ssl_certificates" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="arcgis.gis.nb.Machine.ssl_certificates">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ssl_certificates</span></span><a class="headerlink" href="#arcgis.gis.nb.Machine.ssl_certificates" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets the list of all the certificates (self-signed and CA-signed)
 created for the server machine. The server securely stores these
 certificates inside a key store within the configuration store.</p>
 </dd></dl>
 
-<dl class="py method">
-<dt id="arcgis.gis.nb.Machine.status">
-<em class="property">property </em><code class="sig-name descname">status</code><a class="headerlink" href="#arcgis.gis.nb.Machine.status" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="arcgis.gis.nb.Machine.status">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">status</span></span><a class="headerlink" href="#arcgis.gis.nb.Machine.status" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the Machine’s Status</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -2016,8 +2204,8 @@ certificates inside a key store within the configuration store.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="arcgis.gis.nb.Machine.unregister">
-<code class="sig-name descname">unregister</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.Machine.unregister" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.gis.nb.Machine.unregister">
+<span class="sig-name descname"><span class="pre">unregister</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.Machine.unregister" title="Permalink to this definition">¶</a></dt>
 <dd><p>Removes this machine from the site.  This server machine will no
 longer participate in the site or run any of the GIS services.  All
 resources that were acquired by the server machine (memory, files,
@@ -2036,18 +2224,18 @@ or join an existing site.</p>
 
 </dd></dl>
 
-</section>
-<section id="securitymanager">
-<h2>SecurityManager<a class="headerlink" href="#securitymanager" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="securitymanager">
+<h2>SecurityManager<a class="headerlink" href="#securitymanager" title="Permalink to this heading">¶</a></h2>
 <dl class="py class">
-<dt id="arcgis.gis.nb.SecurityManager">
-<em class="property">class </em><code class="sig-prename descclassname">arcgis.gis.nb.</code><code class="sig-name descname">SecurityManager</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span></em>, <em class="sig-param"><span class="n">gis</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.SecurityManager" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.gis.nb.SecurityManager">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">arcgis.gis.nb.</span></span><span class="sig-name descname"><span class="pre">SecurityManager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gis</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb.SecurityManager" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>This resource is a container for all resources and operations
 pertaining to security in your ArcGIS Notebook Server site.</p>
-<dl class="py method">
-<dt id="arcgis.gis.nb.SecurityManager.configuration">
-<em class="property">property </em><code class="sig-name descname">configuration</code><a class="headerlink" href="#arcgis.gis.nb.SecurityManager.configuration" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="arcgis.gis.nb.SecurityManager.configuration">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">configuration</span></span><a class="headerlink" href="#arcgis.gis.nb.SecurityManager.configuration" title="Permalink to this definition">¶</a></dt>
 <dd><p>This resource returns the currently active security configuration
 of your ArcGIS Notebook Server site. A security configuration
 involves the following pieces of information, and can be modified
@@ -2151,17 +2339,17 @@ By default, all of the above options are enabled. Values must be comma separated
 
 </dd></dl>
 
-</section>
-<section id="notebookdataaccess">
-<h2>NotebookDataAccess<a class="headerlink" href="#notebookdataaccess" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="notebookdataaccess">
+<h2>NotebookDataAccess<a class="headerlink" href="#notebookdataaccess" title="Permalink to this heading">¶</a></h2>
 <dl class="py class">
-<dt id="arcgis.gis.nb._dataaccess.NotebookDataAccess">
-<em class="property">class </em><code class="sig-prename descclassname">arcgis.gis.nb._dataaccess.</code><code class="sig-name descname">NotebookDataAccess</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span></em>, <em class="sig-param"><span class="n">gis</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb._dataaccess.NotebookDataAccess" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.gis.nb._dataaccess.NotebookDataAccess">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">arcgis.gis.nb._dataaccess.</span></span><span class="sig-name descname"><span class="pre">NotebookDataAccess</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gis</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb._dataaccess.NotebookDataAccess" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>The Data Access Workspace Directory allows notebook authors to manage files used in their notebooks.</p>
-<dl class="py method">
-<dt id="arcgis.gis.nb._dataaccess.NotebookDataAccess.files">
-<em class="property">property </em><code class="sig-name descname">files</code><a class="headerlink" href="#arcgis.gis.nb._dataaccess.NotebookDataAccess.files" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="arcgis.gis.nb._dataaccess.NotebookDataAccess.files">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">files</span></span><a class="headerlink" href="#arcgis.gis.nb._dataaccess.NotebookDataAccess.files" title="Permalink to this definition">¶</a></dt>
 <dd><p>Lists files that are located in the workspace directory (/arcgis/home) of the user making the request.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -2171,8 +2359,8 @@ By default, all of the above options are enabled. Values must be comma separated
 </dd></dl>
 
 <dl class="py method">
-<dt id="arcgis.gis.nb._dataaccess.NotebookDataAccess.upload">
-<code class="sig-name descname">upload</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fp</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#arcgis.gis.nb._dataaccess.NotebookDataAccess.upload" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.gis.nb._dataaccess.NotebookDataAccess.upload">
+<span class="sig-name descname"><span class="pre">upload</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fp</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb._dataaccess.NotebookDataAccess.upload" title="Permalink to this definition">¶</a></dt>
 <dd><p>Uploads a file to the Notebook Server</p>
 <table class="docutils align-default">
 <colgroup>
@@ -2197,17 +2385,17 @@ By default, all of the above options are enabled. Values must be comma separated
 
 </dd></dl>
 
-</section>
-<section id="notebookfile">
-<h2>NotebookFile<a class="headerlink" href="#notebookfile" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="notebookfile">
+<h2>NotebookFile<a class="headerlink" href="#notebookfile" title="Permalink to this heading">¶</a></h2>
 <dl class="py class">
-<dt id="arcgis.gis.nb._dataaccess.NotebookFile">
-<em class="property">class </em><code class="sig-prename descclassname">arcgis.gis.nb._dataaccess.</code><code class="sig-name descname">NotebookFile</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">definition</span><span class="p">:</span> <span class="n">Dict<span class="p">[</span>str<span class="p">, </span>Any<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">da</span><span class="p">:</span> <span class="n"><a class="reference internal" href="#arcgis.gis.nb._dataaccess.NotebookDataAccess" title="arcgis.gis.nb._dataaccess.NotebookDataAccess">arcgis.gis.nb._dataaccess.NotebookDataAccess</a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb._dataaccess.NotebookFile" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.gis.nb._dataaccess.NotebookFile">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">arcgis.gis.nb._dataaccess.</span></span><span class="sig-name descname"><span class="pre">NotebookFile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">definition</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">da</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb._dataaccess.NotebookFile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Represents a Single File on the ArcGIS Notebook Server</p>
 <dl class="py method">
-<dt id="arcgis.gis.nb._dataaccess.NotebookFile.download">
-<code class="sig-name descname">download</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; str<a class="headerlink" href="#arcgis.gis.nb._dataaccess.NotebookFile.download" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.gis.nb._dataaccess.NotebookFile.download">
+<span class="sig-name descname"><span class="pre">download</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb._dataaccess.NotebookFile.download" title="Permalink to this definition">¶</a></dt>
 <dd><p>Copies down the data from the server to the local machine</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -2217,8 +2405,8 @@ By default, all of the above options are enabled. Values must be comma separated
 </dd></dl>
 
 <dl class="py method">
-<dt id="arcgis.gis.nb._dataaccess.NotebookFile.erase">
-<code class="sig-name descname">erase</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#arcgis.gis.nb._dataaccess.NotebookFile.erase" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.gis.nb._dataaccess.NotebookFile.erase">
+<span class="sig-name descname"><span class="pre">erase</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.gis.nb._dataaccess.NotebookFile.erase" title="Permalink to this definition">¶</a></dt>
 <dd><p>Deletes a file from the system</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -2227,21 +2415,21 @@ By default, all of the above options are enabled. Values must be comma separated
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="arcgis.gis.nb._dataaccess.NotebookFile.properties">
-<em class="property">property </em><code class="sig-name descname">properties</code><a class="headerlink" href="#arcgis.gis.nb._dataaccess.NotebookFile.properties" title="Permalink to this definition">¶</a></dt>
+<dl class="py property">
+<dt class="sig sig-object py" id="arcgis.gis.nb._dataaccess.NotebookFile.properties">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">properties</span></span><a class="headerlink" href="#arcgis.gis.nb._dataaccess.NotebookFile.properties" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-</section>
-<section id="nbservicesmanager">
-<h2>NBServicesManager<a class="headerlink" href="#nbservicesmanager" title="Permalink to this headline">¶</a></h2>
-</section>
-<section id="nbservice">
-<h2>NBService<a class="headerlink" href="#nbservice" title="Permalink to this headline">¶</a></h2>
-</section>
-</section>
+</div>
+<div class="section" id="nbservicesmanager">
+<h2>NBServicesManager<a class="headerlink" href="#nbservicesmanager" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="nbservice">
+<h2>NBService<a class="headerlink" href="#nbservice" title="Permalink to this heading">¶</a></h2>
+</div>
+</div>
 
 
 
@@ -2279,12 +2467,12 @@ By default, all of the above options are enabled. Values must be comma separated
 
   </div>
   
-    Options v: 2.0.0
+    Options v: 2.0.1
 
   <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
       <span class="fa fa-book"> Pick an earlier version</span>
-      v: 2.0.0
+      v: 2.0.1
       <span class="fa fa-caret-down"></span>
     </span>
     <div class="rst-other-versions">
@@ -2292,6 +2480,10 @@ By default, all of the above options are enabled. Values must be comma separated
       
       <dl>
         <dt>Versions</dt>
+        
+          
+          <dd><a href="2.0.0/">2.0.0</a></dd>
+          
         
           
           <dd><a href="1.9.1/">1.9.1</a></dd>

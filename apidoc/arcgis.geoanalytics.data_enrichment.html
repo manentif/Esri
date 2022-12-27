@@ -4,11 +4,10 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>arcgis.geoanalytics.data_enrichment module &mdash; arcgis 2.0.0 documentation</title>
+  <title>arcgis.geoanalytics.data_enrichment module &mdash; arcgis 2.0.1 documentation</title>
   
 
   
@@ -33,10 +32,12 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -80,7 +81,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             
               <div class="version">
-                2.0.0
+                2.0.1
               </div>
             
           
@@ -105,7 +106,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               
             
             
-              <p><span class="caption-text">arcgis</span></p>
+              <p class="caption" role="heading"><span class="caption-text">arcgis</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="arcgis.gis.toc.html">arcgis.gis module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.env.html">arcgis.env module</a></li>
@@ -119,8 +120,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l2 current"><a class="reference internal" href="arcgis.geoanalytics.toc.html#submodules">Submodules</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.analyze_patterns.html">arcgis.geoanalytics.analyze_patterns module</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">arcgis.geoanalytics.data_enrichment module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#enrich-from-grid">enrich_from_grid</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#calculate-motion-statistics">calculate_motion_statistics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#enrich-from-grid">enrich_from_grid</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#arcgis.geoanalytics.data_enrichment.enrich_from_grid"><code class="docutils literal notranslate"><span class="pre">enrich_from_grid()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#calculate-motion-statistics">calculate_motion_statistics</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#arcgis.geoanalytics.data_enrichment.calculate_motion_statistics"><code class="docutils literal notranslate"><span class="pre">calculate_motion_statistics()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="arcgis.geoanalytics.find_locations.html">arcgis.geoanalytics.find_locations module</a></li>
@@ -135,6 +142,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li class="toctree-l1"><a class="reference internal" href="arcgis.geoenrichment.html">arcgis.geoenrichment module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.geometry.html">arcgis.geometry module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.geoprocessing.html">arcgis.geoprocessing module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcgis.graph.html">arcgis.graph module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.mapping.toc.html">arcgis.mapping module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.realtime.html">arcgis.realtime module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="arcgis.schematics.html">arcgis.schematics module</a></li>
@@ -214,14 +222,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJGGV5"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-  <section id="arcgis-geoanalytics-data-enrichment-module">
-<h1>arcgis.geoanalytics.data_enrichment module<a class="headerlink" href="#arcgis-geoanalytics-data-enrichment-module" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="arcgis-geoanalytics-data-enrichment-module">
+<h1>arcgis.geoanalytics.data_enrichment module<a class="headerlink" href="#arcgis-geoanalytics-data-enrichment-module" title="Permalink to this heading">¶</a></h1>
 <span class="target" id="module-arcgis.geoanalytics.data_enrichment"></span><p>These tools are used for data enrichment using geoanalytics</p>
-<section id="enrich-from-grid">
-<h2>enrich_from_grid<a class="headerlink" href="#enrich-from-grid" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="enrich-from-grid">
+<h2>enrich_from_grid<a class="headerlink" href="#enrich-from-grid" title="Permalink to this heading">¶</a></h2>
 <dl class="py function">
-<dt id="arcgis.geoanalytics.data_enrichment.enrich_from_grid">
-<code class="sig-prename descclassname">arcgis.geoanalytics.data_enrichment.</code><code class="sig-name descname">enrich_from_grid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_layer</span></em>, <em class="sig-param"><span class="n">grid_layer</span></em>, <em class="sig-param"><span class="n">enrichment_attributes</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.data_enrichment.enrich_from_grid" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.geoanalytics.data_enrichment.enrich_from_grid">
+<span class="sig-prename descclassname"><span class="pre">arcgis.geoanalytics.data_enrichment.</span></span><span class="sig-name descname"><span class="pre">enrich_from_grid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_layer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid_layer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">enrichment_attributes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">future</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.data_enrichment.enrich_from_grid" title="Permalink to this definition">¶</a></dt>
 <dd><img alt="_images/enrich_from_grid.png" src="_images/enrich_from_grid.png" />
 <p>The Enrich From Multi-Variable Grid task joins attributes from a multivariable grid to a point layer.
 The multivariable grid must be created using the <code class="docutils literal notranslate"><span class="pre">build_multivariable_grid</span></code> task. Metadata from the
@@ -298,12 +306,12 @@ results. The GPJob can be queried on the status of the execution.</p>
 </div>
 </dd></dl>
 
-</section>
-<section id="calculate-motion-statistics">
-<h2>calculate_motion_statistics<a class="headerlink" href="#calculate-motion-statistics" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="calculate-motion-statistics">
+<h2>calculate_motion_statistics<a class="headerlink" href="#calculate-motion-statistics" title="Permalink to this heading">¶</a></h2>
 <dl class="py function">
-<dt id="arcgis.geoanalytics.data_enrichment.calculate_motion_statistics">
-<code class="sig-prename descclassname">arcgis.geoanalytics.data_enrichment.</code><code class="sig-name descname">calculate_motion_statistics</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_layer</span></em>, <em class="sig-param"><span class="n">track_fields</span></em>, <em class="sig-param"><span class="n">motion_statistics</span><span class="o">=</span><span class="default_value">'All'</span></em>, <em class="sig-param"><span class="n">track_history_window</span><span class="o">=</span><span class="default_value">3</span></em>, <em class="sig-param"><span class="n">idle_tol_dist</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">idle_tol_unit</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">idle_time_tol</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">idle_time_tol_unit</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">time_boundary_split</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">split_unit</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">time_bound_ref</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">dist_method</span><span class="o">=</span><span class="default_value">'Geodesic'</span></em>, <em class="sig-param"><span class="n">distance_unit</span><span class="o">=</span><span class="default_value">'Meters'</span></em>, <em class="sig-param"><span class="n">duration_unit</span><span class="o">=</span><span class="default_value">'Seconds'</span></em>, <em class="sig-param"><span class="n">speed_unit</span><span class="o">=</span><span class="default_value">'MetersPerSecond'</span></em>, <em class="sig-param"><span class="n">accel_unit</span><span class="o">=</span><span class="default_value">'MetersPerSecondSquared'</span></em>, <em class="sig-param"><span class="n">elev_unit</span><span class="o">=</span><span class="default_value">'meters'</span></em>, <em class="sig-param"><span class="n">output_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">context</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">future</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.data_enrichment.calculate_motion_statistics" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="arcgis.geoanalytics.data_enrichment.calculate_motion_statistics">
+<span class="sig-prename descclassname"><span class="pre">arcgis.geoanalytics.data_enrichment.</span></span><span class="sig-name descname"><span class="pre">calculate_motion_statistics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_layer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">track_fields</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">motion_statistics</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'All'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">track_history_window</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idle_tol_dist</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idle_tol_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idle_time_tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idle_time_tol_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_boundary_split</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_bound_ref</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dist_method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Geodesic'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distance_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Meters'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">duration_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Seconds'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">speed_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'MetersPerSecond'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">accel_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'MetersPerSecondSquared'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elev_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'meters'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">future</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#arcgis.geoanalytics.data_enrichment.calculate_motion_statistics" title="Permalink to this definition">¶</a></dt>
 <dd><p>The Calculate Motion Statistics task calculates motion statistics and
 descriptors for time-enabled points that represent one or more moving
 entities. Points are grouped together into tracks representing each
@@ -451,8 +459,8 @@ results. The GPJob can be queried on the status of the execution.</p>
 </dl>
 </dd></dl>
 
-</section>
-</section>
+</div>
+</div>
 
 
 
@@ -490,12 +498,12 @@ results. The GPJob can be queried on the status of the execution.</p>
 
   </div>
   
-    Options v: 2.0.0
+    Options v: 2.0.1
 
   <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
       <span class="fa fa-book"> Pick an earlier version</span>
-      v: 2.0.0
+      v: 2.0.1
       <span class="fa fa-caret-down"></span>
     </span>
     <div class="rst-other-versions">
@@ -503,6 +511,10 @@ results. The GPJob can be queried on the status of the execution.</p>
       
       <dl>
         <dt>Versions</dt>
+        
+          
+          <dd><a href="2.0.0/">2.0.0</a></dd>
+          
         
           
           <dd><a href="1.9.1/">1.9.1</a></dd>
