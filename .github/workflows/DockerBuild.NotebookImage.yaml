@@ -3,6 +3,7 @@ name: DockerBuild.NotebookImage
 on:
   # allow it to be run on-demand
   workflow_dispatch:
+  push:
 
 jobs:
   build-and-push:
